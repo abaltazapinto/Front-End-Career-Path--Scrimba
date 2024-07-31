@@ -49,10 +49,11 @@ h1, h2, h3, h4, p {
 }
 
 .gift-img {
+    margin:0 auto;
     width: 400px;
     border: 6px solid white;
     border-radius: 10px;
-    width: 100%;
+    width: 50%;
     height: 400px;
     background-size:cover;
     background-position: center;
