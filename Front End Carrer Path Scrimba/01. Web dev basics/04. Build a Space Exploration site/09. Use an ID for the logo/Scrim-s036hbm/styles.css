@@ -22,3 +22,8 @@ width to a suitable level.
 .underline {
     border-bottom: 4px solid white;
 }
+
+#spacexLogo
+{
+    width: 200px;
+}
