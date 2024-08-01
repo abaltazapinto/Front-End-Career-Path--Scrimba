@@ -1,0 +1,13 @@
+html, body {
+    padding: 1rem;
+    font-size: 1.25rem;
+    
+}
+
+audio {
+    filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+}
+
+video {
+    border-radius: 5px;
+}
