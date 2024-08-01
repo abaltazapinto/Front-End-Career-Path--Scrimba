@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.welcome-porto {
+    color: white !important;
+    background: url("images/porto_background.jpg");
+    background-size: cover !important;
+    background-position: 0%;
+    display: flex !important;
+    flex-direction: column;
+    justify-self: center !important;
+    align-items: center !important;
+    
+
+}
+
+#title, #subtitle {
+    background-color: #B9CDDA;
+    margin: 10px auto !important;
+    padding: 2.5px 10px ;
+    border-radius: 10px;
+    text-shadow: 2px 0.5px 1px #222222;
+}
+
+#subtitle {
+    background-color: #98A6D4;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+.things-to-do {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A4BEF3;
+    margin: 0 auto;
+}
+
+.activity {
+    margin: 10px ;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    
+}
+
+.activity img {
+    border-radius: 50%;
+    width: 150px;
+    height: 135px;
+    
+    display: flex;
+    border: 2px solid #222222;
+    margin-bottom: 20px;
+    cursor: pointer;
+    
+}
+
+#activity5, #activity4, #activity3, #activity2, #activity1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    
+}
+
+.no-style-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.guide {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #D1D5DE;
+
+    align-items: start;
+    color: #222222;
+    justify-content: end;
+    
+}
+.guide h3 {
+    text-shadow: 1px 1px 0px black;
+    margin: 10px;
+}
+
+.guide h4 {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #222222;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.guide img {
+ width: 150px;
+ border-radius: 50%;
+ border: 2px solid black;
+ cursor:pointer;
+}
+
+.guide {
+    
+    text-decoration: none;
+    color: white;
+}
