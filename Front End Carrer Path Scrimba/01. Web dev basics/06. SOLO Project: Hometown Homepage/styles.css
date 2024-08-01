@@ -12,7 +12,27 @@ body {
     font-style: normal;
     width:100% !important;
     max-width:none;
+    background: linear-gradient(45deg,#E6E1C5, #feb47b);
+    background-size: cover !important;
+    height: 100vh !important;
 
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+    .container {
+        width: 80%;
+    }
+} 
+
+@media (min-width: 1024px) {
+    .container {
+        width: 70%;
+    }
 }
 
 .welcome-porto {
@@ -52,7 +72,7 @@ body {
 
 .activities {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     list-style-type: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
@@ -126,13 +146,13 @@ body {
  border-radius: 50%;
  border: 2px solid black;
  cursor:pointer;
- margin-left: 50px;
+ 
 }
 
 .guide-info {   
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: start;
     text-decoration: none;
     color: white;
