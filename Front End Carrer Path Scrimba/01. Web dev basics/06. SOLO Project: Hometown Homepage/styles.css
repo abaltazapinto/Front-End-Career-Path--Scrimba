@@ -2,13 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: cover;
+    height: cover;
 }
 
 body {
     font-family: "Gloria Hallelujah", cursive;
     font-weight: 400;
     font-style: normal;
-    
+
 }
 
 .welcome-porto {
@@ -20,8 +22,6 @@ body {
     flex-direction: column;
     justify-self: center !important;
     align-items: center !important;
-    
-
 }
 
 #title, #subtitle {
@@ -43,57 +43,66 @@ body {
 .things-to-do {
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: #A4BEF3;
-    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.activity {
-    margin: 10px ;
+.activities {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
+    width: 100%;
+    justify-content: center;
     text-align: center;
-    
 }
 
-.activity img {
+.activities div {
+    flex: 1; /* Allows each item to grow and shrink equally */
+    margin: 10px; /* Adds space around each item */
+    text-align: center; /* Centers the content within each item */
+}
+
+.activities img {
+    
     border-radius: 50%;
     width: 150px;
     height: 135px;
-    
-    display: flex;
-    border: 2px solid #222222;
-    margin-bottom: 20px;
-    cursor: pointer;
+    border: 2px solid #222222; 
+    cursor : pointer;
+    transition: transform 0.3s ease-in-out;
+
     
 }
 
+.activities img:hover {
+    transform: scale(1.10);
+}
+.activities h4:hover {
+    color: white;
+}
 #activity5, #activity4, #activity3, #activity2, #activity1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 10px;
+        
     
 }
 
 .no-style-link {
     text-decoration: none;
     color: inherit;
+    text-align: center;
+    align-items: center;
 }
 
 .guide {
-    padding: 10px 20px;
     display: flex;
     flex-direction: row;
     background-color: #D1D5DE;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
 
-    align-items: start;
-    color: #222222;
-    justify-content: end;
-    
 }
 .guide h3 {
     text-shadow: 1px 1px 0px black;
@@ -109,15 +118,22 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .guide img {
  width: 150px;
  border-radius: 50%;
  border: 2px solid black;
  cursor:pointer;
+ margin-left: 50px;
 }
 
-.guide {
-    
+.guide-info {   
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
     text-decoration: none;
     color: white;
+    margin-right: auto;
+    margin-left: auto;
 }
