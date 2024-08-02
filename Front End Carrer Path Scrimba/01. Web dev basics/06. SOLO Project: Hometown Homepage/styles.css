@@ -10,11 +10,12 @@ body {
     font-family: "Gloria Hallelujah", cursive;
     font-weight: 400;
     font-style: normal;
-    width:100% !important;
-    max-width:none;
-    background: linear-gradient(45deg,#E6E1C5, #feb47b);
+    width: 100% !important;
+    max-width: none;
+    background: linear-gradient(45deg, #E6E1C5, #feb47b);
     background-size: cover !important;
     height: 100vh !important;
+    height: 100vh;
 
 }
 
@@ -27,7 +28,7 @@ body {
     .container {
         width: 80%;
     }
-} 
+}
 
 @media (min-width: 1024px) {
     .container {
@@ -46,10 +47,11 @@ body {
     align-items: center !important;
 }
 
-#title, #subtitle {
+#title,
+#subtitle {
     background-color: #B9CDDA;
     margin: 10px auto !important;
-    padding: 2.5px 10px ;
+    padding: 2.5px 10px;
     border-radius: 10px;
     text-shadow: 2px 0.5px 1px #222222;
 }
@@ -59,7 +61,7 @@ body {
     font-size: 16px;
     margin-top: 20px;
     text-align: center;
-    
+
 }
 
 .things-to-do {
@@ -82,32 +84,33 @@ body {
 }
 
 .activities div {
-    flex: 1; /* Allows each item to grow and shrink equally */
-    margin: 10px; /* Adds space around each item */
-    text-align: center; /* Centers the content within each item */
+    flex: 1;
+    /* Allows each item to grow and shrink equally */
+    margin: 10px;
+    /* Adds space around each item */
+    text-align: center;
+    /* Centers the content within each item */
 }
 
 .activities img {
-    
+
     border-radius: 50%;
     width: 150px;
     height: 135px;
-    border: 2px solid #222222; 
-    cursor : pointer;
+    border: 2px solid #222222;
+    cursor: pointer;
     transition: transform 0.3s ease-in-out;
 
-    
+
 }
 
 .activities img:hover {
     transform: scale(1.10);
 }
+
 .activities h4:hover {
     color: white;
-}
-#activity5, #activity4, #activity3, #activity2, #activity1 {
-        
-    
+    transform: scale(1.20);
 }
 
 .no-style-link {
@@ -126,6 +129,7 @@ body {
     padding: 20px 20px;
 
 }
+
 .guide h3 {
     text-shadow: 1px 1px 0px black;
     margin: 10px;
@@ -142,14 +146,14 @@ body {
 }
 
 .guide img {
- width: 150px;
- border-radius: 50%;
- border: 2px solid black;
- cursor:pointer;
- 
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+
 }
 
-.guide-info {   
+.guide-info {
     display: flex;
     flex-direction: column;
     align-items: center;
