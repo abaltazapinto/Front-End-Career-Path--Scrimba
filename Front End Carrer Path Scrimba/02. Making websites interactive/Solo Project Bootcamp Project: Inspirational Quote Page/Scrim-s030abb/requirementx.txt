@@ -1,0 +1,23 @@
+Requirements
+    - Build it from "scratch"
+Make sure you use:
+    - Classes
+    - Background-image
+    - Google font: Inter
+
+
+strech goals 
+    change the quoote and the background image
+    use Flexbox instead
+    Change color of quote box on :hover
+    Make a quote box link that opens this URL in a new tab.
+        https://scrimba.com/learn/frontend/
+
+    
+    Place the quote box exactly on the center.
+
+    - Use Javascript to display a random quote every refresh.
+    - Display a random background image on every refresh.
+
+    figma file:
+    https://www.figma.com/design/eOj9KgTkxxzQdF8sNpO6tX/Inspirational-Quote-Page-(Copy)?node-id=0-1&t=YDDU1ApfPyKtYvIP-0
