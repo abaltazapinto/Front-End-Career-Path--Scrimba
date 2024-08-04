@@ -1,0 +1,21 @@
+/*
+Challenge:
+Add colors to the site based on the provided design.
+
+pink: #EFB0C9
+blue: #a2d2ff
+white: #ffffff
+*/
+
+body {
+    text-align: center;
+    font-family: 'Happy Monkey', cursive;
+    background-color: #a2d2ff;
+}
+
+#bff-img {
+    width: 150px;
+    border-radius: 50%;
+    border:5px solid #EFB0C9;
+    
+}

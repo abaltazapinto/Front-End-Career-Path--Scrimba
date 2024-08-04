@@ -1,0 +1,55 @@
+/*
+Challenge:
+1. Center the text and button
+2. Style the button according to the design.
+   Use a class to select the button.
+*/
+
+body {
+    color: white;
+    background-image: url("images/universe.jpg");
+    background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    justify-content: center;
+}
+
+.main-container {
+    margin-bottom: 20px;
+}
+
+.main-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;
+    transition: backgound-color 0.3s ease;
+}
+
+.main-container button:hover {
+    background-color: #0056b3;
+}
+
+.orbitron-btn {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.orbitron-title {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: bold;
+  }
+  
