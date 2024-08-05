@@ -1,3 +1,5 @@
+import quotes from './quotes.js'
+
 document.addEventListener("DOMContentLoaded", function () {
     const images = [ 
         './images/nature.jpg',
@@ -12,4 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const randomImage = images[Math.floor(Math.random() * images.length)]
     document.body.style.backgroundImage =  `url('${randomImage}')`;
 
-})
+    //quotes    
+
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+
+    // select the quote in a different way but at the same time effective !!
+
+    const quoteElement = document.querySelector('.quote .text');
+    quoteElement.innerHTML = `<h1>${randomQuote.quote}</h1><h2>- ${randomQuote.author}</h2>`
+
+
+
+});
+

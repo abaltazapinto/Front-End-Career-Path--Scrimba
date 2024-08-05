@@ -1,4 +1,4 @@
-const quotes = [
+ const quotes = [
     {
         quote: "Today is your opportunity to build the tomorrow you want.",
         author: "Ken Poirot"
@@ -20,3 +20,5 @@ const quotes = [
         author: "Justin Bieber"
     }
 ]
+
+export default quotes;
