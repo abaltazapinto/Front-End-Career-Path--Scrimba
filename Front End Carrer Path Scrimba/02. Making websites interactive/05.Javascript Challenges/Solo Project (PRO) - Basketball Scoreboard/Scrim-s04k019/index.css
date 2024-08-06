@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'DSEG7-Classic';
+    src: url(fonts-DSEG_v046/DSEG7-Classic/DSEG7Classic-Italic.woff2) format('woff2'),
+         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.woff) format('woff'),
+         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.ttf)
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1B244A;
+    color: black;
+    height: 20rem;
+    width: 40rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    border: 3px solid #222222;
+}
+
+.scorecardHome {
+    background-color: #080001;
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    color: #F94F6D;
+    font-family: 'DSEG7-Classic', sans-serif;
+    font-size: 2rem;
+    
+}
+.scorecardAway {
+    background-color: #080001;
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    color: #F94F6D;
+    font-family: 'DSEG7-Classic', sans-serif;
+    font-size: 2rem;
+    
+}
+
+
+.winner {
+    border: 2px solid #F94F6D;
+}
+
+
+.host {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 20 30px 10 30px;
+}

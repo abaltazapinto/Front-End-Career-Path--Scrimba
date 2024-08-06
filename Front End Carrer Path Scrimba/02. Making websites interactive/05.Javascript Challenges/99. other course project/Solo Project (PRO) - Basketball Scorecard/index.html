@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container flex">
+                <div class="team">
+                    <h3 class="home">HOME</h3>
+                    <div class="score" id="home-points">
+                        <h1>  0  </h1>
+                </div>
+                <div class="scorepoints">
+                    <button class="points" onclick="addHomePoints(1)">+1</button>
+                    <button class="points" onclick="addHomePoints(2)">+2</button>
+                    <button class="points" onclick="addHomePoints(3)">+3</button>
+                </div>
+            </div>
+            <div class="container">
+                 <div> 
+                    <button class="reset" onclick="reset()">New Game</button>
+                 </div>   
+            </div>
+            <div>
+                <div class="team">
+                    <h3 class="guest"> GUEST</h3>
+                    <div class="score" id="away-points">
+                        <h1>  0   </h1>
+                    </div>
+                    <div class="scorepoints">
+                        
+                        <button class="points" onclick="addAwayPoints(1)">+1</button>
+                        <button class="points" onclick="addAwayPoints(2)">+2</button>
+                        <button class="points" onclick="addAwayPoints(3)">+3</button>
+                
+                    </div>
+                </div>
+            </div>
+        <div class="cron">
+            <h3>CRONOMETRO</h3>
+            <div class="cronometro">
+                <h1 id="cronometro">00:00</h1>
+                <button class="start" onclick="startCronometro()">Start</button>
+                <button class="stop" onclick="stopCronometro()">Stop</button>
+                <button class="reset" onclick="resetCronometro()">Reset</button>
+            </div>
+        </div>         
+        <script src="index.js" defer></script>
+    </body>
+</html>
