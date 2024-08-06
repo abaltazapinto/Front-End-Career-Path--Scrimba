@@ -13,42 +13,47 @@ body {
 }
 .container {
     display: flex;
-    justify-content: space-around;
-    background-color: #1B244A;
+    justify-content: center;
+    background-color:   #1B244A;
     color: black;
     height: 20rem;
     width: 40rem;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    border: 3px solid #222222;
+    border: 3px solid orange;
+}
+.team {
+    display: flex;
+    flex-direction: column;
 }
 
 .scorecardHome {
     background-color: #080001;
-    width: 10rem;
+    width: 8rem;
     height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10%;
+    border-radius: 50%;
     color: #F94F6D;
     font-family: 'DSEG7-Classic', sans-serif;
     font-size: 2rem;
+    margin-left: 15%;
     
 }
 .scorecardAway {
     background-color: #080001;
-    width: 10rem;
+    width: 8rem;
     height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10%;
+    border-radius: 50%;
     color: #F94F6D;
     font-family: 'DSEG7-Classic', sans-serif;
     font-size: 2rem;
-    
+    margin-left: 15%;    
 }
 
 
@@ -63,4 +68,50 @@ body {
     color: white;
     text-align: center;
     margin: 20 30px 10 30px;
+}
+
+.timer { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cronometer {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 3em;
+}
+
+.controls {
+    flex-wrap: wrap;
+    background-color: inherit
+    
+}
+
+.points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: inherit;
+    margin: 10px 5px;
+}
+
+.resetGame {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background-color: inherit;
+}
+
+.newGame {
+    background-color: lightgray;
+    border-radius: 10%;
+}
+
+.timer {
+    color:white;
+    font-size: bold;
+    font-size: 5rem;
 }

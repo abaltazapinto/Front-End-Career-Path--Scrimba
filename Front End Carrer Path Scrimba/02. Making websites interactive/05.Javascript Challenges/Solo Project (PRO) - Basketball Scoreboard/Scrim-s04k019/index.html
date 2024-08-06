@@ -10,24 +10,38 @@
             <div class="team">
                 <h3 class="host">HOME</h3>
                 <div class="scorecardHome" id="points-home">
-                    <p id="home-points" class="score">50</p>
+                    <p id="home-points" class="score">0</p>
                 </div>
-                    <div>
-                        <p>+1</p>
-                        <p>+2</p>
-                        <p>+3</p>
+                    <div class="points">
+                        <button class="points" onclick="addHomePoints(1)">+1</button>
+                        <button class="points" onclick="addHomePoints(2)">+2</button>
+                        <button class="points" onclick="addHomePoints(3)">+3</button>
                     </div>
             </div>
+
+            <div class="timer">
+                
+                <div class="controls">
+                    <button class="start" onclick="startCronometer()">▶️</button>
+                    <button class="stop" onclick="stopCronometer()">⏯️</button>
+                    <button class="reset" onclick="resetCronometer()">🆕</button>
+                </div>
+                <div class="resetGame">
+                    <button class="newGame" onclick="newGame()">New Game</button>
+                </div>
+                <p id="cronometer" > 00:00 </p>
+            </div>
+
             
             <div>
                 <h3 class="host">GUEST</h3>
-                <div class="scorecardAway">
-                    <p id="away-points" class="score">49</p>
+                <div class="scorecardAway" id="points-away">
+                    <p id="away-points" class="score">0</p>
                 </div>
-                <div>
-                    <p>+1</p>
-                    <p>+2</p>
-                    <p>+3</p>
+                <div class="points">
+                    <button class="points" onclick="addAwayPoints(1)">+1</button>
+                    <button class="points" onclick="addAwayPoints(2)">+2</button>
+                    <button class="points" onclick="addAwayPoints(3)">+3</button>
                 </div>
             </div>
         </div>
