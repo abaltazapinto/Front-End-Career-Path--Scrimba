@@ -5,13 +5,15 @@ body {
     Find a web safe font you like, and add it 
     to your card.
     */
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .avatar {
     width: 250px;
-    border-radius:500px;
+    border-radius:50%;
     border: 2px solid #222222;
     transition: transform 0.3s ease; 
 }
@@ -48,6 +50,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     text-align: center;
     background: #F9DEC9;

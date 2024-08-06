@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s07hbsele1",
+  "description": "https://v2.scrimba.com/s030abb",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
