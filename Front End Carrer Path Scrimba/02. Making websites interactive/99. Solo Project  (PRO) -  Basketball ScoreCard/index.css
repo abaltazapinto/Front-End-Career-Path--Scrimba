@@ -15,11 +15,11 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    background-color:   #F7F8FC;
+    background-color: #E0D2C3;
     color: #222222;
     border-radius: 10px;
     align-items: center;
-    border: 3px solid orange;
+    border: 3px solid #F94F6D;
 }
 
 .team {
@@ -36,7 +36,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: #F94F6D;
+    color:  #F94F6D;
     font-family: 'DSEG7-Classic', sans-serif;
     font-size: 2rem;    
 }
@@ -63,6 +63,7 @@ body {
 }
 
 #cronometer {
+    width: 2.2em;
     font-size: 5em;
     margin-bottom: 10px;
 }
@@ -80,7 +81,7 @@ body {
         margin: 10px;
 }
 
-.points {
+.points-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,23 +90,35 @@ body {
     margin: 10px 5px;
 }
 
-.startBtn, .stopBtn, .resetBtn {
-    width: 4em;
-    height: auto;
+#start-btn.disabled {
+    display: none !important;
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+#start-btn, #reset-btn, #next-period-btn {
+    width: 2em;
+    height: 2em;
+    background-color: #222222;
     border-radius: 50%;
+    color: #F94F6D;
+    border: 2px solid #F94F6D ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
     cursor: pointer;
 }
 
 .newGame {
-    background-color: #2CDC09;
-    border-radius: 10%;
-    border: 1px white solid;
-    color: white;
+    background-color: #222222;
+    border: 1px solid #F94F6D;
+    color: #F94F6D;
+    font-weight: bold;
     margin: 10px 10px;
     cursor: pointer;
 }
 
-.period {
+#period {
     background-color: #080001;
     color: #F94F6D;
     margin-left: auto;
@@ -115,4 +128,5 @@ body {
     margin: 10px auto;
     border-radius: 10px;
     width: 2rem;
+
 }

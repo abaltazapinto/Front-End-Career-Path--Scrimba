@@ -13,23 +13,23 @@
                     <div class="scorecard" id="points-home">
                         <p id="home-points" class="score">0</p>
                     </div>
-                        <div class="points">
-                            <button class="points" onclick="addHomePoints(1)">+1</button>
-                            <button class="points" onclick="addHomePoints(2)">+2</button>
-                            <button class="points" onclick="addHomePoints(3)">+3</button>
+                        <div class="points-button">
+                            <button disabled class="points-button" onclick="addHomePoints(1)">+1</button>
+                            <button disabled class="points-button" onclick="addHomePoints(2)">+2</button>
+                            <button disabled class="points-button" onclick="addHomePoints(3)">+3</button>
                         </div>
             </div>
                 <div class="middle">
-                     <div class="period">
-                         1
-                     </div>   
-                        <p id="cronometer" class="cronometer"> 20:00 </p>
+                     <p id="period">
+                        0                       
+                     </p>   
+                        <p id="cronometer" class="cronometer"> 12:00 </p>
                             <div class="controls">           
-                                <button class="startBtn" onclick="startCronometer()">⏯</button>
-                                <button class="stopBtn" onclick="stopCronometer()">⏸</button>
-                                <button class="resetBtn" onclick="resetCronometer()">⟳</button>
+                                <button disabled disabled id="start-btn" class= "start-btn" onclick="startCronometer()">⏵</button>
+                                <button disabled id="reset-btn" class="reset-btn" onclick="resetCronometer()">⟳</button>
                             </div>
-                                <button class="newGame" onclick="newGame()">New Game</button>
+                                <button disabled id="next-period-btn" onclick="nextPeriod()">+</button>
+                                <button id="new-game-btn" class="newGame" onclick="newGame()">New Game</button>
                 </div>
             <div>
                 <div class="team">    
@@ -37,10 +37,10 @@
                         <div class="scorecard" id="points-away">
                             <p id="away-points" class="score">0</p>
                         </div>
-                            <div class="points">
-                                <button class="points" onclick="addAwayPoints(1)">+1</button>
-                                <button class="points" onclick="addAwayPoints(2)">+2</button>
-                                <button class="points" onclick="addAwayPoints(3)">+3</button>
+                            <div class="points-button">
+                                <button class="points-button" onclick="addAwayPoints(1)" disabled>+1</button>
+                                <button disabled class="points-button" onclick="addAwayPoints(2)">+2</button>
+                                <button disabled class="points-button" onclick="addAwayPoints(3)">+3</button>
                             </div>
                 </div>
             </div>
