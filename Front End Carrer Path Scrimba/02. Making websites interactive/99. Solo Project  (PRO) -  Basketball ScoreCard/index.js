@@ -38,42 +38,68 @@ const highlightLeader = () => {
 
 
 const displayTime = document.querySelector('#cronometer')
-const startBtn = document.querySelector("#startBtn")    
-const pauseBtn = document.querySelector("#pauseBtn")
-const resetBtn = document.querySelector("#resetBtn")
+const startBtn = document.querySelector("#start-btn")    
+const resetBtn = document.querySelector("#reset-btn")
+let timer;
+let isRunning = false;
+let [minutes, seconds] = [12, 0]
 
 
 
 function startCronometer() { 
-    const display = document.querySelector('#cronometer')
-    let duration = 60 * 20;
-    let timer = duration, minutes, seconds;
-    
-    let myInterval = -1;
-    
     // if paused start
-    
-    // else pause
-    cronometroInterval = setInterval(() => {
-        minutes = Math.floor(timer / 60);
-        seconds = Math.floor(timer % 60);
-        minutes = minutes < 10? "0" + minutes : minutes;
-        seconds = seconds < 10? "0" + seconds : seconds;
-        
-        const tempo = `${minutes}:${seconds}`;
-        display.innerHTML = tempo;
-        
-        if (--timer < 0) {
-            clearInterval(cronometroInterval);
-        }
-    }, 1000);
-    
+    if (isRunning) {
+        pauseCronometer()
+    }else {
+        start();
+    }
+};
+
+function start() {
+    isRunning = true;
+    startBtn.textContent = '⏸'
+    timer = setInterval(updateTime, 1000)
+    enablePointsButton()
 }
+
+function updateTime() {
+    if(seconds === 0 && minutes === 0) {
+        clearInterval(timer);
+        isRunning = false;
+        return;
+    }
+
+    if(seconds === 0) {
+        seconds = 59;
+        minutes--;
+    } else {
+        seconds --;
+    }
+
+    displayTime.textContent = `${pad(minutes)}:${pad(seconds)}`;
+}
+
+function pauseCronometer() {
+    isRunning = false;
+    startBtn.textContent = '⏵'
+    clearInterval(timer);
+}
+
+
+
 const stopCronometer = () => { 
     clearInterval(cronometroInterval);
 }
 const resetCronometer = () => {
-    document.querySelector('#cronometer').textContent = '20:00';
+    pauseCronometer();
+    minutes = 12;
+    seconds = 0;
+    displayTime.textContent = `${pad(minutes)}:${pad(seconds)}`;
+
+}
+
+function pad(unit) {
+    return unit < 10 ? '0' + unit : unit;
 }
 const newGame = () =>  {
     homePoints = 0;
@@ -83,4 +109,33 @@ const newGame = () =>  {
         stopCronometer();
         resetCronometer();
         highlightLeader();
+        enableButtons()
+        document.getElementById('period').innerText = 0;
+        nextPeriodBtn();
+        enablePointsButton()        
+}
+
+const nextPeriodBtn = () => {
+    const period = document.getElementById('period').innerText
+    let periodNumber = Number(period)
+    periodNumber = (periodNumber + 1) % 5;
+    document.getElementById('period').innerText = periodNumber;
+
+    console.log("click")
+
+};
+
+function enableButtons() {
+    startBtn.disabled = false;
+    resetBtn.disabled = false;
+    
+}
+
+const addHomePointsBtns = document.querySelectorAll(".points-button");
+
+function enablePointsButton() {
+    addHomePointsBtns.forEach(button => {
+        button.disabled = false;
+    });
+    
 }
