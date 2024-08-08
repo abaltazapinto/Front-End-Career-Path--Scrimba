@@ -1,8 +1,118 @@
 body {
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'DSEG7-Classic';
+    src: url(fonts-DSEG_v046/DSEG7-Classic/DSEG7Classic-Italic.woff2) format('woff2'),
+         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.woff) format('woff'),
+         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.ttf)
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    background-color:   #F7F8FC;
+    color: #222222;
+    border-radius: 10px;
+    align-items: center;
+    border: 3px solid orange;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scorecard {
+    background-color: #080001;
+    width: 8rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #F94F6D;
+    font-family: 'DSEG7-Classic', sans-serif;
+    font-size: 2rem;    
+}
+
+.winner {
+    outline: 2px solid #F94F6D;
+}
+
+.host {
+    display: flex;
+    align-items: center;
+    
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20 30px 10 30px;
+}
+
+.middle { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+#cronometer {
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.controls > button {
+    background-color: #2CDC09;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        margin: 10px;
+}
+
+.points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: inherit;
+    margin: 10px 5px;
+}
+
+.startBtn, .stopBtn, .resetBtn {
+    width: 4em;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.newGame {
+    background-color: #2CDC09;
+    border-radius: 10%;
+    border: 1px white solid;
+    color: white;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.period {
+    background-color: #080001;
+    color: #F94F6D;
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: center;
+    padding: 10px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 2rem;
 }
