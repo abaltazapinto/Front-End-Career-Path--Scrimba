@@ -113,7 +113,6 @@ const newGame = () =>  {
         document.getElementById('period').innerText = 0;
         nextPeriodBtn();
         enablePointsButton()
-        showButton();       
 }
 
 const nextPeriodBtn = () => {
@@ -138,12 +137,4 @@ function enablePointsButton() {
         button.disabled = false;
     });
     
-}
-
-const hideButton= (button) => {
-    button.classList.add("hidden");
-}
-
-const showButton= (button) => {
-    button.classList.remove("hidden");
 }
