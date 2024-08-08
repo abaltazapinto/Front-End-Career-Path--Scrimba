@@ -112,7 +112,8 @@ const newGame = () =>  {
         enableButtons()
         document.getElementById('period').innerText = 0;
         nextPeriodBtn();
-        enablePointsButton()        
+        enablePointsButton()
+        showButton();       
 }
 
 const nextPeriodBtn = () => {
@@ -120,7 +121,6 @@ const nextPeriodBtn = () => {
     let periodNumber = Number(period)
     periodNumber = (periodNumber + 1) % 5;
     document.getElementById('period').innerText = periodNumber;
-
     console.log("click")
 
 };
@@ -138,4 +138,12 @@ function enablePointsButton() {
         button.disabled = false;
     });
     
+}
+
+const hideButton= (button) => {
+    button.classList.add("hidden");
+}
+
+const showButton= (button) => {
+    button.classList.remove("hidden");
 }
