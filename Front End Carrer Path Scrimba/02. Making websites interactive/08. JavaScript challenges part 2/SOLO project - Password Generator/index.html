@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random passwordGenerator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Happy+Monkey&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Happy+Monkey&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<script src="index.js"></script>
+</head>
+<body>
+    <div class="container" >
+        <span class="white">Generate</span></br>
+        <span class="green" >random password</span>
+            <p> Never Let an insecure password again</p>
+            <button id="generateBtn" onclick="generatePassword()"> Generate passwords </button>
+                <hr class="custom-line">
+                    <div class="display">
+
+                        <input type="text" id="password" placeholder="password" autocomplete="off">
+                        <img class='copyIcon1' src="images/copy.png" alt="copyImg" onclick="copyPassword('password')">
+
+                        <input type="text" id="password2" placeholder="password" autocomplete="off" >
+                        <img class='copyIcon' src="images/copy.png" alt="copyImg1" onclick="copyPassword('password2')">
+                    </div>
+        </div>
+</body>
+</html>
