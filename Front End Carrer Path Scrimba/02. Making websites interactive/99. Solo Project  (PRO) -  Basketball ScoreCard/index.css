@@ -1,136 +1,138 @@
 body {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @font-face {
-    font-family: 'DSEG7-Classic';
-    src: url(fonts-DSEG_v046/DSEG7-Classic/DSEG7Classic-Italic.woff2) format('woff2'),
-         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.woff) format('woff'),
-         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.ttf)
+  font-family: "DSEG7-Classic";
+  src:
+    url(fonts-DSEG_v046/DSEG7-Classic/DSEG7Classic-Italic.woff2) format("woff2"),
+    url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.woff) format("woff"),
+    url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.ttf);
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    background-color: #E0D2C3;
-    color: #222222;
-    border-radius: 10px;
-    align-items: center;
-    border: 3px solid #F94F6D;
+  display: flex;
+  justify-content: center;
+  background-color: #e0d2c3;
+  color: #222222;
+  border-radius: 10px;
+  align-items: center;
+  border: 3px solid #f94f6d;
 }
 
 .team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .scorecard {
-    background-color: #080001;
-    width: 8rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color:  #F94F6D;
-    font-family: 'DSEG7-Classic', sans-serif;
-    font-size: 2rem;    
+  background-color: #080001;
+  width: 8rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #f94f6d;
+  font-family: "DSEG7-Classic", sans-serif;
+  font-size: 2rem;
 }
 
 .winner {
-    outline: 2px solid #F94F6D;
+  outline: 2px solid #f94f6d;
 }
 
 .host {
-    display: flex;
-    align-items: center;
-    
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin: 20 30px 10 30px;
+  display: flex;
+  align-items: center;
+
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20 30px 10 30px;
 }
 
-.middle { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
 }
 
 #cronometer {
-    width: 2.2em;
-    font-size: 5em;
-    margin-bottom: 10px;
+  width: 2.2em;
+  font-size: 5em;
+  margin-bottom: 10px;
 }
 
 .controls {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .controls > button {
-    background-color: #2CDC09;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        color: white;
-        margin: 10px;
+  background-color: #2cdc09;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+  margin: 10px;
 }
 
 .points-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    background-color: inherit;
-    margin: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: inherit;
+  margin: 10px 5px;
 }
 
 #start-btn.disabled {
-    display: none !important;
-    opacity: 0.3;
-    cursor: not-allowed;
+  display: none !important;
+  opacity: 0.3;
+  cursor: not-allowed;
 }
-#start-btn, #reset-btn, #next-period-btn {
-    width: 2em;
-    height: 2em;
-    background-color: #222222;
-    border-radius: 50%;
-    color: #F94F6D;
-    border: 2px solid #F94F6D ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
+#start-btn,
+#reset-btn,
+#next-period-btn {
+  width: 2em;
+  height: 2em;
+  background-color: #222222;
+  border-radius: 50%;
+  color: #f94f6d;
+  border: 2px solid #f94f6d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .newGame {
-    background-color: #222222;
-    border: 1px solid #F94F6D;
-    color: #F94F6D;
-    font-weight: bold;
-    margin: 10px 10px;
-    cursor: pointer;
+  background-color: #222222;
+  border: 1px solid #f94f6d;
+  color: #f94f6d;
+  font-weight: bold;
+  margin: 10px 10px;
+  cursor: pointer;
 }
 
 #period {
-    background-color: #080001;
-    color: #F94F6D;
-    margin-left: auto;
-    margin-right: auto; 
-    text-align: center;
-    padding: 10px 10px;
-    margin: 10px auto;
-    border-radius: 10px;
-    width: 2rem;
-
+  background-color: #080001;
+  color: #f94f6d;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 10px 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 2rem;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }

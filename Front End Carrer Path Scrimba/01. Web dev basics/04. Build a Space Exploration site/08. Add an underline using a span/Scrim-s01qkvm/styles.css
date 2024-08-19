@@ -1,21 +1,21 @@
 body {
-    color: white;
-    background-image: url("images/universe.jpg");
-    background-size: cover;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
+  color: white;
+  background-image: url("images/universe.jpg");
+  background-size: cover;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
 }
 
 .btn {
-    padding: 6px 12px;
-    background: white;
-    border: none;
-    font-family: 'Orbitron', sans-serif;
+  padding: 6px 12px;
+  background: white;
+  border: none;
+  font-family: "Orbitron", sans-serif;
 }
 
 .underline {
-    text-decoration: underline;
-    /* you can use also the border-bottom: 44px solid white */
+  text-decoration: underline;
+  /* you can use also the border-bottom: 44px solid white */
 }
 
 /* 

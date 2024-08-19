@@ -1,47 +1,50 @@
 body {
-    text-align: center;
-    font-family: 'Happy Monkey', cursive;
-    background: #a2d2ff;
-    color: #ffffff;
+  text-align: center;
+  font-family: "Happy Monkey", cursive;
+  background: #a2d2ff;
+  color: #ffffff;
 }
 
-h1, h2, h3, h4, p {
-    text-shadow: 0 0 1px black;
+h1,
+h2,
+h3,
+h4,
+p {
+  text-shadow: 0 0 1px black;
 }
 
 #bff-img {
-    width: 150px;
-    border-radius: 50%;
-    border: 6px solid #EFB0C9;
-    margin-bottom: 10px;
+  width: 150px;
+  border-radius: 50%;
+  border: 6px solid #efb0c9;
+  margin-bottom: 10px;
 }
 
 #bday-age {
-    background: #EFB0C9;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 5px 0 10px 0;
+  background: #efb0c9;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0 10px 0;
 }
 
 #bday-date {
-    margin: 0;
-    background: #EFB0C9;
-    padding: 5px 10px;
-    border-radius: 5px;
+  margin: 0;
+  background: #efb0c9;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 #header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.gift-section img{
-    width: 400px;
-    margin-bottom: 10px;
-    border: 5px solid white;
-    border-radius: 2%;
+.gift-section img {
+  width: 400px;
+  margin-bottom: 10px;
+  border: 5px solid white;
+  border-radius: 2%;
 }
 /*
 Challenge:
@@ -53,4 +56,3 @@ Challenge:
 
 PS: the image should be 400px wide.
 */
-

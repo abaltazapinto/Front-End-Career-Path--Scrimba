@@ -1,165 +1,159 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: cover;
-    height: cover;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: cover;
+  height: cover;
 }
 
 body {
-    font-family: "Gloria Hallelujah", cursive;
-    font-weight: 400;
-    font-style: normal;
-    width: 100% !important;
-    max-width: none;
-    background: linear-gradient(45deg, #E6E1C5, #feb47b);
-    background-size: cover !important;
-    height: 100vh !important;
-    height: 100vh;
-
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
+  width: 100% !important;
+  max-width: none;
+  background: linear-gradient(45deg, #e6e1c5, #feb47b);
+  background-size: cover !important;
+  height: 100vh !important;
+  height: 100vh;
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 @media (min-width: 600px) {
-    .container {
-        width: 80%;
-    }
+  .container {
+    width: 80%;
+  }
 }
 
 @media (min-width: 1024px) {
-    .container {
-        width: 70%;
-    }
+  .container {
+    width: 70%;
+  }
 }
 
 .welcome-porto {
-    color: white !important;
-    background: url("images/porto_background.jpg");
-    background-size: cover !important;
-    background-position: 0%;
-    display: flex !important;
-    flex-direction: column;
-    justify-self: center !important;
-    align-items: center !important;
+  color: white !important;
+  background: url("images/porto_background.jpg");
+  background-size: cover !important;
+  background-position: 0%;
+  display: flex !important;
+  flex-direction: column;
+  justify-self: center !important;
+  align-items: center !important;
 }
 
 #title,
 #subtitle {
-    background-color: #B9CDDA;
-    margin: 10px auto !important;
-    padding: 2.5px 10px;
-    border-radius: 10px;
-    text-shadow: 2px 0.5px 1px #222222;
+  background-color: #b9cdda;
+  margin: 10px auto !important;
+  padding: 2.5px 10px;
+  border-radius: 10px;
+  text-shadow: 2px 0.5px 1px #222222;
 }
 
 #subtitle {
-    background-color: #98A6D4;
-    font-size: 16px;
-    margin-top: 20px;
-    text-align: center;
-
+  background-color: #98a6d4;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .things-to-do {
-    display: flex;
-    flex-direction: column;
-    background-color: #A4BEF3;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #a4bef3;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .activities {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 12px;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 12px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 .activities div {
-    flex: 1;
-    /* Allows each item to grow and shrink equally */
-    margin: 10px;
-    /* Adds space around each item */
-    text-align: center;
-    /* Centers the content within each item */
+  flex: 1;
+  /* Allows each item to grow and shrink equally */
+  margin: 10px;
+  /* Adds space around each item */
+  text-align: center;
+  /* Centers the content within each item */
 }
 
 .activities img {
-
-    border-radius: 50%;
-    width: 150px;
-    height: 135px;
-    border: 2px solid #222222;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-
-
+  border-radius: 50%;
+  width: 150px;
+  height: 135px;
+  border: 2px solid #222222;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 .activities img:hover {
-    transform: scale(1.10);
+  transform: scale(1.1);
 }
 
 .activities h4:hover {
-    color: white;
-    transform: scale(1.20);
+  color: white;
+  transform: scale(1.2);
 }
 
 .no-style-link {
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    align-items: center;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  align-items: center;
 }
 
 .guide {
-    display: flex;
-    flex-direction: row;
-    background-color: #D1D5DE;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 20px;
-
+  display: flex;
+  flex-direction: row;
+  background-color: #d1d5de;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
 }
 
 .guide h3 {
-    text-shadow: 1px 1px 0px black;
-    margin: 10px;
+  text-shadow: 1px 1px 0px black;
+  margin: 10px;
 }
 
 .guide h4 {
-    text-decoration: none;
-    margin-left: 20px;
-    color: #222222;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 10px;
-    align-items: center;
-    justify-content: center;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #222222;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .guide img {
-    width: 150px;
-    border-radius: 50%;
-    border: 2px solid black;
-    cursor: pointer;
-
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
 }
 
 .guide-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    text-decoration: none;
-    color: white;
-    margin-right: auto;
-    margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-decoration: none;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
 }

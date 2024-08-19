@@ -1,74 +1,69 @@
 body {
-    margin: 0;
-    
+  margin: 0;
 }
 .reset {
-    background-color: orange;
-    color: white;
-    font-size: 1em;
-    padding: 2;
-    margin-bottom: 10em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: orange;
+  color: white;
+  font-size: 1em;
+  padding: 2;
+  margin-bottom: 10em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .score {
-    background-color: black;
-    font-size: 20px;
-    text-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    color: #f94f6d;
-    width: 5rem;
-    height: 5rem;
-    margin: 10px;
-    border-radius: 5px;
+  background-color: black;
+  font-size: 20px;
+  text-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color: #f94f6d;
+  width: 5rem;
+  height: 5rem;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .container {
-    background-color: #1B244A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: row; /*alterado de horizontal para row/*/
+  background-color: #1b244a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: row; /*alterado de horizontal para row/*/
 }
 
 button {
-
-    background-color: transparent;
-    color: gray;
-    font-size: 0.5em;
-    padding: 10px;
-    margin-bottom: 10em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: transparent;
+  color: gray;
+  font-size: 0.5em;
+  padding: 10px;
+  margin-bottom: 10em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .team {
-    text-align: center;
-    margin: 0 20px; /* Espaçamento entre as equipes */
+  text-align: center;
+  margin: 0 20px; /* Espaçamento entre as equipes */
 }
 
 .team h3 {
-    margin: 0;
-    
+  margin: 0;
 }
 .points {
-
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border: 1px solid gray;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid gray;
 }
-
 
 /* Estilo para o líder */
 .leader {
-    border: 3px solid yellow; /* Borda amarela para destacar o líder */
-    border-radius: 10px; /* Bordas arredondadas para melhor visualização */
-    padding: 5px; /* Espaçamento interno para a borda */
-    box-shadow: 0 0 10px yellow; /* Sombra amarela para maior destaque */
+  border: 3px solid yellow; /* Borda amarela para destacar o líder */
+  border-radius: 10px; /* Bordas arredondadas para melhor visualização */
+  padding: 5px; /* Espaçamento interno para a borda */
+  box-shadow: 0 0 10px yellow; /* Sombra amarela para maior destaque */
 }

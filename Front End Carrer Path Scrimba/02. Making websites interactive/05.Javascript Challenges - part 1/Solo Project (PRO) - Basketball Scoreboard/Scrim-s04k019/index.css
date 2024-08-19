@@ -1,117 +1,114 @@
 body {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @font-face {
-    font-family: 'DSEG7-Classic';
-    src: url(fonts-DSEG_v046/DSEG7-Classic/DSEG7Classic-Italic.woff2) format('woff2'),
-         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.woff) format('woff'),
-         url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.ttf)
+  font-family: "DSEG7-Classic";
+  src:
+    url(fonts-DSEG_v046/DSEG7-Classic/DSEG7Classic-Italic.woff2) format("woff2"),
+    url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.woff) format("woff"),
+    url(fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.ttf);
 }
 .container {
-    display: flex;
-    justify-content: center;
-    background-color:   #1B244A;
-    color: black;
-    height: 20rem;
-    width: 40rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    border: 3px solid orange;
+  display: flex;
+  justify-content: center;
+  background-color: #1b244a;
+  color: black;
+  height: 20rem;
+  width: 40rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  border: 3px solid orange;
 }
 .team {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .scorecardHome {
-    background-color: #080001;
-    width: 8rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: #F94F6D;
-    font-family: 'DSEG7-Classic', sans-serif;
-    font-size: 2rem;
-    margin-left: 15%;
-    
+  background-color: #080001;
+  width: 8rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #f94f6d;
+  font-family: "DSEG7-Classic", sans-serif;
+  font-size: 2rem;
+  margin-left: 15%;
 }
 .scorecardAway {
-    background-color: #080001;
-    width: 8rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: #F94F6D;
-    font-family: 'DSEG7-Classic', sans-serif;
-    font-size: 2rem;
-    margin-left: 15%;    
+  background-color: #080001;
+  width: 8rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #f94f6d;
+  font-family: "DSEG7-Classic", sans-serif;
+  font-size: 2rem;
+  margin-left: 15%;
 }
-
 
 .winner {
-    border: 2px solid #F94F6D;
+  border: 2px solid #f94f6d;
 }
-
 
 .host {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin: 20 30px 10 30px;
-}
-
-.timer { 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.cronometer {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 3em;
-}
-
-.controls {
-    flex-wrap: wrap;
-    background-color: inherit
-    
-}
-
-.points {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    background-color: inherit;
-    margin: 10px 5px;
-}
-
-.resetGame {
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    background-color: inherit;
-}
-
-.newGame {
-    background-color: lightgray;
-    border-radius: 10%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 20 30px 10 30px;
 }
 
 .timer {
-    color:white;
-    font-size: bold;
-    font-size: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cronometer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 3em;
+}
+
+.controls {
+  flex-wrap: wrap;
+  background-color: inherit;
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: inherit;
+  margin: 10px 5px;
+}
+
+.resetGame {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  background-color: inherit;
+}
+
+.newGame {
+  background-color: lightgray;
+  border-radius: 10%;
+}
+
+.timer {
+  color: white;
+  font-size: bold;
+  font-size: 5rem;
 }

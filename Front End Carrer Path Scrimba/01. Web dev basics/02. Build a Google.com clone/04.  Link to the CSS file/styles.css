@@ -1,8 +1,9 @@
-html, body {
-    background: saddlebrown;
-    text-align: center;
+html,
+body {
+  background: saddlebrown;
+  text-align: center;
 }
 
 .input {
-    border-radius: 20px;
+  border-radius: 20px;
 }

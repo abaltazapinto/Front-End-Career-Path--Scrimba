@@ -1,50 +1,78 @@
 <html lang="en">
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
-        <link href="https://fonts.cdnfonts.com/css/mallovice" rel="stylesheet">
-        
-            
-                
-    </head>
-    <body>
-        <div class="container">
-            <div class="team">
-                <h3 class="host">HOME</h3>
-                    <div class="scorecard" id="points-home">
-                        <p id="home-points" class="score">0</p>
-                    </div>
-                        <div class="points-button">
-                            <button disabled class="points-button" onclick="addHomePoints(1)">+1</button>
-                            <button disabled class="points-button" onclick="addHomePoints(2)">+2</button>
-                            <button disabled class="points-button" onclick="addHomePoints(3)">+3</button>
-                        </div>
-            </div>
-                <div class="middle">
-                     <p id="period">
-                        0                       
-                     </p>   
-                        <p id="cronometer" class="cronometer"> 12:00 </p>
-                            <div class="controls">           
-                                <button disabled disabled id="start-btn" class= "start-btn" onclick="startCronometer()">⏵</button>
-                                <button disabled id="reset-btn" class="reset-btn" onclick="resetCronometer()">⟳</button>
-                            </div>
-                                <button id="next-period-btn" onclick="nextPeriodBtn()">+</button>
-                                <button id="new-game-btn" class="newGame" onclick="newGame()">New Game</button>
-                </div>
-            <div>
-                <div class="team">    
-                    <h3 class="host">GUEST</h3>
-                        <div class="scorecard" id="points-away">
-                            <p id="away-points" class="score">0</p>
-                        </div>
-                            <div class="points-button">
-                                <button class="points-button" onclick="addAwayPoints(1)" disabled>+1</button>
-                                <button disabled class="points-button" onclick="addAwayPoints(2)">+2</button>
-                                <button disabled class="points-button" onclick="addAwayPoints(3)">+3</button>
-                            </div>
-                </div>
-            </div>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.cdnfonts.com/css/mallovice" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="team">
+        <h3 class="host">HOME</h3>
+        <div class="scorecard" id="points-home">
+          <p id="home-points" class="score">0</p>
         </div>
-        <script src="index.js"></script>
-    </body>
+        <div class="points-button">
+          <button disabled class="points-button" onclick="addHomePoints(1)">
+            +1
+          </button>
+          <button disabled class="points-button" onclick="addHomePoints(2)">
+            +2
+          </button>
+          <button disabled class="points-button" onclick="addHomePoints(3)">
+            +3
+          </button>
+        </div>
+      </div>
+      <div class="middle">
+        <p id="period">0</p>
+        <p id="cronometer" class="cronometer">12:00</p>
+        <div class="controls">
+          <button
+            disabled
+            disabled
+            id="start-btn"
+            class="start-btn"
+            onclick="startCronometer()"
+          >
+            ⏵
+          </button>
+          <button
+            disabled
+            id="reset-btn"
+            class="reset-btn"
+            onclick="resetCronometer()"
+          >
+            ⟳
+          </button>
+        </div>
+        <button id="next-period-btn" onclick="nextPeriodBtn()">+</button>
+        <button id="new-game-btn" class="newGame" onclick="newGame()">
+          New Game
+        </button>
+      </div>
+      <div>
+        <div class="team">
+          <h3 class="host">GUEST</h3>
+          <div class="scorecard" id="points-away">
+            <p id="away-points" class="score">0</p>
+          </div>
+          <div class="points-button">
+            <button class="points-button" onclick="addAwayPoints(1)" disabled>
+              +1
+            </button>
+            <button disabled class="points-button" onclick="addAwayPoints(2)">
+              +2
+            </button>
+            <button disabled class="points-button" onclick="addAwayPoints(3)">
+              +3
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>

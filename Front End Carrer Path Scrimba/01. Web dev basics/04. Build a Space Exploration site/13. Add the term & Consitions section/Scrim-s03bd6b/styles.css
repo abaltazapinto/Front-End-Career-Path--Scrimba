@@ -12,38 +12,37 @@ tag's default margin.
 */
 
 body {
-    position: relative !important;
-    min-height: 100vh;
-    margin: 0;
-    color: #82a5ca;
-    background-image: url("images/galaxy.webp");
-    background-size: cover;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
+  position: relative !important;
+  min-height: 100vh;
+  margin: 0;
+  color: #82a5ca;
+  background-image: url("images/galaxy.webp");
+  background-size: cover;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
 }
 
 #main-logo {
-    width: 100px;
+  width: 100px;
 }
 
 .btn {
-    padding: 6px 12px;
-    background: white;
-    border: none;
-    font-family: 'Orbitron', sans-serif;
-    color: #82a5ca;
-    font-weight: 800;
+  padding: 6px 12px;
+  background: white;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  color: #82a5ca;
+  font-weight: 800;
 }
 
 .underline {
-    border-bottom: 4px solid white;
+  border-bottom: 4px solid white;
 }
 
 #terms {
-    background-color: white !important;
-    width: 100%;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-
+  background-color: white !important;
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
 }

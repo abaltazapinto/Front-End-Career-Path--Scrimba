@@ -1,75 +1,71 @@
 body {
-    margin: 20px;
-    /*
+  margin: 20px;
+  /*
     Challenge:
     Find a web safe font you like, and add it 
     to your card.
     */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .avatar {
-    width: 250px;
-    border-radius:50%;
-    border: 2px solid #222222;
-    transition: transform 0.3s ease; 
+  width: 250px;
+  border-radius: 50%;
+  border: 2px solid #222222;
+  transition: transform 0.3s ease;
 }
 
 .avatar:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .logos {
-    width: 25px;
-    border-radius: 10px;
-    cursor: pointer;
+  width: 25px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 #linkedin img {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #linkedin:hover img {
-    filter: brightness(1) invert(1);
-    transform: scale(1.5);
+  filter: brightness(1) invert(1);
+  transform: scale(1.5);
 }
 
 .user-info {
-    margin: 5px; 
-    padding: 20px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
+  margin: 5px;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .card {
-    width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    background: #F9DEC9;
-    color: #2b2839;
-    border-bottom: 6px solid #d8cefe;
-    display: flex;
-    margin: 10px;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  background: #f9dec9;
+  color: #2b2839;
+  border-bottom: 6px solid #d8cefe;
+  display: flex;
+  margin: 10px;
 }
-    
-    
+
 #linkedin:hover + .avatar {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
- 
 .border-blue {
-    border: 1px dotted blue;
+  border: 1px dotted blue;
 }
-
 
 /*
 Stretch goals:
@@ -82,4 +78,3 @@ the design of your business card, e.g.:
 - hover effects  🤯🤯
 - animations     🤯🤯🤯
 */
-

@@ -1,72 +1,71 @@
 body {
-    background: #9BC995;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  background: #9bc995;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-
 .container {
-    background-color: #1F2937;
-    color: white;
-    width:25em;
-    border-radius: 10px;
-    padding: 40px 30px;
-    font-family: "Karla", sans-serif;
-    font-weight: bold;
-    font-style: normal;
+  background-color: #1f2937;
+  color: white;
+  width: 25em;
+  border-radius: 10px;
+  padding: 40px 30px;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-style: normal;
 }
 
 .green {
-    color: #4ADF86
+  color: #4adf86;
 }
 
 .container {
-    font-family: Karla;
+  font-family: Karla;
 }
 
 .container > p {
-    font-size:10px;
-    font-family: "Inter", sans-serif;
-    font-weight: normal;
-    font-style: normal;  
+  font-size: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }
 
 #generateBtn {
-    color:white;
-    background-color: #10b981;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
+  color: white;
+  background-color: #10b981;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
 
 .custom-line {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 
 .display {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .display input {
-    background-color: #2A2A2A;
-    color: #4ADF86; 
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    width: 48%; 
-    text-align: center;
-    font-family: "Inter", sans-serif;
-    padding: 10 5px;
-    margin: 10px;
+  background-color: #2a2a2a;
+  color: #4adf86;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 48%;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  padding: 10 5px;
+  margin: 10px;
 }
 
 .display img {
- margin-top: 1em;
- width: 2em;
- height: 2em;
+  margin-top: 1em;
+  width: 2em;
+  height: 2em;
 }

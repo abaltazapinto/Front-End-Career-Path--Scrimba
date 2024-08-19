@@ -1,38 +1,39 @@
-html, body {
-    margin: 0;
-    padding: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+html,
+body {
+  margin: 0;
+  padding: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 caption {
-    margin-bottom: 14px;
-    font-size: 30px;
-    
+  margin-bottom: 14px;
+  font-size: 30px;
 }
 
 th {
-    background-color: #374d7c;
-    color: #fff; 
+  background-color: #374d7c;
+  color: #fff;
 }
 
-table{
-    border-radius: 5px;
-    margin: 0 auto;
+table {
+  border-radius: 5px;
+  margin: 0 auto;
 }
 
 td {
-    background-color: #fdf289;
+  background-color: #fdf289;
 }
 
-td, th {
-    padding: 10px 20px;
+td,
+th {
+  padding: 10px 20px;
 }
 
-tfoot td{
-    background-color: #46edc8;
-    text-align: center;
+tfoot td {
+  background-color: #46edc8;
+  text-align: center;
 }

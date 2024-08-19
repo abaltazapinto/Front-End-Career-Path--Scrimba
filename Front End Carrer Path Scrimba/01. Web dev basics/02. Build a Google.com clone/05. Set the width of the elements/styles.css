@@ -5,13 +5,11 @@ of the Google logo to be 300px.
 */
 
 input {
-    width: 400px;
-    display: block
+  width: 400px;
+  display: block;
 }
-
 
 img {
-    width: 300px;
-    display:block
+  width: 300px;
+  display: block;
 }
- 
