@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s0385rr",
+  "description": "https://v2.scrimba.com/s0385rr",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
