@@ -26,7 +26,6 @@ const fire = document.getElementById("fire");
 let salesTitle = document.querySelector(".sales-heading")
 let achievementsTitle = document.querySelector(".achievements-heading")
 
-console.log(achievementsTitle)
 //board for live sales
 let liveSalesBoard = document.getElementById("live-sales")
 let listAchievements = document.querySelector(".live-achievements")
@@ -46,6 +45,9 @@ let liveAchievements = 0;
 let totalRevenue = 0;
 let totalComission = 0;
 
+// Flags
+let moneyAchievementAwareded = false
+
 function addStar() {
     if(countElement < maxElements) {
         console.log("clicked")
@@ -58,9 +60,6 @@ function addStar() {
     }else {
         alert("Maximum number of elements (star & fire)")
     }
-
-
-
 
 }
 
@@ -90,22 +89,52 @@ function checkAchievements() {
     if (countElement === 1)  {
         listAchievements.innerText += achievements.bell;
         liveAchievements++;
-    }else if (totalRevenue > 2500){
+    }else if (totalRevenue > 2500 && !moneyAchievementAwareded){
         listAchievements.innerText += achievements.money
         liveAchievements++;
+        moneyAchievementAwareded = true
     }else if (countElement === 15) {
         listAchievements.innerText += achievements.trophy
         liveAchievements++;
     }
 }
 
-
-
 // event listeners
 star.addEventListener("click", addStar)
 fire.addEventListener("click", addFire)
 
+//toggle buton for dark-mode and light mode
+const toggleButton = document.getElementById("theme-toggle")
+const body = document.body;
 
 
+if (localStorage.getItem("theme") === null) {
+    // If no theme is set in localStorage, default to light mode
+    localStorage.setItem("theme", "light");
+}
 
 
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleButton.innerText = "Switch to light Mode"
+}else {
+    body.classList.add("light-mode");
+    toggleButton.innerText = "Switch to Dark Mode"
+}
+
+toggleButton.addEventListener("click", function() {
+    if(body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+        toggleButton.innerText = "Switch to Light Mode"
+        localStorage.setItem("theme", "dark");
+    }else {
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+        toggleButton.innerText = "Switch to Light Mode";
+        localStorage.setItem("theme", "dark");
+    }
+});
+
+
+console.log(localStorage.getItem("theme"));

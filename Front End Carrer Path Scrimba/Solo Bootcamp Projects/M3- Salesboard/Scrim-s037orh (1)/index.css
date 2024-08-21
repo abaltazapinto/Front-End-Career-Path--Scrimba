@@ -7,6 +7,17 @@ DARK: #44354A
 COLOR: #9E4770
 */
 
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -14,10 +25,10 @@ html, body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
-    background-color: #ECE4B7;
-
+    height: 100vh; 
+    transition: background-color 0.3s, color 0.3s;
 }
+
 
 .container {
     background-color: #2c1c2c;
@@ -30,7 +41,6 @@ html, body {
     padding: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-
 }
 
 #main-image {
@@ -56,10 +66,6 @@ html, body {
     font-weight: bold;
     margin-top: 20px;
     font-size: 30px;
-    
-}
-
-.live-sales {
     
 }
 
@@ -102,4 +108,38 @@ html, body {
 
 .sales-summary {
     margin-right: 30px;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    margin-left: 1000px;
+}
+
+label {
+    width: 500px;
+    height: 200px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255, 0.4);
+    cursor: pointer;
+}
+
+label:after {
+    content: "";
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(180deg,#ffcc89,#d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
 }
