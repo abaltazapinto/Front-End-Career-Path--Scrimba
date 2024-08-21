@@ -39,7 +39,7 @@ let totalComissionBoard = document.getElementById("commission-value")
 // Loops
 
 // functions
-const maxElements = 20;
+const maxElements = 21;
 let countElement = 0
 let liveAchievements = 0;
 let totalRevenue = 0;
@@ -107,30 +107,31 @@ fire.addEventListener("click", addFire)
 const toggleButton = document.getElementById("theme-toggle")
 const container = document.querySelector(".container");
 
-
 if (localStorage.getItem("theme") === null) {
-    // If no theme is set in localStorage, default to light mode
     localStorage.setItem("theme", "light");
 }
 
-
 if (localStorage.getItem("theme") === "dark") {
     container.classList.add("dark-mode");
-    toggleButton.innerText = "Switch to light Mode"
-}else {
+    toggleButton.innerText = "Switch to Light Mode"
+} else {
     container.classList.add("light-mode");
-    toggleButton.innerText = "Switch to Dark Mode"
+    toggleButton.innerText = "Switch to Dark Mode";
 }
 
 toggleButton.addEventListener("click", function() {
     if(container.classList.contains("dark-mode")) {
         container.classList.remove("dark-mode");
         container.classList.add("light-mode");
-        toggleButton.innerText = "Switch to Light Mode"
-        localStorage.setItem("theme", "dark");
+        toggleButton.classList.remove("dark-mode");
+        toggleButton.classList.add("light-mode");
+        toggleButton.innerText = "Switch to Dark Mode"
+        localStorage.setItem("theme", "light");
     }else {
         container.classList.remove("light-mode");
         container.classList.add("dark-mode");
+        toggleButton.classList.remove("light-mode");
+        toggleButton.classList.add("dark-mode");
         toggleButton.innerText = "Switch to Light Mode";
         localStorage.setItem("theme", "dark");
     }
