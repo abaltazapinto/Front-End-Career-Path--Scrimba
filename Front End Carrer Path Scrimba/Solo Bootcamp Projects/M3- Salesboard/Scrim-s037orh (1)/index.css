@@ -1,0 +1,36 @@
+/*
+COLOR PALETTE
+
+BLACK: #201A23
+WHITE: #FBFBFB
+DARK: #44354A
+COLOR: #9E4770
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #ECE4B7;
+}
+.container {
+    background-color: #9E4770;
+    border-radius: 10px;
+    border: 8px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+#main-image {
+    border-radius: 50%;
+    width: 30%;
+    margin-bottom: 10px;
+} 
