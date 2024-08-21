@@ -105,7 +105,7 @@ fire.addEventListener("click", addFire)
 
 //toggle buton for dark-mode and light mode
 const toggleButton = document.getElementById("theme-toggle")
-const body = document.body;
+const container = document.querySelector(".container");
 
 
 if (localStorage.getItem("theme") === null) {
@@ -115,22 +115,22 @@ if (localStorage.getItem("theme") === null) {
 
 
 if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
+    container.classList.add("dark-mode");
     toggleButton.innerText = "Switch to light Mode"
 }else {
-    body.classList.add("light-mode");
+    container.classList.add("light-mode");
     toggleButton.innerText = "Switch to Dark Mode"
 }
 
 toggleButton.addEventListener("click", function() {
-    if(body.classList.contains("dark-mode")) {
-        body.classList.remove("dark-mode");
-        body.classList.add("light-mode");
+    if(container.classList.contains("dark-mode")) {
+        container.classList.remove("dark-mode");
+        container.classList.add("light-mode");
         toggleButton.innerText = "Switch to Light Mode"
         localStorage.setItem("theme", "dark");
     }else {
-        body.classList.remove("light-mode");
-        body.classList.add("dark-mode");
+        container.classList.remove("light-mode");
+        container.classList.add("dark-mode");
         toggleButton.innerText = "Switch to Light Mode";
         localStorage.setItem("theme", "dark");
     }

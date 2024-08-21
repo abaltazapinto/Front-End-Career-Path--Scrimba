@@ -7,12 +7,12 @@ DARK: #44354A
 COLOR: #9E4770
 */
 
-body.light-mode {
+.container.light-mode {
     background-color: white;
     color: black;
 }
 
-body.dark-mode {
+.container.dark-mode {
     background-color: #121212;
     color: white;
 }
@@ -30,10 +30,26 @@ html, body {
 }
 
 
-.container {
+
+.container.dark-mode {
     background-color: #2c1c2c;
     border-radius: 10px;
     outline: 8px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+
+.container.light-mode {
+    background-color: f8f8f8;
+    color: #121212;
+    border-radius: 10px;
+    outline: 8px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +79,13 @@ html, body {
 
 .live {
     color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 30px;
+    
+}
+.live.light-mode {
+    color: black;
     font-weight: bold;
     margin-top: 20px;
     font-size: 30px;
@@ -119,27 +142,13 @@ label {
     width: 500px;
     height: 200px;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #ebebeb;
-    border-radius: 200px;
-    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255, 0.4);
+    border-radius: 30px;
     cursor: pointer;
+    box-shadow: inset 0px 15px rgba(0,0,0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
 }
 
-label:after {
-    content: "";
-    width: 180px;
-    height: 180px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: linear-gradient(180deg,#ffcc89,#d8860b);
-    border-radius: 180px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-}
 
-input {
-    width: 0;
-    height: 0;
-    visibility: hidden;
-}
