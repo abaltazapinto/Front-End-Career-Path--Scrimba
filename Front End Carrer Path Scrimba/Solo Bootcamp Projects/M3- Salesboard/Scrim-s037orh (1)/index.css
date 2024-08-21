@@ -17,10 +17,11 @@ html, body {
     height: 100vh;
     background-color: #ECE4B7;
 }
+
 .container {
-    background-color: #9E4770;
+    background-color: #2c1c2c;
     border-radius: 10px;
-    border: 8px solid white;
+    outline: 8px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,4 +34,48 @@ html, body {
     border-radius: 50%;
     width: 30%;
     margin-bottom: 10px;
-} 
+    outline: 8px solid #6A4F74
+}
+
+.live {
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.sales {
+    display: inline-block;
+    background-color: #4b334b;
+    border-radius: 30px;
+    padding: 20px;
+    width: 805px;
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 15px;
+    margin-right: 20px;
+}
+
+.sales-total {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+}
+
+.total {
+    display: inline-block;
+    background-color: #4b334b;
+    width: 200px;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: center;
+    font-size
+
+}
+
+.sales-summary {
+    margin-right: 30px;
+}
