@@ -60,10 +60,7 @@ function addStar() {
     }
 
 
-    if(countElement === 1) {
-        listAchievements.innerText += achievements.bell
-        liveAchievements++;
-    }
+
 
 }
 
@@ -93,7 +90,7 @@ function checkAchievements() {
     if (countElement === 1)  {
         listAchievements.innerText += achievements.bell;
         liveAchievements++;
-    }else if (totalRevenue >= 2500){
+    }else if (totalRevenue > 2500){
         listAchievements.innerText += achievements.money
         liveAchievements++;
     }else if (countElement === 15) {
