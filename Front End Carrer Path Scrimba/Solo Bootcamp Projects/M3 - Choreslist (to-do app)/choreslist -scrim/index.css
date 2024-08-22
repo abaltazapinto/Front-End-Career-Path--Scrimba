@@ -112,15 +112,20 @@ input:checked + label + .background > .to-do-list {
     visibility: hidden;
     
 }
+#input-el {
+    padding: 5px;
+}
 
 /* Buttons colors */
 .add-chore-list-btn {
     background: var(--add-button);
     border-radius: 50%;
+    padding: 5px;
 }
 #delete-btn {
     background: var(--delete-button);
     border-radius: 50%;
+    padding: 5px;
 }
 #ul-el {
     padding: 8px;
