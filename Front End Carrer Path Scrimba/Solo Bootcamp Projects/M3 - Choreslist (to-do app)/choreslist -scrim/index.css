@@ -26,6 +26,7 @@ html, body {
     display: block;
     background-color: var(--white);
     align-items: center;
+   
     
 }
 
@@ -109,6 +110,7 @@ input:checked + label + .background > .to-do-list {
 }
 #darkmode-toggle {
     visibility: hidden;
+    
 }
 
 /* Buttons colors */
@@ -116,7 +118,7 @@ input:checked + label + .background > .to-do-list {
     background: var(--add-button);
     border-radius: 50%;
 }
-.delete-btn {
+#delete-btn {
     background: var(--delete-button);
     border-radius: 50%;
 }
