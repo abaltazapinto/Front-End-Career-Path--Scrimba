@@ -16,7 +16,6 @@ const ulEl = document.getElementById("ul-el")
 const addChoreBtn = document.querySelector(".add-chore-list-btn")
 const deleteAllButtonEl = document.getElementById("delete-btn")
 
-
 function render(myTodos) {
     let listTodos = ""
     for (let i = 0; i < myTodos.length; i++) {
@@ -68,7 +67,6 @@ function hideItemDelayed(index) {
     if(checkbox && checkbox.checked) {
         setTimeout(() => {
             console.log(`Trying to remove item-${index}`);
-
              if(item) {
                 removeItemFromFirebase(index)
                 item.remove();
