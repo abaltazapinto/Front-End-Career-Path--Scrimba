@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"
-import { getDatabase , ref, push } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js"
+import { getDatabase , ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js"
 
 // 
 
@@ -17,10 +17,19 @@ const referenceinDB = ref(database, "chorelist")
 let inputEl = document.querySelector("#input-el")
 const addChoreBtn = document.querySelector(".add-chore-list-btn")
 
+onValue(referenceinDB, function (snapshot) {
+    const snapshotValues = snapshot.val()
+    const myTodos = Object.values(snapshotValues)
+    render(myTodos)
+})
+
 addChoreBtn.addEventListener("click", function() {
     push(referenceinDB, inputEl.value)
-    inputEl = ""
+    inputEl.value = ""
 })
+
+
+
 
 // const removeAllBtn= document.querySelector(".delete-btn")
 
