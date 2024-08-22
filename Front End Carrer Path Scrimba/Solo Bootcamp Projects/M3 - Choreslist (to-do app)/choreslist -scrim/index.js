@@ -79,14 +79,11 @@ function hideItemDelayed(index) {
 
 function removeItemFromFirebase(index) {
     const chorelistRef = ref(database, 'chorelist');
-
     onValue(chorelistRef, (snapshot) => {
         const data = snapshot.val();
-
         Object.entries(data).forEach(([key, value], i) => {
             if (i === index) {
                 const itemRef = ref(database, `chorelist/${key}`)
-
                 remove(itemRef)
                 .then(() => {
                     console.log(`Item with index ${index} has been removed from Firebase`)
