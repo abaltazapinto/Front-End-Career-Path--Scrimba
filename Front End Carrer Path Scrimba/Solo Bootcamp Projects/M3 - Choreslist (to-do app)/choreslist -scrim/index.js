@@ -16,18 +16,64 @@ const referenceinDB = ref(database, "chorelist")
 
 let inputEl = document.querySelector("#input-el")
 const addChoreBtn = document.querySelector(".add-chore-list-btn")
+const ulEl = document.getElementById("ul-el")
+
+function render(myTodos) {
+    let listTodos = ""
+    for (let i = 0; i < myTodos.length; i++) {
+        listTodos += `
+            <li id="item-${i}">
+                ${myTodos[i]}
+                <input type="checkbox" id="toDo-${i}" /> 
+            </li>
+        `
+    }
+    ulEl.innerHTML = listTodos
+
+    for (let i = 0; i < myTodos.length; i++) {
+        const checkbox = document.getElementById(`toDo-${i}`);
+        console.log(`Adding listener to #toDo-${i}`, checkbox);
+
+        if (checkbox){
+            checkbox.addEventListener("change", () => hideItemDelayed(i))
+        }else {
+            console.error(`Element with id toDo-${i} not found`)
+        }
+    }
+
+}
 
 onValue(referenceinDB, function (snapshot) {
     const snapshotValues = snapshot.val()
     const myTodos = Object.values(snapshotValues)
     render(myTodos)
+    console.log(myTodos)
 })
+
 
 addChoreBtn.addEventListener("click", function() {
     push(referenceinDB, inputEl.value)
     inputEl.value = ""
 })
 
+// To hide and remove when a checkbox is active
+
+function hideItemDelayed(index) {
+    const item = document.getElementById(`item-${index}`)
+    const checkbox = document.getElementById(`toDo-${index}`);
+
+    if(checkbox && checkbox.checked) {
+        setTimeout(() => {
+            console.log(`Trying to remove item-${index}`);
+            console.log("item", item)
+             if(item) {
+                item.remove();
+             } else {
+                console.error(`Element with id item-${index} not found after delay`)
+             }
+        },3000)
+    }
+}
 
 
 
