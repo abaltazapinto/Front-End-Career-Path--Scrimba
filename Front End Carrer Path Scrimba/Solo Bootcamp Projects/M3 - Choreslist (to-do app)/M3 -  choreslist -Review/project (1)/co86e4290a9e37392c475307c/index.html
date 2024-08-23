@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <title>Choreslist 🧹</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" sizes="16*16" href="./assets/1000_F_211600547_PUBnxsvdDLu1SE5fFBjElke8ifGZNbgc.jpg"">
+    </head>
+    <body> 
+            <input type="checkbox" id="darkmode-toggle" aria-label="Toggle dark mode"/>
+            <label 
+                    for="darkmode-toggle" class="toggle-label" aria-hidden="true">
+            </label>
+            <main class="background" role="main">
+                <h1>Choreslist</h1>
+                <input type="text" id="input-el" aria-label="New chore">
+                <button class="add-chore-list-btn" aria-label="Add chore to the list">-></button>
+                <button id="delete-btn">✕ all</button>
+                <ul id="ul-el">
+                    <li>Tentar</li>
+                </ul>
+            </main>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
