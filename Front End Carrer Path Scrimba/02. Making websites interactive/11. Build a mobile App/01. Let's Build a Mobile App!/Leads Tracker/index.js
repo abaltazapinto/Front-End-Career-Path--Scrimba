@@ -3,18 +3,20 @@ import { getDatabase } from "https://www.gstatic.com/firebasejs/10.13.0/firebase
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
 
 const firebaseConfig = {
-    databaseURL: "https://leads-tracker-app-caec7-default-rtdb.europe-west1.firebasedatabase.app/"
+     databaseURL: "https://leads-tracker-app-caec7-default-rtdb.europe-west1.firebasedatabase.app/"
 
 } 
 
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
 
+
+
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
-const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+
 const tabBtn = document.getElementById("tab-btn")
 
 
@@ -48,22 +50,20 @@ function addDeleteButtonListeners(){
         button.addEventListener('click', function() {
             const index = this.getAttribute('data-index');
             myLeads.splice(index, 1);
-            // localStorage.setItem("myLeads", JSON.stringify(myLeads))
+      
             render(myLeads);
         });
     });
 }
 
 deleteBtn.addEventListener("dblclick", function() {
-    // localStorage.clear()
-    myLeads = []
+ 
+ 
     render(myLeads)
 })
 
 
 inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
+    console.log(inputEl.value)
     inputEl.value = ""
-    // localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    render(myLeads)
 })
