@@ -33,7 +33,10 @@ function render(leads) {
 
 // Challenge: Log out a snapshot of your database when a new value is added to it
 onValue(referenceInDB, function(snapshot) {
-    console.log(snapshot.val())
+    const snapshotValues = snapshot.val()
+    // Challenge: Create a const called 'leads' which is an array containing the values inside of the snapshotValues object
+    const leads = Object.values(snapshotValues)
+    console.log(leads)
 })
 
 deleteBtn.addEventListener("dblclick", function() {
