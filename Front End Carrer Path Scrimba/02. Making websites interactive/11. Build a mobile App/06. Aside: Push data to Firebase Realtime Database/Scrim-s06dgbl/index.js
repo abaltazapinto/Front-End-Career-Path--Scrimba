@@ -1,7 +1,8 @@
 import { initializeApp, } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getDatabase,
         ref,
-        push
+        push,
+        onValue
  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -19,4 +20,5 @@ const submitButton = document.getElementById("submit-button")
 submitButton.addEventListener("click", function() {
     push(referenceInDB, birthdayInputField.value)
     birthdayInputField.value = ""
+    onValue(referenceInDB, console.log(snapshot.val()))
 })
