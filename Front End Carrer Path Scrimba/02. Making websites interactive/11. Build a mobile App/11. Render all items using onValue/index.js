@@ -37,6 +37,8 @@ onValue(referenceInDB, function(snapshot) {
     // Challenge: Create a const called 'leads' which is an array containing the values inside of the snapshotValues object
     const leads = Object.values(snapshotValues)
     console.log(leads)
+     // Challenge: Use the render function with 'leads' to render the leads in the app
+     render(leads)
 })
 
 deleteBtn.addEventListener("dblclick", function() {
