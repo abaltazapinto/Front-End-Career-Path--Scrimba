@@ -22,9 +22,10 @@ function render(leads) {
     for (let i = 0; i < leads.length; i++) {
         listItems += `
             <li>
-                <a target='_blank' href='${leads[i]}'>
+                <a target='_blank' rel="noopener noreferrer"  href='${leads[i]}'>
                     ${leads[i]}
                 </a>
+                <button class='delete-btn' data-index='${i}'><i class="fas fa-trash"></i></button>
             </li>
         `
     }
