@@ -40,4 +40,11 @@ a {
     color: #5f9341;
 }
 
+.delete-btn { 
+    color: white;
+    border: 1px solid #222222;
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
 
