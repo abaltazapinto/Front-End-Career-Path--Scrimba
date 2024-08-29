@@ -56,6 +56,7 @@ onValue(referenceInDB, function(snapshot) {
 })
 
 function deleteLead(key) {
+    
     console.log("Attempting to delete lead with key:", key);
     const leadRef = ref(database, `leads/${key}`);
     console.log("Firebase reference to delete:", leadRef);
