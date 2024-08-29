@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>
+        <title>Leads Tracker</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body>
+        <main role="main">
+            <!--  dark mode toggle -->
+            <input type="checkbox" id="darkmode-toggle" aria-label="Toggle dark mode"/>
+            <label 
+                for="darkmode-toggle" class="toggle-label" aria-hidden="true">
+            </label>
+            <!-- Continuing main features -->
+            <input type="text" id="input-el" aria-label="New website" placeholder="https://scrimba.com">
+            <button id="input-btn" aria-label="Add a new site to the list">SAVE INPUT</button>
+            <button id="delete-btn">DELETE ALL</button>
+            <ul id="ul-el">
+            </ul>
+            <script type="module" src="index.js"></script>
+        </main>
+    </body>
+</html>
