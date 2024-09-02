@@ -1,0 +1,111 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    background-color: #cecbf3;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #333333;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0 auto;
+    width: 800px;
+}
+main {
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+}
+
+/* Main Content */
+.blob {
+    width: 400px;
+}
+.hero-section {
+    position: relative;
+    height: 500px;
+}
+.hero-section h1, .hero-section svg {
+    position: absolute;
+}
+.hero-section svg {
+    position: absolute;
+    left: 210px;
+    top: 60px;
+}
+.hero-section h1 {
+    margin: 0;
+    font-size: 40px;
+    position: absolute;
+    left: 280px;
+    top: 210px;
+}
+
+/* Poems */
+.poem-section {
+    position: relative;
+}
+.blob-1 {
+    width: 600px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.blob-2 {
+    width: 450px;
+    position: absolute;
+    left: 0;
+    top: 350px;
+}
+.blob-3 {
+    width: 600px;
+    position: absolute;
+    right: 0;
+    top: 600px;
+}
+.poem-1 {
+    width: 200px;
+    font-size: 24px;
+    position: absolute;
+    right: 200px;
+    top: 200px;
+}
+.poem-2 {
+    width: 200px;
+    font-size: 20px;
+    position: absolute;
+    left: 110px;
+    top: 470px;
+}
+.poem-3 {
+    width: 250px;
+    font-size: 28px;
+    position: absolute;
+    left: 340px;
+    top: 810px;
+}
+
+/* Code for Skip Navigation Link goes here */
+.skip-nav-link {
+    position: absolute;
+    left: -200px;
+    top: 80px;
+    background-color: #ffffff; /* Background for better visibility */
+    color: #333333;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: underline; /* Ensures text-decoration even if general a styles are removed */
+
+}
+.skip-nav-link:focus {
+    left: 0; /* Bring into view oon focus */
+    border: 2px solid #0000EE; /* Add a border to indicate focus */
+    outline: none; /* Removes default outline */ 
+
+}
