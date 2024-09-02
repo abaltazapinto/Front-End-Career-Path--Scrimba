@@ -1,0 +1,125 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body, .contact-input, .address-input, .radio-container p {
+    font-family: 'Poppins', sans-serif;
+}
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+.contact-form-section {
+    display: flex;
+    width: 800px;
+    padding: 30px;
+    margin: 0 auto;
+}
+.contact-image {
+    width: 400px;
+    object-fit: contain;
+    margin-left: 60px;
+}
+.contact-form-heading {
+    font-size: 3rem;
+    margin: 0;
+}
+.contact-form-intro {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+.contact-input {
+    display: block;
+    width: 300px;
+    margin: 5px auto 15px;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border: 2px solid #333333;
+}
+.contact-textarea {
+    max-width: 300px;
+    padding: 16px 20px;
+    border: 2px solid #333333;
+}
+.contact-input::-webkit-input-placeholder, .address-input::-webkit-input-placeholder {
+    color: #555555;
+}
+.contact-submit-button {
+    border: 2px solid #333333;
+    padding: 8px 20px;
+    border-radius: 40px;
+    margin: 10px auto 0;
+    min-width: 120px;
+}
+.contact-submit-button:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+}
+.address {
+    display: flex;
+}
+.address-input {
+    width: 110px;
+    margin: 5px auto 10px;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border: 2px solid #333333;
+}
+.postcode {
+    margin-left: 40px;
+}
+.contact-radio {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.radio-container p {
+    margin-bottom: 10px;
+}
+.city-select {
+    width: 150px;
+    margin: 5px auto 10px;
+    border-radius: 20px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 2px solid #333333;
+}
+.city-select:focus-visible {
+    outline: 3px solid #bbd5ff;
+}
+.popover-message {
+    display: none;
+    position: absolute;
+    background-color: #444444;
+    color: #ffffff;
+    border: 1px solid black;
+    padding: 8px;
+    z-index: 100;
+    margin-left: 130px;
+    border-radius: 8px;
+    margin-top: -35px;
+}
+.popover-message::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #444444 transparent transparent transparent;
+}
+.contact-submit-button:disabled {
+    border-color: #aaaaaa;
+}
+.contact-submit-button:disabled:hover {
+    cursor: not-allowed;
+}
+.contact-submit-button:disabled:active {
+    transform: none;
+}
+.contact-submit-button:disabled:hover + .popover-message {
+    display: block;
+}
