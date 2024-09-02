@@ -98,13 +98,13 @@ main {
     top: 80px;
     background-color: #ffffff; /* Background for better visibility */
     color: #333333;
-    padding: 8px;
+    padding: 8px 20px 8px 40px;
     border-radius: 4px;
     text-decoration: underline; /* Ensures text-decoration even if general a styles are removed */
 
 }
 .skip-nav-link:focus {
-    left: 0; /* Bring into view oon focus */
+    left: -20px; /* Bring into view oon focus */
     border: 2px solid #0000EE; /* Add a border to indicate focus */
     outline: none; /* Removes default outline */ 
 
