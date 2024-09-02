@@ -1,18 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const submitButton = document.getElementById('submitButton');
-    const popoverMessage = document.getElementById('popoverMessage');
 
-    submitButton.addEventListener('mouseover', function() {
-        if (submitButton.disabled) {
-            popoverMessage.style.display = 'block';
-        }
-    });
-
-    submitButton.addEventListener('mouseout', function() {
-        popoverMessage.style.display = 'none';
-    });
-});
-    
 function checkInputs() {
     const name = document.getElementById('name').value;
     const address = document.getElementById('address').value;
@@ -25,6 +11,10 @@ function checkInputs() {
     // Checks if all fields are filled (truthy) and at least one radio button is selected
     const allFilled = name && address && city && postcode && email && (yesRadio || noRadio);
     
+    if(allFilled) {
+        popoverMessage.style.opacity = "0";
+    }
+
     document.getElementById('submitButton').disabled = !allFilled;
     return allFilled
 }
