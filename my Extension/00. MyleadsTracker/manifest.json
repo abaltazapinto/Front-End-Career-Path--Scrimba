@@ -2,12 +2,14 @@
     "manifest_version": 3,
     "version": "1.0",
     "name": "Leads tracker",
+    "description": "Save your important links",
     "action": {
         "default_popup": "index.html",
         "default_icon": "icon.png"
     },
     "permissions": [
-        "tabs"
+        "storage", 
+        "activeTab"
     ],
     "background": {
         "service_worker": "background.js"
