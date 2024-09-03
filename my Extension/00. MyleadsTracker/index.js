@@ -3,7 +3,7 @@ import { getDatabase,
          ref,
          push,
          onValue,
-         remove } from "./js/firebase-database.js"
+         remove } from "./css/firebase-database.js"
 
 const firebaseConfig = {
     databaseURL: "https://leads-tracker-app-caec7-default-rtdb.europe-west1.firebasedatabase.app/"
