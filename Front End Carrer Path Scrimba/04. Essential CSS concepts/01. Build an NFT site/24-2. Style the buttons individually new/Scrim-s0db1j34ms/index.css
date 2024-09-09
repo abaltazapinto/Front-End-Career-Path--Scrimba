@@ -1,0 +1,108 @@
+body{
+    font-size: 16px;
+    color: #2b283a;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* typography */
+
+h1, h3{
+    margin: 0;
+}
+
+h1{
+    color: whitesmoke;
+    font-size: 36px;
+}
+
+h2{
+    margin-top: 0;
+}
+
+h3{
+    color: #d0aaff;
+    font-size: 20px;
+}
+
+p{
+    line-height: 23px;
+}
+
+/* links */
+#crafting {
+    color:#ef5839;
+    background-color: inherit;
+    padding: 0;
+}
+
+a {
+    color: whitesmoke;
+    background-color: #5f29a3;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 5px 5px;
+    font-weight: 500; 
+}
+
+a:hover, a:active{
+    color: #d4b44c;
+}
+
+.Us {
+    background-color: #f3e885;
+    color: #2b283a;
+    font-weight: 500;
+}
+
+.Us:active, .Us:hover {
+    filter: brightness(1.2)
+}
+/* 
+Challenge:
+1. Style the 4 button-style links as per 
+   the specifications on the slide.
+2. Remember to group the selectors
+   where possible to keep the CSS DRY.
+⚠️ Think: what would make good class
+   names for these links? 
+*/
+
+/* layout */
+
+header, section, footer{
+    padding: 45px 0;
+}
+
+header, .section-two{
+    background-color: #5f29a3;
+}
+
+.section-two{
+    color: whitesmoke;
+}
+
+.container{
+    width: 620px;
+    margin: 0 auto;
+}
+
+.main-image{
+    width:100%;
+}
+
+.section-two-image-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature-image{
+    width: 300px;
+    border-radius: 4.6px;
+}
+
+footer{
+    text-align: center;
+    color: #5f29a3;
+}
