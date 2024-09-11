@@ -4,15 +4,11 @@ body {
     font-size: 21px;
     font-weight: 300;
     margin: 0;
-    padding: 0;
-    height: 100vh;
 }
 
 .container {
-    min-width: 570px;
+    width: 570px;
     margin: 0 auto;
-    text-align: center;
-    width: 100%;
 }
 
 .bold-text {
@@ -60,23 +56,19 @@ a:focus {
     font-size: 16px;
 } 
 
-.intro {
-    background-color: #FFEAEA;
-    margin: 0 auto;
+header,
+section {
+    padding: 100px 0;
 }
 
-.final {
-    background-color: #EAF9FF;
-    margin: 0 auto;
+header {
+    background-color: #d7d7d7;
 }
-.photo {
-    background-color: #D7D7D7;
-    margin: 0 auto;
-}
-h1, h2, p {
-    margin: 0 0;
-}
-.photo, .intro, .final {
 
-    padding: 20px;
+.about-me {
+    background-color: #ffeaea;
+}
+
+.articles {
+    background-color: #eaf9ff;
 }
