@@ -179,7 +179,7 @@ img.user-img {
 
 #post-avatar {
   border-radius: 50%;
-  width: 10rem;
+  width: 5rem;
 }
 
 .main-images {
@@ -210,3 +210,4 @@ img.user-img {
 .interaction button:active {
   transform: scale(0.9);
 }
+
