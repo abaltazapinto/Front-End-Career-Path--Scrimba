@@ -34,3 +34,15 @@ const toggle = document.getElementById('darkmode-toggle');
 toggle.addEventListener('change', function () {
   document.body.classList.toggle('dark-mode', toggle.checked);
 });
+
+const firstPostAvatar = document.querySelector("#post-avatar")
+console.log(firstPostAvatar)
+firstPostAvatar.src = 'images/avatar-vangogh.jpg'
+
+const namePostAvatar = document.querySelector("#avatar-name-1")
+namePostAvatar.innerHTML = `<p class=avatar-name id="avatar-name-1">${posts[0].name}</p> <br>
+<p class=avatar-location> ${posts[0].location}</p>
+`
+
+const avatarLocation = document.querySelector("#avatar-location-1")
+avatarLocation.innerHTML = ` `

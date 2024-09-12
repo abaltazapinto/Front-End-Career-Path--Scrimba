@@ -96,26 +96,53 @@ label:active:after {
   width: 26px;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  
+}
+
 header {
   background-color: var(--background);
   flex: 0 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  
 }
 
 .container {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  border: 8px solid var(--button-outline-color);
+}
+
+.container, .container-avatars {
+  display: flex;
+  align-items: center;  
+  border-top: 8px solid var(--button-outline-color);
+  border-left: 8px solid var(--button-outline-color);
+  border-right: 8px solid var(--button-outline-color);  
   padding: 0 20px;
   min-width: 60%;
   width: 870px;
   background-color: var(--background);
-  
+  margin-top: 0;
+  margin: 0;
 }
+
+.avatar-name {
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.avatar-location {
+  margin-top: 0;
+  font-weight: 300;
+}
+
+
 img {
   padding: 20px;
   
@@ -131,4 +158,11 @@ img.user-img {
 
 main {
   flex: 1 0 auto;
+  display: ;
 }
+
+#post-avatar {
+  border-radius: 50%;
+  width: 10rem;
+}
+
