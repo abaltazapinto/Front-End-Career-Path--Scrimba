@@ -149,15 +149,11 @@ header {
 }
 
 .avatar-name {
-  font-weight: 900;
   margin-bottom: 0;
 }
-
 .avatar-location {
-  margin-top: 0;
-  font-weight: 300;
+  margin-top: -10px;
 }
-
 
 img {
   padding: 20px;
@@ -209,5 +205,16 @@ img.user-img {
 
 .interaction button:active {
   transform: scale(0.9);
+}
+
+.likes-1 {
+  margin-left:-5px;
+  display: block;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.bold {
+  font-weight: 900;
 }
 

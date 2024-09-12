@@ -48,22 +48,30 @@
                 <div class="img-name">   
                     <img id="post-avatar" alt="User Avatar" />
                     <div class="avatar-name" id="avatar-name-1">
-                    
-                
                     </div>
                 </div>
                 
                 <img alt="face of ${post[0].name}" class="main-images" src="images/avatar-vangogh.jpg" id="post">
                 <div class="interaction">
-                    <button class="like-btn">❤️</button>
+                <div class="post" data-post-id="0"> 
+                    <button class="like-btn like" id="like-btn">❤️ </button>
+                        
                     <button class="comment-btn">💬</button> 
-                    <button class="share-btn">✈️</button> 
+                        <span class="comment-btn"></span>
+                    <button class="share-btn">✈️</button>
+
+                    <span class="bold likes-1"></span>
+
+                    <div class="comments">
+                        <span></span>
+                    </div>
+                </div> 
                 </div>
 
             </div>
         </main>
 
     </div>
-    <script src="index.js" ></script>
+    <script src="index.js" type="module"></script>
   </body>
 </html>

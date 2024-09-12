@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/abaltazapinto/Front-End-Career-Path--Scrimba/issues"
   },
-  "homepage": "https://github.com/abaltazapinto/Front-End-Career-Path--Scrimba#readme"
+  "homepage": "https://github.com/abaltazapinto/Front-End-Career-Path--Scrimba#readme",
+  "dependencies": {
+    "firebase": "^10.13.1"
+  }
 }
