@@ -2,4 +2,133 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--background);
+  color: var(--text-color);
+  height: 100%;
+  min-height: 100vh;
+}
+
+:root {
+  --main-image-outline: #222222;
+  --white: #FBFBFB;
+  --text-color: #201A23;
+  --purple: #9E4770;
+  --background: #F5F9E9;
+  --button-bg-color: #E6BEAE;
+  --button-outline-color: black;
+  --button-text-shadow: 1px 1px 2px #222222, -1px -1px 2px #222222;
+  --sales-bg-color: #FFC4EB;
+  --dark-purple: #44354A;
+  --sales-color:  #E6BEAE;
+
+}
+
+.dark-mode {
+  --main-image-outline: #fff;
+  --black: #201A23;
+  --background: #222 ;
+  --white-background: #F5F9E9;
+  --text-color: #fbfbfb;
+  --light-purple: #9E4770;
+  --dark-purple: #222222;
+  --button-outline-color: #fff;
+  --button-text-shadow: 1px 1px 2px rgb(7, 7, 7), -1px -1px 2px purple;
+  --button-bg-color: #E6BEAE;
+  --sales-color: #44354A;
+}
+
+.dark-mode .sun {
+  fill: yellow;
+}
+
+
+label {
+  width: 75px;
+  height: 25px;
+  position: relative;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  background: var(--background);
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  cursor: pointer;
+}
+
+label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius:180px;
+  box-shadow:  0px 5px 10 px rgba(0,0,0,0.2);
+}
+
+aside {
+position: absolute;
+bottom: 20px;
+right: 20px;
+z-index: 1000;
+}
+
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+input:checked + label {
+  background: #242424 
+}
+
+input:checked + label:after {
+  left: calc( 100% - 15%);
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+label, label::after {
+  transition: 0.3s
+}
+label:active:after {
+  width: 26px;
+}
+
+header {
+  background-color: var(--background);
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 8px solid var(--button-outline-color);
+  padding: 0 20px;
+  min-width: 60%;
+  width: 870px;
+  background-color: var(--background);
+  
+}
+img {
+  padding: 20px;
+  
+}
+
+img.user-img {
+  border-radius: 50%; 
+  width: 20%;
+  border: 5px solid var(--button-outline-color);
+  padding: 0px;
+   
+}
+
+main {
+  flex: 1 0 auto;
 }
