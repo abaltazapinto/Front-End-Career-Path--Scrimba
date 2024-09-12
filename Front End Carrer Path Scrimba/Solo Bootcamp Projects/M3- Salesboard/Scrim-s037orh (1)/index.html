@@ -1,56 +1,80 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Salesboard 🔔 </title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="icon" type="image/webp" size="16*16" href="./images/salesboard.webp">
-        <link rel="icon" type="image/webp" size="32*32" href="./images/sale-label-icon.webp">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <head>
+    <title>Salesboard 🔔</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="icon"
+      type="image/webp"
+      size="16*16"
+      href="./images/salesboard.webp"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      size="32*32"
+      href="./images/sale-label-icon.webp"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <header>
+        <h1 class="live main-heading">Salesboard 🔔</h1>
 
-    </head>
-    <body>
-
-            
-        <div class="container" id="container">
-
-        <header>    
-            <h1 class="live main-heading">Salesboard 🔔</h1>
- 
-            <figure>            
-                <img id="main-image" alt="Andre Face" src="./images/andre.jpeg">
-            </figure>
-            <div class="buttons">
-                <button type="button" class="btn btn-star" id="star" aria-label="Star Sales">⭐</button>
-                <button type="button" class="btn btn-fire" id="fire" aria-label="Fire Sales">🔥</button>
-            </div>
-        </header>
-        <main>     
-            <!-- Live-sales and achivements section Section -->
-             <header class="live">
-                <h2 class="live sales-heading" >Live Sales - </h2>
-                <span class="sales live-sales" id="live-sales"> </span>
-                <h2 class="live achievements-heading">Live Achievements - </h2>
-                <span class="sales live-achievements" ></span>
-            </header>
-        </main>
-
-        <!-- Total revenue and Total comission -->
-        <footer class="sales-total">   
-            <section class="live sales-summary">
-                <h2 class="live sales-revenue-label"> Total Revenue</h2>
-                <span class="total total-revenue" id="total-revenue"> $ </span>
-            </section>
-            <section class="live sales-comission">
-                <h2 class="live comission-label">Total Commision</h2>
-                <span class="total commison-value" id="commission-value">$</span>
-            </section>
-            
-        </footer>
-        <button class="theme-google" id="theme-toggle">switch to Dark mode</button>
+        <figure>
+          <img id="main-image" alt="Andre Face" src="./images/andre.jpeg" />
+        </figure>
+        <div class="buttons">
+          <button
+            type="button"
+            class="btn btn-star"
+            id="star"
+            aria-label="Star Sales"
+          >
+            ⭐
+          </button>
+          <button
+            type="button"
+            class="btn btn-fire"
+            id="fire"
+            aria-label="Fire Sales"
+          >
+            🔥
+          </button>
         </div>
+      </header>
+      <main>
+        <!-- Live-sales and achivements section Section -->
+        <header class="live">
+          <h2 class="live sales-heading">Live Sales -</h2>
+          <span class="sales live-sales" id="live-sales"> </span>
+          <h2 class="live achievements-heading">Live Achievements -</h2>
+          <span class="sales live-achievements"></span>
+        </header>
+      </main>
 
-        <script src="index.js"></script>
-    </body>
+      <!-- Total revenue and Total comission -->
+      <footer class="sales-total">
+        <section class="live sales-summary">
+          <h2 class="live sales-revenue-label">Total Revenue</h2>
+          <span class="total total-revenue" id="total-revenue"> $ </span>
+        </section>
+        <section class="live sales-comission">
+          <h2 class="live comission-label">Total Commision</h2>
+          <span class="total commison-value" id="commission-value">$</span>
+        </section>
+      </footer>
+      <button class="theme-google" id="theme-toggle">
+        switch to Dark mode
+      </button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>

@@ -1,12 +1,16 @@
 # Getting Started
+
 Install the dependencies and run the project in watch mode
+
 ```
 npm install
 npm run build # or watch to rebuild on change
 open index.html
 ```
+
 Note that using Webpack is obselete and this archive has been provided
 for compatibility reasons. Prefer using Vite, check it at https://vitejs.dev
+
 ## About Scrimba
 
 At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜

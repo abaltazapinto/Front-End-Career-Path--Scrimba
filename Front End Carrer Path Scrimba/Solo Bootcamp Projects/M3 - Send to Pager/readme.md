@@ -9,15 +9,16 @@ pager
 reset button
 
 Requirements:
+
 - Build it from scratch
 - Follow the design
 - Make all 14 buttons work
-- Make the 2 displays work 
+- Make the 2 displays work
 
 ![alt text](image-2.png)
 
-stretch goals 
+stretch goals
 
 - Add a time delay
-- Play a notification signal 
+- Play a notification signal
 - Display should'nt overflow

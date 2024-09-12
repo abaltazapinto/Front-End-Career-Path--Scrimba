@@ -1,94 +1,102 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 main {
-    width: 900px;
-    margin: 0 auto 50px;
-    line-height: 1.5;
-    color: #333333;
+  width: 900px;
+  margin: 0 auto 50px;
+  line-height: 1.5;
+  color: #333333;
 }
 strong {
-    color: #0907a4;
+  color: #0907a4;
 }
 a {
-    color: #0907a4;
-    text-decoration-color: #d172cb;
+  color: #0907a4;
+  text-decoration-color: #d172cb;
 }
 
 /* Hero Section */
 .hero-section {
-    text-align: center;
-    position: relative;
-    height: 100vh;
+  text-align: center;
+  position: relative;
+  height: 100vh;
 }
 .hero-heading {
-    font-size: 96px;
-    color: #0907a4;
+  font-size: 96px;
+  color: #0907a4;
 }
 .hero-text {
-    font-size: 20px;
-    color: #333333;
-    position: absolute;
-    width: 260px;
-    right: 0;
-    top: 260px;
+  font-size: 20px;
+  color: #333333;
+  position: absolute;
+  width: 260px;
+  right: 0;
+  top: 260px;
 }
 .hero-image {
-    width: 400px;
-    z-index: 10;
-    position: absolute;
-    left: 250px;
-    top: -50px;
+  width: 400px;
+  z-index: 10;
+  position: absolute;
+  left: 250px;
+  top: -50px;
 }
 
 /* Main Content */
-.astronaut-section, .chair-section, .cubes-section {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.astronaut-section,
+.chair-section,
+.cubes-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-.astronaut-section p, .chair-section p, .cubes-section p {
-    width: 340px;
+.astronaut-section p,
+.chair-section p,
+.cubes-section p {
+  width: 340px;
 }
-.astronaut-section p, .cubes-section p {
-    text-align: right;
+.astronaut-section p,
+.cubes-section p {
+  text-align: right;
 }
 .chair-section {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 .image {
-    width: 400px;
-    padding: 40px;
+  width: 400px;
+  padding: 40px;
 }
 
 /* Card styling */
 .card {
-    position: relative;
-    border: 2px solid #333333;
-    margin-bottom: 40px;
-    border-radius: 40px 0 40px 0;
-    outline-offset: 2px;
-		transition: 0.2s;
+  position: relative;
+  border: 2px solid #333333;
+  margin-bottom: 40px;
+  border-radius: 40px 0 40px 0;
+  outline-offset: 2px;
+  transition: 0.2s;
 }
 .card a::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 .card:hover {
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgb(208,114,202) 0px -3px 0px inset;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgb(208, 114, 202) 0px -3px 0px inset;
 }
 .cta {
-    display: block;
-    padding-top: 20px;
+  display: block;
+  padding-top: 20px;
 }
 .card:focus-within {
-    outline: 2px solid blue;
+  outline: 2px solid blue;
 }
-

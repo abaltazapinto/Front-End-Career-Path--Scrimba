@@ -1,136 +1,137 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Rubik', sans-serif;
-    background-color: #EEF0F4;
-    user-select: none;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  background-color: #eef0f4;
+  user-select: none;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    background-color: #1B1924;
-    /* max-width: 40em; */
-    width: 100%;
-    min-height: 30em;
-    /* max-width: 0px; */
-    flex-direction: column;
-    margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  background-color: #1b1924;
+  /* max-width: 40em; */
+  width: 100%;
+  min-height: 30em;
+  /* max-width: 0px; */
+  flex-direction: column;
+  margin: 30px auto;
 }
 
 .container > h1 {
-    color: white;
+  color: white;
 }
 
 .container > img:first-child {
-    max-height: 25vh;
-    width: 15vh;
-    margin: 25px auto;
+  max-height: 25vh;
+  width: 15vh;
+  margin: 25px auto;
 }
 
 #greetingsTo {
-    background-color: #444059;
-    color: #8F80BF;
-    min-width: 10em;
-    cursor: pointer;
-    width: 80%;
-    max-width: 300px;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
+  background-color: #444059;
+  color: #8f80bf;
+  min-width: 10em;
+  cursor: pointer;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 select {
-    background-color: #444059;
-    color: #8F80BF;
-    min-width: 10em;
-    cursor: pointer;
-    padding: auto;
-    width: 38%;
-    max-width: 140px;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px 5px;
+  background-color: #444059;
+  color: #8f80bf;
+  min-width: 10em;
+  cursor: pointer;
+  padding: auto;
+  width: 38%;
+  max-width: 140px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 5px;
 }
 
 input {
-    min-height: 20vh;
-    text-align: justify;
-    margin-left: 10px;
-    padding-bottom: 10px;
+  min-height: 20vh;
+  text-align: justify;
+  margin-left: 10px;
+  padding-bottom: 10px;
 }
 
 select {
-    display: flexbox;
+  display: flexbox;
 }
 
 button {
-    display:block;
-    margin: 20px auto;
-    padding: 10px;
-    width: 50%;
-    max-width: 200px;
-    border: none;
-    border-radius: 5px;
-    background-color: #00AEEF;
-    color:white;
-    cursor:pointer;
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: 50%;
+  max-width: 200px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00aeef;
+  color: white;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #007B9E;
+  background-color: #007b9e;
 }
 
 .flex-container {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    max-width: fit-content;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: fit-content;
+  margin: 0 auto;
 }
 
 #endorsements-List {
-    background-color: #1B1924;
-    color: #444059;
-    border-radius: 5px;
-    padding: 15px;
-    width: 80%;
-    max-width: 300rem;
-    margin: 20px auto;
-    text-align: left;
-    list-style: none;
+  background-color: #1b1924;
+  color: #444059;
+  border-radius: 5px;
+  padding: 15px;
+  width: 80%;
+  max-width: 300rem;
+  margin: 20px auto;
+  text-align: left;
+  list-style: none;
 }
 
 h3 {
-    font-family: 'Josefin Sans', sans-serif;
-    color: white;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
 }
 ul li {
-    font-size: 20px;
-    background-color: #ffff;
-    padding: 15px 15px ;
-    border-radius: 3px;
-    margin: 0.5em;
-    flex-grow: 1;
-    text-align: left;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2)
+  font-size: 20px;
+  background-color: #ffff;
+  padding: 15px 15px;
+  border-radius: 3px;
+  margin: 0.5em;
+  flex-grow: 1;
+  text-align: left;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 ul li:hover {
-    background-color: #FFECC7;
-    cursor: pointer;
+  background-color: #ffecc7;
+  cursor: pointer;
 }
 
 .like-button {
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    vertical-align: middle; 
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
 .like-count {
-    margin-right: 5px; 
-    vertical-align: middle; 
+  margin-right: 5px;
+  vertical-align: middle;
 }

@@ -1,17 +1,14 @@
 {
-    "manifest_version": 3,
-    "version": "1.0",
-    "name": "Leads tracker",
-    "description": "Save your important links",
-    "action": {
-        "default_popup": "index.html",
-        "default_icon": "icon.png"
-    },
-    "permissions": [
-        "storage", 
-        "activeTab"
-    ],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self' https://www.gstatic.com; object-src 'self'"
-    }
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Leads tracker",
+  "description": "Save your important links",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://www.gstatic.com; object-src 'self'"
+  }
 }

@@ -3,8 +3,8 @@
 // Fetch your value from localStorage and log it out
 
 //1
-localStorage.setItem("programming", "difficult")
+localStorage.setItem("programming", "difficult");
 
-let programming = localStorage.getItem("programming")
+let programming = localStorage.getItem("programming");
 
-console.log(programming)
+console.log(programming);

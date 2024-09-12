@@ -1,11 +1,14 @@
 # Getting Started
+
 Install the dependencies and run the project
+
 ```
 npm install
 npm start
 ```
 
 Head over to https://vitejs.dev/ to learn more about configuring vite
+
 ## About Scrimba
 
 At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
@@ -20,9 +23,10 @@ Happy Coding!
 
 Para alterar a disposicao do seu projecto para horizontal, você deve ajustar a propriedade `flex-direction` da sua classe `.container`para `row`em vez de horizontal .
 
-esta funcao chamada highlighLeader é responsavel por des tacar visualmente 
+esta funcao chamada highlighLeader é responsavel por des tacar visualmente
 
 1- Recupera Elementos HTML dos Pontos:
+
 ```
 var homeScoreElement = document.getElementbyID(home-points')
 ```
@@ -36,7 +40,7 @@ var guestScore= +guestScoreElement || 0;
 Aqui a funcao le o texto interno desses elementos, que supostamente sao numeros representeando as pontuacoes. O operador `+` converte esse texto para um numero. Se o texto for vazio ou nao um numero valido .
 
 if (homeScore > guestScore) [
-    himeScoreElement.add('leader);
+himeScoreElement.add('leader);
 ] else if (guestScore > homeScore) {
-    guestScoreElement.classList.add('leader');
+guestScoreElement.classList.add('leader');
 }

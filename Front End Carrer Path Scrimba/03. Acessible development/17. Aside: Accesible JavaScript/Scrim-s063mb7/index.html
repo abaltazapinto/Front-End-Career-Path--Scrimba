@@ -1,54 +1,97 @@
 <html lang="en">
-    <head>
-        <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-        
-        <!-- Fonts & Icons -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body class="contact-page">
-        <main id="main">
-            <!-- Form section -->
-            <section class="contact-form-section">
-                <form>
-                    <h2 class="contact-form-heading">Sign up</h2>
-                    <p class="contact-form-intro">Enter your contact information, and then there will be cake. 🍰</p>
-                    <label for="name">Full name</label>
-                    <input class="contact-input" id="name" type="text" placeholder="Sherlock Holmes" />
-                    <label for="address">Address</label>
-                    <input class="contact-input" id="address" type="text" placeholder="221B Baker Street" />
-                    <div class="address">
-                        <div class="city">
-                            <label for="city">City</label>
-                            <select class="city-select" id="city" type="text" placeholder="London">
-                                <option value="london">London</option>
-                                <option value="manchester">Manchester</option>
-                                <option value="leeds">Leeds</option>
-                            </select>
-                        </div>
-                        <div class="postcode">
-                            <label for="postcode">Postcode</label>
-                            <input class="address-input" id="postcode" type="text" placeholder="NW1 6XE" />
-                        </div>
-                    </div>
-                    <label for="email">Email</label>
-                    <input class="contact-input" id="email" type="text" placeholder="sherlock.holmes@gmail.com" />
-                    <div class="radio-container">
-                        <p>Do you have cats?</p>
-                        <label for="yes">Yes</label>
-                        <input class="contact-radio" id="yes" type="radio" name="cats" />
-                        <label for="no">No</label>
-                        <input class="contact-radio" id="no" type="radio" name="cats" />
-                    </div>
-                    <span class="popover-message" id="popoverMessage">⚠️ Complete the form to send the message.</span>
-                    <button class="contact-submit-button" type="submit" disabled id="submitButton">Send message 🎉</button>
-                </form>
-                <img class="contact-image" src="images/drone-contact.png" alt="A woman seeing a drone approaching." />
-            </section>
-        </main>
-        <script src="index.js"></script>
-    </body>
+  <head>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="contact-page">
+    <main id="main">
+      <!-- Form section -->
+      <section class="contact-form-section">
+        <form>
+          <h2 class="contact-form-heading">Sign up</h2>
+          <p class="contact-form-intro">
+            Enter your contact information, and then there will be cake. 🍰
+          </p>
+          <label for="name">Full name</label>
+          <input
+            class="contact-input"
+            id="name"
+            type="text"
+            placeholder="Sherlock Holmes"
+          />
+          <label for="address">Address</label>
+          <input
+            class="contact-input"
+            id="address"
+            type="text"
+            placeholder="221B Baker Street"
+          />
+          <div class="address">
+            <div class="city">
+              <label for="city">City</label>
+              <select
+                class="city-select"
+                id="city"
+                type="text"
+                placeholder="London"
+              >
+                <option value="london">London</option>
+                <option value="manchester">Manchester</option>
+                <option value="leeds">Leeds</option>
+              </select>
+            </div>
+            <div class="postcode">
+              <label for="postcode">Postcode</label>
+              <input
+                class="address-input"
+                id="postcode"
+                type="text"
+                placeholder="NW1 6XE"
+              />
+            </div>
+          </div>
+          <label for="email">Email</label>
+          <input
+            class="contact-input"
+            id="email"
+            type="text"
+            placeholder="sherlock.holmes@gmail.com"
+          />
+          <div class="radio-container">
+            <p>Do you have cats?</p>
+            <label for="yes">Yes</label>
+            <input class="contact-radio" id="yes" type="radio" name="cats" />
+            <label for="no">No</label>
+            <input class="contact-radio" id="no" type="radio" name="cats" />
+          </div>
+          <span class="popover-message" id="popoverMessage"
+            >⚠️ Complete the form to send the message.</span
+          >
+          <button
+            class="contact-submit-button"
+            type="submit"
+            disabled
+            id="submitButton"
+          >
+            Send message 🎉
+          </button>
+        </form>
+        <img
+          class="contact-image"
+          src="images/drone-contact.png"
+          alt="A woman seeing a drone approaching."
+        />
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
