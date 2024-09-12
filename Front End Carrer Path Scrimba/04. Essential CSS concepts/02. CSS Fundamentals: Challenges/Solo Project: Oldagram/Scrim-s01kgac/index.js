@@ -44,5 +44,22 @@ namePostAvatar.innerHTML = `<p class=avatar-name id="avatar-name-1">${posts[0].n
 <p class=avatar-location> ${posts[0].location}</p>
 `
 
-const avatarLocation = document.querySelector("#avatar-location-1")
-avatarLocation.innerHTML = ` `
+//interaction of the buttons wait and at the end build a real time database for this .
+
+const likeBtn = document.querySelector('.like-btn');
+console.log(likeBtn)
+const commentBtn = document.querySelector('.comment-btn');
+const shareBtn = document.querySelector('.share-btn');
+
+likeBtn.addEventListener("click", () => {
+    alert('You liked the Post')
+    console.log('clicked');
+});
+
+commentBtn.addEventListener('click', () => {
+    alert('you want to comment')
+});
+
+shareBtn.addEventListener('click', () => {
+    alert('You shared this post')
+});
