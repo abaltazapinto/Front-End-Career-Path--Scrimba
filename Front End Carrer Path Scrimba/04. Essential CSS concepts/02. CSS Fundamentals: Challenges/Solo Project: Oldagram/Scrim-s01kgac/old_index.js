@@ -81,6 +81,56 @@ toggle.addEventListener('change', function () {
 })
 
 
+//interaction of the buttons wait and at the end build a real time database for this .
+
+// const likes = document.querySelector('.likes-1')
+
+// const likeBtn = document.getElementById('like-btn')
+// const commentBtn = document.querySelector('.comment-btn')
+// const shareBtn = document.querySelector('.share-btn')
+
+// //firebase
+// const updateLikes = (postId, newLikes) => {
+//   const postRef = ref(db, `posts/${postId}/likes`)
+
+//   set(postRef, newLikes)
+//     .then(() => {
+//       console.log('likes updated in Firebase sucessfully')
+//     })
+//     .catch((error) => {
+//       console.error('Error updating likes in Firebase', error)
+//     })
+// }
+
+
+/*old way */
+// likeBtn.addEventListener('click', () => {
+//   const postId = 0
+//   posts[postId].likes++
+//   likes.innerText = posts[postId].likes + ` likes`
+//   // Firebase
+//   updateLikes(postId, posts[postId].likes)
+// })
+
+// commentBtn.addEventListener('click', () => {
+//   alert('you want to comment')
+// })
+
+// shareBtn.addEventListener('click', () => {
+//   alert('You shared this post')
+// })
+//comments username and comment
+// let comments = document.querySelector('.comments')
+// comments.innerHTML = `<span class="bold margin-bottom" >${posts[0].username} </span> <span> ${posts[0].comment}</span> `
+// const firstPostAvatar = document.querySelector('#post-avatar')
+// console.log(firstPostAvatar)
+// firstPostAvatar.src = 'images/avatar-vangogh.jpg'
+// const namePostAvatar = document.querySelector('#avatar-name-1')
+// namePostAvatar.innerHTML = `<p class="bold avatar-name" id="avatar-name-1">${posts[0].name}</p> <br>
+// <p class=avatar-location> ${posts[0].location}</p>
+// `
+
+
 /* function to automatically create the Post */ 
 
 function createPostHTML(post) {
