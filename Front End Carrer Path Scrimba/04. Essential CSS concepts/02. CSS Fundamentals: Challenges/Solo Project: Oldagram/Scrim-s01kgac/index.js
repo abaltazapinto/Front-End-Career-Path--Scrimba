@@ -53,11 +53,12 @@ const posts = [
 
 
 
-//Store each post in the Firebase
+//Store each post in the Firebase in a wai that each one have an index 
 posts.forEach((post, index) => {
   const newPostRef = ref(db, `posts/postId${index + 1}`)
   set(newPostRef, post)
 })
+
 posts.forEach((post, index) => {
   const postRef = ref(db, `posts/postId${index + 1}`)
 
@@ -65,10 +66,18 @@ posts.forEach((post, index) => {
   onValue(postRef, (snapshot) => {
     const postData = snapshot.val()
 
+    //buttons like
+    let likeButton = document.querySelectorAll(".likes")
+    console.log(likeButton)
     if (postData) {
       posts[index].likes = postData.likes
-      console.log(index)
-
+      /*console.log(index)*/
+      console.log(postData.likes)
+      likeButton.addEventListener('click', function() {
+        likeCount++
+        update(ref(database, `posts/postId${index +1 }`), { likes: likeCount })
+      });
+      
       /* document.querySelector(`.likes-${index+1}`).innerText = `${posts[index].likes} likes`; */
     }
   })

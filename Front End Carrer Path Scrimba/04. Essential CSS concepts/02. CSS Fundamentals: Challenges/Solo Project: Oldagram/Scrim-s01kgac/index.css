@@ -190,6 +190,7 @@ img.user-img {
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+  margin-bottom: 50px;
 }
 
 .interaction button {
@@ -208,7 +209,7 @@ img.user-img {
   transform: scale(0.9);
 }
 
-.likes-1 {
+.likes {
   margin-left: -5px;
   display: block;
   margin-top: 10px;
