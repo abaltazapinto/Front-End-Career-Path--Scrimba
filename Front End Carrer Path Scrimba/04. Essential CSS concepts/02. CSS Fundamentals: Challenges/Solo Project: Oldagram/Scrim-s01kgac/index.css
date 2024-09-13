@@ -10,69 +10,69 @@ body {
 
 :root {
   --main-image-outline: #222222;
-  --white: #FBFBFB;
-  --text-color: #201A23;
-  --purple: #9E4770;
-  --background: #F5F9E9;
-  --button-bg-color: #E6BEAE;
+  --white: #fbfbfb;
+  --text-color: #201a23;
+  --purple: #9e4770;
+  --background: #f5f9e9;
+  --button-bg-color: #e6beae;
   --button-outline-color: black;
   --button-text-shadow: 1px 1px 2px #222222, -1px -1px 2px #222222;
-  --sales-bg-color: #FFC4EB;
-  --dark-purple: #44354A;
-  --sales-color:  #E6BEAE;
-
+  --sales-bg-color: #ffc4eb;
+  --dark-purple: #44354a;
+  --sales-color: #e6beae;
 }
 
 .dark-mode {
   --main-image-outline: #fff;
-  --black: #201A23;
-  --background: #222 ;
-  --white-background: #F5F9E9;
+  --black: #201a23;
+  --background: #222;
+  --white-background: #f5f9e9;
   --text-color: #fbfbfb;
-  --light-purple: #9E4770;
+  --light-purple: #9e4770;
   --dark-purple: #222222;
   --button-outline-color: #fff;
   --button-text-shadow: 1px 1px 2px rgb(7, 7, 7), -1px -1px 2px purple;
-  --button-bg-color: #E6BEAE;
-  --sales-color: #44354A;
+  --button-bg-color: #e6beae;
+  --sales-color: #44354a;
 }
 
 .dark-mode .sun {
   fill: yellow;
 }
 
-
 label {
   width: 75px;
   height: 25px;
   position: relative;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 5px;
   background: var(--background);
   border-radius: 200px;
-  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  box-shadow:
+    inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
 
 label::after {
-  content: "";
+  content: '';
   width: 20px;
   height: 20px;
   position: absolute;
   top: 2.5px;
   left: 5px;
   background: linear-gradient(180deg, #ffcc89, #d8860b);
-  border-radius:180px;
-  box-shadow:  0px 5px 10 px rgba(0,0,0,0.2);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10 px rgba(0, 0, 0, 0.2);
 }
 
 aside {
-position: absolute;
-bottom: 20px;
-right: 20px;
-z-index: 1000;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 input {
@@ -81,16 +81,17 @@ input {
   visibility: hidden;
 }
 input:checked + label {
-  background: #242424 
+  background: #242424;
 }
 
 input:checked + label:after {
-  left: calc( 100% - 15%);
+  left: calc(100% - 15%);
   transform: translateX(-100%);
   background: linear-gradient(180deg, #777, #3a3a3a);
 }
-label, label::after {
-  transition: 0.3s
+label,
+label::after {
+  transition: 0.3s;
 }
 label:active:after {
   width: 26px;
@@ -102,7 +103,6 @@ label:active:after {
   align-items: center;
   justify-content: center;
   margin: 0;
-  
 }
 
 header {
@@ -111,7 +111,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .container {
@@ -119,12 +118,12 @@ header {
 }
 
 .container,
- .container-avatars {
+.container-avatars {
   display: flex;
-  align-items: center;  
+  align-items: center;
   border-top: 8px solid var(--button-outline-color);
   border-left: 8px solid var(--button-outline-color);
-  border-right: 8px solid var(--button-outline-color);  
+  border-right: 8px solid var(--button-outline-color);
   padding: 0 20px;
   min-width: 60%;
   width: 870px;
@@ -137,7 +136,6 @@ header {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-
 }
 
 .img-name {
@@ -145,7 +143,6 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
 }
 
 .avatar-name {
@@ -160,11 +157,10 @@ img {
 }
 
 img.user-img {
-  border-radius: 50%; 
+  border-radius: 50%;
   width: 20%;
   border: 5px solid var(--button-outline-color);
   padding: 0px;
-   
 }
 
 #post {
@@ -208,7 +204,7 @@ img.user-img {
 }
 
 .likes-1 {
-  margin-left:-5px;
+  margin-left: -5px;
   display: block;
   margin-top: 10px;
   margin-left: 20px;
@@ -222,17 +218,21 @@ img.user-img {
   justify-content: flex-start;
 }
 
+/* bold no-bold */
 .bold {
   font-weight: bolder;
-  
 }
 
 .noBold {
   font-weight: 10;
 }
 
-.margin-top-left10 {
+/*margins*/
+.margin-top-left {
   margin-top: 10px;
   margin-left: 5px;
 }
 
+.margin-bottom {
+  margin-bottom: 20px;
+}
