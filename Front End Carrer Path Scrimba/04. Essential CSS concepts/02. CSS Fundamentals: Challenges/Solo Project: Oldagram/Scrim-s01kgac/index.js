@@ -18,8 +18,15 @@ const appSettings = {
 const app = initializeApp(appSettings)
 const db = getDatabase(app)
 
-// Create a reference to the 'posts' node in the database
-const postRef = ref(db, 'posts')
+
+// Identify the use with local Storage
+let userId = localStorage.getItem('userId');
+if (!userId) {
+  userId = 'user_' + Math.floor(Math.random() * 100000);
+  localStorage.setItem('userId', userId);
+}
+
+
 
 const posts = [
   {
@@ -82,7 +89,7 @@ function createPostHTML(post, index) {
           <button class="comment-btn"><span>💬</span></button>
           <button class="share-btn"><span>🔗</span></button>
           <div class="likes-interaction">
-            <span class="bold likes-${index + 1}">${post.likes}</span>
+            <span class="bold likes-${index + 1}">${post.likes || 0}</span>
             <span class="margin-top-left no-bold">likes</span>
           </div>
           <div class="comments">
@@ -98,38 +105,91 @@ function createPostHTML(post, index) {
 //Store each post in the Firebase in a wai that each one have an index 
 posts.forEach((post, index) => {
   const newPostRef = ref(db, `posts/postId${index + 1}`)
-  set(newPostRef, post)
-})
 
-function addLikeButtonListeners() {
-  posts.forEach((post, index) => {
-    const likeButton = document.getElementById(`like-btn-${index + 1}`)
-    const likesDisplay = document.querySelector(`.likes-${index + 1}`)
-    const postRef = ref(db, `posts/postId${index + 1}`);
-
-    //add a click event to the like butn
-
-    likeButton.addEventListener('click', () => {
-      //increment locally the like count
-      post.likes += 1;
-
-      //updates the UI with the new like count
-      likesDisplay.innerText = post.likes;
-
-      //update the like count in Firebase
-      update(postRef, { likes: post.likes });
-    });
+  //check if post already exits in Firebase
+  onValue(newPostRef, (snapshot) => {
+    if (!snapshot.exists()) {
+      //If the post does not exist set it !!
+      set(newPostRef, post)
+    }
   });
+});
+
+
+  
+function addLikeButtonListeners() { 
+    const postRef = ref(db, `posts`);
+
+    onValue(postRef, (snapshot) => {
+      const postData = snapshot.val(); // gets the data from firebase
+
+   
+      Object.keys(postData).forEach((key,index) => {
+          const post = postData[key];
+          const likeButton = document.getElementById(`like-btn-${index + 1}`);
+          const likesDisplay = document.querySelector(`.likes-${index + 1}`)
+          const postRef = ref(db, `posts/${key}`);
+
+          //check if the user already liked the post
+          const likedBy = post.likedBy || []; 
+
+
+          if (!likedBy.includes(userId)) {
+            //add a click event to the like butn
+            likeButton.addEventListener('click', () => {
+              //increment the like count
+              const newLikes = post.likes + 1; 
+              const updatedLikedBy = [...likedBy, userId];
+
+              // Update the like count in Firebase with newLikes
+              update(postRef, { likes: newLikes, likedBy: updatedLikedBy })
+                .then(() => {
+                  console.log('Like updated successfully in Firebase!');
+                })
+                .catch((error) => {
+                  console.error('Error updating likes in Firebase: ', error);
+                });
+
+              // update UI
+              likesDisplay.innerText = newLikes;
+            });
+          } else {
+            console.log("You have already liked this post.")
+            console.log(`${userId}`)
+          }
+        })
+    });
 }
 
 function renderPosts() {
   const postContainer = document.getElementById('post-container');
   postContainer.innerHTML = '';
-  posts.forEach((post, index) => {
-    postContainer.innerHTML += createPostHTML(post, index);
-  });
 
-  addLikeButtonListeners();
+  const postRef = ref(db, 'posts');
+
+  onValue(postRef, (snapshot) => { 
+    const postsData = snapshot.val();
+    console.log(postsData)
+
+    if (!postsData) {
+      console.log("No posts found in the database.");
+      return;
+    } 
+
+    // loops over the posts data and render each post
+    Object.keys(postsData).forEach((key, index) => {
+      const post = postsData[key];
+
+      if (typeof post.likes === 'undefined') {
+        post.likes = 0;
+      }
+      postContainer.innerHTML += createPostHTML(post, index);
+    });
+
+    addLikeButtonListeners();
+    }, {
+      onlyOnce: true
+    });
 }
 
 renderPosts()
