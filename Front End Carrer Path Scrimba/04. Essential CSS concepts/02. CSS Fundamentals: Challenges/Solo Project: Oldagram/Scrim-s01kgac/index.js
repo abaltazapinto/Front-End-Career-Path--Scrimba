@@ -3,6 +3,7 @@ import {
   getDatabase,
   ref,
   set,
+  update,
   push,
   onValue,
   remove,
@@ -52,37 +53,6 @@ const posts = [
 ]
 
 
-
-//Store each post in the Firebase in a wai that each one have an index 
-posts.forEach((post, index) => {
-  const newPostRef = ref(db, `posts/postId${index + 1}`)
-  set(newPostRef, post)
-})
-
-posts.forEach((post, index) => {
-  const postRef = ref(db, `posts/postId${index + 1}`)
-
-  //ouvir firebase
-  onValue(postRef, (snapshot) => {
-    const postData = snapshot.val()
-
-    //buttons like
-    let likeButton = document.querySelectorAll(".likes")
-    console.log(likeButton)
-    if (postData) {
-      posts[index].likes = postData.likes
-      /*console.log(index)*/
-      console.log(postData.likes)
-      likeButton.addEventListener('click', function() {
-        likeCount++
-        update(ref(database, `posts/postId${index +1 }`), { likes: likeCount })
-      });
-      
-      /* document.querySelector(`.likes-${index+1}`).innerText = `${posts[index].likes} likes`; */
-    }
-  })
-})
-
 // Handle dark mode toggle (optional)
 const toggle = document.getElementById('darkmode-toggle')
 toggle.addEventListener('change', function () {
@@ -90,14 +60,15 @@ toggle.addEventListener('change', function () {
 })
 
 
+
 /* function to automatically create the Post */ 
 
-function createPostHTML(post) {
+function createPostHTML(post, index) {
   return `
     <div class="container-avatars">
       <div class="img-name">
         <img id="post-avatar" src="${post.avatar}" alt="User Avatar" />
-        <div class="avatar-name" id="avatar-name-1">
+        <div class="avatar-name" id="avatar-name-${index + 1}">
           <p class=bold avatar-name> ${post.name}</p>
           <p class=avatar-location> ${post.location}</p>
         </div>
@@ -105,12 +76,13 @@ function createPostHTML(post) {
 
       <img alt="face of ${post.name}" class="main-images" src="${post.post}" id="post" />
       <div class="interaction">
-        <div class="post" data-post-id="0">
-          <button class="like-btn like" id="like-btn"><span>❤️</span></button>
+        <div class="post" data-post-id="${index}">
+          <button class="like-btn like" id="like-btn-${index + 1}"><span>❤️</span>
+          </button>
           <button class="comment-btn"><span>💬</span></button>
           <button class="share-btn"><span>🔗</span></button>
           <div class="likes-interaction">
-            <span class="bold likes-1">${post.likes}</span>
+            <span class="bold likes-${index + 1}">${post.likes}</span>
             <span class="margin-top-left no-bold">likes</span>
           </div>
           <div class="comments">
@@ -123,11 +95,41 @@ function createPostHTML(post) {
   `;
 }
 
+//Store each post in the Firebase in a wai that each one have an index 
+posts.forEach((post, index) => {
+  const newPostRef = ref(db, `posts/postId${index + 1}`)
+  set(newPostRef, post)
+})
+
+function addLikeButtonListeners() {
+  posts.forEach((post, index) => {
+    const likeButton = document.getElementById(`like-btn-${index + 1}`)
+    const likesDisplay = document.querySelector(`.likes-${index + 1}`)
+    const postRef = ref(db, `posts/postId${index + 1}`);
+
+    //add a click event to the like butn
+
+    likeButton.addEventListener('click', () => {
+      //increment locally the like count
+      post.likes += 1;
+
+      //updates the UI with the new like count
+      likesDisplay.innerText = post.likes;
+
+      //update the like count in Firebase
+      update(postRef, { likes: post.likes });
+    });
+  });
+}
+
 function renderPosts() {
   const postContainer = document.getElementById('post-container');
-  posts.forEach(post => {
-    postContainer.innerHTML += createPostHTML(post)
+  postContainer.innerHTML = '';
+  posts.forEach((post, index) => {
+    postContainer.innerHTML += createPostHTML(post, index);
   });
+
+  addLikeButtonListeners();
 }
 
 renderPosts()
