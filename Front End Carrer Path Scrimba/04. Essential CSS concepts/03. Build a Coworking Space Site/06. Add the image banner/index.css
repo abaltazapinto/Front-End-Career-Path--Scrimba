@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #282828;
+}
+
+header {
+    background-color: #282828;
+    color: whitesmoke;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 25px;
+    gap: 10px
+}
+
+li {
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+}
+
+.align-right {
+    margin-left: auto;
+} 
+
+h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 30px 25px;
+}
+
+.item {
+    position: relative;
+}
+
+.item-img {
+    width: 100%;
+}
+
+.caption {
+    margin: 0 25px;
+}
+
+.img-banner {
+/*
+Challenge:
+1. Position the image banner at the top left 
+   of the first image as per the slide. What
+   CSS do you need to add to the parent 
+   element to make this work?
+*/ 
+    background-color: #cd6858;
+    color: whitesmoke;
+    padding: 10px;
+    position: absolute; 
+    margin: -700px 0 0 10px;
+    z-index: 1000;
+}
+
