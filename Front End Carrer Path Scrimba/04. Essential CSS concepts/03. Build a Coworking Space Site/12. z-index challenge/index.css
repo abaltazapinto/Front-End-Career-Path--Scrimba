@@ -30,6 +30,7 @@ img {
 .box-1 {
     left: 0;
     top: 0;
+    z-index: 0;
 }
 
 /**
@@ -41,12 +42,14 @@ img {
     height: 200px;
     right: 0;
     top: 0;
+    z-index: 1;
 }
 
 .box-3 {
     background-color: pink;
     left: 0;
     bottom: 0;
+    z-index: 2;
 }
 
 .box-4 {
@@ -67,7 +70,7 @@ img {
     bottom: 0;
     background-color: deeppink;
     color: white;
-    z-index: 1;
+    z-index: 3;
 } 
 
 .attribution-container {
