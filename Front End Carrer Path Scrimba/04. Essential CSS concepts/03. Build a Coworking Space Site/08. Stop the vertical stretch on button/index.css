@@ -47,26 +47,11 @@ h1 {
 }
 
 .item-img {
-/*
-Challenge:
-1. Find the cause of the white space between 
-   the top of the button and the bottom of 
-   the image and eliminate it!
-*/
-    margin: 0;
+    display: block;
     width: 100%;
-    display: block
 }
 
 .caption {
-/*
-Challenge:
-1. Position the text and button at opposite
-   ends of the parent element. Make sure that 
-   there is always at least 20px of space 
-   between the button and the text, even when 
-   you make the browser narrower.
-*/
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -80,17 +65,21 @@ Challenge:
     background-color: #cd6858;
     color: whitesmoke;
     padding: 10px;
-}
+} 
 
 button {
+/*
+Challenge:
+1. Centrally align the button on the 
+   vertical axis so it looks like the 
+   screenshot on the slide.
+*/
     border: none;
     background-color: #cd6858;
     color: whitesmoke;
     padding: 10px 15px;
     font-weight: 700;
     cursor: pointer;
-    margin: 0;
-    padding: 10px 15px;
-    
+    margin: auto auto auto auto;
 }
 
