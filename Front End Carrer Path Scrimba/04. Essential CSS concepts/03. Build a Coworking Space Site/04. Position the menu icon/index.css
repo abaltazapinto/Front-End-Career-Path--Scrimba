@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #282828;
+}
+
+header {
+    background-color: #282828;
+    color: whitesmoke;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 25px;
+    gap: 10px
+}
+
+li {
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+}
+
+.align-right {
+    margin: auto 0 auto auto;
+/* 
+Challenge:
+1. Add a line of CSS to position the menu 
+   icon at the right-hand end of the ul 
+   element. The logo and location pin should 
+   remain where they are.
+*/
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 30px 25px;
+}
+
+.item-img {
+    width: 100%;
+}
+
+.caption {
+    margin: 0 25px;
+}
