@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.meme-container {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background-image: url('husky.jpeg');
+    background-size: cover;
+    margin: 30px auto;
+    box-shadow: 1px 1px 5px #999; 
+}
+
+.meme-text {
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+    width: 250px;
+    margin: auto 0 0 auto;
+/* 
+Challenge:
+1. Position the meme-text div in the 
+   bottom right corner of the container.
+*/
+}
+
+h1 {
+   font-size: 18px; 
+}
+
+
+
+
