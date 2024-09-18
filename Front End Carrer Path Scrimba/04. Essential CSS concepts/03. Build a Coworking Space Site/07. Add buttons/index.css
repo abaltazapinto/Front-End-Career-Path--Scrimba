@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #282828;
+}
+
+header {
+    background-color: #282828;
+    color: whitesmoke;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 25px;
+    gap: 10px
+}
+
+li {
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+}
+
+.align-right {
+    margin-left: auto;
+} 
+
+h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 30px 25px;
+}
+
+.item {
+    position: relative;
+}
+
+.item-img {
+    width: 100%;
+}
+
+.caption {
+/*
+Challenge:
+1. Position the text and button at opposite
+   ends of the parent element. Make sure that 
+   there is always at least 20px of space 
+   between the button and the text, even when 
+   you make the browser narrower.
+*/
+    position: relative;
+    margin: 0 25px;
+}
+
+.caption button {
+    position: absolute;
+    margin: -45px 0px 200px 900px;
+    z-index: 1000;
+}
+
+button:hover {
+    filter: brightness(50%);
+}
+
+.img-banner { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #cd6858;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+button {
+    border: none;
+    background-color: #cd6858;
+    color: whitesmoke;
+    padding: 10px 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
