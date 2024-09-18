@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#2980b9, #6dd5fa); 
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+   text-align: center;
+   color: gold;
+   font-weight: 300;
+}
+
+.map-container {
+    position: relative;
+    margin: 30px auto 0 auto;
+    width: 300px;
+    border: 2px solid red;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.sun-icon {
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.temperature {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+/*
+Challenge:
+1. Position the temperature div 
+   next to the sun emoji. 
+*/
+    font-size: 20px;
+}
