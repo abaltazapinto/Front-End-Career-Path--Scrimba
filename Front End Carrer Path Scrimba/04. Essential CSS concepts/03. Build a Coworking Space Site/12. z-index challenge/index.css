@@ -1,0 +1,93 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins'
+}
+
+.container {
+    border: 2px solid #444;
+    width: 400px;
+    height: 400px;
+    margin: 2em auto;
+    position: relative;
+}
+
+img {
+    width: 100%
+}
+
+.box {
+    box-sizing: border-box;
+    border: 1px solid #444;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+}
+
+.box-1 {
+    left: 0;
+    top: 0;
+}
+
+/**
+* Challenge:
+* 1. Use z-index 3 times to finish this layout. 
+**/
+
+.box-2 {
+    height: 200px;
+    right: 0;
+    top: 0;
+}
+
+.box-3 {
+    background-color: pink;
+    left: 0;
+    bottom: 0;
+}
+
+.box-4 {
+    right: 0;
+    bottom: 0;
+}
+
+.title-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: deeppink;
+    color: white;
+    z-index: 1;
+} 
+
+.attribution-container {
+    position: absolute;
+    bottom: 0;
+    background-color: #000;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+p {
+    color: #fff;
+    padding: 0.3em .5em;
+    font-size: 12px;
+}
