@@ -1,0 +1,100 @@
+/*
+COLOR PALETTE
+
+BLACK: #000000
+
+WHITE: #FFFFFF
+LIGHT: #FDF7F4
+
+ORANGE: #FFD18C
+DARK ORANGE: #FFA724
+*/
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+  --background: #FFFFFF;
+  --text-color: #000000;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+}
+.dark-mode {
+  --background: #222222;
+  color: var(--text-color);
+}
+
+.dark-mode .sun {
+    fill: yellow;
+}
+.dark-mode .moon {
+    fill: black;
+}
+.moon {
+    fill: white;;
+}
+
+
+label {
+    width: 75px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    background: var(--background);
+    border-radius: 200px;
+    box-shadow:
+      inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+      inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+  }
+  
+  label::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 2.5px;
+    left: 5px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10 px rgba(0, 0, 0, 0.2);
+  }
+  
+  aside {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+  
+  input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  input:checked + label {
+    background: #242424;
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 15%);
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+  }
+  label,
+  label::after {
+    transition: 0.3s;
+  }
+  label:active:after {
+    width: 26px;
+  }
+  
