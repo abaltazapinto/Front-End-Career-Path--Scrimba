@@ -14,8 +14,9 @@ modal.style.display = 'none'
 modalCloseBtn.addEventListener('click', closeModal)
 
 
-acceptBtn.addEventListener('click', function(e) {
+acceptBtn.addEventListener('submit', function(e) {
     e.preventDefault()
+    console.log("form submitted")
     setTimeout(closeModal, 3000)
 })
 
