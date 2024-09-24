@@ -28,12 +28,6 @@ img{
     display: flex;
     gap: 15px;
     align-items: center;
-    
-}
-
-.question {
-    background-color: #68e1fd;
-    color: #1434A4;
 }
 
 .question, .answer{
@@ -43,16 +37,14 @@ img{
     font-weight: bold;
 }
 
-#reveal-btn{
-    display: block;
-    
+.question{
+    background-color: whitesmoke;
 }
 
 .answer{
     display: none;
-
+    color: #ee6c4d;
     border: 1px solid; 
-
 }
 
 .container, header{
