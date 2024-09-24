@@ -1,0 +1,52 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    </head>  
+
+    <body>        
+        <header>
+            <img src="NASA.png">
+        </header>
+        <main>
+            <!-- form here! -->
+<!-- 
+Challenge:
+1. Add inputs for the email and password
+   fields. Remember to add all necessary
+   properties.
+2. Give the inputs labels and make it so
+   that clicking on the label brings the 
+   corresponding input into focus.    
+ -->
+            <form>
+                <label for="astronautName">Astronaut Name 👩‍🚀</label>
+                <input 
+                    type="text" 
+                    id="astronautName" 
+                    name="astronautName"
+                    placeholder="Neil Armstrong"
+                    >
+                <label for="astronautEmail">Astronaut Email</label>
+                <input
+                    type="email"
+                    id="astronautEmail"
+                    name="astronautEmail"
+                    placeholder="n.Armstrong@nasa.com"
+                    >
+                <label for="astronautPassword">Password</label>
+                <input
+                    type="password"
+                    id="astronautPassword"
+                    name="astronautPassword"
+                    placeholder="********"
+                    >
+            </form>
+        </main>
+        <script src="index.js"></script>
+    </body>
+
+</html>
