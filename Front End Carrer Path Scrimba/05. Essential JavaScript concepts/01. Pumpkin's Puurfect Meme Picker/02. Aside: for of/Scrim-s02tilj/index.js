@@ -27,6 +27,8 @@ for (let character of characters){
         console.log(power)
     }
 /*
+
+just trying to understand git pull origin
 Challenge:
 1. Nest a for of inside this for of to iterate over 
    the powers array for each character. Log out each 
