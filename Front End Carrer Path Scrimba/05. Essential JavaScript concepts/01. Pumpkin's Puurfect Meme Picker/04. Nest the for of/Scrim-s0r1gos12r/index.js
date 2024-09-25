@@ -188,8 +188,8 @@ Challenge:
             emotionArray.push(emotion)
         }
     }
-    console.log(emotionArray)
+    return emotionArray;
 }
 
-getEmotionsArray(catsData)
+console.log(getEmotionsArray(catsData))
 
