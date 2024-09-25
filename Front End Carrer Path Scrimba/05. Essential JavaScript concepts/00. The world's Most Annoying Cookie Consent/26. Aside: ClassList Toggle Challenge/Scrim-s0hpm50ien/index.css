@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h4{
+    font-size: 12px;
+}
+
+p{
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.img-details{
+    width: 130px;
+}
+
+img{
+    width: 130px;
+}
+
+.btn-controls{
+    text-align: center;
+}
+
+button{
+    padding: 7px 17px;
+}
