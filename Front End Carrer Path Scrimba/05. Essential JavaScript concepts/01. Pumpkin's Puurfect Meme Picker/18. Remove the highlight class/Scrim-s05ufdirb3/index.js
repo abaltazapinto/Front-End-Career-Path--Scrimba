@@ -14,11 +14,12 @@ Challenge:
 */ 
 
     let radioClass = document.getElementsByClassName("radio")
-    console.log("radio class", radioClass)
+    
     
     for (let radio of radioClass) {
         radio.classList.remove('highlight')
         console.log(radio)
+        
     }
 
     document.getElementById(e.target.id).parentElement.classList.add('highlight')
