@@ -42,11 +42,14 @@ Challenge:
    “catsArray”. 
 */  
 const catsArray = getMatchingCatsArray()
-console.log(catsArray);
 
-/*2.*/
-const cat = catsArray.find(cat => cat.emotionTags.includes("happy"))
-console.log(cat)
+
+/*2. corrected*/
+
+if(catsArray.length === 1) {
+    console.log(catsArray[0])
+}
+
 /*
 Challenge:
 1. Set up an if to check if there is only one
@@ -54,7 +57,7 @@ Challenge:
    out that cat object (but not the whole array!)
    {}
    Test: "happy", animated GIFS only checked.
-*/
+*/  
 
 }
 
