@@ -1,0 +1,35 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+h2{
+    text-align: center;
+}
+
+.terms{
+ width: 250px;
+ margin: 20px auto;
+ max-height: 250px;
+ overflow: scroll;   
+}
+
+img{
+    max-width: 230px;
+}
+
+.controls{
+    text-align: center;
+}
+
+.checkbox-container{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    margin-top: 10px;
+    padding: 9px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
