@@ -1,4 +1,4 @@
-import { catsData } from '/data.js'
+import { catsData } from './data.js'
 
 const emotionRadios = document.getElementById('emotion-radios')
 const getImageBtn = document.getElementById('get-image-btn')
@@ -41,11 +41,19 @@ Challenge:
    and save whatever it returns to a const called 
    “catsArray”. 
 */  
-    
+const catsArray = getMatchingCatsArray()
+/*
+Challenge:
+1. Set up an if to check if there is only one
+   cat object in the array. If there is, log
+   out that cat object (but not the whole array!)
+   {}
+   Test: "happy", animated GIFS only checked.
+*/ 
 }
 
 function renderCat(){
-
+    getSingleCatObject()
 }
  
 function getEmotionsArray(cats){
