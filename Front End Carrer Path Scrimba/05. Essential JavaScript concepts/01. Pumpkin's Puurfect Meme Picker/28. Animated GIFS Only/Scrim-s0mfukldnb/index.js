@@ -21,10 +21,9 @@ function getMatchingCatsArray(){
         const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
         const isGif = gifsOnlyOption.checked
         
-        const matchingCatsArray = catsData.filter(cat =>  
-        isGif ? cat.isGif && cat.emotionTags(selectedEmotion) : cat.emotionTags.includes(selectedEmotion)
-        )
-/*
+        const matchingCatsArray = catsData.filter(cat => isGif ?   cat.emotionTags.includes(selectedEmotion)  && cat.isGif : cat.emotionTags.includes(selectedEmotion)
+        ) 
+        /*
 Challenge:
 1. Change the .filter() method's function so it returns an 
    array that only has GIFs if the 'GIFs only' option is 
