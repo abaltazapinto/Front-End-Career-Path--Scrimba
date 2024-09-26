@@ -16,8 +16,8 @@ Challenge:
 getImage.addEventListener('click', getMatchingCatsArray)
 
 function getMatchingCatsArray(e) {
-    const checkedRadio = document.querySelector('input[type="radio"]:checked')
-    console.log(checkedRadio.value)
+    const checkedRadio = document.querySelector('input[type="radio"]:checked').value
+    console.log(checkedRadio)
 }
 
 
