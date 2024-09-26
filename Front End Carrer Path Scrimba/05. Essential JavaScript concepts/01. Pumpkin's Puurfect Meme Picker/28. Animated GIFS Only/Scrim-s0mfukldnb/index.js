@@ -24,11 +24,11 @@ function getMatchingCatsArray(){
         const matchingCatsArray = catsData.filter(cat => isGif ?   cat.emotionTags.includes(selectedEmotion)  && cat.isGif : cat.emotionTags.includes(selectedEmotion)
         ) 
         /*
-Challenge:
-1. Change the .filter() method's function so it returns an 
-   array that only has GIFs if the 'GIFs only' option is 
-   checked. If the 'GIFs only' option is not checked, it
-   should return an array of all matches as it does now.
+            Challenge:
+            1. Change the .filter() method's function so it returns an 
+            array that only has GIFs if the 'GIFs only' option is 
+            checked. If the 'GIFs only' option is not checked, it
+            should return an array of all matches as it does now.
 */ 
 
         console.log(matchingCatsArray)
