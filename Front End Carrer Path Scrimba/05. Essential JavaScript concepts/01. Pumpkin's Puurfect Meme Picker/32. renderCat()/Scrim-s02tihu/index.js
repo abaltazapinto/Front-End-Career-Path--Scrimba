@@ -82,13 +82,6 @@ Challenge:
         >`
 */ 
 
-
-    // const catObject = getSingleCatObject()
-    // console.log("cat Object: ", catObject)
-    // memeModalInner.innerHTML += `<p>${catObject}</p>`
-    // memeModal.innerHTML += `<p> ${catObject}</p>`
-    // my answer
-
 const catObject = getSingleCatObject();
 console.log("catObject", catObject)
 function getData(catObject) {
@@ -96,10 +89,6 @@ function getData(catObject) {
        console.log(`${key}: ${catObject[key]}`) 
     }
 } 
-
-// console.log(`./images/${catObject.image}`);
-// console.log(catObject.image); // Check if the extension is correct
-
 
 if(!catObject) {
         console.log('No cat to display')
@@ -109,13 +98,22 @@ if(!catObject) {
     // proceed with rendering if there's a valid catObject
     console.log(catObject)
 
-    memeModalInner.innerHTML = `
+    const emotionsHTML = catObject.emotionTags.map(tag => `<span>${tag}</span>`).join(' & ');
+
+    
+    const htmlContent = `
         <img 
-        class="cat-img"
-        src= "./images/${catObject.image}"
-        alt="${catObject.alt}
-        >
+            class="cat-img"
+            src= "./images/${catObject.image}"
+            alt="${catObject}">
+        <div class="emotions">Emotions: <b>${emotionsHTML}</b></div>
     `;
+
+    memeModalInner.innerHTML = htmlContent
+    console.log(htmlContent)
+    console.log(emotionsHTML)
+    console.log
+
     memeModal.style.display = "flex"
 
         
@@ -157,6 +155,13 @@ function renderEmotionsRadios(cats){
 
 renderEmotionsRadios(catsData)
 
+const closeBtnModal = document.querySelector('#meme-modal-close-btn')
+console.log(closeBtnModal)
 
+function closeModal(closeBtnModal) {
+    memeModal.style.display = 'none';    
+}
+
+closeBtnModal.addEventListener('click', closeModal)
 
 
