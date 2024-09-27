@@ -139,9 +139,14 @@ input[type="radio"]{
 }
 
 .cat-img{
+    /* display: block;
+    width: auto;
+    height: auto; */
+        
     max-width: 340px;
     max-height: 420px;
     border-radius: 5px;
+    z-index: 1000;
 }
 
 .meme-modal-close-btn{
