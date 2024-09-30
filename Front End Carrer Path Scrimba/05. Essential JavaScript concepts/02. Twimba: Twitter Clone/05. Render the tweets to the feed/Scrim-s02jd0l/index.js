@@ -39,8 +39,6 @@ function getFeedHtml(){
 
 function render(){
     let feed = document.querySelector('#feed')
-    console.log(feed)
-
     feed.innerHTML = getFeedHtml()
 /*
 Challenge:
@@ -50,5 +48,5 @@ Challenge:
    See if you can do this with just one line of code!
 */
 }
-
+  
 render()
