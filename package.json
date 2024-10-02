@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/abaltazapinto/Front-End-Career-Path--Scrimba#readme",
   "dependencies": {
-    "firebase": "^10.13.1"
+    "firebase": "^10.13.1",
+    "uuid": "^10.0.0"
   }
 }
