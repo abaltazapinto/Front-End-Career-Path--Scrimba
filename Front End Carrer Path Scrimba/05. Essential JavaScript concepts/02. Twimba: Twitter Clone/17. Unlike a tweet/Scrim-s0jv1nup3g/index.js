@@ -12,36 +12,23 @@ document.addEventListener('click', function(e){
     }
 })
 
-function handleLikeClick(tweetId){
-    console.log(tweetId)
-    const targetTweetObj = tweetsData.find(tweet => tweet.uuid === tweetId);
-    console.log("targetTweetObj", targetTweetObj) 
-    if (targetTweetObj) {
-        targetTweetObj.likes += 1;
-        console.log(`Updated likes for UUID ${tweetId}: ${targetTweetObj.likes}`);
-        const heartIconElement = document.querySelector(`.fa-heart[data-like="${tweetId}"]`)
-        console.log("Heart icon element:", heartIconElement)
-        if (heartIconElement) {
-           const tweetElement = heartIconElement.closest('.tweet')
-            console.log("Parent tweet element", tweetElement)
-            if(tweetElement) {
-                const likeCountElement = tweetElement.querySelector('.like-count');
-                console.log("likeCountElement:", likeCountElement)
-                if(likeCountElement) {
-                    likeCountElement.innerHTML = `${targetTweetObj.likes}`
-                } else {
-                    console.log("likeCountElement not Found")
-                    }
-                }
-            } else {
-                console.log("Heart icon element not found!")
-            }
-         } else {
-            console.log("Tweet not found")
-        }
-    }
-
-
+function handleLikeClick(tweetId){ 
+    const targetTweetObj = tweetsData.filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
+    
+/*
+Challenge:
+1. When a tweet is liked, it's 'isLiked' property
+   should be set to true.
+2. When a tweet is unliked, it's 'isLiked' property
+   should be set to false and its 'likes' count
+   should be decremented.
+*/   
+    targetTweetObj.likes++
+    
+    render()
+}
 
 function getFeedHtml(){
     let feedHtml = ``
@@ -65,9 +52,7 @@ function getFeedHtml(){
                     <i class="fa-solid fa-heart"
                     data-like="${tweet.uuid}"
                     ></i>
-                    <span class="like-count">
                     ${tweet.likes}
-                    </span>
                 </span>
                 <span class="tweet-detail">
                     <i class="fa-solid fa-retweet"
@@ -89,3 +74,4 @@ function render(){
 }
 
 render()
+
