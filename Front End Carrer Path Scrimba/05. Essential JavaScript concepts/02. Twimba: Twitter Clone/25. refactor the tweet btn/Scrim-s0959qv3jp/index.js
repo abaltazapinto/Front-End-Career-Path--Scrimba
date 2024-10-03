@@ -2,21 +2,29 @@ import { tweetsData } from './data.js'
 const tweetInput = document.getElementById('tweet-input')
 const tweetBtn = document.getElementById('tweet-btn')
 
-tweetBtn.addEventListener('click', function(){
-    console.log(tweetInput.value)
-})
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
-       handleLikeClick(e.target.dataset.like) 
+       handleLikeClick(e.target.dataset.like)
     }
     else if(e.target.dataset.retweet){
         handleRetweetClick(e.target.dataset.retweet)
     }
     else if(e.target.dataset.reply){
         handleReplyClick(e.target.dataset.reply)
-        console.log(e.target.dataset.reply)
     }
+    else if(tweetBtn) {
+
+        handleTweetBtnClick()
+    }
+/*
+Challenge:
+1. Add an else if so that if the Tweet button
+   is clicked, handleTweetBtnClick is called.
+*/ 
 })
  
 function handleLikeClick(tweetId){ 
@@ -38,8 +46,6 @@ function handleRetweetClick(tweetId){
     const targetTweetObj = tweetsData.filter(function(tweet){
         return tweet.uuid === tweetId
     })[0]
-
-    console.log(targetTweetObj.replies)
     
     if(targetTweetObj.isRetweeted){
         targetTweetObj.retweets--
@@ -52,17 +58,11 @@ function handleRetweetClick(tweetId){
 }
 
 function handleReplyClick(replyId){
-    
-/*
-Challenge:
-1. Use the uuid stored in 'replyId' to take control 
-   of the div containing that tweet’s replies. 
-   (Check the HTML string below to remind yourself 
-   what id that div will have.)  
-2. Toggle the CSS class "hidden" on that div. 
-*/ 
+    document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+}
 
-document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+function handleTweetBtnClick(){
+    console.log(tweetInput.value)
     
 }
 
@@ -88,16 +88,16 @@ function getFeedHtml(){
         if(tweet.replies.length > 0){
             tweet.replies.forEach(function(reply){
                 repliesHtml+=`
-            <div class="tweet-reply">
-                <div class="tweet-inner">
-                    <img src="${reply.profilePic}" class="profile-pic">
-                        <div>
-                            <p class="handle">${reply.handle}</p>
-                            <p class="tweet-text">${reply.tweetText}</p>
-                        </div>
-                    </div>
+<div class="tweet-reply">
+    <div class="tweet-inner">
+        <img src="${reply.profilePic}" class="profile-pic">
+            <div>
+                <p class="handle">${reply.handle}</p>
+                <p class="tweet-text">${reply.tweetText}</p>
             </div>
-            `
+        </div>
+</div>
+`
             })
         }
         
