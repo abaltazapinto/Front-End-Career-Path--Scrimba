@@ -84,7 +84,7 @@ Challenge:
 </div>
 */
     tweet.replies.forEach(function(reply) {
-            repliesHtml = `
+            repliesHtml += `
                 <div class="tweet-reply">
                 <div class="tweet-inner">
                     <img src="${reply.profilePic}" class="profile-pic">
