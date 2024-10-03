@@ -1,11 +1,16 @@
 import { tweetsData } from './data.js'
 const tweetInput = document.getElementById('tweet-input')
-const tweetBtn = document.getElementById('tweet-btn')
+
 
 // tweetBtn.addEventListener('click', function(){
 //     console.log(tweetInput.value)
 // })
 
+/*
+Challenge:
+1. Somewhere in index.js there is a line of code 
+   we no longer need. Find it and delete it!
+*/ 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
        handleLikeClick(e.target.dataset.like)
@@ -16,7 +21,7 @@ document.addEventListener('click', function(e){
     else if(e.target.dataset.reply){
         handleReplyClick(e.target.dataset.reply)
     }
-    else if(tweetBtn) {
+    else if(e.target.id === 'tweet-btn') {
 
         handleTweetBtnClick()
     }
