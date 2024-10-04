@@ -64,7 +64,7 @@ Challenge:
 1. No empty tweets!
 2. Clear the textarea after tweeting!
 */
-     if(tweetInput.value.length > 0 && tweetInput.value.trim() !== '')   
+     if(tweetInput.value && tweetInput.value.trim() !== '')   
         tweetsData.unshift({
             handle: `@Scrimba`,
             profilePic: `images/scrimbalogo.png`,
