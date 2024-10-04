@@ -70,10 +70,23 @@ function handleTweetBtnClick(){
         text: tweetText,
         id: tweetId,
         handle: '@Scrimba',
-        profilePic: './images/scrimbalogo.png'
+        profilePic: 'images/scrimbalogo.png',
+        likes: 0,
+        retweets: 0,
+        replies: [
+            {
+                handle: `@TomCruise ✅`,
+                profilePic: `./images/flower.png`,
+                tweetText: `Yes! Sign me up! 😎🛩`,
+            }
+        ],
+        isLiked: false,
+        isRetweeted: false,
+        uuid: uuidv4()
     }
-
+    
     // appending to the feed
+
     const feed = document.getElementById('feed')
     const tweetElement= document.createElement('div')
     tweetElement.classList.add('tweet')
@@ -83,10 +96,34 @@ function handleTweetBtnClick(){
         <div>
             <p class=handle> ${newTweet.handle} </p>
             <p class="tweet-text" > ${newTweet.text} </p>
-            
-        </div>
+            <div class="tweet-details">
+                 <span class="tweet-detail">
+                     <i class="fa-regular fa-comment-dots"
+                     data-reply="${newTweet.uuid}"
+                     ></i>
+                     ${newTweet.replies.length}
+                 </span>
+                <span class="tweet-detail">
+                     <i class="fa-solid fa-heart "
+                     data-like="${newTweet.uuid}"
+                     ></i>
+                     ${newTweet.likes}
+                 </span>
+                 <span class="tweet-detail">
+                     <i class="fa-solid fa-retweet "
+                     data-retweet="${newTweet.uuid}"
+                     ></i>
+                     ${newTweet.retweets}
+                 </span>
+             </div>   
+         </div>            
+     </div>
+     <div class="hidden" id="replies-${newTweet.uuid}">
+         
+    </div>   
+ </div>
     `
-    feed.appendChild(tweetElement)
+     feed.appendChild(tweetElement)
 /*
 Challenge:
 2. When the Tweet button is clicked, log out an object
@@ -97,6 +134,7 @@ Challenge:
    The handle @Scrimba (or whatever you prefer) and 
    the profile pic scrimbalogo.png can be hard-coded.
 */ 
+    
 }
 
 function getFeedHtml(){
