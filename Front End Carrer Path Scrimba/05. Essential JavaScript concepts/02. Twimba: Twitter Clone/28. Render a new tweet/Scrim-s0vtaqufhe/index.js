@@ -58,7 +58,7 @@ Challenge:
 1. Add the new tweet object to 'tweetsData'
    and make it render at the top of the feed. 
 */ 
-    console.log({
+    const newTweet = {
         handle: `@Scrimba`,
         profilePic: `images/scrimbalogo.png`,
         likes: 0,
@@ -68,8 +68,14 @@ Challenge:
         isLiked: false,
         isRetweeted: false,
         uuid: uuidv4()
-    })
+    }
+    // add new tweet to the top of the tweetsData array
+    tweetsData.unshift(newTweet)
+   
+    render()
 }
+
+tweetInput.addEventListener('click', handleLikeClick)
 
 function getFeedHtml(){
     let feedHtml = ``
