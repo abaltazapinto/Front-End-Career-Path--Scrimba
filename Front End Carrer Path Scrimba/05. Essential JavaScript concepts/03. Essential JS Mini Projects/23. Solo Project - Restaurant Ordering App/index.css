@@ -1,3 +1,46 @@
 body {
     margin: 0;
 } 
+.upper-img {
+}
+
+.carousel img {
+    width: 80%;
+    height: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    top: 0;
+    left: 100%;
+    transition: left 0.5s ease;
+    opacity: 1;
+    z-index: 1;
+}
+
+.carrousel img.active {
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+    top: -100%;
+}
+
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
