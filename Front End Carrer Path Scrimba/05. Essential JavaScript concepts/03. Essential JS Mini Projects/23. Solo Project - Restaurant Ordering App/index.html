@@ -6,10 +6,15 @@
        <title>Jimmy's Diner Restaurant</title>
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <!-- Poppins -->
        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-   
+   <!-- smythe -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
         <!-- Put an img for the restaurant site ad app -->
     </head>
+    <body>
     <aside>
         <input type="checkbox" id="darkmode-toggle" aria-label="Toggle dark mode"/>
         <label for="darkmode-toggle" class="toggle-label" aria-hidden="true">
@@ -38,30 +43,36 @@
                  L12.212,17.855z"/>
              </g>
              </svg>
-                <svg version="1.1" class="moon" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg version="1.1" class="moon" width="24px" height="24px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
         </label>
-    </aside>
-    <section aria-label="Newest plates">
-        <div class="carousel" data-carousel>
-            <button class="carousel-button prev" data-carousel-button="prev">&#10232;</button>
-            <button class="carousel-button next" data-carousel-button="next">&#10233;</button>    
-            <ul data-slides>
-                <li class="slide" data-active>
-                    <img src="images/resized_pizza_full_514x144.png" alt="Pizza" >
-                </li>
-                <li class="slide" >
-                    <img src="images/upper-image.png" alt="hamburguer">  
-                </li>
-                <li class="slide" >
-                    <img src="images/hamburguer-img.jpg" alt="Pizzas" >
-                </li>
-            </ul>
-        </div>    
-    </section> 
-      <body>
-	<script src="index.js"></script>
+    </aside>    
+      <!-- use prettier on th eproject  -->
+    <header>    
+        <section aria-label="Newest plates" >
+            <div class="carousel" data-carousel>
+                <button class="carousel-button prev" data-carousel-button="prev">&#10232;</button>
+                <button class="carousel-button next" data-carousel-button="next">&#10233;</button>    
+                <ul data-slides>
+                    <li class="slide" data-active>
+                        <img src="images/resized_pizza_full_514x144.png" alt="Pizza" >
+                    </li>
+                    <li class="slide" >
+                        <img src="images/upper-image.png" alt="hamburguer">  
+                    </li>
+                </ul>
+            </div>    
+        </section>
+    </header> 
+        <section aria-label="restautant-menu" class="container">
+            <main class="items">  
+
+            </main>
+        
+        </section>
+	<script src="index.js" type="module"></script>
+    <script src="data.js" type="module"></script>
     </body>
 </html>
 

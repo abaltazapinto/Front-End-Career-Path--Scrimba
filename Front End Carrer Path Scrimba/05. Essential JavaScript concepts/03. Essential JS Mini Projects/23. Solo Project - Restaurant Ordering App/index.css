@@ -1,22 +1,24 @@
-*, *::before, *::after {
+/* *, *::before, *::after {
     box-sizing: border-box;
-}
+} */
 
 html,
 body {
+    
     background-color: var(--background);
     color: var(--text-color);
     display: flex;
-    height: 100%;
-    min-height: 100vh;
+    flex-direction: column;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
     font-family: "Poppins", sans-serif;
+    margin: 0;
 }
 
 :root {
     --main-image-outline: #222222;
+    --outline: #222222;
     --white: #fbfbfb;
     --text-color: #201a23;
     --purple: #9e4770;
@@ -31,6 +33,7 @@ body {
   
   .dark-mode {
     --main-image-outline: #fff;
+    --outline: #fff;
     --black: #201a23;
     --background: #222222;
     /* --white-background: #f5f9e9; */
@@ -43,6 +46,13 @@ body {
     --sales-color: #44354a;
   }
 
+
+/*  trying to tackle the bug */
+div, img {
+    max-height: 100vh;
+    height: auto;
+    object-fit: contain;
+}
 /* for the dark-mode toggle */
 
 
@@ -85,13 +95,13 @@ input {
 }
 
 input:checked + label {
-    background: #242424 
+    background: #242424  
 }
 
 input:checked + label:after {
     left: calc( 100% - 15%);
     transform: translateX(-100%);
-    /* background: linear-gradient(180deg, #777, #3a3a3a); */
+    background: linear-gradient(180deg, #777, #3a3a3a); 
 }
 
 label, label::after {
@@ -101,6 +111,7 @@ label:active:after {
     width: 26px;
 }
 
+/* Carousel */
 .carousel{
     width: 100vw;
     height: 100vh;
@@ -122,14 +133,12 @@ label:active:after {
 }
 
  .slide > img {
-    display: block;
+    display: flex;
     width: 100%;
     height: 15%;
-    padding-right: 20px;
-    padding-left: 10px;
     padding-top: 10px;
-    object-fit: cover;
-    object-position: center;
+    /* object-fit: cover; 
+    object-position: center;  */
  }
  .slide[data-active ="true"] {
     opacity: 1;
@@ -167,4 +176,104 @@ label:active:after {
  }
  .carousel-button.next {
     right: 1rem
+ }
+
+ /* Control the sizes of the <li> elements */
+
+ ul.data-slides {
+    height: auto;
+ }
+
+ li.slide {
+    min-height: 100px;
+    /* max-height: 200px ; */
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-grow: 0;
+ }
+
+li.slide img {
+    height: 100px;
+    object-fit: cover;
+    width: 100%;
+ }
+ 
+ .carousel {
+    height: 15vh;
+     display: block;
+     flex-direction: column;
+    }
+    
+    /*  Container */
+ .container {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+    
+ }
+
+ ul.data-slides {
+    height: 100%;
+ }
+
+ .items {
+    display: flex;
+    flex-direction: row;
+ }
+
+ .img-item {
+    width: 70px;
+    height: 89px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 150px;
+    padding-right: 50px;
+    padding-top: 60px;
+ }
+
+ .menu-items {
+    font-size: 28;
+    font-weight: bold;
+    font-family: "Smythe", system-ui;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-bottom: 1px solid #222
+ }
+
+
+
+ .price {
+    font-size: 20;
+    font-family: "Smythe", system-ui;
+ }
+
+ .description {
+    display: block;
+    flex-grow: 1;
+    padding-right: 200px;
+    
+ }
+
+ h6 {
+    font-size: 16;
+    font-weight: lighter;
+ }
+
+ .plus-button {
+    margin-top: 10%;
+    width: 40px;
+    height: 40px;
+    outline: 2px solid var(--outline);
+    border-radius: 50%;
+    background-color: var(--background);
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
  }
