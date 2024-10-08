@@ -1,18 +1,28 @@
 <html lang="en">
     <head>
        <link rel="stylesheet" href="index.css">
-       <meta name="viewport" content="wisth=device-width", initial-scale="1.0">
-       <title>Jimmy's Diner</title>
+       <meta http-equiv="X-UA-Compatible" content="IE-edge">
+       <meta name="viewport" content="width=device-width", initial-scale="1.0">
+       <title>Jimmy's Diner Restaurant</title>
         <!-- Put an img for the restaurant site ad app -->
     </head>
-    <div class="carousel">
-        <img src="images/upper-image.png" alt="menu-image 1" class="carousel-image active">  
-        <img src="images/resized_pizza_full_514x144.png" alt="menu-image 2«" class="carousel-image">    
-    </div>
-    <div class="dots">
-        <span class="dot active" onclick="showSlide(0)"></span>
-        <span class="dot" onclick="showSlide(1)"></span>
-    </div>
+    <section aria-label="Newest plates">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">&#10232;</button>
+            <button class="carousel-button next" data-carousel-button="next">&#10233;</button>    
+            <ul data-slides>
+                <li class="slide" data-active>
+                    <img src="images/resized_pizza_full_514x144.png" alt="Pizza" >
+                </li>
+                <li class="slide" >
+                    <img src="images/upper-image.png" alt="hamburguer">  
+                </li>
+                <li class="slide" >
+                    <img src="images/hamburguer-img.jpg" alt="Pizzas" >
+                </li>
+            </ul>
+        </div>    
+    </section> 
       <body>
 	<script src="index.js"></script>
     </body>

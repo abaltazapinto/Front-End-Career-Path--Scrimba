@@ -1,18 +1,28 @@
 // script.js
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-image');
-const dots = document.querySelectorAll('.dot');
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        dots[i].classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
-            dots[i].classList.add('active');
-        }
-    });
-    currentSlide = index;
+const buttons = document.querySelectorAll("[data-carousel-button]")
+console.log(buttons)
+if (buttons) {  
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const offset = button.dataset.carouselButton === "next" ? 1 : -1
+        const offsetless = button.dataset.carouselButton === "prev" ? -1 : 1
+        const slides = button
+            .closest("[data-carousel]")
+            .querySelector("[data-slides]")
+
+        const activeSlide = slides.querySelector("[data-active]")
+        console.log("active slide",activeSlide)
+
+        let newIndex = [...slides.children].indexOf(activeSlide) + offset 
+        console.log("new index", newIndex)
+
+        if(newIndex < 0) newIndex = slides.children - 1
+        if(newIndex >= slides.children.length) newIndex = 0
+
+        slides.children[newIndex].dataset.active = true
+        delete activeSlide.dataset.active
+    })
 }
-
-showSlide(currentSlide);
+)
+}
