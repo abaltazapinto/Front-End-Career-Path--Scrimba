@@ -50,7 +50,7 @@
     </aside>    
       <!-- use prettier on th eproject  -->
     <header>    
-        <section aria-label="Newest plates" >
+        <section aria-label="Newest plates" class="menu-section">
             <div class="carousel" data-carousel>
                 <button class="carousel-button prev" data-carousel-button="prev">&#10232;</button>
                 <button class="carousel-button next" data-carousel-button="next">&#10233;</button>    
@@ -68,11 +68,15 @@
             </div>    
         </section>
     </header> 
-        <section aria-label="restautant-menu" class="container">
+         <section aria-label="restaurant-menu" id="menu-items"> 
             <main class="items">  
-
             </main>
         </section>
+        <section aria-label="Total order and price" class="order-section">
+        </section>
+        <!-- <section aria-label="Button for completing the order" class="complete-order">
+          <button id="complete-order"> Complete order</button>
+        </section> -->
 	<script src="index.js" type="module"></script>
     <script src="data.js" type="module"></script>
     </body>
