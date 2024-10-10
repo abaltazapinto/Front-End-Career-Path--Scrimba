@@ -114,8 +114,10 @@ function initializeMenuButtons() {
 
             orderList.push(orderItem);
             updateOrder();
+            document.querySelector('#complete-order').addEventListener('click', initializeCardDetails)
         });
     });
+    
 }
 
 function updateOrder() {
@@ -185,34 +187,47 @@ initializeMenuButtons();
 // handle the completeOrder Function
 
 function initializeCardDetails() {
+    
     const sectionPayementByCard = document.createElement('section');
-    sectionPayementByCard.classList('section-payment');
+    sectionPayementByCard.classList.add('section-payment');
   
     const mainPayementByCard = document.createElement('main')
-    mainPayementByCard.classList('main-payment');
+    mainPayementByCard.classList.add('main-payment');
     
     const modalContent = document.createElement('div');
+    const modalText = document.createElement('h2')
+    modalText.textContent = `Enter card details`;
     modalContent.classList.add('modal-content');
-    modalContent.appendChild(modalName);
     
-    const modalName = document.createElement('div');
-    modalName.ariaPlaceholder = 'Enter your name';
-    modalName.classList.add('card-name')
-    modalContent.appendChild(modalCardNumber)
-
-    const modalCardNumber = document.createElement('div');
-    modalCardNumber.ariaPlaceholder = "Enter card number";
-    modalCardNumber.classList.add('card-number')
-    modalContent.appendChild(modalCVV)
-
-    const modalCVV = document.createElement('div');
-    modalCVV.ariaPlaceholder = "Enter CVV"
-    modalCVV.classList.add('card-cvv')
+    modalContent.appendChild(modalText)
+    // create name
+    const nameInput = document.createElement('input');
+    nameInput.setAttribute('type', 'text');
+    nameInput.setAttribute('placeholder', 'Enter your name');
+    nameInput.id = 'card-name'
+    nameInput.classList.add('card-name');
+    modalContent.appendChild(nameInput)
     
+
+    // create card
+    const cardNumberInput = document.createElement('input');
+    cardNumberInput.setAttribute('type', 'text');
+    cardNumberInput.setAttribute('placeholder', 'Enter card number');
+    cardNumberInput.classList.add('card-number');
+    modalContent.appendChild(cardNumberInput)
+
+    //create Cvv 
+    const cvvInput = document.createElement('input');
+    cvvInput.setAttribute('type', 'text')
+    cvvInput.setAttribute('placeholder', 'Enter CVV')
+    cvvInput.classList.add('card-cvv')
+    modalContent.appendChild(cvvInput)
+
+    // create pay button
     const buttonPay = document.createElement('button')
     buttonPay.classList.add('complete-payment')
     buttonPay.textContent = 'Pay'
-
+    buttonPay.addEventListener('click', handleCompleteOrder);
 
     mainPayementByCard.appendChild(modalContent);
     mainPayementByCard.appendChild(buttonPay)
@@ -223,9 +238,7 @@ function initializeCardDetails() {
 }
 
 // add an event listener to plot the modal 
-document.addEventListener('DOMContentLoaded', function() {
-document.querySelector('#complete-order').addEventListener('click', initializeCardDetails)
-document.querySelector('#complete-order').addEventListener('click', function (){
-    console.log("clicked")
-})
-})
+function handleCompleteOrder(){
+    alert('Payement complete')
+}
+
