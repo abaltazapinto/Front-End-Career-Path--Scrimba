@@ -54,6 +54,9 @@ menuArray.forEach(item => {
     imgItem.src = `${item.image}`
     imgItem.alt = item.name;
 
+    const wrapImgPlus = document.createElement('div')
+    wrapImgPlus.classList.add('wrappedItems')
+
     const itemSolo = document.createElement('div')
     itemSolo.classList.add('description')
     
@@ -69,6 +72,7 @@ menuArray.forEach(item => {
 
     const button = document.createElement('div')
     button.classList.add('plus')
+
     const buttonPlus = document.createElement('button')
     buttonPlus.id = 'button+'
     buttonPlus.textContent = "+";
@@ -79,9 +83,14 @@ menuArray.forEach(item => {
     menuItem.appendChild(itemSolo)
     menuItem.appendChild(button)
     button.appendChild(buttonPlus)
+    
+    menuItem.appendChild(wrapImgPlus)
+    wrapImgPlus.appendChild(itemSolo);
+    wrapImgPlus.appendChild(buttonPlus)
     itemSolo.appendChild(itemName)
     itemSolo.appendChild(itemIngredients);
     itemSolo.appendChild(itemPrice)
+
 
     menuSection.appendChild(menuItem)
 })
@@ -165,6 +174,7 @@ function updateOrder() {
     orderSection.appendChild(totalPriceDiv)
 
     const buttonOrder = document.createElement('button')
+    buttonOrder.id = ('complete-order')
     buttonOrder.classList.add('complete-order')
     buttonOrder.textContent = `Complete order`
     orderSection.appendChild(buttonOrder)
@@ -172,3 +182,50 @@ function updateOrder() {
 
 initializeMenuButtons();
 
+// handle the completeOrder Function
+
+function initializeCardDetails() {
+    const sectionPayementByCard = document.createElement('section');
+    sectionPayementByCard.classList('section-payment');
+  
+    const mainPayementByCard = document.createElement('main')
+    mainPayementByCard.classList('main-payment');
+    
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+    modalContent.appendChild(modalName);
+    
+    const modalName = document.createElement('div');
+    modalName.ariaPlaceholder = 'Enter your name';
+    modalName.classList.add('card-name')
+    modalContent.appendChild(modalCardNumber)
+
+    const modalCardNumber = document.createElement('div');
+    modalCardNumber.ariaPlaceholder = "Enter card number";
+    modalCardNumber.classList.add('card-number')
+    modalContent.appendChild(modalCVV)
+
+    const modalCVV = document.createElement('div');
+    modalCVV.ariaPlaceholder = "Enter CVV"
+    modalCVV.classList.add('card-cvv')
+    
+    const buttonPay = document.createElement('button')
+    buttonPay.classList.add('complete-payment')
+    buttonPay.textContent = 'Pay'
+
+
+    mainPayementByCard.appendChild(modalContent);
+    mainPayementByCard.appendChild(buttonPay)
+
+    sectionPayementByCard.appendChild(mainPayementByCard)
+
+    document.body.appendChild(sectionPayementByCard)
+}
+
+// add an event listener to plot the modal 
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelector('#complete-order').addEventListener('click', initializeCardDetails)
+document.querySelector('#complete-order').addEventListener('click', function (){
+    console.log("clicked")
+})
+})

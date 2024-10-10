@@ -247,6 +247,14 @@ li.slide img {
    font-weight: lighter;
  }
 
+.wrappedItems {
+   z-index: 888;
+   display: flex;
+   justify-content: space-between;
+   width: 100%; 
+   padding-left: 30px;
+}
+
  .plus-button {
     width: 40px;
     height: 40px;
@@ -257,7 +265,7 @@ li.slide img {
     font-size: 24px;
     font-weight: bold;
     justify-content: center;
-    align-items: center;
+    align-self: center;
     cursor: pointer;
  }
 
@@ -352,12 +360,44 @@ li.slide img {
    
  }
 
- .complete-order {
+ #complete-order, .complete-payement {
    width: 100%;
+   height: 25%;
    color: white;
    margin-top: 20px;
-   padding: 20px;
    background-color: #16DB99;
    border-radius: 7px;
-   font-weight: 600;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+   font-weight: 700;
  }
+
+ #complete-order:hover , .complete-payement:hover {
+   background-color: #00b89a;
+   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+ }
+
+/*  Handle the modal of payement */
+
+.section-payment {
+   background-color: (var(--background));  
+   z-index: 999;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.main-payment {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.modal-content {
+   padding: 10px;
+}
+
+.card-name, .card-number, .car-cvv {
+   border: 1px solid var(--text-color);
+}
+
