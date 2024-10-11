@@ -1,0 +1,32 @@
+1. Melhore a sua escrita
+Prompt:
+"Corrija os erros gramaticais e ortográficos do text acima. Também quero que forneça sugestões para melhorar a clareza da minha escrita"
+
+2. A Técnica 80 / 20
+Utilize este prompt para aprender mais rápido
+
+Prompt: 
+"Quero aprender sobre [insira o assunto]. Identifique e retorne os 20% mais importantes aprendizados deste assunto que me ajudarão a compreender os 80% necessário."
+
+3. NOVAS HABILIDADES
+Aprenda e desenvolva novas habilidades
+Prompt:
+"quero aprender [insira a habilidade]. Crie um plano simples de 30 dias que ajudará um iniciante como eu a aprender essa habilidade completamente do zero"
+
+4. OTIMIZE SUAS LEITURAS
+Obtenha breves resumos de livros
+Prompt:
+"Resuma o livro [cite o livro] d autor [cite o autor] e me envie uma lista dos pontos mais importantes".
+
+5. FEEDBACK INTELEGENTE 
+Este comando te ajudará a obter opiniões das mentes mais brilhantes da humanidade
+Prompt:
+"Suponha que vocẽ seja [cite uma pessoa, por exemplo: Nikola Tesla]. Leia meu argumento abaixo e me forneça sua opinião como se você fosse [cite a pessoa novamente]"
+[Insira o seu argumento]
+
+6. SOLUCIONE POBLEMAS 
+Este Comando te ajudará na tomada de decisões.
+Prompt: 
+"Seu papelé solucionar problemas. Forneça-me um guia passo a passo para resolver este problema com eficiência [insira o seu problema].
+
+Respire fundo e desenvolva uma lista com prś e contras para que eu possa tomar a melhor decisão"
