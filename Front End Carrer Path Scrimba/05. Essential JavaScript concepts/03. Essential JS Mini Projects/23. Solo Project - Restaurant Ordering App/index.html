@@ -1,5 +1,7 @@
 <html lang="en">
   <head>
+    <!-- CSP policies -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; object-src 'none';"> -->
     <link rel="stylesheet" href="index.css" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
@@ -135,15 +137,15 @@
     <header>
       <section aria-label="Newest plates" class="menu-section">
         <div class="carousel" data-carousel>
-          <button class="carousel-button prev" data-carousel-button="prev">
+          <button class="carousel-button prev" data-carousel-button="prev" aria-label="Previous slide">
             &#10232;
           </button>
-          <button class="carousel-button next" data-carousel-button="next">
+          <button class="carousel-button next" data-carousel-button="next" aria-label="Next slide">
             &#10233;
           </button>
           <ul data-slides>
             <li class="slide" data-active>
-              <img src="images/resized_pizza_full_514x144.png" alt="Pizza" />
+              <img src="./images/resized_pizza_full_514x144.png" alt="Pizza" />
             </li>
             <li class="slide">
               <img src="./images/burger-head.png" alt="hamburguer" />
@@ -166,6 +168,8 @@
     <script src="index.js" type="module">
       defer
     </script>
-    <!-- <script src="data.js" type="module"> defer</script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
+
   </body>
 </html>

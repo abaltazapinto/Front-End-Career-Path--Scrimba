@@ -10,7 +10,6 @@ toggle.setAttribute(
 toggle.addEventListener("change", function () {
   document.body.classList.toggle("dark-mode", toggle.checked);
 });
-
 //handle the carousel
 const buttons = document.querySelectorAll("[data-carousel-button]");
 if (buttons) {
@@ -26,10 +25,10 @@ if (buttons) {
         .closest("[data-carousel]")
         .querySelector("[data-slides]");
       const activeSlide = slides.querySelector("[data-active]");
-      activeSlide.setAttribute(
-        "aria-label",
-        `The magic plates of our Restaurant`,
+      const sanitizedAriaLabel = DOMPurify.sanitize(
+        `The magic plates of our restaurant`,
       );
+      activeSlide.setAttribute("aria-label", sanitizedAriaLabel);
       // Ensure slides only contain elements that are `li.slide`
       const slideArray = Array.from(slides.children).filter((child) =>
         child.classList.contains("slide"),
@@ -52,9 +51,7 @@ if (buttons) {
     });
   });
 }
-
 //hanle the object menu
-console.log(menuArray);
 menuArray.forEach((item, e) => {
   const menuSection = document.getElementById("menu-items");
   const menuItem = document.createElement("div");
@@ -72,9 +69,9 @@ menuArray.forEach((item, e) => {
   const ariaName = item.name;
   const itemName = document.createElement("h3");
   itemName.setAttribute("aria-label", `Choose one ${ariaName}`);
-  itemName.textContent = item.name;
+  itemName.textContent = DOMPurify.sanitize(item.name);
   const itemIngredients = document.createElement("p");
-  itemIngredients.textContent = item.ingredients.join(", ");
+  itemIngredients.textContent = DOMPurify.sanitize(item.ingredients.join(", "));
   const itemING = item.ingredients.join(", ");
   itemIngredients.setAttribute(
     "aria-label",
@@ -87,7 +84,7 @@ menuArray.forEach((item, e) => {
     `The price of your item is ${ariaPrice}`,
   );
   itemPrice.classList.add("price");
-  itemPrice.textContent = `$${item.price}`;
+  itemPrice.textContent = DOMPurify.sanitize(`$${item.price}`);
   const button = document.createElement("div");
   button.classList.add("plus");
   const addButton = document.createElement("button");
@@ -95,7 +92,6 @@ menuArray.forEach((item, e) => {
   addButton.textContent = "+";
   addButton.setAttribute("aria-label", `Add ${ariaName} to your plate`);
   addButton.classList.add("plus-button");
-
   //append everything
   menuItem.appendChild(imgItem);
   menuItem.appendChild(itemSolo);
@@ -109,9 +105,7 @@ menuArray.forEach((item, e) => {
   itemSolo.appendChild(itemPrice);
   menuSection.appendChild(menuItem);
 });
-
 // handle the Order
-
 let orderList = [];
 
 function initializeMenuButtons() {
@@ -155,22 +149,24 @@ function updateOrder() {
     orderItemDiv.classList.add("name-product");
     const itemSpanNumber = document.createElement("span");
     itemSpanNumber.classList.add("product-number");
-    itemSpanNumber.textContent = `${item.quantity}`;
+    itemSpanNumber.textContent = DOMPurify.sanitize(`${item.quantity}`);
     const itemNameSpan = document.createElement("span");
     itemNameSpan.classList.add("product-name");
-    itemNameSpan.textContent = `${item.name} x${item.quantity}`;
-    itemNameSpan.setAttribute(
-      "aria-label",
+    itemNameSpan.textContent = DOMPurify.sanitize(
+      `${item.name} x${item.quantity}`,
+    );
+    const itemNameSpanAriaLabel = DOMPurify.sanitize(
       `You are ordering: ${itemNameSpan.textContent}`,
     );
+    itemNameSpan.setAttribute("aria-label", itemNameSpanAriaLabel);
 
     const itemPriceSpan = document.createElement("span");
     itemPriceSpan.classList.add("product-price");
     itemPriceSpan.textContent = `$${item.price.toFixed(2)}`;
-    itemPriceSpan.setAttribute(
-      "aria-label",
+    const itemPriceSpanAriaLabel = DOMPurify.sanitize(
       `The price of your ${itemNameSpan.textContent} is ${itemPriceSpan.textContent}`,
     );
+    itemPriceSpan.setAttribute("aria-label", itemNameSpanAriaLabel);
 
     orderItemDiv.appendChild(itemNameSpan);
     orderItemDiv.appendChild(itemPriceSpan);
@@ -211,9 +207,9 @@ function initializeCardDetails() {
   const mainPayementByCard = document.createElement("main");
   mainPayementByCard.classList.add("main-payment");
 
-  const modalContent = document.createElement("form");
+  let modalContent = document.createElement("form");
   const modalText = document.createElement("h2");
-  modalText.textContent = `Enter card details`;
+  modalText.textContent = DOMPurify.sanitize(`Enter card details`);
   modalText.setAttribute("aria-label", `Enter your card details input`);
   modalContent.classList.add("modal-content");
   modalContent.id = "paymentForm";
@@ -223,11 +219,17 @@ function initializeCardDetails() {
   const nameInput = document.createElement("input");
   nameInput.setAttribute("type", "text");
   nameInput.setAttribute("placeholder", "Enter your name");
+
+  modalContent.appendChild(nameInput);
   nameInput.setAttribute("aria-label", `Enter your name in this input`);
-  nameInput.id = "card-name";
   nameInput.classList.add("card-name");
   nameInput.setAttribute("required", "true");
-  modalContent.appendChild(nameInput);
+  nameInput.setAttribute("pattern", "[A-Za-zÀ-ÿ\\s]+");
+  nameInput.setAttribute("autocomplete", "off");
+  nameInput.setAttribute(
+    "title",
+    "Name should only contain letters, including accented characters and spaces",
+  );
 
   // create card
   const cardNumberInput = document.createElement("input");
@@ -239,6 +241,13 @@ function initializeCardDetails() {
   );
   cardNumberInput.classList.add("card-number");
   cardNumberInput.setAttribute("required", "true");
+  cardNumberInput.setAttribute("pattern", "\\d{16}");
+  cardNumberInput.setAttribute(
+    "title",
+    "Please enter a valid 15-digit card number",
+  );
+  cardNumberInput.setAttribute("min", "0");
+  cardNumberInput.setAttribute("autocomplete", "off");
   modalContent.appendChild(cardNumberInput);
 
   //create Cvv
@@ -248,6 +257,10 @@ function initializeCardDetails() {
   cvvInput.setAttribute("required", true);
   cvvInput.setAttribute("aria-label", `Enter card CVV in this input`);
   cvvInput.classList.add("card-cvv");
+  cvvInput.setAttribute("pattern", "\\d{3}");
+  cvvInput.setAttribute("autocomplete", "off");
+  cvvInput.setAttribute("min", "0");
+  cardNumberInput.setAttribute("title", "Please enter a valid 3-digit CVV");
   modalContent.appendChild(cvvInput);
 
   // create pay button
@@ -255,16 +268,28 @@ function initializeCardDetails() {
   buttonPay.classList.add("complete-payment");
   buttonPay.textContent = "Pay";
   buttonPay.setAttribute("aria-label", "Pay the bill with your card");
+
   buttonPay.addEventListener("click", function (event) {
     if (
       cvvInput.checkValidity() &&
       cardNumberInput.checkValidity() &&
       nameInput.checkValidity()
     ) {
+      //sanitize everything
+      const sanitizedCardNumber = DOMPurify.sanitize(cardNumberInput.value);
+      const sanitizeCvv = DOMPurify.sanitize(cvvInput.value);
+      const sanitizedName = DOMPurify.sanitize(nameInput.value);
+
       handleCompleteOrder();
     } else {
-      event.preventDefault();
-      alert("Please fill in all required fields");
+      //   event.preventDefault();
+      if (!nameInput.checkValidity()) {
+        alert("Only letters allowed in the name field");
+      } else if (!cardNumberInput.checkValidity()) {
+        alert("Please enter a valid card number (16 digits)");
+      } else if (!cvvInput.checkValidity()) {
+        alert(`Please Enter a valid CVV "`);
+      }
     }
   });
   mainPayementByCard.appendChild(modalContent);
@@ -277,8 +302,20 @@ function initializeCardDetails() {
 function handleCompleteOrder() {
   const sectionTotal = document.querySelector(".section-payment");
   sectionTotal.classList.add("hidden");
-  const sectionOrder = document.querySelector(".order-section");
+  let sectionOrder = document.querySelector(".order-section");
   const nameInput = document.querySelector(".card-name");
-  sectionOrder.textContent = `Thanks, ${nameInput.value}! Your order is on its way!`;
+  const sanitizedName = DOMPurify.sanitize(nameInput.value);
+  sectionOrder.textContent = DOMPurify.sanitize(
+    `Thanks, ${sanitizedName}! Your order is on its way!`,
+  );
   sectionOrder.classList.add("good-bye");
+  //clears the form inputs
+  document.querySelector("#paymentForm").reset();
+  setTimeout(() => {
+    sectionTotal.remove();
+    sectionOrder.remove();
+  }, 2500);
+  setTimeout(() => {
+    window.location.reload();
+  }, 3500);
 }
