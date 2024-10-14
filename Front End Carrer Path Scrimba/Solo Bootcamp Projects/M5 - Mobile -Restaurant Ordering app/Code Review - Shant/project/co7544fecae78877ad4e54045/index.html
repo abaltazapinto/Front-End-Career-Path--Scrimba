@@ -1,12 +1,29 @@
 <html lang="en">
-    <head>
-        <!-- Policies -->
-         <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; object-src 'none';"> -->
-        <link rel="stylesheet" href="index.css">
-        <title>Invoice Creator</title>
-        <!-- misses an image for the site like a icon -->
-    </head>
-    <body>
+  <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- CSP policies -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; object-src 'none';"> -->
+     <link rel="icon" href="./images/burger.png"/>
+    <link rel="stylesheet" href="index.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Jimmy's Diner Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- smythe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Put an img for the restaurant site ad app -->
+  </head>
+  <body>
     <aside
       class="dark && light mode"
       alt="toggle-label for dark and light modes"
@@ -117,46 +134,43 @@
         </svg>
       </label>
     </aside>
-    <div class="container">
-        <section class="section1st invoice-title">
-            <h1 class="invoice-title">
-                Invoice creator
-                <p class="subtitle">Thanks for chosing Confiplus, LLC!</p>
-            </h1>
-            <div class="invoiceSection">
-              <h3> Work </h3>
-              <ul id="selectedItems"></ul>
-              <p id="totalAmount"></p>
-            </div>
-        </section>
-        <section class="carousel-container">
-            <div class="carousel-container">
-                <div id="carousel" class="carousel">
-                </div>
-                <button id="prevBtn">&#8249;</button>
-                <button id="nextBtn">&#8250;</button>
-            </div>
-        </section>
-        <section>
-            <footer>
-              <div class="invoice-section">
-                <div class="invoice-header">
-                    <span>TASK</span>
-                    <span>TOTAL</span>
-                </div>
-                <ul id="selectedItems"></ul>
-                <div class="total-row">
-                    <span>TOTAL AMOUNT</span>
-                    <span id="totalAmount">$0</span>
-                </div>
-            </div>
-                <button id="send-invoice-btn">
-                    ✉️ Send to Invoice
-                </button>
-            </footer>
-        </section>
-    </div>
-        <script src="index.js" type="module"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
-    </body>
+    <!-- use prettier on th eproject  -->
+    <header>
+      <section aria-label="Newest plates" class="menu-section">
+        <div class="carousel" data-carousel>
+          <button class="carousel-button prev" data-carousel-button="prev" aria-label="Previous slide">
+            &#10232;
+          </button>
+          <button class="carousel-button next" data-carousel-button="next" aria-label="Next slide">
+            &#10233;
+          </button>
+          <ul data-slides>
+            <li class="slide" data-active>
+              <img src="./images/resized_pizza_full_514x144.png" alt="Pizza" />
+            </li>
+            <li class="slide">
+              <img src="./images/burger-head.png" alt="hamburguer" />
+            </li>
+            <li class="slide">
+              <img src="./images/upper-image.png" alt="hamburguer" />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </header>
+    <section aria-label="restaurant-menu" id="menu-items">
+      <main class="items"></main>
+    </section>
+    <article
+      aria-label="Total order and price || Thank you for your visit"
+      class="order-section"
+    ></article>
+
+    <script src="index.js" type="module">
+      defer
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
+
+  </body>
 </html>
