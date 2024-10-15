@@ -117,16 +117,17 @@
         </svg>
       </label>
     </aside>
+    <aside>
+      <!-- make a div with the spending at the moment -->
+    </aside>
     <div class="container">
         <section class="section1st invoice-title">
             <h1 class="invoice-title">
                 Invoice creator
                 <p class="subtitle">Thanks for chosing Confiplus, LLC!</p>
             </h1>
-            <div class="invoiceSection">
+            <div class="invoice-section">
               <h3> Work </h3>
-              <ul id="selectedItems"></ul>
-              <p id="totalAmount"></p>
             </div>
         </section>
         <section class="carousel-container">
@@ -137,26 +138,28 @@
                 <button id="nextBtn">&#8250;</button>
             </div>
         </section>
-        <section>
+        <section class="footer">
             <footer>
               <div class="invoice-section">
                 <div class="invoice-header">
-                    <span>TASK</span>
-                    <span>TOTAL</span>
+                    <span id="task"> TASK</span>
+                      
+                    <span id="task-total">TOTAL</span>
                 </div>
-                <ul id="selectedItems"></ul>
                 <div class="total-row">
                     <span>TOTAL AMOUNT</span>
                     <span id="totalAmount">$0</span>
                 </div>
             </div>
+            <div class="send-invoice">
                 <button id="send-invoice-btn">
                     ✉️ Send to Invoice
                 </button>
+            </div>
             </footer>
         </section>
     </div>
-        <script src="index.js" type="module"></script>
+        <script src="index.js" type="module" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
     </body>
 </html>

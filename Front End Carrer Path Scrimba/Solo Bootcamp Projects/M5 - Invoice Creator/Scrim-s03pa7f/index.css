@@ -17,11 +17,12 @@ html, body {
 
 :root {
     --main-title: #2b283A;
-    --background-title: #3A69D2;
+    --background-title: #D5D4D8;
     --background: #f5f5f5;
     --text-color-1: #4A4E74;
     --text-color-2: #D5D4D8;
-    --text-color-2: #918E9B;
+    --text-color-3: #918E9B;
+    --text-color-4: #222;
     --button-invoice: #d5D4d8;
     --button-send: #3770ED;
     --button-send-hover: #2860D8;
@@ -32,11 +33,12 @@ html, body {
     --main-title: #f5f5f5;
     --background-title: #3A69D2;
     --background: #1F2937;
-    --text-color-1: #f5f5f5;
+    --text-color-1: #D5D4D8;
     --text-color-2: #D5D4D8;
     --text-color-3: #918E9B;
+    --text-color-4: #222;
     --button-invoice: #d1d4F4;
-    --button-send: #3A69D2;
+    --button-send: #2860D8;
     --button-send-hover: #2860D8;
     --button-text-color: #fff;
 }
@@ -170,7 +172,7 @@ input {
     background: var(--background-title);
     color: var(--main-title);
     width: 590px;
-    height: 190px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -178,22 +180,48 @@ input {
 }
 
 .section1st {
-    border-top: 1px solid var(--text-color-1);
+    border-top: 1px solid var(--text-color-3);
     border-left: 1px solid var(--text-color-1);
     border-right: 1px solid var(--text-color-1);
+    height: auto;
 }
 
 .invoice-title {
+    background: var(--background-title);
+    color: var(--main-title);
+    width: 590px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
     font-weight: 900;
     margin: 0;
+    margin-top: 50px;
+ 
+}
+
+.invoice-section {
+    margin-bottom: 20px;
+}
+
+.invoice-section > h3 {
+    font-size: 30px;
+}
+
+.invoice-section > .invoice-header {
+    border-top: 8px solid var(--text-color-1);
+    padding: 20px;
 }
 .subtitle {
     font-weight: 300;
     font-size: 14px;
-    color: #918E9B;
+    color: var(--text-color-1);
     margin: 0;
     text-align: center;
 }
+
 /* button to send invoice */
 #addToInvoiceBtn {
     border-radius: 8px;
@@ -225,12 +253,12 @@ li {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-    
     position: relative;
-    width: 589px;
+    width: 590px;
     border-left: 1px solid var(--text-color-1);
     border-right: 1px solid var(--text-color-1);
     margin: 0;
+    
 }
 
 .carousel {
@@ -243,11 +271,12 @@ li {
 
 .service-btn {
     background-color: #FFF;
-    color: var(--text-color-1);
+    color: var(--text-color-3);
     border: 1px solid #D5d4D8;
     border-radius: 4px;
     padding: 8px 13px;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 800;
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 10px;
@@ -289,8 +318,31 @@ li {
     display:flex;
     justify-content: space-between;
     flex-direction: row;
-    color: var(--text-color-3);
-    border-bottom: 1px solid var(--text-color-3);
+    color: var(--text-color-1);
+    font-weight: 900;
+    border-bottom: 1px solid var(--text-color-1);
+}
+
+.task {
+
+}
+
+.task-list {
+    list-style-type: none;
+    font-weight: 400;
+    padding: 0;
+}
+
+.service-btn.selected {
+    background-color: #e0e0e0;
+    border: 2px solid #007bff;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color-1);
+    font-weight: 700;
 }
 
 #selectedItems {
@@ -304,18 +356,52 @@ li {
     margin-bottom: 10px;
 }
 
+/* Footer */
+.total-tasks, .task-total {
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-color-1);
+}
+
+.remove-btn {
+    font-size: 10px;
+    font-weight: 300;
+    color: #918E9B;
+    cursor: pointer;
+    border: none;
+    background-color: none;
+}
+
+.footer {
+    width: 589px;
+    border-left: 1px solid var(--text-color-1);
+    border-right: 1px solid var(--text-color-1);
+    border-bottom: 1px solid var(--text-color-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-invoice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
 #send-invoice-btn {
     background-color: var(--button-send);
+    color: var(--button-invoice);
     border:none;
     padding:10px 20px;
     border-radius: 10px;
     margin:20px;
+    margin-bottom: 50px;
+    font-size: 2rem;
 }
 #send-invoice-btn:hover {
     background-color: var(--button-send-hover);
+    font-weight: 900;
 }
 
-.remove-btn {
-    color: #918E9B;
-    cursor: pointer;
-}
