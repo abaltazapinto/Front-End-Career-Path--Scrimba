@@ -1,12 +1,12 @@
 <html lang="en">
-    <head>
-        <!-- Policies -->
-         <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; object-src 'none';"> -->
-        <link rel="stylesheet" href="index.css">
-        <title>Invoice Creator</title>
-        <!-- misses an image for the site like a icon -->
-    </head>
-    <body>
+  <head>
+    <!-- Policies -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; object-src 'none';"> -->
+    <link rel="stylesheet" href="index.css" />
+    <title>Invoice Creator</title>
+    <!-- misses an image for the site like a icon -->
+  </head>
+  <body>
     <aside
       class="dark && light mode"
       alt="toggle-label for dark and light modes"
@@ -121,45 +121,56 @@
       <!-- make a div with the spending at the moment -->
     </aside>
     <div class="container">
-        <section class="section1st invoice-title">
-            <h1 class="invoice-title">
-                Invoice creator
-                <p class="subtitle">Thanks for chosing Confiplus, LLC!</p>
-            </h1>
-            <div class="invoice-section">
-              <h3> Work </h3>
+      <section class="section1st invoice-title">
+        <h1 class="invoice-title">
+          Invoice creator
+          <p class="subtitle">Thanks for chosing Confiplus, LLC!</p>
+        </h1>
+        <div class="invoice-section">
+          <h3>Work</h3>
+        </div>
+      </section>
+      <section class="carousel-container">
+        <div class="carousel-container">
+          <div id="carousel" class="carousel"></div>
+          <button id="prevBtn">&#8249;</button>
+          <button id="nextBtn">&#8250;</button>
+        </div>
+      </section>
+      <section class="footer">
+        <footer>
+          <div class="invoice-section">
+            <div class="invoice-header">
+              <div class="right column">
+              <div id="task" class="right column">TASK</div>
+              <div id="selected-items" class="tasks"></div> 
             </div>
-        </section>
-        <section class="carousel-container">
-            <div class="carousel-container">
-                <div id="carousel" class="carousel">
-                </div>
-                <button id="prevBtn">&#8249;</button>
-                <button id="nextBtn">&#8250;</button>
+            <div>
+              <div class="left column">
+                <div id="left column">TOTAL</div>
+              </div class="left column">
+              <div id="selected-items-count" class="tasks"></div>
             </div>
-        </section>
-        <section class="footer">
-            <footer>
-              <div class="invoice-section">
-                <div class="invoice-header">
-                    <span id="task"> TASK</span>
-                      
-                    <span id="task-total">TOTAL</span>
-                </div>
-                <div class="total-row">
-                    <span>TOTAL AMOUNT</span>
-                    <span id="totalAmount">$0</span>
-                </div>
+          </div>
+            <div class="total-row">
+              <div>
+              <div class="total-row left thin" >Notes</div>
+              <span class="conditionleft thin">We accept cash, credit card, or PayPal</span>
+              </div>
+              <div class="right">
+              <div class="total-row right thin">TOTAL AMOUNT</div>
+              <span class="total-row right" id="totalAmount">$0</span>
+              </div>
             </div>
-            <div class="send-invoice">
-                <button id="send-invoice-btn">
-                    ✉️ Send to Invoice
-                </button>
-            </div>
-            </footer>
-        </section>
+          </div>
+          <div class="send-invoice">
+            <button id="send-invoice-btn">✉️ Send to Invoice</button>
+          </div>
+        </footer>
+      </section>
     </div>
-        <script src="index.js" type="module" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
-    </body>
+  </div>
+    <script src="index.js" type="module" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
+  </body>
 </html>

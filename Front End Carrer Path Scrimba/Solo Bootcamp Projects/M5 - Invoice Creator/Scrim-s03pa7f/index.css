@@ -105,8 +105,8 @@ input {
   
 .container {
     width: 100%;
-    height: 800px;
-    max-width: 600px;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,9 +158,8 @@ input {
         max-width: 1200px; /* Even wider for big screens */
         padding: 24px;
         font-size: 1.2rem;  /* Larger font for big screens */
-        max-height: 800px;
+        max-height: fit-content;
         min-height: 600px;
-        ;
     }
 
     .button {
@@ -171,12 +170,25 @@ input {
 .invoice-title {
     background: var(--background-title);
     color: var(--main-title);
-    width: 590px;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background: var(--background-title);
+    color: var(--main-title);
+    width: inherit;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 900;
+
+ 
 }
 
 .section1st {
@@ -186,28 +198,14 @@ input {
     height: auto;
 }
 
-.invoice-title {
-    background: var(--background-title);
-    color: var(--main-title);
-    width: 590px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    font-weight: 900;
-    margin: 0;
-    margin-top: 50px;
- 
-}
-
 .invoice-section {
     margin-bottom: 20px;
 }
 
 .invoice-section > h3 {
     font-size: 30px;
+    padding: 0;
+    margin: 0;
 }
 
 .invoice-section > .invoice-header {
@@ -245,9 +243,13 @@ li {
 
 #totalAmount {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 36px;
+    line-height: 4px;
+    color: var(--text-color-1);
 }
-
+.conditions {
+    margin: 0;
+}
 .carousel-container {
     display: flex;
     justify-content: center;
@@ -304,6 +306,7 @@ li {
     right: 5;
 }
 
+/* Footer */
 
 .invoice-section {
     /* border-top: 1px solid #C3C6DB; */
@@ -319,12 +322,32 @@ li {
     justify-content: space-between;
     flex-direction: row;
     color: var(--text-color-1);
-    font-weight: 900;
+    font-weight: 700;
+    font-size: 12px;
     border-bottom: 1px solid var(--text-color-1);
 }
+.total-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--text-color-1);
+    font-weight: 700;
+}
 
-.task {
-
+.item-count {
+    margin: 3px; 
+    font-weight: 300;
+}
+.bold {
+    font-weight: 900;
+}
+.item-name {
+    font-weight: 300;
+    margin: 3px;
+}
+.tasks {
+    margin-top: 10px;
+    font-weight: 300;
 }
 
 .task-list {
@@ -338,11 +361,28 @@ li {
     border: 2px solid #007bff;
 }
 
-.total-row {
+.column {
     display: flex;
+    flex-direction: column;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    color: var(--text-color-1);
-    font-weight: 700;
+    align-self: flex-start;
+    padding: 5px;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-end;
+    padding: 10px;
+}
+.thin {
+    font-size: 12px;
+    font-weight: 300;
 }
 
 #selectedItems {
@@ -356,10 +396,10 @@ li {
     margin-bottom: 10px;
 }
 
-/* Footer */
 .total-tasks, .task-total {
-    font-size: 10px;
     font-weight: 300;
+    font-size: 12px;
+    
     color: var(--text-color-1);
 }
 

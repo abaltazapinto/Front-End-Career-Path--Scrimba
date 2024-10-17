@@ -1,5 +1,5 @@
 export const workItems = [
-    { name: 'Wash Car', price: 10 },
+    { name: 'Wash Car', price: 10},
     { name: 'Mow Lawn', price: 20 },
     { name: 'Pell Weeds', price: 30 },
     { name: 'Paint Fence', price: 40 },
