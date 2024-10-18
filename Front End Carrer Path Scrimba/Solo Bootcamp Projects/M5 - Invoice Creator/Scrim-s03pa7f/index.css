@@ -253,9 +253,17 @@ li {
     font-size: 36px;
     line-height: 4px;
     color: var(--text-color-1);
+    padding: 10px;
 }
 .conditions {
     margin: 0;
+}
+
+.conditionleft {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .carousel-container {
     display: flex;
@@ -359,21 +367,23 @@ footer {
     justify-content: space-between;
     color: var(--text-color-1);
     font-weight: 700;
+    padding:20px;
 }
 
 .item-count {
-    margin: 3px; 
+    margin: 4px; 
     font-weight: 300;
+}
+.item-name {
+    
+    font-weight: 300;
+    margin: 5px;
 }
 .bold {
     font-weight: 900;
 }
-.item-name {
-    font-weight: 300;
-    margin: 3px;
-}
-.tasks {
-    margin-top: 10px;
+
+.tasks { 
     font-weight: 300;
 }
 
@@ -391,22 +401,11 @@ footer {
 .column {
     display: flex;
     flex-direction: column;
-}
-
-.left {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    align-self: flex-start;
+    align-self: center;
     padding: 5px;
 }
-.right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-self: flex-end;
-    padding: 10px;
-}
+
 .thin {
     font-size: 12px;
     font-weight: 300;
@@ -459,6 +458,9 @@ footer {
 /* # buttons */
 
 #send-invoice-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--button-send);
     color: var(--button-invoice);
     border:none;
