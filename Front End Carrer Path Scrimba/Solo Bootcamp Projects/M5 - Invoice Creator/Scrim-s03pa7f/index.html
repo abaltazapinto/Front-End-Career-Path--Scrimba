@@ -16,7 +16,7 @@
         id="darkmode-toggle"
         aria-label="Toggle dark mode"
       />
-      <label for="darkmode-toggle" class="toggle-label" aria-hidden="true">
+      <label for="darkmode-toggle" id="toggle-label" name="toggle-label" aria-hidden="true">
         <svg
           version="1.1"
           class="sun"
@@ -120,8 +120,9 @@
     <aside>
       <!-- make a div with the spending at the moment -->
     </aside>
+
     <div class="container">
-      <section class="section1st invoice-title">
+      <section class="section1st invoice-title" id="sectionOne">
         <h1 class="invoice-title">
           Invoice creator
           <p class="subtitle">Thanks for chosing Confiplus, LLC!</p>
@@ -136,7 +137,23 @@
           <button id="prevBtn">&#8249;</button>
           <button id="nextBtn">&#8250;</button>
         </div>
+        <div class="task-input-container">
+          <label for="username" class="work-item" aria-hidden="true"></label>
+          <input type="text" id="task-input" name="task-input" placeholder="Enter task" required class="task-input"/>
+          <label for="task-price" id="task.label" class="task-label"></label>
+          <select name="price" id="task-price" name="task-price" class="task-price"> 
+            <option value="10" class='task-price'> $10 </option>
+            <option value="20" class='task-price'> $20 </option>
+            <option value="30" class='task-price'> $30 </option>
+            <option value="40" class='task-price'> $40 </option>
+            <option value="40" class='task-price'> $40 </option>
+            <option value="50" class='task-price'> $50 </option>
+          </select>
+          <button class="add-work-btn">+</button>
+        </div>
+        </form>
       </section>
+
       <section class="footer">
         <footer>
           <div class="invoice-section">

@@ -19,6 +19,7 @@ html, body {
     --main-title: #2b283A;
     --background-title: #D5D4D8;
     --background: #f5f5f5;
+    --outline-btn-inside: #3A3D63;
     --text-color-1: #4A4E74;
     --text-color-2: #D5D4D8;
     --text-color-3: #918E9B;
@@ -27,25 +28,28 @@ html, body {
     --button-send: #3770ED;
     --button-send-hover: #2860D8;
     --button-text-color:#fff;
+    --outline: #222;
 }
 
 .dark-mode {
     --main-title: #f5f5f5;
     --background-title: #3A69D2;
     --background: #1F2937;
+    --outline-btn-inside: #2F1836;
     --text-color-1: #D5D4D8;
     --text-color-2: #D5D4D8;
     --text-color-3: #918E9B;
-    --text-color-4: #222;
+    --text-color-4: #fff;
     --button-invoice: #d1d4F4;
-    --button-send: #2860D8;
+    --button-send: #3770ED;
     --button-send-hover: #2860D8;
     --button-text-color: #fff;
+    --outline: #fff;
 }
 
 /* for the dark-mode toggle */
 
-label {
+#toggle-label {
     width: 75px;
     height: 25px;
     position: relative;
@@ -60,8 +64,8 @@ label {
       inset 0px -5px 15px rgba(255, 255, 255, 0.4);
     cursor: pointer;
   }
-  
-  label::after {
+
+#toggle-label::after {
     content: "";
     width: 20px;
     height: 20px;
@@ -79,34 +83,37 @@ label {
     z-index: 1000;
 }
 
-input {
+/* Estilo específico para o input do Dark/Light mode */
+#darkmode-toggle {
     width: 0;
     height: 0;
     visibility: hidden;
-  }
-  
-  input:checked + label {
+}
+
+#darkmode-toggle:checked + #toggle-label {
     background: #242424;
-  }
-  
-  input:checked + label:after {
+}
+
+#darkmode-toggle:checked + #toggle-label::after {
     left: calc(100% - 15%);
     transform: translateX(-100%);
     background: linear-gradient(180deg, #777, #3a3a3a);
-  }
-  
-  label,
-  label::after {
+}
+
+/* Apenas para o label do toggle */
+#toggle-label,
+#toggle-label::after {
     transition: 0.3s;
-  }
-  label:active:after {
+}
+
+#toggle-label:active::after {
     width: 26px;
-  }
-  
+}
+
 .container {
     width: 100%;
     height: 100vh;
-
+    border: 1px solid var(--text-color-4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,9 +199,9 @@ input {
 }
 
 .section1st {
-    border-top: 1px solid var(--text-color-3);
+    /* border-top: 1px solid var(--text-color-3);
     border-left: 1px solid var(--text-color-1);
-    border-right: 1px solid var(--text-color-1);
+    border-right: 1px solid var(--text-color-1); */
     height: auto;
 }
 
@@ -252,15 +259,27 @@ li {
 }
 .carousel-container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    width: inherit;
+    /* border-left: 1px solid var(--text-color-1);
+    border-right: 1px solid var(--text-color-1); */
+    margin: 0;
+}
+
+.work-add-container {
+    display: flex;
+    flex-direction: e;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
     position: relative;
     width: 590px;
-    border-left: 1px solid var(--text-color-1);
-    border-right: 1px solid var(--text-color-1);
-    margin: 0;
-    
+    /* border-left: 1px solid var(--text-color-1);
+    border-right: 1px solid var(--text-color-1); */
 }
 
 .carousel {
@@ -307,6 +326,14 @@ li {
 }
 
 /* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+}
 
 .invoice-section {
     /* border-top: 1px solid #C3C6DB; */
@@ -324,7 +351,7 @@ li {
     color: var(--text-color-1);
     font-weight: 700;
     font-size: 12px;
-    border-bottom: 1px solid var(--text-color-1);
+    /* border-bottom: 1px solid var(--text-color-1); */
 }
 .total-row {
     display: flex;
@@ -399,7 +426,6 @@ li {
 .total-tasks, .task-total {
     font-weight: 300;
     font-size: 12px;
-    
     color: var(--text-color-1);
 }
 
@@ -414,9 +440,9 @@ li {
 
 .footer {
     width: 589px;
-    border-left: 1px solid var(--text-color-1);
+    /* border-left: 1px solid var(--text-color-1);
     border-right: 1px solid var(--text-color-1);
-    border-bottom: 1px solid var(--text-color-1);
+    border-bottom: 1px solid var(--text-color-1); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -430,6 +456,8 @@ li {
     margin-top: 20px;
 }
 
+/* # buttons */
+
 #send-invoice-btn {
     background-color: var(--button-send);
     color: var(--button-invoice);
@@ -439,9 +467,88 @@ li {
     margin:20px;
     margin-bottom: 50px;
     font-size: 2rem;
+    cursor: pointer;
 }
 #send-invoice-btn:hover {
     background-color: var(--button-send-hover);
     font-weight: 900;
 }
+.add-work-btn {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    background-color: var(--button-send);
+    color: var(--button-invoice);
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 20px ;
+    transition: background-color 03s;
+}
 
+.add-work-btn:hover {
+    background-color: color-contrast(var(--button-send) vs var(--button-send), #FFF);
+    color: var(--button-send);
+}
+
+
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+#price {
+    border: none;
+    
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;
+    background-image: none;
+    padding: 5px; */
+}
+
+.task-input-container {
+    display: flex;
+    max-width: 400px;
+    outline: 0.5px solid var(--button-invoice);
+    border-radius: 4px;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 0px 20px;
+    width: 150%;
+}
+
+
+
+.task-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-input, .task-price {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 'none';
+}
+
+#task-price {
+    border: none;
+    max-width: fit-content;
+}
+
+#task-input {
+    border: none;
+}

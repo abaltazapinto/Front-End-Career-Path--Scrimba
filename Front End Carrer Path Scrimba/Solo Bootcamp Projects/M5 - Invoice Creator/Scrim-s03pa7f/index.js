@@ -125,6 +125,66 @@ function addToInvoice(e) {
     const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
     document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
 }
+// add more-work + button
+function initializeMenuWork() {
+    const addWork = document.querySelector('.add-work')
+
+    // if (addWork) {
+    //     addWork.addEventListener("click", () => {
+    //     //  const sectionCarousel = document.querySelector('.carousel-container')
+    //     //  sectionCarousel.style.display = 'none'
+    //     // //  sectionCarousel.classList.add('hidden') // hide the carousel
+
+    //     //  // create new section to add work
+    //     //  const sectionPrevTowork = document.querySelector(".container");
+    //     //  const sectionAddWorkContainer = document.createElement('section')
+    //     //  sectionAddWorkContainer.classList.add('article-work-container');
+
+    //     //  console.log(sectionPrevTowork)
+    //     //  console.log(sectionAddWorkContainer.parentElement)
+
+    //     //  // create the elements of input and button 
+    //     //  const taskInput = document.createElement('input');
+    //     //  taskInput.type = 'text';
+    //     //  taskInput.setAttribute = ('placeholder', 'Enter a task');
+    //     //  taskInput.classList.add('task-input'); // see the css to style this class
+         
+    //     //  const taskPrice = document.createElement('input');
+    //     //  taskPrice.type = 'number';
+    //     //  taskPrice.setAttribute = ('placeholder', '$10');
+    //     //  taskPrice.value = 10;
+    //     //  taskPrice.classList.add('task-price'); // style this class
+
+    //     //  const taskAddButton = document.createElement('button');
+    //     //  taskAddButton.classList.add('task-add-btn');
+    //     //  taskAddButton.textContent = '+'
+
+    //     //  //add the elements to the main container
+    //     //     sectionAddWorkContainer.appendChild(taskInput)
+    //     //     sectionAddWorkContainer.appendChild(taskPrice)
+    //     //     sectionAddWorkContainer.appendChild(taskAddButton)
+
+    //     //  document.body.appendChild(sectionAddWorkContainer)
+
+    //     //  // Hipotese de adionar o functionamento de adicionar tarefa
+    //     //  taskAddButton.addEventListener('click', () => {
+    //     //     console.log('Task added', taskInput.value, taskPrice.value);
+    //     //     // aqui posso implementar a lógica para adiconar tarefa ao invoice
+    //     //  })
+    //     // });
+    // }else {
+    //     console.error("Elemento '.add-work' não encontrado. ");
+    // }
+
+}
+
+initializeMenuWork();
+
+function addWorkMenu() {
+    console.log('You made it')
+    initializeMenuWork()
+}
+
 
 
 // create the invoice
