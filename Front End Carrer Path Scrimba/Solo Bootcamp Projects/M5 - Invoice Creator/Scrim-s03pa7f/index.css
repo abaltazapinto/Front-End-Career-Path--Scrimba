@@ -554,3 +554,66 @@ footer {
 #task-input {
     border: none;
 }
+
+/* addin more than one section */
+.warning-details {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-Warning-area {
+    background-color: var(--background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.main-Warning-area button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--button-send);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.main-Warning-area button:hover {
+    background-color: var(--button-send-hover);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.area-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
