@@ -224,7 +224,7 @@ function sendInvoiceEmail() {
     emailSection.ariaRoleDescription = 'main area for email-request'
     const areaButtons = document.createElement('div')
     areaButtons.classList.add('area-email-buttons')
-    const closeButton = document.createElement('span');
+    const closeButton = document.createElement('button');
     closeButton.classList.add('close')
 
     closeButton.onclick = function () {
@@ -233,14 +233,21 @@ function sendInvoiceEmail() {
 
     const modalEmailQuestion = document.createElement('h2')
     modalEmailQuestion.textContent = DOMPurify.sanitize(`Do you want to receive the invoice of Confiplus by Email?`)
+
     modalEmailQuestion.setAttribute('aria-label', "question if the customer want to receive the invoice per email")
 
+    const yesButton = document.createElement('button')
     
     grabContainer.appendChild(emailSection)
     emailSection.appendChild(mainEmailRequested)
+    // areaButtons.appendChild(closeButton)
+    // areaButtons.appendChild(yesButton)
+
     mainEmailRequested.appendChild(modalEmailQuestion)
     mainEmailRequested.appendChild(areaButtons)
-    const yesButton = document.createElement('button')
+    
+    
+   
     
     
     let existingEmailInput = document.getElementById('recipientEmail')
@@ -272,27 +279,31 @@ function sendInvoiceEmail() {
         email.appendChild(emailInput)
         
         emailContainer.appendChild(submitButton)
+        let recipientEmail = existingEmailInput.value;
+        if(!recipientEmail) {
+            alert('Please enter a valid email address.')
+            return;
+        }
 
         return; //stope the function untill you have the mail
 
     }}
     
-    let recipientEmail = existingEmailInput.value;
-    
-    if(!recipientEmail) {
-        alert('Please enter a valid email address.')
-        return;
-    }
+
+
     // Get the invoice details
     let selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
-
+    let totalAmount = document.getElementById('totalAmount')
+    console.log("totalAmount",totalAmount)
+    const totalAmountTextContent = totalAmount.textContent
     // Prepare the email content
     let emailParams = {
         invoice_details: selectedItemsDetails,
-        total_amount: totalAmount.textContent,
+        total_amount: totalAmountTextContent,
         to_email: recipientEmail,  // Replace with the email written before in the input
         from_name: 'Confiplus',          // Replace with your company name
     };
+
 
     //use SMTPJS to send the email after you have to learn EMAILJS
     Email.send({
