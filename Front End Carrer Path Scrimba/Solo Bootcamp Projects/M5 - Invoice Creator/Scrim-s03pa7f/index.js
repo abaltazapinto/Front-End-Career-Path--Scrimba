@@ -1,4 +1,5 @@
 
+
 import { workItems } from './assets/workItems.js'
 
 // Handle dark mode toggle
@@ -35,10 +36,12 @@ function initCarousel() {
     workItems.forEach((item) => {
         const button = document.createElement('button');
         button.classList.add('service-btn');
+        button.setAttribute("aria-label", `${item.name} offered for ${item.price}`)
         button.textContent = `${item.name}: $${item.price}`;
         button.addEventListener('click', handleItemClick);
         carousel.appendChild(button);
     });
+    renderCarousel();
     updateCarousel();
 }
 
@@ -55,16 +58,15 @@ function updateCarousel() {
 
 function handleItemClick(e) {
     addToInvoice(e)
+    console.log("clicked")
 }
 
 function addToInvoice(e) {
     const button = e.target;
+    console.log(button);
     let itemName = button.textContent.split(':')[0].trim();
     const itemPrice = Number(button.textContent.split('$')[1]?.trim());
-    let priceNumber = itemPrice ? parseFloat(itemPrice) : 0;
-
-    // Update itemCounts for the clicked item
-    
+    let priceNumber = itemPrice ? parseFloat(itemPrice) : 0; 
     if (!itemCounts[itemName]) {
         itemCounts[itemName] = 0; // Initialize count if not present
     }
@@ -72,16 +74,7 @@ function addToInvoice(e) {
 
     // Check if the item is already in selectedItems
     let existingItem = selectedItems.find(i => i.name === itemName);
-
-    if (existingItem) {
-
-        // Update count and total price if the item already exists
-        if (existingItem.count === 0 && existingItem.count === 1){
-            existingItem.count = itemCounts[itemName];
-            existingItem.totalPrice = existingItem.count * existingItem.price;
-        }
-
-    } else {
+    if (!existingItem) {
         // If item doesn't exist, add it to selectedItems with initial count and total price
         selectedItems.push({
             name: itemName,
@@ -89,130 +82,65 @@ function addToInvoice(e) {
             price: itemPrice,
             totalPrice: itemPrice * itemCounts[itemName],
         });
-    }
-
+    } 
     // Update the HTML to display the selected items
     const taskContainer = document.getElementById('selected-items');
     const countContainer = document.getElementById('selected-items-count')
     // Clear the current contents of the container to avoid duplications
-    
     if(existingItem) {
-
         const grabContainer = document.getElementById('container')
-        
-        // alert(`You have already a ${itemName} you want another one ? ` )
         const sectionWarningDetails = document.createElement("section")
         sectionWarningDetails.classList.add('warning-details') 
-
         const mainWarningArea = document.createElement('main')
         mainWarningArea.classList.add('main-Warning-area')
-
         const areaButtons = document.createElement('div');
         areaButtons.classList.add('area-buttons')
-
         const closeButton = document.createElement('span');
         closeButton.classList.add('close')
-        
-
         //close the modal on clicking the close button
         closeButton.onclick = function () {
             modalWarningQuestion.style.display = 'none';
         }
-
-
         const modalWarningQuestion = document.createElement('h2')
-        modalWarningQuestion.textContent = DOMPurify.sanitize(`Do you want to add anoter ${itemName} to the services ?`)
+        modalWarningQuestion.textContent = DOMPurify.sanitize(`Do you want to add another ${itemName} to the services ?`)
         modalWarningQuestion.setAttribute('aria-label', "Question about the number of services need");
-        
         grabContainer.appendChild(sectionWarningDetails)
         mainWarningArea.appendChild(modalWarningQuestion)
         mainWarningArea.appendChild(areaButtons)
-   
         sectionWarningDetails.appendChild(mainWarningArea)
-
         const yesButton = document.createElement('button');
         yesButton.textContent = 'Yes';
         yesButton.onclick = function () {
+        //get the count of the object associated with
             existingItem.count = itemCounts[itemName];
+            //changing the total price of the item in question
             existingItem.totalPrice = existingItem.count * existingItem.price;
             (function() {     
-                console.log("came here")
-                // taskContainer.innerHTML = '';
-                // countContainer.innerHTML = '';
-                // Iterate over `selectedItems` and add them to the container in the HTML
                 for (let item of selectedItems) {
-                        
-                        if(item.count < 2) {
-                            // Create a new HTML element for each item (e.g., a 'div')
-                            const itemElement = document.createElement('div');
-                            itemElement.classList.add('item-element');
-                            // Create a separate element for the ite-name
-                            const itemNameElement = document.createElement('div')
-                            itemNameElement.classList.add('item-name');
-                            itemNameElement.textContent = `${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`;
-                            taskContainer.appendChild(itemElement);
-                            itemElement.appendChild(itemNameElement);
-                            
-                            // Need to create a new span for the count and total price
-                            const itemCount = document.createElement('div')
-                            itemCount.classList.add('item-count')
-
-                            console.log("passed in the second component")
-                            const totalCountElement = document.createElement('div');
-
-                            totalCountElement.classList.add('item-count');
-                            totalCountElement.classList.add(`data-${itemName}`);
-                            // totalCountElement.id = `${item.name.toLowerCase().replace(/\s/g, '-')}-total`;
-                            totalCountElement.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
-                            
-                            countContainer.appendChild(itemCount);
-                            itemCount.appendChild(totalCountElement)
-                            taskDiv.appendChild(taskContainer)
-
-                            console.log("item.count", item.count)
-
-                            const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
-                            document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
-                        } else {
-
-                            existingTotalCountElement = document.querySelector(`data-${itemName}`);
-                            console.log(existingTotalCountElement)
-                            if(existingTotalCountElement) {
-                                totalCountElement.innerHTML = '';
-                                totalCountElement.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
-                            }    
+                        const sanitizeItemName = item.name.toLowerCase().replace(/\s+/g,'-');    
+                        if(item.count >= 1 ) {
+                            const element = document.querySelector(`[data-${sanitizeItemName}]`);
+                            if(element) {
+                                element.innerHTML = '';
+                                element.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
+                                const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
+                                document.getElementById('totalAmount').textContent = `$${totalItemsAmount.toFixed(2)}`
+                            }
                         }
-            }
-            
+            }      
             sectionWarningDetails.style.display = 'none';
         })();
-            // updateInvoice();
-
         }
-
         const noButton = document.createElement('button');
         noButton.textContent = 'No';
         noButton.onclick = function () {
             sectionWarningDetails.style.display = 'none';
         }
-
         areaButtons.appendChild(yesButton);
         areaButtons.appendChild(noButton);
-        
-            // Close the modal when clicking outside of it
-            window.onclick = function (event) {
-                if (event.target === window) {
-                    mainWarningArea.style.display = 'none';
-                }
-            };
-                
-    }
-
-    if (!existingItem) {
-        taskContainer.innerHTML = '';
-        countContainer.innerHTML = '';
-    // Iterate over `selectedItems` and add them to the container in the HTML
+    } else {
     for (let item of selectedItems) {
+        const sanitizeItemName = item.name.toLowerCase().replace(/\s+/g,'-');    
         if(item.count >0 && item.count <2){
         // Create a new HTML element for each item (e.g., a 'div')
         const itemElement = document.createElement('div');
@@ -220,43 +148,190 @@ function addToInvoice(e) {
         // Create a separate element for the ite-name
         const itemNameElement = document.createElement('div')
         itemNameElement.classList.add('item-name');
-
         itemNameElement.textContent = `${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`;
         taskContainer.appendChild(itemElement);
         itemElement.appendChild(itemNameElement);
-
-            console.log("passed in the second conponent")
-
         // Need to create a new span for the count and total price
         const itemCount = document.createElement('div')
         itemCount.classList.add('item-count');
-        itemCount.classList.add(`data-${itemName}`);
-
         const totalCountElement = document.createElement('div');
-        totalCountElement.classList.add('item-count');
-            totalCountElement.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
-            countContainer.appendChild(itemCount);
-            itemCount.appendChild(totalCountElement)
-            taskDiv.appendChild(taskContainer)
-            console.log("item.count", item.count)
-            const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
-            document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
+        // totalCountElement.classList.add('item-count');
+        totalCountElement.classList.add(`data-${sanitizeItemName}`);
+        totalCountElement.setAttribute(`data-${sanitizeItemName}`, sanitizeItemName)
+        totalCountElement.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
+        countContainer.appendChild(itemCount);
+        itemCount.appendChild(totalCountElement)
+        taskDiv.appendChild(taskContainer)
+        const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
+        document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
         }
-        // for the total
-        console.log(itemCounts && item.count)
     }
+}}
+
+let tasks = []
+function addTask() {
+        const taskInput = document.getElementById('task-input').value;
+        const taskPrice = document.getElementById('task-price').value;
+        
+
+        if(taskInput && taskPrice) {
+            workItems.push({
+                name: taskInput,
+                price: taskPrice
+            }); 
+            // clear the input after adding
+            document.getElementById('task-input').value = '';
+            renderCarousel()
+        } else {
+            alert('Please enter a task and select a price')
+        }
 }
+
+document.querySelector(".add-work-btn").addEventListener('click', addTask)
+
+function renderCarousel() {
+    const carousel = document.getElementById('carousel');
+    // Shoul i clean before ?
+     carousel.innerHTML = '';
+    // Loop over the tasks array ro remove the task
+    workItems.forEach((task, index) => {
+        const taskButton = document.createElement('button')
+        taskButton.classList.add('service-btn')
+        taskButton.setAttribute("aria-label", `${task.name} offered for ${task.price}`)
+        // taskButton.setAttribute("style","display : none" )
+        taskButton.innerText = `${task.name}: $${task.price}`
+        // add a event listener to remove
+        taskButton.addEventListener('dblclick', function() {
+            removeTask(index);
+            console.log(`${task.name} removed on double click`)
+            console.log("dbclick")
+            
+        })
+        taskButton.addEventListener('click', handleItemClick)
+        carousel.appendChild(taskButton)
+        updateCarousel();
+    });
+}
+
+function sendInvoiceEmail() {
+    // entering the input with the desired email
+    let grabContainer = document.getElementById('container');
+    const emailSection = document.createElement('section')
+    emailSection.classList.add('email-details')
+    emailSection.ariaRoleDescription = 'section for email-request'
+    const mainEmailRequested = document.createElement('main')
+    mainEmailRequested.classList.add('main-recipient-email') 
+    emailSection.ariaRoleDescription = 'main area for email-request'
+    const areaButtons = document.createElement('div')
+    areaButtons.classList.add('area-email-buttons')
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close')
+
+    closeButton.onclick = function () {
+        emailSection.style.display = 'none'
+    }
+
+    const modalEmailQuestion = document.createElement('h2')
+    modalEmailQuestion.textContent = DOMPurify.sanitize(`Do you want to receive the invoice of Confiplus by Email?`)
+    modalEmailQuestion.setAttribute('aria-label', "question if the customer want to receive the invoice per email")
+
     
+    grabContainer.appendChild(emailSection)
+    emailSection.appendChild(mainEmailRequested)
+    mainEmailRequested.appendChild(modalEmailQuestion)
+    mainEmailRequested.appendChild(areaButtons)
+    const yesButton = document.createElement('button')
+    
+    
+    let existingEmailInput = document.getElementById('recipientEmail')
+    
+    yesButton.onclick = function (){
+    if (!existingEmailInput) {
+
+        const emailInput = document.createElement('input');
+        emailInput.type = 'email';
+        emailInput.id = 'recipientEmail';
+        emailInput.classList.add('recipientEmail')
+        emailInput.placeholder = 'Enter you personal email';
+        emailInput.required = true;
+        emailInput.style.margin = '10px 0'
+        emailInput.ariaRoleDescription = 'Enter your personal email'
+        
+        //create a label
+        const emailLabel = document.createElement('label');
+        emailLabel.setAttribute("for", "recipientEmail");
+        emailLabel.textContent = 'Enter your email address';
+            // button to submit
+        const submitEmailButton = document.createElement('button')
+        submitEmailButton.textContent = "Submit Email and Send Invoice"
+        submitEmailButton.style.display = 'block';
+        submitEmailButton.marginTop = '10px';
+
+        document.appendChild(submitButton)
+
+        email.appendChild(emailInput)
+        
+        emailContainer.appendChild(submitButton)
+
+        return; //stope the function untill you have the mail
+
+    }}
+    
+    let recipientEmail = existingEmailInput.value;
+    
+    if(!recipientEmail) {
+        alert('Please enter a valid email address.')
+        return;
+    }
+    // Get the invoice details
+    let selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
+
+    // Prepare the email content
+    let emailParams = {
+        invoice_details: selectedItemsDetails,
+        total_amount: totalAmount.textContent,
+        to_email: recipientEmail,  // Replace with the email written before in the input
+        from_name: 'Confiplus',          // Replace with your company name
+    };
+
+    //use SMTPJS to send the email after you have to learn EMAILJS
+    Email.send({
+        secureToken: 'my secure token',
+        To: recipientEmail,
+        From: "andrebaltazarpinto@gmail.com",
+        Sucject: "Invoice from Confiplus",
+        Body: `Here are the invoice detail \n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
+    }).then(
+        message => {
+            alert('Invoice sent successfully');
+            console.log('Suceess:', message);
+        }
+    ).catch(
+        error => {
+            alert('Failes to send the invoice. Please try again')
+            console.log('Failed:', error)
+        }
+    )
 }
+
+// Attach this to your send invoice button
+document.getElementById('send-invoice-btn').addEventListener('click', sendInvoiceEmail);
+
+function removeTask(index) {
+    workItems.splice(index, 1);
+    renderCarousel();
+}
+
 
 // create the invoice
 sendInvoiceBtn.addEventListener('click', () => {
-    console.log('Sending invoice...', selectedItems)
     // implement the rest here
     alert('Invoice sent!');
-    selectedItems = [];
-    // updateInvoice();
-    updateInvoice();
+    alert('Reseting values')
+    // // update browser
+    // setTimeout(() => {
+    //     window.location.reload()
+    // }, 3500)
 });
 
 prevButton.addEventListener('click', () => {
@@ -274,3 +349,4 @@ nextBtn.addEventListener('click', () => {
 });
 
 initCarousel();
+renderCarousel();
