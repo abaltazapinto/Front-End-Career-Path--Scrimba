@@ -1,5 +1,3 @@
-
-
 import { workItems } from './assets/workItems.js'
 
 // Handle dark mode toggle
@@ -94,6 +92,7 @@ function addToInvoice(e) {
         const mainWarningArea = document.createElement('main')
         mainWarningArea.classList.add('main-Warning-area')
         const areaButtons = document.createElement('div');
+
         areaButtons.classList.add('area-buttons')
         const closeButton = document.createElement('span');
         closeButton.classList.add('close')
@@ -212,118 +211,104 @@ function renderCarousel() {
         updateCarousel();
     });
 }
-
 function sendInvoiceEmail() {
     // entering the input with the desired email
     let grabContainer = document.getElementById('container');
-    const emailSection = document.createElement('section')
-    emailSection.classList.add('email-details')
-    emailSection.ariaRoleDescription = 'section for email-request'
-    const mainEmailRequested = document.createElement('main')
-    mainEmailRequested.classList.add('main-recipient-email') 
-    emailSection.ariaRoleDescription = 'main area for email-request'
-    const areaButtons = document.createElement('div')
-    areaButtons.classList.add('area-email-buttons')
-    const closeButton = document.createElement('button');
-    closeButton.classList.add('close')
+    const emailSection = document.createElement('section');
+    emailSection.classList.add('email-details');
+    const mainEmailRequested = document.createElement('main');
+    mainEmailRequested.classList.add('main-recipient-email');
+    const modalEmailQuestion = document.createElement('h2');
+    modalEmailQuestion.textContent = DOMPurify.sanitize(`Do you want to receive the invoice of Confiplus by Email?`);
 
-    closeButton.onclick = function () {
-        emailSection.style.display = 'none'
-    }
+    const areaButtons = document.createElement('div');
+    areaButtons.classList.add('area-email-buttons');
 
-    const modalEmailQuestion = document.createElement('h2')
-    modalEmailQuestion.textContent = DOMPurify.sanitize(`Do you want to receive the invoice of Confiplus by Email?`)
-
-    modalEmailQuestion.setAttribute('aria-label', "question if the customer want to receive the invoice per email")
-
-    const yesButton = document.createElement('button')
-    
-    grabContainer.appendChild(emailSection)
-    emailSection.appendChild(mainEmailRequested)
-    // areaButtons.appendChild(closeButton)
-    // areaButtons.appendChild(yesButton)
-
-    mainEmailRequested.appendChild(modalEmailQuestion)
-    mainEmailRequested.appendChild(areaButtons)
-    
-    
-   
-    
-    
-    let existingEmailInput = document.getElementById('recipientEmail')
-    
-    yesButton.onclick = function (){
-    if (!existingEmailInput) {
-
-        const emailInput = document.createElement('input');
-        emailInput.type = 'email';
-        emailInput.id = 'recipientEmail';
-        emailInput.classList.add('recipientEmail')
-        emailInput.placeholder = 'Enter you personal email';
-        emailInput.required = true;
-        emailInput.style.margin = '10px 0'
-        emailInput.ariaRoleDescription = 'Enter your personal email'
-        
-        //create a label
-        const emailLabel = document.createElement('label');
-        emailLabel.setAttribute("for", "recipientEmail");
-        emailLabel.textContent = 'Enter your email address';
-            // button to submit
-        const submitEmailButton = document.createElement('button')
-        submitEmailButton.textContent = "Submit Email and Send Invoice"
-        submitEmailButton.style.display = 'block';
-        submitEmailButton.marginTop = '10px';
-
-        document.appendChild(submitButton)
-
-        email.appendChild(emailInput)
-        
-        emailContainer.appendChild(submitButton)
-        let recipientEmail = existingEmailInput.value;
-        if(!recipientEmail) {
-            alert('Please enter a valid email address.')
-            return;
-        }
-
-        return; //stope the function untill you have the mail
-
-    }}
-    
-
-
-    // Get the invoice details
-    let selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
-    let totalAmount = document.getElementById('totalAmount')
-    console.log("totalAmount",totalAmount)
-    const totalAmountTextContent = totalAmount.textContent
-    // Prepare the email content
-    let emailParams = {
-        invoice_details: selectedItemsDetails,
-        total_amount: totalAmountTextContent,
-        to_email: recipientEmail,  // Replace with the email written before in the input
-        from_name: 'Confiplus',          // Replace with your company name
+    const closeNOButton = document.createElement('span');
+    closeNOButton.classList.add('close');
+    closeNOButton.onclick = function () {
+        emailSection.style.display = 'none';
     };
 
+    const yesButton = document.createElement('button');
+    yesButton.textContent = "Yes";
+    yesButton.classList.add('yes-button');
 
-    //use SMTPJS to send the email after you have to learn EMAILJS
-    Email.send({
-        secureToken: 'my secure token',
-        To: recipientEmail,
-        From: "andrebaltazarpinto@gmail.com",
-        Sucject: "Invoice from Confiplus",
-        Body: `Here are the invoice detail \n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
-    }).then(
-        message => {
-            alert('Invoice sent successfully');
-            console.log('Suceess:', message);
+    grabContainer.appendChild(emailSection);
+    emailSection.appendChild(mainEmailRequested);
+    mainEmailRequested.appendChild(modalEmailQuestion);
+    mainEmailRequested.appendChild(areaButtons);
+    
+    areaButtons.appendChild(closeNOButton);
+    areaButtons.appendChild(yesButton);
+
+    yesButton.onclick = function () {
+        let existingEmailInput = document.getElementById('recipientEmail');
+        
+        if (!existingEmailInput) {
+            const emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.id = 'recipientEmail';
+            emailInput.classList.add('recipientEmail');
+            emailInput.placeholder = 'Enter your personal email';
+            emailInput.required = true;
+            emailInput.style.margin = '20px 10px';
+            emailInput.style.padding = '10px';
+
+            const emailLabel = document.createElement('label');
+            emailLabel.setAttribute("for", "recipientEmail");
+            emailLabel.textContent = 'Enter your email address';
+
+            const submitEmailButton = document.createElement('button');
+            submitEmailButton.textContent = "Submit Email and Send Invoice";
+            submitEmailButton.style.display = 'block';
+            submitEmailButton.style.marginTop = '10px';
+            submitEmailButton.style.padding = '10px';
+
+            areaButtons.appendChild(emailLabel);
+            areaButtons.appendChild(emailInput);
+            areaButtons.appendChild(submitEmailButton);
+
+            submitEmailButton.onclick = function () {
+                let recipientEmail = emailInput.value;
+                console.log("recipient email", recipientEmail)
+               
+                if (!recipientEmail) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Get the invoice details
+                let selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
+                let totalAmount = document.getElementById('totalAmount').textContent;
+
+                // Send the email
+                Email.send({
+                    secureToken: 'ef03914d-dfe8-4d00-a5e9-58d775f4dcf7',
+                    To: recipientEmail,
+                    From: "andrebaltazarpinto@gmail.com",
+                    Subject: "Invoice from Confiplus",
+                    Body: `Here are the invoice details:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
+
+                }).then(
+                    message => {
+                        alert('Invoice sent successfully');
+                    }
+                ).catch(
+                    error => {
+                        alert('Failed to send the invoice. Please try again.');
+                    }
+                );
+            };
         }
-    ).catch(
-        error => {
-            alert('Failes to send the invoice. Please try again')
-            console.log('Failed:', error)
-        }
-    )
+    };
+    //Optional for email validating function
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(Sting(email).toLowerCase());
+    }
 }
+
 
 // Attach this to your send invoice button
 document.getElementById('send-invoice-btn').addEventListener('click', sendInvoiceEmail);
