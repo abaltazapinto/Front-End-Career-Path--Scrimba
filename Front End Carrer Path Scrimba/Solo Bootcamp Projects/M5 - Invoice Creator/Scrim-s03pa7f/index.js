@@ -266,7 +266,6 @@ function sendInvoiceEmail() {
             emailLabel.setAttribute("for", "recipientEmail");
             emailLabel.textContent = 'Enter your email address';
             
-
             const submitEmailButton = document.createElement('button');
             submitEmailButton.style.fontSize = '28px';
             submitEmailButton.textContent = "Submit Email and Send Invoice";
@@ -299,9 +298,9 @@ function sendInvoiceEmail() {
                     console.log('FAILED...', error);
                     alert('Failed to send the invoice. Please try again.');
                 });
-            };
 
-            sendEmail();
+                emailSection.style.display = 'none'
+            };
             };
         }
     };
