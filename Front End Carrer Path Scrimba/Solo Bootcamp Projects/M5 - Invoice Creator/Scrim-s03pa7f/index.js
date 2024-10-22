@@ -286,7 +286,8 @@ function sendInvoiceEmail() {
             
                 let invoiceData = {
                     to_email: recipientEmail,
-                    to_name: "Customer",  // Replace this with dynamic data if needed
+                    to_name: "Customer",
+                    from: "Confiplus", 
                     message: `Here are the details of your invoice:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
                 };
             
