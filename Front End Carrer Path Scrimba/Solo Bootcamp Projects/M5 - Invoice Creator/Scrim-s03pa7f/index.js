@@ -140,7 +140,7 @@ function addToInvoice(e) {
     } else {
     for (let item of selectedItems) {
         const sanitizeItemName = item.name.toLowerCase().replace(/\s+/g,'-');    
-        if(item.count >0 && item.count <2){
+        if(item.count > 0 && item.count <2){
         // Create a new HTML element for each item (e.g., a 'div')
         const itemElement = document.createElement('div');
         itemElement.classList.add('item-element');
@@ -286,7 +286,7 @@ function sendInvoiceEmail() {
                 let invoiceData = {
                     to_email: recipientEmail,
                     to_name: "Customer",
-                    from: "Confiplus", 
+                    from_name: "Confiplus", 
                     message: `Here are the details of your invoice:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
                 };
             
@@ -300,6 +300,9 @@ function sendInvoiceEmail() {
                 });
 
                 emailSection.style.display = 'none'
+                setTimeout(() => {
+                    window.location.reload()
+                }, 3500)
             };
             };
         }
@@ -319,12 +322,10 @@ function removeTask(index) {
 // create the invoice
 sendInvoiceBtn.addEventListener('click', () => {
     // implement the rest here
-    alert('Invoice sent!');
-    alert('Reseting values')
+    // alert('Invoice sent!');
+    // alert('Reseting values')
     // // update browser
-    // setTimeout(() => {
-    //     window.location.reload()
-    // }, 3500)
+
 });
 
 prevButton.addEventListener('click', () => {
