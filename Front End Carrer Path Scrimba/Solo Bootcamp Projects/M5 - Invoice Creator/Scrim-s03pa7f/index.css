@@ -609,6 +609,7 @@ footer {
     float: right;
     font-size: 28px;
     font-weight: bold;
+
 }
 
 .close:hover, .yes-button:hover {
@@ -617,8 +618,30 @@ footer {
     cursor: pointer;
 }
 
-.area-buttons, .area-email-buttons {
+.area-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.area-email-buttons  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.recipientEmail {
+    display: flex;
+    padding: 30px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+}
+/* 
+// secureToken: 'ef03914d-dfe8-4d00-a5e9-58d775f4dcf7',
+// To: recipientEmail,
+// From: "andrebaltazarpinto@gmail.com",
+// Subject: "Invoice from Confiplus",
+// Body: `Here are the invoice details:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}` */

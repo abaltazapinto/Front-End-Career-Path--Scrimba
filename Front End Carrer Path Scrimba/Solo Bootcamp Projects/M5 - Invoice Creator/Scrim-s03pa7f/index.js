@@ -259,61 +259,52 @@ function sendInvoiceEmail() {
             emailInput.required = true;
             emailInput.style.margin = '20px 10px';
             emailInput.style.padding = '10px';
-
+            emailInput.style.borderRadius ='10px'
+            emailInput.style.width = 'fit-content'
+            
             const emailLabel = document.createElement('label');
             emailLabel.setAttribute("for", "recipientEmail");
             emailLabel.textContent = 'Enter your email address';
+            
 
             const submitEmailButton = document.createElement('button');
+            submitEmailButton.style.fontSize = '28px';
             submitEmailButton.textContent = "Submit Email and Send Invoice";
             submitEmailButton.style.display = 'block';
             submitEmailButton.style.marginTop = '10px';
             submitEmailButton.style.padding = '10px';
+            submitEmailButton.style.borderRadius ='10px'
 
             areaButtons.appendChild(emailLabel);
             areaButtons.appendChild(emailInput);
             areaButtons.appendChild(submitEmailButton);
 
             submitEmailButton.onclick = function () {
-                let recipientEmail = emailInput.value;
-                console.log("recipient email", recipientEmail)
-                console.log("Email SMTPJS", Email)
-                
-               if (!recipientEmail) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-                // Get the invoice details
-                let selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
-                let totalAmount = document.getElementById('totalAmount').textContent;
+                const recipientEmail = document.getElementById('recipientEmail').value;
+                const selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
+                const totalAmount = document.getElementById('totalAmount').textContent;
+            
+                let invoiceData = {
+                    to_email: recipientEmail,
+                    to_name: "Customer",  // Replace this with dynamic data if needed
+                    message: `Here are the details of your invoice:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
+                };
+            
+                emailjs.send("service_nos1bvr", "template_ru1zke6", invoiceData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Invoice sent successfully!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to send the invoice. Please try again.');
+                });
+            };
 
-                // Send the email
-                Email.send({
-                    secureToken: 'ef03914d-dfe8-4d00-a5e9-58d775f4dcf7',
-                    To: recipientEmail,
-                    From: "andrebaltazarpinto@gmail.com",
-                    Subject: "Invoice from Confiplus",
-                    Body: `Here are the invoice details:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
-
-                }).then(
-                    message => {
-                        alert('Invoice sent successfully');
-                    }
-                ).catch(
-                    error => {
-                        alert('Failed to send the invoice. Please try again.');
-                    }
-                );
+            sendEmail();
             };
         }
     };
 
-    // //Optional for email validating function
-    // function validateEmail(email) {
-    //     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    //     return re.test(Sting(email).toLowerCase());
-    // }
-}
 
 
 // Attach this to your send invoice button
