@@ -224,7 +224,10 @@ function sendInvoiceEmail() {
     const areaButtons = document.createElement('div');
     areaButtons.classList.add('area-email-buttons');
 
-    const closeNOButton = document.createElement('span');
+    const closeNOButton = document.createElement('button');
+    closeNOButton.textContent = 'No'
+    closeNOButton.classList.add('no-button')
+
     closeNOButton.classList.add('close');
     closeNOButton.onclick = function () {
         emailSection.style.display = 'none';
@@ -243,6 +246,8 @@ function sendInvoiceEmail() {
     areaButtons.appendChild(yesButton);
 
     yesButton.onclick = function () {
+        yesButton.style.display = 'none'
+        closeNOButton.style.display = 'none'
         let existingEmailInput = document.getElementById('recipientEmail');
         
         if (!existingEmailInput) {
@@ -272,12 +277,12 @@ function sendInvoiceEmail() {
             submitEmailButton.onclick = function () {
                 let recipientEmail = emailInput.value;
                 console.log("recipient email", recipientEmail)
-               
-                if (!recipientEmail) {
+                console.log("Email SMTPJS", Email)
+                
+               if (!recipientEmail) {
                     alert('Please enter a valid email address.');
                     return;
                 }
-                
                 // Get the invoice details
                 let selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
                 let totalAmount = document.getElementById('totalAmount').textContent;
@@ -302,11 +307,12 @@ function sendInvoiceEmail() {
             };
         }
     };
-    //Optional for email validating function
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(Sting(email).toLowerCase());
-    }
+
+    // //Optional for email validating function
+    // function validateEmail(email) {
+    //     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //     return re.test(Sting(email).toLowerCase());
+    // }
 }
 
 

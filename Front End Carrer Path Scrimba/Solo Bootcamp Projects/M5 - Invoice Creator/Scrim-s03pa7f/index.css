@@ -604,14 +604,14 @@ footer {
     background-color: var(--button-send-hover);
 }
 
-.close {
+.close, .yes-button {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover {
+.close:hover, .yes-button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
