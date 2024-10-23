@@ -470,7 +470,3 @@ p {
   width: inherit;
   border: 2px solid var(--dark-green);
 }
-
-#recipientName::placeholder {
-  font-size: 2rem;
-}

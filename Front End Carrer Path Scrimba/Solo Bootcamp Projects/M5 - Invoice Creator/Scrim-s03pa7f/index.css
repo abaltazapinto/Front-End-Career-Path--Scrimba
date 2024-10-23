@@ -632,16 +632,10 @@ footer {
     font-size: 28px;
 }
 
-.recipientEmail {
+.recipientEmail, .recipientName {
     display: flex;
     padding: 30px;
     font-size: 16px;
     align-items: center;
     justify-content: center;
 }
-/* 
-// secureToken: 'ef03914d-dfe8-4d00-a5e9-58d775f4dcf7',
-// To: recipientEmail,
-// From: "andrebaltazarpinto@gmail.com",
-// Subject: "Invoice from Confiplus",
-// Body: `Here are the invoice details:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}` */
