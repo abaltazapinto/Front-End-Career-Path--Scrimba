@@ -14,9 +14,9 @@ toggle.addEventListener("change", function () {
 const carousel = document.getElementById('carousel');
 const prevButton = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-const workItemsList = document.getElementById('selected-items');
 const taskDiv = document.getElementById('task');
-const totalDiv = document.getElementById('selected-items-count')
+let taskContainer = document.getElementById('selected-items');
+let countContainer = document.getElementById('selected-items-count')
 let totalAmount = document.getElementById('total-amount')
 const sendInvoiceBtn = document.getElementById('send-invoice-btn');
 
@@ -84,6 +84,10 @@ function addToInvoice(e) {
     // Update the HTML to display the selected items
     const taskContainer = document.getElementById('selected-items');
     const countContainer = document.getElementById('selected-items-count')
+
+    console.log(existingItem)
+    // taskContainer = 
+    // countContainer = 
     // Clear the current contents of the container to avoid duplications
     if(existingItem) {
         const grabContainer = document.getElementById('container')
@@ -165,7 +169,11 @@ function addToInvoice(e) {
         document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
         }
     }
-}}
+    }
+}
+
+
+    
 
 let tasks = []
 function addTask() {
@@ -307,7 +315,6 @@ function sendInvoiceEmail() {
             };
         }
     };
-
 
 
 // Attach this to your send invoice button
