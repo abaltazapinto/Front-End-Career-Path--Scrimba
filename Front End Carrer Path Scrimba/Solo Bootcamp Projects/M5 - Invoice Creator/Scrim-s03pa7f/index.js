@@ -56,12 +56,12 @@ function updateCarousel() {
 
 function handleItemClick(e) {
     addToInvoice(e)
-    console.log("clicked")
 }
 
+
 function addToInvoice(e) {
+
     const button = e.target;
-    console.log(button);
     let itemName = button.textContent.split(':')[0].trim();
     const itemPrice = Number(button.textContent.split('$')[1]?.trim());
     let priceNumber = itemPrice ? parseFloat(itemPrice) : 0; 
@@ -73,6 +73,7 @@ function addToInvoice(e) {
     // Check if the item is already in selectedItems
     let existingItem = selectedItems.find(i => i.name === itemName);
     if (!existingItem) {
+        
         // If item doesn't exist, add it to selectedItems with initial count and total price
         selectedItems.push({
             name: itemName,
@@ -80,16 +81,49 @@ function addToInvoice(e) {
             price: itemPrice,
             totalPrice: itemPrice * itemCounts[itemName],
         });
-    } 
-    // Update the HTML to display the selected items
-    const taskContainer = document.getElementById('selected-items');
-    const countContainer = document.getElementById('selected-items-count')
 
-    console.log(existingItem)
-    // taskContainer = 
-    // countContainer = 
-    // Clear the current contents of the container to avoid duplications
-    if(existingItem) {
+
+        for (let item of selectedItems) {
+
+            const sanitizeItemName = item.name.toLowerCase().replace(/\s+/g,'-'); 
+            console.log(item.count)
+            console.log(selectedItems)
+
+            // verifying that if the item work is already on the DOM, if yes, we can pull the interaction
+            if (document.querySelector(`.data-${sanitizeItemName}`)) {
+                continue; 
+            }
+            // FoundWork = selectedItems.filter(work => work.name === itemName)
+            // console.log("Found Work", FoundWork)
+        if(item.count > 0 ){
+            // Create a new HTML element for each item (e.g., a 'div')
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('item-element');
+            // Create a separate element for the ite-name
+            const itemNameElement = document.createElement('div')
+            itemNameElement.classList.add('item-name');
+            itemNameElement.textContent = `${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`;
+            taskContainer.appendChild(itemElement);
+
+            itemElement.appendChild(itemNameElement);
+            // Need to create a new span for the count and total price
+            const itemCount = document.createElement('div')
+            itemCount.classList.add('item-count');
+            const totalCountElement = document.createElement('div');
+            // totalCountElement.classList.add('item-count');
+            totalCountElement.classList.add(`data-${sanitizeItemName}`);
+            totalCountElement.setAttribute(`data-${sanitizeItemName}`, sanitizeItemName)
+            totalCountElement.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
+            countContainer.appendChild(itemCount);
+            itemCount.appendChild(totalCountElement)
+            taskDiv.appendChild(taskContainer)
+            const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
+            document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
+
+            }
+        }
+    } 
+    else {
         const grabContainer = document.getElementById('container')
         const sectionWarningDetails = document.createElement("section")
         sectionWarningDetails.classList.add('warning-details') 
@@ -104,6 +138,7 @@ function addToInvoice(e) {
         closeButton.onclick = function () {
             modalWarningQuestion.style.display = 'none';
         }
+
         const modalWarningQuestion = document.createElement('h2')
         modalWarningQuestion.textContent = DOMPurify.sanitize(`Do you want to add another ${itemName} to the services ?`)
         modalWarningQuestion.setAttribute('aria-label', "Question about the number of services need");
@@ -121,8 +156,10 @@ function addToInvoice(e) {
             (function() {     
                 for (let item of selectedItems) {
                         const sanitizeItemName = item.name.toLowerCase().replace(/\s+/g,'-');    
-                        if(item.count >= 1 ) {
+
+                        if(item.count >= 1 && existingItem) {
                             const element = document.querySelector(`[data-${sanitizeItemName}]`);
+                            console.log(element)
                             if(element) {
                                 element.innerHTML = '';
                                 element.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
@@ -141,35 +178,8 @@ function addToInvoice(e) {
         }
         areaButtons.appendChild(yesButton);
         areaButtons.appendChild(noButton);
-    } else {
-    for (let item of selectedItems) {
-        const sanitizeItemName = item.name.toLowerCase().replace(/\s+/g,'-');    
-        if(item.count > 0 && item.count <2){
-        // Create a new HTML element for each item (e.g., a 'div')
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('item-element');
-        // Create a separate element for the ite-name
-        const itemNameElement = document.createElement('div')
-        itemNameElement.classList.add('item-name');
-        itemNameElement.textContent = `${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`;
-        taskContainer.appendChild(itemElement);
-        itemElement.appendChild(itemNameElement);
-        // Need to create a new span for the count and total price
-        const itemCount = document.createElement('div')
-        itemCount.classList.add('item-count');
-        const totalCountElement = document.createElement('div');
-        // totalCountElement.classList.add('item-count');
-        totalCountElement.classList.add(`data-${sanitizeItemName}`);
-        totalCountElement.setAttribute(`data-${sanitizeItemName}`, sanitizeItemName)
-        totalCountElement.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
-        countContainer.appendChild(itemCount);
-        itemCount.appendChild(totalCountElement)
-        taskDiv.appendChild(taskContainer)
-        const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
-        document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
-        }
-    }
-    }
+
+    } 
 }
 
 
@@ -192,7 +202,7 @@ function addTask() {
         } else {
             alert('Please enter a task and select a price')
         }
-}
+    }
 
 document.querySelector(".add-work-btn").addEventListener('click', addTask)
 
@@ -219,6 +229,7 @@ function renderCarousel() {
         updateCarousel();
     });
 }
+
 function sendInvoiceEmail() {
     // entering the input with the desired email
     let grabContainer = document.getElementById('container');
@@ -259,41 +270,65 @@ function sendInvoiceEmail() {
         let existingEmailInput = document.getElementById('recipientEmail');
         
         if (!existingEmailInput) {
+
+            const divOfInputs = document.createElement('div')
+            divOfInputs.classList.add('inputs-email')
+            const nameInput = document.createElement('input')
+            nameInput.type = 'text';
+            nameInput.id = 'recipientName';
+            nameInput.classList.add('recipientName');
+            nameInput.fontSize = '10rem'
+            nameInput.placeholder = 'Enter your name';
+            nameInput.required = true;
+            nameInput.style.margin = '2rem 1rem';
+            nameInput.style.padding = '1rem';
+            nameInput.style.borderRadius ='2rem'
+            nameInput.style.width = '18rem'
+            nameInput.style.height = '5rem'
+            
             const emailInput = document.createElement('input');
             emailInput.type = 'email';
             emailInput.id = 'recipientEmail';
             emailInput.classList.add('recipientEmail');
             emailInput.placeholder = 'Enter your personal email';
             emailInput.required = true;
-            emailInput.style.margin = '20px 10px';
-            emailInput.style.padding = '10px';
-            emailInput.style.borderRadius ='10px'
-            emailInput.style.width = 'fit-content'
+            emailInput.style.margin = '2rem 1rem';
+            emailInput.style.padding = '1rem';
+            emailInput.style.borderRadius ='2rem'
+            emailInput.style.width = '18rem'
+            emailInput.style.height = '5rem'
             
+            const nameLabel = document.createElement('label');
+            nameLabel.setAttribute("for", "recipientName")
+            nameLabel.textContent = ('Enter your name')
+
+
             const emailLabel = document.createElement('label');
             emailLabel.setAttribute("for", "recipientEmail");
-            emailLabel.textContent = 'Enter your email address';
+            emailLabel.textContent = ('Enter your email address');
             
             const submitEmailButton = document.createElement('button');
-            submitEmailButton.style.fontSize = '28px';
+            submitEmailButton.style.fontSize = '2rem';
             submitEmailButton.textContent = "Submit Email and Send Invoice";
             submitEmailButton.style.display = 'block';
-            submitEmailButton.style.marginTop = '10px';
-            submitEmailButton.style.padding = '10px';
-            submitEmailButton.style.borderRadius ='10px'
+            submitEmailButton.style.marginTop = '1rem';
+            submitEmailButton.style.padding = '2rem';
+            submitEmailButton.style.borderRadius ='1rem'
 
-            areaButtons.appendChild(emailLabel);
-            areaButtons.appendChild(emailInput);
+           divOfInputs.appendChild(emailInput);
+            divOfInputs.appendChild(nameInput)
+            areaButtons.appendChild(divOfInputs);
             areaButtons.appendChild(submitEmailButton);
 
             submitEmailButton.onclick = function () {
                 const recipientEmail = document.getElementById('recipientEmail').value;
+                const nameInput = document.getElementById('recipientName').value;
                 const selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
                 const totalAmount = document.getElementById('totalAmount').textContent;
             
                 let invoiceData = {
                     to_email: recipientEmail,
-                    to_name: "Customer",
+                    to_name: nameInput,
                     from_name: "Confiplus", 
                     message: `Here are the details of your invoice:\n${selectedItemsDetails}\n\nTotal Amount: ${totalAmount}`
                 };
