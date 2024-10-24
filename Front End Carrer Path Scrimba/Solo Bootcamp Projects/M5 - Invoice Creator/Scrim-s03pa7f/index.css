@@ -193,6 +193,8 @@ aside {
   justify-content: center;
   align-items: center;
   width: inherit;
+  margin: 1rem;
+  padding: 0.625rem;
 }
 
 .section1st {
@@ -352,20 +354,47 @@ footer {
   padding: 20px;
 }
 
+/* remove button of work after the item-name */
+.item-element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.remove-work-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    color: var(--text-color-3);
+    font-weight: bold;
+    margin: 0.625rem;
+    font-size: 0.625rem;
+    /* line-height: 0.00625rem; */
+    cursor: pointer;
+    font-weight: 300;
+}
+
+/* continuing */
 .item-count {
-  margin: 4px;
+  margin-bottom: 1.225rem;
+  margin-top: 0.425rem;
+
   font-weight: 300;
 }
 .item-name {
   font-weight: 300;
-  margin: 5px;
+  margin: 0.625rem;
 }
+
 .bold {
   font-weight: 900;
 }
 
 .tasks {
   font-weight: 300;
+  margin: 0.625rem
 }
 
 .task-list {
@@ -408,15 +437,6 @@ footer {
   font-weight: 300;
   font-size: 12px;
   color: var(--text-color-1);
-}
-
-.remove-btn {
-  font-size: 10px;
-  font-weight: 300;
-  color: #918e9b;
-  cursor: pointer;
-  border: none;
-  background-color: none;
 }
 
 .footer {

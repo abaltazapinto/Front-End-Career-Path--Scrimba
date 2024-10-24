@@ -1,3 +1,4 @@
+
 import { workItems } from "./assets/workItems.js";
 
 // Handle dark mode toggle
@@ -28,7 +29,7 @@ const itemPrice = Object.values(workItems.map((item) => [item.price], 0));
 let currentIndex = 0;
 const itemsPerPage = 3;
 const itemsToSlide = 1;
-const selectedItems = [];
+let selectedItems = [];
 
 // carousel
 function initCarousel() {
@@ -69,6 +70,34 @@ function addItemToSelectedItems(itemName, itemPrice, itemCount) {
   });
 }
 
+function removeItem(itemName) {
+    console.log("removed")
+    if(itemCounts[itemName] > 0) {
+        itemCounts[itemName]--;
+        
+        if(itemCounts[itemName] === 0){
+            selectedItems = selectedItems.filter((i) => i.name !== itemName);
+            const itemElement = document.querySelector(`.data-${itemName.toLowerCase().replace(/\s+/g, "-")}`);
+            //left part
+            const sanitizeItemName = itemName.toLowerCase().replace(/\s+/g, "-");
+            const itemNameElement = document.getElementById(sanitizeItemName)
+            if (itemElement && itemNameElement) {
+                itemElement.remove();
+                itemNameElement.remove();
+            }   
+            const totalCountElement = document.querySelector(`.data-${itemName.toLowerCase().replace(/\s+/g, "-")}`);
+
+            if (totalCountElement) {
+                totalCountElement.textContent = DOMPurify.sanitize(`x ${itemCounts[itemName]} - $${(itemCounts[itemName] * selectedItems.find(i => i.name === itemName).price).toFixed(2)}`);
+            }
+        } 
+        // Update the total price
+        const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.price * itemCounts[item.name], 0);
+        document.getElementById("totalAmount").textContent = DOMPurify.sanitize(`$${totalItemsAmount.toFixed(2)}`);
+    }    
+}
+
+
 function addToInvoice(e) {
   const button = e.target;
   let itemName = button.textContent.split(":")[0].trim();
@@ -95,20 +124,30 @@ function addToInvoice(e) {
         // Create a new HTML element for each item (e.g., a 'div')
         const itemElement = document.createElement("div");
         itemElement.classList.add("item-element");
+        itemElement.id = `${sanitizeItemName}`
         // Create a separate element for the ite-name
         const itemNameElement = document.createElement("div");
         itemNameElement.classList.add("item-name");
         itemNameElement.textContent = DOMPurify.sanitize(
           `${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`,
         );
-        taskContainer.appendChild(itemElement);
+        const buttonRemoveItem = document.createElement('button')
+        buttonRemoveItem.classList.add('remove-work-btn')
+        buttonRemoveItem.textContent = DOMPurify.sanitize(`Remove`)
 
+        buttonRemoveItem.addEventListener("dblclick", function () {
+            removeItem(itemName);
+          });
+
+        taskContainer.appendChild(itemElement);
         itemElement.appendChild(itemNameElement);
+        itemElement.appendChild(buttonRemoveItem)
+
         // Need to create a new span for the count and total price
         const itemCount = document.createElement("div");
         itemCount.classList.add("item-count");
         const totalCountElement = document.createElement("div");
-        // totalCountElement.classList.add('item-count');
+        totalCountElement.classList.add('item-count');
         totalCountElement.classList.add(`data-${sanitizeItemName}`);
         totalCountElement.setAttribute(
           `data-${sanitizeItemName}`,
@@ -151,7 +190,7 @@ function addToInvoice(e) {
     );
     modalWarningQuestion.setAttribute(
       "aria-label",
-      "Question about the number of services need",
+      "Question about the number of services needed",
     );
     grabContainer.appendChild(sectionWarningDetails);
     mainWarningArea.appendChild(modalWarningQuestion);
