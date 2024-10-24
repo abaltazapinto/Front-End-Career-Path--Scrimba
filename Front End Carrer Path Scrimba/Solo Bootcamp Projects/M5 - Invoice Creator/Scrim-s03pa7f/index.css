@@ -6,7 +6,7 @@
 }
 html, body {
     margin: 0;
-    padding: 20px;
+    padding: 1.25rem;
     font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
@@ -60,26 +60,27 @@ html, body {
     background: #ebebeb;
     border-radius: 200px;
     box-shadow:
-      inset 0px 5px 15px rgba(0, 0, 0, 0.4),
-      inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+      inset 0px 0.3125rem 0.9375rem rgba(0, 0, 0, 0.4),
+      inset 0px -0.3125rem 0.9375rem rgba(255, 255, 255, 0.4);
     cursor: pointer;
   }
 
 #toggle-label::after {
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     position: absolute;
-    top: 2.5px;
-    left: 5px;
+    top: 0.15625rem;
+    left: 0.3125rem;
     background: linear-gradient(180deg, #ffcc89, #d8860b);
     border-radius: 180px;
-    box-shadow: 0px 5px 10 px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
   }
+
   aside {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0.625rem;
+    right: 0.625rem;
     z-index: 1000;
 }
 
@@ -107,67 +108,66 @@ html, body {
 }
 
 #toggle-label:active::after {
-    width: 26px;
+    width: 1.625rem;
 }
 
 .container {
     width: 100%;
     height: 100vh;
-    border: 1px solid var(--text-color-4);
+    border: 0.0625rem solid var(--text-color-4);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
+    justify-content: center; 
 }
 
-/* Base CSS - for tablets and medium-sized screens */
+/* Responsive container design */
+
 .container {
     width: 100%;
     height: auto;
-    max-width: 550px; /* This is the default for medium screens */
-    padding: 16px;
-    font-size: 1rem;  /* Default font size */
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    max-width: 90vw;
+    padding: 1rem;
+    font-size: 1 rem;
+    box-shadow: 0px 0.0625rem 0.625rem rgba(0, 0, 0, 0.2);
+    /* border: 1px solid var(--text-color-4); */
+
 }
 
 /* For mobile phones (up to 600px) */
 @media screen and (max-width: 600px) {
     .container {
-        width: 100%;
-        padding: 8px;  /* Less padding for small screens */
+        padding: 0.5rem;  
         font-size: 0.9rem;  /* Smaller font size */
     }
 
     .button {
-        width: 100%; /* Full width button for mobile */
-    }
-}
-
-/* For laptops and desktops (600px to 1200px) */
-@media screen and (min-width: 600px) and (max-width: 1200px) {
-    .container {
-        width: 100%;
-        max-width: 900px; /* Wider max width for laptops */
-        padding: 16px;
-        font-size: 1.1rem;  /* Slightly larger font */
-    }
-
-    .button {
-        width: auto; /* Adaptive width for buttons on larger screens */
+        width: auto; 
     }
 }
 
 /* For larger monitors (1200px and up) */
 @media screen and (min-width: 1200px) {
     .container {
-        width: 100%;
-        max-width: 1200px; /* Even wider for big screens */
-        padding: 24px;
+        width: 70vw;
+        padding: 1.5rem;
         font-size: 1.2rem;  /* Larger font for big screens */
         max-height: fit-content;
-        min-height: 600px;
+        min-height: 50vh;
     }
+
+/* For laptops and desktops (600px to 1200px) */
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        max-width: 900px; /* Wider max width for laptops */
+        padding: 1rem;
+        font-size: 1.1rem;  /* Slightly larger font */
+    }
+    .button {
+        width: auto; /* Adaptive width for buttons on larger screens */
+    }
+}
 
     .button {
         width: auto; /* Button adapts naturally */
@@ -183,25 +183,12 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    background: var(--background-title);
-    color: var(--main-title);
     width: inherit;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
+    font-size: 3rem;
     font-weight: 900;
-
- 
 }
 
 .section1st {
-    /* border-top: 1px solid var(--text-color-3);
-    border-left: 1px solid var(--text-color-1);
-    border-right: 1px solid var(--text-color-1); */
     height: auto;
 }
 
@@ -210,7 +197,7 @@ html, body {
 }
 
 .invoice-section > h3 {
-    font-size: 30px;
+    font-size: 2rem;
     padding: 0;
     margin: 0;
 }
@@ -219,9 +206,10 @@ html, body {
     border-top: 8px solid var(--text-color-1);
     padding: 20px;
 }
+
 .subtitle {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 1rem;
     color: var(--text-color-1);
     margin: 0;
     text-align: center;
@@ -229,14 +217,14 @@ html, body {
 
 /* button to send invoice */
 #addToInvoiceBtn {
-    border-radius: 8px;
-    padding: 10px 30px;
+    border-radius: 1em;
+    padding: 0.625rem 1.875rem;
     background: var(--button-send);
     color: var(--button-text-color);
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 ul {
@@ -245,72 +233,58 @@ ul {
 }
 
 li {
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
 }
 
 #totalAmount {
     font-weight: bold;
-    font-size: 36px;
-    line-height: 4px;
+    font-size: 2.25rem;
+    line-height: 1.5rem;
     color: var(--text-color-1);
-    padding: 10px;
+    padding: 0.625rem;
 }
 .conditions {
     margin: 0;
 }
 
 .conditionleft {
-    margin: 10px;
+    margin: 0.625rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .carousel-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
     position: relative;
     width: inherit;
-    /* border-left: 1px solid var(--text-color-1);
-    border-right: 1px solid var(--text-color-1); */
     margin: 0;
-}
-
-.work-add-container {
-    display: flex;
-    flex-direction: e;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    position: relative;
-    width: 590px;
-    /* border-left: 1px solid var(--text-color-1);
-    border-right: 1px solid var(--text-color-1); */
 }
 
 .carousel {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
     transition: transform 0.3s ease-out;
-    padding: 30px;
-    max-width: 700px;
+    padding: 1.875rem;
+    max-width: inherit;
 }
+
 
 .service-btn {
     background-color: #FFF;
     color: var(--text-color-3);
-    border: 1px solid #D5d4D8;
-    border-radius: 4px;
-    padding: 8px 13px;
-    font-size: 16px;
+    border: 0.0625rem solid #D5d4D8;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.8125rem;
+    font-size: 1rem;
     font-weight: 800;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 10px;
     width: 150px;
     height: 50px;
 }
@@ -325,30 +299,31 @@ li {
     transform: translateY(-50%);
     background-color: #ddd;
     border: none;
-    padding: 10px;
+    padding: 0.625rem;
     cursor: pointer;
 }
 
 #prevBtn {
-    left: 5;
+    left: 5px;
 }
 
 #nextBtn {
-    right: 5;
+    right: 5px;
 }
 
 /* Footer */
+
 footer {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: inherit;
+    width: 100%;
     height: inherit;
 }
 
 .invoice-section {
-    /* border-top: 1px solid #C3C6DB; */
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -363,7 +338,6 @@ footer {
     color: var(--text-color-1);
     font-weight: 700;
     font-size: 12px;
-    /* border-bottom: 1px solid var(--text-color-1); */
 }
 .total-row {
     display: flex;
@@ -443,9 +417,6 @@ footer {
 
 .footer {
     width: 589px;
-    /* border-left: 1px solid var(--text-color-1);
-    border-right: 1px solid var(--text-color-1);
-    border-bottom: 1px solid var(--text-color-1); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -468,10 +439,10 @@ footer {
     background-color: var(--button-send);
     color: var(--button-invoice);
     border:none;
-    padding:10px 20px;
-    border-radius: 10px;
-    margin:20px;
-    margin-bottom: 50px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    margin:1.25rem;
+    margin-bottom: 3.125rem;
     font-size: 2rem;
     cursor: pointer;
 }
@@ -480,19 +451,19 @@ footer {
     font-weight: 900;
 }
 .add-work-btn {
-    width: 10px;
-    height: 10px;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-self: center;
     align-items: center;
     background-color: var(--button-send);
     color: var(--button-invoice);
-    border-radius: 5px;
-    font-size: 24px;
+    border-radius: 0.3125rem;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-    padding: 20px ;
+    padding: 1.25rem;
     transition: background-color 03s;
 }
 
@@ -511,42 +482,35 @@ footer {
 
 #price {
     border: none;
-    
-    /* -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: none;
-    background-image: none;
-    padding: 5px; */
 }
 
 .task-input-container {
     display: flex;
     max-width: 400px;
     outline: 0.5px solid var(--button-invoice);
-    border-radius: 4px;
+    border-radius: 0.0625rem;
     overflow: hidden;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 1rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 0px 20px;
-    width: 150%;
+    padding: 0px 1.25rem;
+    width: 100%;
 }
 
 
 
 .task-label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 0.0625rem;
 }
 
 .task-input, .task-price {
     width: 100%;
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.625rem;
     border: 'none';
 }
 
@@ -626,16 +590,16 @@ footer {
 
 .area-email-buttons  {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-size: 2rem;
 }
 
 .recipientEmail, .recipientName {
     display: flex;
-    padding: 30px;
-    font-size: 16px;
+    padding: 2rem;
+    font-size: 1rem;
     align-items: center;
     justify-content: center;
 }
