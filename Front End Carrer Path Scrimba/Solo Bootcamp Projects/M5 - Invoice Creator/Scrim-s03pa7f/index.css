@@ -63,7 +63,7 @@ body {
 /* for the dark-mode toggle */
 
 #toggle-label {
-  width: 15vw;
+  width: 5vw;
   height: 2rem;
   position: relative;
   display: flex;

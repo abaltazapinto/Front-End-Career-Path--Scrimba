@@ -71,24 +71,24 @@ function addItemToSelectedItems(itemName, itemPrice, itemCount) {
 }
 
 function removeItem(itemName) {
-    console.log("removed")
     if(itemCounts[itemName] > 0) {
         itemCounts[itemName]--;
+        const totalCountElement = document.querySelector(`.data-${itemName.toLowerCase().replace(/\s+/g, "-")}`);
+        if (totalCountElement) {
+            totalCountElement.textContent = DOMPurify.sanitize(`x ${itemCounts[itemName]} - $${(itemCounts[itemName] * selectedItems.find(i => i.name === itemName).price).toFixed(2)}`);
+        }
         if(itemCounts[itemName] === 0){
             selectedItems = selectedItems.filter((i) => i.name !== itemName);
             const itemElement = document.querySelector(`.data-${itemName.toLowerCase().replace(/\s+/g, "-")}`);
             //left part
             const sanitizeItemName = itemName.toLowerCase().replace(/\s+/g, "-");
             const itemNameElement = document.getElementById(sanitizeItemName)
+
             if (itemElement && itemNameElement) {
                 itemElement.remove();
                 itemNameElement.remove();
             }   
-            const totalCountElement = document.querySelector(`.data-${itemName.toLowerCase().replace(/\s+/g, "-")}`);
 
-            if (totalCountElement) {
-                totalCountElement.textContent = DOMPurify.sanitize(`x ${itemCounts[itemName]} - $${(itemCounts[itemName] * selectedItems.find(i => i.name === itemName).price).toFixed(2)}`);
-            }
         } 
         // Update the total price
         const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.price * itemCounts[item.name], 0);
