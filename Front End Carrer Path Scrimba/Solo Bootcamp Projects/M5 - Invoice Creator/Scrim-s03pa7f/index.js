@@ -1,3 +1,4 @@
+
 import { workItems } from './assets/workItems.js'
 
 // Handle dark mode toggle
@@ -26,7 +27,7 @@ const itemPrice = Object.values(workItems.map(item => [item.price], 0))
 let currentIndex = 0;
 const itemsPerPage = 3;
 const itemsToSlide = 1;
-let selectedItems = [];
+const selectedItems = [];
 
 // carousel
 function initCarousel() {
@@ -35,7 +36,7 @@ function initCarousel() {
         const button = document.createElement('button');
         button.classList.add('service-btn');
         button.setAttribute("aria-label", `${item.name} offered for ${item.price}`)
-        button.textContent = `${item.name}: $${item.price}`;
+        button.textContent = DOMPurify.sanitize(`${item.name}: $${item.price}`);
         button.addEventListener('click', handleItemClick);
         carousel.appendChild(button);
     });
@@ -59,6 +60,16 @@ function handleItemClick(e) {
 }
 
 
+function addItemToSelectedItems(itemName, itemPrice, itemCount) {
+    selectedItems.push({
+        name: itemName,
+        count: itemCount,
+        price: itemPrice,
+        totalPrice: itemPrice * itemCount,
+    });
+}
+
+
 function addToInvoice(e) {
 
     const button = e.target;
@@ -72,16 +83,10 @@ function addToInvoice(e) {
 
     // Check if the item is already in selectedItems
     let existingItem = selectedItems.find(i => i.name === itemName);
-    if (!existingItem) {
-        
-        // If item doesn't exist, add it to selectedItems with initial count and total price
-        selectedItems.push({
-            name: itemName,
-            count: itemCounts[itemName],
-            price: itemPrice,
-            totalPrice: itemPrice * itemCounts[itemName],
-        });
 
+    if (!existingItem) {
+        addItemToSelectedItems(itemName, itemPrice, itemCounts[itemName]);
+    
 
         for (let item of selectedItems) {
 
@@ -102,7 +107,7 @@ function addToInvoice(e) {
             // Create a separate element for the ite-name
             const itemNameElement = document.createElement('div')
             itemNameElement.classList.add('item-name');
-            itemNameElement.textContent = `${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`;
+            itemNameElement.textContent = DOMPurify.sanitize(`${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`);
             taskContainer.appendChild(itemElement);
 
             itemElement.appendChild(itemNameElement);
@@ -113,12 +118,12 @@ function addToInvoice(e) {
             // totalCountElement.classList.add('item-count');
             totalCountElement.classList.add(`data-${sanitizeItemName}`);
             totalCountElement.setAttribute(`data-${sanitizeItemName}`, sanitizeItemName)
-            totalCountElement.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
+            totalCountElement.textContent = DOMPurify.sanitize(`x ${item.count} - $${item.totalPrice.toFixed(2)}`)
             countContainer.appendChild(itemCount);
             itemCount.appendChild(totalCountElement)
             taskDiv.appendChild(taskContainer)
             const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
-            document.getElementById('totalAmount').textContent =`$${totalItemsAmount.toFixed(2)}`;
+            document.getElementById('totalAmount').textContent = DOMPurify.sanitize((`$${totalItemsAmount.toFixed(2)}`));
 
             }
         }
@@ -162,9 +167,9 @@ function addToInvoice(e) {
                             console.log(element)
                             if(element) {
                                 element.innerHTML = '';
-                                element.textContent = `x ${item.count} - $${item.totalPrice.toFixed(2)}`
+                                element.textContent = DOMPurify.sanitize(`x ${item.count} - $${item.totalPrice.toFixed(2)}`)
                                 const totalItemsAmount = selectedItems.reduce((sum, item) => sum + item.totalPrice, 0)
-                                document.getElementById('totalAmount').textContent = `$${totalItemsAmount.toFixed(2)}`
+                                document.getElementById('totalAmount').textContent = DOMPurify.sanitize(`$${totalItemsAmount.toFixed(2)})`)
                             }
                         }
             }      
@@ -300,16 +305,16 @@ function sendInvoiceEmail() {
             
             const nameLabel = document.createElement('label');
             nameLabel.setAttribute("for", "recipientName")
-            nameLabel.textContent = ('Enter your name')
+            nameLabel.textContent = DOMPurify.sanitize('Enter your name')
 
 
             const emailLabel = document.createElement('label');
             emailLabel.setAttribute("for", "recipientEmail");
-            emailLabel.textContent = ('Enter your email address');
+            emailLabel.textContent = DOMPurify.sanitize('Enter your email address');
             
             const submitEmailButton = document.createElement('button');
             submitEmailButton.style.fontSize = '2rem';
-            submitEmailButton.textContent = "Submit Email and Send Invoice";
+            submitEmailButton.textContent = DOMPurify.sanitize("Submit Email and Send Invoice");
             submitEmailButton.style.display = 'block';
             submitEmailButton.style.marginTop = '1rem';
             submitEmailButton.style.padding = '2rem';
@@ -322,6 +327,10 @@ function sendInvoiceEmail() {
 
             submitEmailButton.onclick = function () {
                 const recipientEmail = document.getElementById('recipientEmail').value;
+                if (!recipientEmail.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    alert("Please enter a valid email.");
+                    return;
+                }
                 const nameInput = document.getElementById('recipientName').value;
                 const selectedItemsDetails = selectedItems.map(item => `${item.name}: ${item.count} x $${item.price.toFixed(2)} = $${item.totalPrice.toFixed(2)}`).join('\n');
                 const totalAmount = document.getElementById('totalAmount').textContent;
