@@ -1,11 +1,7 @@
 <html lang="en">
   <head>
-    <!-- Policies -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; object-src 'none';"> -->
     <link rel="stylesheet" href="index.css" />
-
     <title>Invoice Creator</title>
-    
     <!-- misses an image for the site like a icon -->
   </head>
   <body>
@@ -18,7 +14,12 @@
         id="darkmode-toggle"
         aria-label="Toggle dark mode"
       />
-      <label for="darkmode-toggle" id="toggle-label" name="toggle-label" aria-hidden="true">
+      <label
+        for="darkmode-toggle"
+        id="toggle-label"
+        name="toggle-label"
+        aria-hidden="true"
+      >
         <svg
           version="1.1"
           class="sun"
@@ -141,63 +142,75 @@
         </div>
         <div class="task-input-container">
           <label for="username" class="work-item" aria-hidden="true"></label>
-          <input type="text" id="task-input" name="task-input" placeholder="Enter task" required class="task-input"/>
+          <input
+            type="text"
+            id="task-input"
+            name="task-input"
+            placeholder="Enter task"
+            required
+            class="task-input"
+          />
           <label for="task-price" id="task.label" class="task-label"></label>
-          <select name="price" id="task-price" name="task-price" class="task-price"> 
-            <option value="10" class='task-price'> $10 </option>
-            <option value="20" class='task-price'> $20 </option>
-            <option value="30" class='task-price'> $30 </option>
-            <option value="40" class='task-price'> $40 </option>
-            <option value="40" class='task-price'> $40 </option>
-            <option value="50" class='task-price'> $50 </option>
+          <select
+            name="price"
+            id="task-price"
+            name="task-price"
+            class="task-price"
+          >
+            <option value="10" class="task-price">$10</option>
+            <option value="20" class="task-price">$20</option>
+            <option value="30" class="task-price">$30</option>
+            <option value="40" class="task-price">$40</option>
+            <option value="40" class="task-price">$40</option>
+            <option value="50" class="task-price">$50</option>
           </select>
           <button class="add-work-btn">+</button>
         </div>
-        </form>
       </section>
-
       <section class="footer">
         <footer>
           <div class="invoice-section">
             <div class="invoice-header">
               <div class="left column">
-              <div id="task" class="column">TASK</div>
-              <div id="selected-items" class="tasks"></div> 
-            </div>
-            <div>
-              <div class="right column">
-                <div id="total" class="column">TOTAL</div>
-                <div id="selected-items-count" class="tasks"></div>
+                <div id="task" class="column">TASK</div>
+                <div id="selected-items" class="tasks"></div>
               </div>
-            </div>
-          </div>
-          </div>
-            <div class="total-row">
               <div>
-              <div class="total-row left thin" >Notes</div>
-              <span class="conditionleft thin">We accept cash, credit card, or PayPal</span>
+                <div class="right column">
+                  <div id="total" class="column">TOTAL</div>
+                  <div id="selected-items-count" class="tasks"></div>
+                </div>
               </div>
-              <div class="right">
+            </div>
+          </div>
+          <div class="total-row">
+            <div>
+              <div class="total-row left thin">Notes</div>
+              <span class="conditionleft thin"
+                >We accept cash, credit card, or PayPal</span
+              >
+            </div>
+            <div class="right">
               <div class="total-row right thin">TOTAL AMOUNT</div>
               <span class="total-row right" id="totalAmount">$0</span>
-              </div>
             </div>
-          
+          </div>
           <div class="send-invoice">
             <button id="send-invoice-btn">✉️ Send to Invoice</button>
-          </div>
           </div>
         </footer>
       </section>
     </div>
-  </div>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
-  <script type="text/javascript">
-    (function(){
-        emailjs.init("nXyMwu1uYjUpU-tcP"); 
-    })();
-</script>
-  <script src="index.js" type="module" defer ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("nXyMwu1uYjUpU-tcP");
+      })();
+    </script>
+    <script src="index.js" type="module" defer></script>
   </body>
 </html>

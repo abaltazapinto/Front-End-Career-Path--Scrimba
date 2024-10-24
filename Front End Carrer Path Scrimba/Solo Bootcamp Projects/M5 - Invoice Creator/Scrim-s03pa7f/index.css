@@ -1,606 +1,613 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url(./Fonts/Inter/);
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Inter";
+  src: url(./Fonts/Inter/);
+  font-weight: 400;
+  font-style: normal;
 }
 
-html, body {
-    margin: 0;
-    padding: 1.25rem;
-    font-size: 1rem;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--background);
-    margin: 0;
-    padding: 1.25rem;
-    font-family: 'Inter', sans-serif;
+html,
+body {
+  margin: 0;
+  padding: 1.25rem;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  margin: 0;
+  padding: 1.25rem;
+  font-family: "Inter", sans-serif;
 }
 
 :root {
-    --main-title: #2b283A;
-    --background-title: #D5D4D8;
-    --background: #f5f5f5;
-    --outline-btn-inside: #3A3D63;
-    --text-color-1: #4A4E74;
-    --text-color-2: #D5D4D8;
-    --text-color-3: #918E9B;
-    --text-color-4: #222;
-    --button-invoice: #d5D4d8;
-    --button-send: #3770ED;
-    --button-send-hover: #2860D8;
-    --button-text-color:#fff;
-    --outline: #222;
+  --main-title: #2b283a;
+  --background-title: #d5d4d8;
+  --background: #f5f5f5;
+  --outline-btn-inside: #3a3d63;
+  --text-color-1: #4a4e74;
+  --text-color-2: #d5d4d8;
+  --text-color-3: #918e9b;
+  --text-color-4: #222;
+  --button-invoice: #d5d4d8;
+  --button-send: #3770ed;
+  --button-send-hover: #2860d8;
+  --button-text-color: #fff;
+  --outline: #222;
 }
 
 .dark-mode {
-    --main-title: #f5f5f5;
-    --background-title: #3A69D2;
-    --background: #1F2937;
-    --outline-btn-inside: #2F1836;
-    --text-color-1: #D5D4D8;
-    --text-color-2: #D5D4D8;
-    --text-color-3: #918E9B;
-    --text-color-4: #fff;
-    --button-invoice: #d1d4F4;
-    --button-send: #3770ED;
-    --button-send-hover: #2860D8;
-    --button-text-color: #fff;
-    --outline: #fff;
+  --main-title: #f5f5f5;
+  --background-title: #3a69d2;
+  --background: #1f2937;
+  --outline-btn-inside: #2f1836;
+  --text-color-1: #d5d4d8;
+  --text-color-2: #d5d4d8;
+  --text-color-3: #918e9b;
+  --text-color-4: #fff;
+  --button-invoice: #d1d4f4;
+  --button-send: #3770ed;
+  --button-send-hover: #2860d8;
+  --button-text-color: #fff;
+  --outline: #fff;
 }
-
 
 /* for the dark-mode toggle */
 
 #toggle-label {
-    width: 15vw;
-    height: 2.rem;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.rem;
-    background: #ebebeb;
-    border-radius: 200px;
-    box-shadow:
-      inset 0px 0.3125rem 0.9375rem rgba(0, 0, 0, 0.4),
-      inset 0px -0.3125rem 0.9375rem rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-  }
+  width: 15vw;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow:
+    inset 0px 0.3125rem 0.9375rem rgba(0, 0, 0, 0.4),
+    inset 0px -0.3125rem 0.9375rem rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
 
 #toggle-label::after {
-    content: "";
-    width: 1.25rem;
-    height: 1.25rem;
-    position: absolute;
-    top: 0.15625rem;
-    left: 0.3125rem;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
-    border-radius: 180px;
-    box-shadow: 0px 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
-  }
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  position: absolute;
+  top: 0.15625rem;
+  left: 0.3125rem;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+}
 
-  aside {
-    position: fixed;
-    bottom: 0.625rem;
-    right: 0.625rem;
-    z-index: 1000;
+aside {
+  position: fixed;
+  bottom: 0.625rem;
+  right: 0.625rem;
+  z-index: 1000;
 }
 
 /* Estilo específico para o input do Dark/Light mode */
 #darkmode-toggle {
-    width: 0;
-    height: 0;
-    visibility: hidden;
+  width: 0;
+  height: 0;
+  visibility: hidden;
 }
 
 #darkmode-toggle:checked + #toggle-label {
-    background: #242424;
+  background: #242424;
 }
 
 #darkmode-toggle:checked + #toggle-label::after {
-    left: calc(100% - 15%);
-    transform: translateX(-100%);
-    background: linear-gradient(180deg, #777, #3a3a3a);
+  left: calc(100% - 15%);
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
 }
 
 /* Apenas para o label do toggle */
 #toggle-label,
 #toggle-label::after {
-    transition: 0.3s;
+  transition: 0.3s;
 }
 
 #toggle-label:active::after {
-    width: 1.625rem;
+  width: 1.625rem;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Responsive container design */
 
 .container {
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    font-size: 1 rem;
-    box-shadow: 0px 0.0625rem 0.625rem rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  font-size: 1 rem;
+  box-shadow: 0px 0.0625rem 0.625rem rgba(0, 0, 0, 0.4);
 }
 
 /* For mobile phones (up to 600px) */
 @media screen and (max-width: 600px) {
-    .container {
-        padding: 0.5rem;  
-        font-size: 0.9rem;  /* Smaller font size */
-    }
+  .container {
+    padding: 0.5rem;
+    font-size: 0.9rem; /* Smaller font size */
+  }
 
-    .button {
-        width: 100%; 
-    }
+  .button {
+    width: 100%;
+  }
 }
 
 /* For larger monitors (1200px and up) */
 @media screen and (min-width: 1200px) {
-    .container {
-        width: 70vw;
-        padding: 1.5rem;
-        font-size: 1.2rem;  /* Larger font for big screens */
-        min-height: 50vh;
-    }
+  .container {
+    width: 70vw;
+    padding: 1.5rem;
+    font-size: 1.2rem; /* Larger font for big screens */
+    min-height: 50vh;
+  }
 
-/* For laptops and desktops (600px to 1200px) */
-@media screen and (min-width: 600px) and (max-width: 1200px) {
+  /* For laptops and desktops (600px to 1200px) */
+  @media screen and (min-width: 600px) and (max-width: 1200px) {
     .container {
-        width: 100%;
-        max-width: 900px; /* Wider max width for laptops */
-        padding: 1rem;
-        font-size: 1.1rem;  /* Slightly larger font */
+      width: 100%;
+      max-width: 900px; /* Wider max width for laptops */
+      padding: 1rem;
+      font-size: 1.1rem; /* Slightly larger font */
     }
     .button {
-        width: auto; /* Adaptive width for buttons on larger screens */
+      width: auto; /* Adaptive width for buttons on larger screens */
     }
-}
+  }
 
-    .button {
-        width: auto; /* Button adapts naturally */
-    }
+  .button {
+    width: auto; /* Button adapts naturally */
+  }
 }
 
 .invoice-title {
-    background: var(--background-title);
-    color: var(--main-title);
-    font-size: 3rem;
-    font-weight: 900;
-    text-align: center;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: inherit;
+  background: var(--background-title);
+  color: var(--main-title);
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
 }
 
 .section1st {
-    height: auto;
+  height: auto;
 }
 
 .invoice-section {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .invoice-section > h3 {
-    font-size: 2rem;
-    padding: 0;
-    margin: 0;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 .invoice-section > .invoice-header {
-    border-top: 8px solid var(--text-color-1);
-    padding: 20px;
+  border-top: 8px solid var(--text-color-1);
+  padding: 20px;
 }
 
 .subtitle {
-    font-weight: 300;
-    font-size: 1rem;
-    color: var(--text-color-1);
-    margin: 0;
-    text-align: center;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--text-color-1);
+  margin: 0;
+  text-align: center;
 }
 
 /* button to send invoice */
 #addToInvoiceBtn {
-    border-radius: 1em;
-    padding: 0.625rem 1.875rem;
-    background: var(--button-send);
-    color: var(--button-text-color);
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
+  border-radius: 1em;
+  padding: 0.625rem 1.875rem;
+  background: var(--button-send);
+  color: var(--button-text-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 ul {
-    list-style-type: none;
-
+  list-style-type: none;
 }
 
 li {
-    margin-bottom: 0.3125rem;
+  margin-bottom: 0.3125rem;
 }
 
 #totalAmount {
-    font-weight: bold;
-    font-size: 2.25rem;
-    line-height: 1.5rem;
-    color: var(--text-color-1);
-    padding: 0.625rem;
+  font-weight: bold;
+  font-size: 2.25rem;
+  line-height: 1.5rem;
+  color: var(--text-color-1);
+  padding: 0.625rem;
 }
 .conditions {
-    margin: 0;
+  margin: 0;
 }
 
 .conditionleft {
-    margin: 0.625rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: inherit;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: inherit;
+  margin: 0;
 }
 
 .carousel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    transition: transform 0.3s ease-out;
-    padding: 1.875rem;
-    max-width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  transition: transform 0.3s ease-out;
+  padding: 1.875rem;
+  max-width: inherit;
 }
 
-
 .service-btn {
-    background-color: #FFF;
-    color: var(--text-color-3);
-    border: 0.0625rem solid #D5d4D8;
-    border-radius: 0.25rem;
-    padding: 0.5rem 0.8125rem;
-    font-size: 1rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 150px;
-    height: 50px;
+  background-color: #fff;
+  color: var(--text-color-3);
+  border: 0.0625rem solid #d5d4d8;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.8125rem;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 150px;
+  height: 50px;
 }
 
 .service-btn:hover {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
-#prevBtn, #nextBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ddd;
-    border: none;
-    padding: 0.625rem;
-    cursor: pointer;
+#prevBtn,
+#nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ddd;
+  border: none;
+  padding: 0.625rem;
+  cursor: pointer;
 }
 
 #prevBtn {
-    left: 5px;
+  left: 5px;
 }
 
 #nextBtn {
-    right: 5px;
+  right: 5px;
 }
 
 /* Footer */
 
 footer {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
 }
 
 .invoice-section {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .invoice-header {
-    width: 490px;
-    display:flex;
-    justify-content: space-between;
-    flex-direction: row;
-    color: var(--text-color-1);
-    font-weight: 700;
-    font-size: 12px;
+  width: 490px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  color: var(--text-color-1);
+  font-weight: 700;
+  font-size: 12px;
 }
 .total-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: var(--text-color-1);
-    font-weight: 700;
-    padding:20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--text-color-1);
+  font-weight: 700;
+  padding: 20px;
 }
 
 .item-count {
-    margin: 4px; 
-    font-weight: 300;
+  margin: 4px;
+  font-weight: 300;
 }
 .item-name {
-    
-    font-weight: 300;
-    margin: 5px;
+  font-weight: 300;
+  margin: 5px;
 }
 .bold {
-    font-weight: 900;
+  font-weight: 900;
 }
 
-.tasks { 
-    font-weight: 300;
+.tasks {
+  font-weight: 300;
 }
 
 .task-list {
-    list-style-type: none;
-    font-weight: 400;
-    padding: 0;
+  list-style-type: none;
+  font-weight: 400;
+  padding: 0;
 }
 
 .service-btn.selected {
-    background-color: #e0e0e0;
-    border: 2px solid #007bff;
+  background-color: #e0e0e0;
+  border: 2px solid #007bff;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-self: center;
-    padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  padding: 5px;
 }
 
 .thin {
-    font-size: 12px;
-    font-weight: 300;
+  font-size: 12px;
+  font-weight: 300;
 }
 
 #selectedItems {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 #selectedItems li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.total-tasks, .task-total {
-    font-weight: 300;
-    font-size: 12px;
-    color: var(--text-color-1);
+.total-tasks,
+.task-total {
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--text-color-1);
 }
 
 .remove-btn {
-    font-size: 10px;
-    font-weight: 300;
-    color: #918E9B;
-    cursor: pointer;
-    border: none;
-    background-color: none;
+  font-size: 10px;
+  font-weight: 300;
+  color: #918e9b;
+  cursor: pointer;
+  border: none;
+  background-color: none;
 }
 
 .footer {
-    width: 589px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 589px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .send-invoice {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* # buttons */
 
 #send-invoice-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-send);
-    color: var(--button-invoice);
-    border:none;
-    padding: 0.625rem 1.25rem;
-    border-radius: 0.625rem;
-    margin:1.25rem;
-    margin-bottom: 3.125rem;
-    font-size: 2rem;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-send);
+  color: var(--button-invoice);
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.625rem;
+  margin: 1.25rem;
+  margin-bottom: 3.125rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
 #send-invoice-btn:hover {
-    background-color: var(--button-send-hover);
-    font-weight: 900;
+  background-color: var(--button-send-hover);
+  font-weight: 900;
 }
 .add-work-btn {
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    align-items: center;
-    background-color: var(--button-send);
-    color: var(--button-invoice);
-    border-radius: 0.3125rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 1.25rem;
-    transition: background-color 03s;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  background-color: var(--button-send);
+  color: var(--button-invoice);
+  border-radius: 0.3125rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1.25rem;
+  transition: background-color 03s;
 }
 
 .add-work-btn:hover {
-    background-color: color-contrast(var(--button-send) vs var(--button-send), #FFF);
-    color: var(--button-send);
+  background-color: color-contrast(
+    var(--button-send) vs var(--button-send),
+    #fff
+  );
+  color: var(--button-send);
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #price {
-    border: none;
+  border: none;
 }
 
 .task-input-container {
-    display: flex;
-    max-width: 400px;
-    outline: 0.5px solid var(--button-invoice);
-    border-radius: 0.0625rem;
-    overflow: hidden;
-    flex-direction: row;
-    justify-content: flex-end;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 0px 1.25rem;
-    width: 100%;
+  display: flex;
+  max-width: 400px;
+  outline: 0.5px solid var(--button-invoice);
+  border-radius: 0.0625rem;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: flex-end;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0px 1.25rem;
+  width: 100%;
 }
 
 .task-label {
-    font-weight: bold;
-    margin-bottom: 0.0625rem;
+  font-weight: bold;
+  margin-bottom: 0.0625rem;
 }
 
-.task-input, .task-price {
-    width: 100%;
-    margin: 1rem;
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 0.625rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    border: 'none';
+.task-input,
+.task-price {
+  width: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.625rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border: "none";
 }
 
 #task-price {
-    border: none;
-    max-width: fit-content;
+  border: none;
+  max-width: fit-content;
 }
 
 #task-input {
-    border: none;
+  border: none;
 }
 
 /* email details section */
 /* addin more than one section */
-.warning-details, .email-details {
-    position: fixed;
-    top: 0; 
-    left: 0;
-    width:100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.warning-details,
+.email-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.main-Warning-area, .main-recipient-email {
-    background-color: var(--background);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+.main-Warning-area,
+.main-recipient-email {
+  background-color: var(--background);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
-.main-Warning-area button, .main-recipient-email button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: var(--button-send);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+.main-Warning-area button,
+.main-recipient-email button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: var(--button-send);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.main-Warning-area button:hover, .main-recipient-email button:hover {
-    background-color: var(--button-send-hover);
+.main-Warning-area button:hover,
+.main-recipient-email button:hover {
+  background-color: var(--button-send-hover);
 }
 
-.close, .yes-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-
+.close,
+.yes-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.close:hover, .yes-button:hover {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.close:hover,
+.yes-button:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .area-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.area-email-buttons  {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+.area-email-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
-.recipientEmail, .recipientName {
-    display: flex;
-    padding: 2rem;
-    font-size: 1rem;
-    align-items: center;
-    justify-content: center;
+.recipientEmail,
+.recipientName {
+  display: flex;
+  padding: 2rem;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
 }
