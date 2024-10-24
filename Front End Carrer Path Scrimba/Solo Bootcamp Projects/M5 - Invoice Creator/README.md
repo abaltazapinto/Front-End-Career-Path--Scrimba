@@ -60,6 +60,20 @@ Conclusion
     - **itemCounts**: Tracks the count of each task.
     - **TotalAmount**: Calculates and displays the total amount of the invoice.
 
+### Task and wor-item remotion
+
+- **removing** both the work-items from the carousel and the task-items from the invoice by and update the total accordingly**DOUBLE - CLICKING**
+  
+  - #### . `removeTask(index)`
+ Removes a work item from the `workItems` array based on the index and re-renders the carousel.
+
+  - #### . `removeItem(itemName)`
+Removes an item from the invoice:
+- Decreases the item count if it's greater than zero.
+- If the count reaches zero, removes the item from `selectedItems`.
+- Updates the DOM to reflect the removal of the item and updates the total price accordingly.
+
+
 ### Task and Servie Management
 
 - **Functionality**: Manages the creation and removal of tasks from the list of available services.

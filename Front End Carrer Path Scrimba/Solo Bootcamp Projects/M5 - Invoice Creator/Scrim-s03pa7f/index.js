@@ -74,7 +74,6 @@ function removeItem(itemName) {
     console.log("removed")
     if(itemCounts[itemName] > 0) {
         itemCounts[itemName]--;
-        
         if(itemCounts[itemName] === 0){
             selectedItems = selectedItems.filter((i) => i.name !== itemName);
             const itemElement = document.querySelector(`.data-${itemName.toLowerCase().replace(/\s+/g, "-")}`);
@@ -134,11 +133,9 @@ function addToInvoice(e) {
         const buttonRemoveItem = document.createElement('button')
         buttonRemoveItem.classList.add('remove-work-btn')
         buttonRemoveItem.textContent = DOMPurify.sanitize(`Remove`)
-
         buttonRemoveItem.addEventListener("dblclick", function () {
             removeItem(itemName);
           });
-
         taskContainer.appendChild(itemElement);
         itemElement.appendChild(itemNameElement);
         itemElement.appendChild(buttonRemoveItem)
