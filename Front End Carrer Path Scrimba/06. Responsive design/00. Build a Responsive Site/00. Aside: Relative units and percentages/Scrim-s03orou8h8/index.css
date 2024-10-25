@@ -1,0 +1,57 @@
+body {
+    color: #8C8D9C;
+    text-align: center;
+}
+
+.prog-container {
+    width: 460px;
+    margin: 38px auto; 
+}
+
+.prog-bar {
+    height: 20px;
+    background-color: #808CB0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.prog-indicator {
+    height: 100%;
+    background-color: hotpink;
+}
+
+/* ----------------------------------------------------
+   Challenge: 
+   Set the width of each progress bar using a percentage
+*/
+
+.prog-33 {
+    width: 33%;
+}
+
+.prog-60 {
+ width:60%;
+}
+
+.prog-90 {
+    width:90%;
+}
+
+/* -------------------------------------------------- */
+
+h1 {
+    font-family: 'Racing Sans One', cursive;
+    font-weight: normal;
+    font-size: 54px;
+    color: #808CB0;
+    margin: 40px 0 56px;
+}
+
+.prog-info {
+    display: flex;
+    margin-bottom: 10px;
+}
+.status {
+    font-weight: 600;
+    margin-left: auto;
+}
