@@ -1,0 +1,66 @@
+body {
+    color: #202945;
+    background-color: #faf9f6;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.75rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+  
+.container {
+    width: 85%;
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.joke {
+    padding: 1.5em 0;
+    border-bottom: solid 1px;
+}
+
+.joke:last-child {
+    border: none;
+}
+
+.question {
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.punchline {
+    display: none;
+    margin-bottom: 0;
+}
+
+.joke:hover .punchline {
+    display: block;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (max-width: 499px) {
+    body {
+        color: #faf9f6;
+        background-color: #202945;
+    }
+}
+
+/*
+ Challenge: 
+   - Create a media query that targets a minimum
+     browser width of 500px
+   - In the media query, update the body's color and background
+*/
+
+@media (min-width: 500px) {
+    body {
+        color: yellowgreen;
+        background: paleturquoise;
+    }
+}
+

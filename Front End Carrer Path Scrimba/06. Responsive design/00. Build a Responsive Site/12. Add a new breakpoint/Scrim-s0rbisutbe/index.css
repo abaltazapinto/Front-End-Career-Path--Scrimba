@@ -6,13 +6,6 @@ body {
 
 /* ----- TYPOGRAPHY ----- */
 
-/*
-  Challenge:
-   - Change all the font-sizes from em to rem:
-     h1, h2, h3, .subheading, and .btn
-*/
-
-
 h1, 
 h3 {
     margin: 0;
@@ -34,12 +27,12 @@ h3 {
 }
 
 p {
-    line-height: 23px;
+    line-height: 1.5;
 }
 
 .subheading {
     display: block;
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
     color: #d0aaff;
 }
 
@@ -93,10 +86,25 @@ a:active {
 
 /* ----- LAYOUT ----- */
 
+/*
+  Challenge:
+    1. Create a new media query that targets a browser width of 768px or wider. 
+    2. Within the media query, select the header, section, and footer elements
+       and apply a top and bottom padding of 2.875em.
+    3. Adjust the initial padding for the header, section and footer elements.
+       Set a top and bottom padding value in em equal to 20px.
+*/
+
+@media (min-width: 768px) {
+    .header, .section-two, footer {
+        padding: 2.875em;
+    }
+}
+
 header, 
 section, 
 footer {
-    padding: 2.875rem 0;
+    padding: 1.25em 0;
 }
 
 header, 
@@ -118,20 +126,29 @@ header,
     width: 100%;
     display: block;
     max-width: 640px;
-    margin: 0 auto 2rem;
-}
-
-.section-two-image-container {
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto 2em;
 }
 
 .feature-image {
-    width: 48.8%;
+    width: 100%;
     border-radius: 4.6px;
+    margin-bottom: 1em;
 }
 
 footer {
     text-align: center;
     color: #5f29a3;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (min-width: 480px) {
+    .section-two-image-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .feature-image {
+        width: 48.8%;        
+    }
 }
