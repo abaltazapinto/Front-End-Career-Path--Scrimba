@@ -11,7 +11,16 @@
     flex-basis: 220px;
     flex-grow: 1;
 }
+/*
+  Challenge:
+    - Set the initial main size of .expand to a size larger than 220px
+*/
+
+.expand {
+    flex-basis: 250px ;
+}
 
 img {
     width: 100%;
+
 }
