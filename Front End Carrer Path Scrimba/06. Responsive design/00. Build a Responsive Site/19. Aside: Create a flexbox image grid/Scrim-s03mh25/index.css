@@ -1,0 +1,17 @@
+.image-container {
+    max-width: 800px;
+    line-height: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid;
+}
+
+.pet-item {
+    flex-basis: 220px;
+    flex-grow: 1;
+}
+
+img {
+    width: 100%;
+}
