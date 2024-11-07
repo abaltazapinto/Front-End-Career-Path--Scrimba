@@ -1,0 +1,77 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #404040;
+    margin: 0;
+}
+
+/* =================
+    Typography 
+   ================= */
+
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 900;
+}
+
+.beta-text { 
+    font-weight: 900;
+}
+
+.subheading {
+    color: #575757;
+    font-weight: 900;
+}
+
+/* =================
+    Intro
+   ================= */
+
+.intro { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 15.625rem;
+    text-align: center;
+    color: #fff;
+    background-color: #9480e4;
+}
+
+/* ====================
+    Main content
+   ==================== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+}
+
+.img-main {
+    border-radius: 50%;
+    padding: 1.5rem;
+    max-width: 12rem;
+}
+/* 
+  Challenge: Style the main content
+    - Use flexbox to horizontally center all items inside 
+      .main-content. The <p> text should remain left-aligned.
+    - Use em to give .main-content a top padding equal to 40px
+      and a left and right padding equal to 32px.
+    - Set the width of .img-main to 120px and display it as a rounded image.
+*/
+
+
+
+/* =================
+    Form
+   ================= */
+   
+
+/* =================
+    Media queries 
+   ================= */

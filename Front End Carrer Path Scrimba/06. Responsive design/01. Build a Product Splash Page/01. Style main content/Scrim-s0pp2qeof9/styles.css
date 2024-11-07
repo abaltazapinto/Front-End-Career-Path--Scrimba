@@ -1,0 +1,59 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #404040;
+}
+
+/* =================
+    Typography 
+   ================= */
+
+h1 {
+    font-weight: 400;
+}
+
+.beta-text { 
+    font-weight: 900;
+}
+
+.subheading {
+    color: #575757;
+    font-weight: 900;
+}
+
+/* =================
+    Intro
+   ================= */
+
+/* 
+  Challenge: Style the .intro section
+    - Convert into a flex container; 
+      display its content in a column
+    - Set a minimum height of 250px
+    - Center-align its content
+    - Vertically center the content
+    - Remove the space around the edges of the page
+*/
+
+.intro { 
+    color: #fff;
+    background-color: #9480e4;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ====================
+    Main content
+   ==================== */
+
+
+/* =================
+    Form
+   ================= */
+   
+
+/* =================
+    Media queries 
+   ================= */
