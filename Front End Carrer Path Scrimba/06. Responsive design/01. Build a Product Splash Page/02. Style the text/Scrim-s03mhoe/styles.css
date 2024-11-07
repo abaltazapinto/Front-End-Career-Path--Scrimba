@@ -15,7 +15,9 @@ body {
 */
 
 h1 {
+    font-size: 2.5rem;
     font-weight: 400;
+    text-shadow: #816fca 1px 5px 10px;
 }
 
 .beta-text { 
