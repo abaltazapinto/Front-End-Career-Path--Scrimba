@@ -7,20 +7,11 @@ body {
 /* =================
     Typography 
    ================= */
-   
-/* 
-  Challenge: Set the initial styles for text
-    - Set the h1 to a relative font-size value equal to 40px
-    - Apply a text shadow to the h1 using the color value #816fca
-*/
-p {
-    font-size: 1.125rem;
-    line-height: 1.35;
-}
+
 h1 {
     font-size: 2.5rem;
     font-weight: 400;
-    text-shadow: #816fca 1px 5px 10px;
+    text-shadow: 0 2px #816fca;
 }
 
 h2 {
@@ -28,15 +19,23 @@ h2 {
     margin: 0.167em 0;
 }
 
+p {
+    font-size: 1.125rem;
+    line-height: 1.35;
+}
+
 .beta-text { 
     font-weight: 900;
-    text-transform: uppercase;
 }
 
 .subheading {
     color: #575757;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
+    font-weight: 900;  
+    margin-bottom: 0.5em;
+}
+
+.beta-text,
+.subheading {
     text-transform: uppercase;
 }
 
@@ -86,3 +85,21 @@ h2 {
 /* =================
     Media queries 
    ================= */
+   
+   @media (min-width: 576px) {
+     body {
+        display: flex;
+     }
+     .intro, .main-content {
+        flex-basis: 50%;
+     }
+   }
+/* 
+  Challenge: Adjust the layout for wider screens
+    - Add a media query that targets a browser width of 576px or wider
+    - Within the media query, convert the parent element of .intro and 
+      .main-content to a flex container
+    - Set the width .intro and .main-content to exactly
+      half the total width of their parent container
+*/
+
