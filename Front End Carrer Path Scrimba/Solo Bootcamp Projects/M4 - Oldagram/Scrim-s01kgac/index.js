@@ -116,7 +116,6 @@ posts.forEach((post, index) => {
 });
 
 
-<<<<<<< Updated upstream
   
 function addLikeButtonListeners() { 
     const postRef = ref(db, `posts`);
@@ -195,7 +194,6 @@ function renderPosts() {
 
 renderPosts()
 
-=======
 //Handle the images of the users .
 
 const firstPostAvatar = posts[0].avatar;
@@ -203,4 +201,3 @@ const firstPostAvatar = posts[0].avatar;
 document.getElementById('post-avatar').src = firstPostAvatar
 console.log(src, document.getElementById('post-avatar').src) 
 console.log("LOL")
->>>>>>> Stashed changes
