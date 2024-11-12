@@ -18,7 +18,6 @@ const appSettings = {
 const app = initializeApp(appSettings)
 const db = getDatabase(app)
 
-
 // Identify the use with local Storage
 let userId = localStorage.getItem('userId');
 if (!userId) {
