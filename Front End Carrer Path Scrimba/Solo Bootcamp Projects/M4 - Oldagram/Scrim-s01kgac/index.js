@@ -199,4 +199,4 @@ const firstPostAvatar = posts[0].avatar;
 
 document.getElementById('post-avatar').src = firstPostAvatar
 console.log(src, document.getElementById('post-avatar').src) 
-console.log("LOL")
+console.log("LOL LOL")
