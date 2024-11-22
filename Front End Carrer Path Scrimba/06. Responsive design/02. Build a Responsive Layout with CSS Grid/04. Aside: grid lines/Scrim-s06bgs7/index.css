@@ -1,0 +1,29 @@
+html, body {
+    margin: 1em;
+    padding: 0;
+}
+
+.grid-container {
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5em;
+}
+
+.grid-item {
+    background-color: lightgreen;
+    padding: .2em;
+    font-size: 1.5em;
+    color: black;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.explicit {
+    /* background-color: yellow; */
+}
+
+    
+    
