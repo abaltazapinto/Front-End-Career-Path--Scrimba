@@ -5,17 +5,44 @@ html, body {
 
 .grid-container {
     display: grid;
-    gap: .5em;
-    grid-template-columns: 5em 5em 5em 5em;
-    border: 2px solid black;
-} 
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
 
 .grid-item {
-    background-color: lightgreen;
-    padding: .2em;
-    text-align: center;
+    padding: .5em;
     font-size: 2em;
     color: black;
-    border: 1px solid #999;
-    } 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 
+Challenge:
+Change the span counts we are using on these 
+selectors 👇 to fix this layout. 
+You will also need to add some spans for rows. 
+Think about how you do that!
+ */
+    
+header {
+    background-color: palegoldenrod;
+    grid-column: span 3;
+}
+nav {
+    background-color: lightcoral;
+    grid-column: span 1;
+    grid-row: span 2;
+    /* grid-template: 1fr 1fr 1fr / span 2; */
+}
+main {
+    background-color: lightgreen;
+    /* grid-template: 1fr 1fr / 1fr 1fr; */
+    grid-column: span 2;
+    grid-row: span 2;
+}
+footer {
+    background-color: gold;
+    grid-column: span 3;
+}
     

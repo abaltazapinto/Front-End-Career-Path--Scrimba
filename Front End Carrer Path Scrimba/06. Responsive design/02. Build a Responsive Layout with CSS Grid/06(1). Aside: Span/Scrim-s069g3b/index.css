@@ -1,0 +1,31 @@
+html, body {
+    margin: 1em;
+    padding: 0;
+}
+
+.grid-container {
+      
+}
+
+.grid-item {
+    padding: .5em;
+    font-size: 2em;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+header {
+    background-color: palegoldenrod;
+}
+nav {
+    background-color: lightcoral;
+}
+main {
+    background-color: lightgreen;
+}
+footer {
+    background-color: gold;
+}
+    
