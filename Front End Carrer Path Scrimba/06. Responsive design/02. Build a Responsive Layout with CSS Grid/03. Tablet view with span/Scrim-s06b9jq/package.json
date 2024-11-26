@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s06b9jq",
+  "description": "https://scrimba.com/the-frontend-developer-career-path-c0j/~0kj/s0208rpvi1/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
