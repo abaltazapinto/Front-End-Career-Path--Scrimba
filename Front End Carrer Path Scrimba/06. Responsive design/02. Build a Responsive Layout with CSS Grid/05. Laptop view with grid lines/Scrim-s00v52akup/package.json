@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s00v52akup",
+  "description": "https://scrimba.com/s00v52akup/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}

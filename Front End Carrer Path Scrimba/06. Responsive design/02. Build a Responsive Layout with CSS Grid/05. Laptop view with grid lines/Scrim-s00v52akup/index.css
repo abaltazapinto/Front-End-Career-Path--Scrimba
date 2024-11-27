@@ -14,39 +14,50 @@ body {
    
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
     gap: 1em;
 }
 
 @media (min-width: 500px) {
-/*
-Challenge: 
-    1. Make our layout look like the screenshot. 
-    (📝 Try to write the least CSS possible.)  
-*/
     main {
-        
+        grid-template-columns: 1fr 1fr;
     } 
     .technology {
-        grid-column: 1 / -1; 
-    }
-    .environment {   
-        grid-column: 1 / 2; /*First column*/
-        grid-row: 2;
+        grid-column: span 2;
     }
     .nasa {
-        grid-column: 2/ 3;
-        grid-row: 2 / 4;
-    }
-    .physics {
-        grid-column: 1/2;
-        grid-row: 3;
+        grid-row: span 2;
     }
     .health {
-        grid-column: 1 / -1;;
-        grid-row: 4;
+        grid-column: span 2;
     }  
+}
+
+@media (min-width: 870px) {
+/*
+Challenge:
+    1. Create a 12 column layout. 
+       (Don’t write 1fr 12 times 😡)
+    2. Place the items using grid lines.
+       (📝 Try to write as little CSS as possible.)  
+*/
+    main {
+    }
+    
+    .technology {
+    }
+    
+    .environment {
+    }
+     
+    .nasa {
+    }
+    
+    .physics { 
+    }
+    
+    .health {
+    }
 }
 
 /* =================
