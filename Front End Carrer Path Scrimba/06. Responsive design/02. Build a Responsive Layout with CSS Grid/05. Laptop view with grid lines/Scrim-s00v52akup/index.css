@@ -42,21 +42,27 @@ Challenge:
        (📝 Try to write as little CSS as possible.)  
 */
     main {
+        grid-template-columns: repeat(12, 1fr);
     }
     
     .technology {
+        grid-column: span 6;
     }
     
     .environment {
+        grid-column: span 3;
     }
      
     .nasa {
+        grid-column: span 3;
     }
     
     .physics { 
+        grid-column: span 4;
     }
     
     .health {
+        grid-column: span 5;
     }
 }
 
