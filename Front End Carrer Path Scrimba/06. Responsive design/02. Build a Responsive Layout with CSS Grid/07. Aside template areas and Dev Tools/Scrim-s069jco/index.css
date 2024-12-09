@@ -1,0 +1,57 @@
+html, body {
+    margin: 1em;
+    padding: 0;
+}
+
+/* 
+Challenge:
+   1. Finish mapping out these elements using 
+      their grid-areas.
+
+ */
+
+.grid-container {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(12, 1fr);
+    grid-template-areas: 
+        "head head head head head head head head head head head head"
+        "nav nav main main main main main main main aside aside aside"
+        "nav nav main main main main main main main aside aside aside"
+        "nav nav main main main main main main main aside aside aside"
+        "foot foot foot foot foot foot foot foot foot foot foot foot";
+}
+
+.grid-item {
+    padding: .5em;
+    font-size: 2em;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+header {
+    grid-area: head;
+    background-color: palegoldenrod;
+}
+
+nav {
+    grid-area: nav;
+    background-color: lightcoral;
+}
+
+main {
+    grid-area: main;
+    background-color: lightgreen;
+}
+
+aside {
+    grid-area: aside;
+    background-color: lightgray;
+}
+
+footer {
+    grid-area: foot;
+    background-color: gold;
+}
+    
