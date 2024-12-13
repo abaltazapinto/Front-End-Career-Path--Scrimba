@@ -3,9 +3,127 @@
         <title>My Learning Journal</title>
         <link rel="stylesheet" href="css/style.css">
         <!-- Dont forget to add the meta tag and the icon to the website -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     <body>
-        <header>
+    <aside
+        class="dark && light mode"
+        alt="toggle-label for dark and light modes"
+      >
+        <input
+          type="checkbox"
+          id="darkmode-toggle"
+          aria-label="Toggle dark mode"
+        />
+        <label
+          for="darkmode-toggle"
+          id="toggle-label"
+          name="toggle-label"
+          aria-hidden="true"
+        >
+          <svg
+            version="1.1"
+            class="sun"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="24px"
+            height="24px"
+            viewBox="0 0 64 64"
+            enable-background="new 0 0 64 64"
+            xml:space="preserve"
+          >
+            <g>
+              <circle
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                cx="32.003"
+                cy="32.005"
+                r="16.001"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M12.001,31.997c0-2.211-1.789-4-4-4H4c-2.211,0-4,1.789-4,4
+                   s1.789,4,4,4h4C10.212,35.997,12.001,34.208,12.001,31.997z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M12.204,46.139l-2.832,2.833c-1.563,1.562-1.563,4.094,0,5.656
+                   c1.562,1.562,4.094,1.562,5.657,0l2.833-2.832c1.562-1.562,1.562-4.095,0-5.657C16.298,44.576,13.767,44.576,12.204,46.139z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M32.003,51.999c-2.211,0-4,1.789-4,4V60c0,2.211,1.789,4,4,4
+                   s4-1.789,4-4l-0.004-4.001C36.003,53.788,34.21,51.999,32.003,51.999z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M51.798,46.143c-1.559-1.566-4.091-1.566-5.653-0.004
+                   s-1.562,4.095,0,5.657l2.829,2.828c1.562,1.57,4.094,1.562,5.656,0s1.566-4.09,0-5.656L51.798,46.143z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M60.006,27.997l-4.009,0.008
+                   c-2.203-0.008-3.992,1.781-3.992,3.992c-0.008,2.211,1.789,4,3.992,4h4.001c2.219,0.008,4-1.789,4-4
+                   C64.002,29.79,62.217,27.997,60.006,27.997z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M51.798,17.859l2.828-2.829c1.574-1.566,1.562-4.094,0-5.657
+                   c-1.559-1.567-4.09-1.567-5.652-0.004l-2.829,2.836c-1.562,1.555-1.562,4.086,0,5.649C47.699,19.426,50.239,19.418,51.798,17.859z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M32.003,11.995c2.207,0.016,4-1.789,4-3.992v-4
+                   c0-2.219-1.789-4-4-4c-2.211-0.008-4,1.781-4,3.993l0.008,4.008C28.003,10.206,29.792,11.995,32.003,11.995z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#E0BC00"
+                d="M12.212,17.855c1.555,1.562,4.079,1.562,5.646-0.004
+                   c1.574-1.551,1.566-4.09,0.008-5.649l-2.829-2.828c-1.57-1.571-4.094-1.559-5.657,0c-1.575,1.559-1.575,4.09-0.012,5.653
+                   L12.212,17.855z"
+              />
+            </g>
+          </svg>
+          <svg
+            version="1.1"
+            class="moon"
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </label>
+      </aside>
+      
+        <header id="main-header">
             <div class="logo">
                 <img src="images/logo.png" alt="Logo">
                 <h1>My Learning Journal</h1>
@@ -16,14 +134,16 @@
         </header>
         <main>
             <div class="blog">
-                <a href="https://www.42porto.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="42School"
-                    aria-label="My learning environment for 42">
-                    <article>
-                        <img src="images/42World.webp"
-                            alt="Logo of the 42 school">
+              <a href="https://www.42porto.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="42School"
+              aria-label="My learning environment for 42"
+              >
+
+              <article>
+              <img src="images/42World.webp"
+                  alt="Logo of the 42 school">
                         <header>
                             <h4>
                                 December 12, 2024
@@ -55,6 +175,74 @@
                     </article>
                 </a>
             </div>
+            <div class="blog">
+              <a href="https://scrimba.com/learn-javascript-deep-dive" target="_blank" rel="noopener noreferrer" class="ScrimbaDeepDive" aria-label="My learning environment for Scrimba Javascript Deep Dive">
+                <article>
+                  <img src="images/learn-javascriptdv.webp" alt="Logo of the Javascript Deep Dive course">
+                  <header>
+                    <h4>December 12, 2024</h4>
+                    <h1>Scrimba Javascript Deep Dive</h1>
+                    <h3>Exploring the depths of Javascript's core concepts! Each chapter provides clarity on advanced techniques, empowering me to write efficient, clean, and maintainable code.</h3>
+                  </header>
+                </article>
+              </a>
+            </div>
+            
+            <div class="blog">
+              <a href="https://scrimba.com/learn-front-end-path" target="_blank" rel="noopener noreferrer" class="ScrimbaFrontEnd" aria-label="My learning environment for Scrimba Front End Path">
+                <article>
+                  <img src="images/FED.webp" alt="Logo of the Front End Path course">
+                  <header>
+                    <h4>December 13, 2024</h4>
+                    <h1>Scrimba Front End Path</h1>
+                    <h3>A journey to mastering front-end development! From HTML to React, this course is helping me build robust, responsive, and visually stunning web applications.</h3>
+                  </header>
+                </article>
+              </a>
+            </div>
+            
+            <div class="blog">
+              <a href="https://www.java.com/en/java_in_action/bluej.jsp" target="_blank" rel="noopener noreferrer" class="JavaEisnt789" aria-label="My learning environment for Java Eisnt 789">
+                <article>
+                  <img src="images/bluej.png" alt="Logo of Java Eisnt 789 with BlueJ">
+                  <header>
+                    <h4>December 13, 2024</h4>
+                    <h1>Java Eisnt 789 with BlueJ</h1>
+                    <h3>Delving into the fundamentals of Java programming! BlueJ makes object-oriented concepts tangible, providing a perfect start to my Java coding adventure.</h3>
+                  </header>
+                </article>
+              </a>
+            </div>
+            
+            <div class="blog">
+              <a href="https://java-eisnt-10791-with-vaadin.com" target="_blank" rel="noopener noreferrer" class="JavaEisnt10791" aria-label="My learning environment for Java Eisnt 10791">
+                <article>
+                  <img src="images/What-is-Vaadin.webp" alt="Logo of Java Eisnt 10791 with Vaadin">
+                  <header>
+                    <h4>December 13, 2024</h4>
+                    <h1>Java Eisnt 10791 Web Applications with Vaadin</h1>
+                    <h3>Taking Java to the web! This course blends Java's power with Vaadin's UI framework, enabling me to create elegant, functional web applications.</h3>
+                  </header>
+                </article>
+              </a>
+            </div>
+            
+            <div class="blog">
+              <a href="https://www.udemy.com/course/java-the-complete-java-developer-course/learn/lecture/34998722?start=150#content" target="_blank" rel="noopener noreferrer" class="UdemyJava" aria-label="My learning environment for Udemy Java Masterclass">
+                <article>
+                  <img src="images/java-programming-masterclass.webp" alt="Logo of Udemy Java Masterclass">
+                  <header>
+                    <h4>December 13, 2024</h4>
+                    <h1>Udemy Java Masterclass</h1>
+                    <h3>130 hours of expert lessons from Tim Buchalka! This masterclass offers deep insights into Java, reinforcing my knowledge while introducing new concepts and practices.</h3>
+                  </header>
+                </article>
+              </a>
+            </div>
+            <footer></footer>
         </main>
     </body>
+
+    <script src="./js/index.js"></script> defer
+
 </html>

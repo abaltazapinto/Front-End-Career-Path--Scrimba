@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,37 +12,130 @@
     text-decoration: none;
 }
 
-html {
+/* ***********************************
+******* Black and white color*********
+**************************************/
+
+:root {
+    --background: #ffffff;         /* White background */
+    --text-color-1: #1a1a1a;      /* Dark gray for primary text */
+    --text-color-2: #4a4a4a;      /* Medium gray for secondary text */
+    --outline: #d1d5db;           /* Light gray for outlines */
+    --accent: #007bff;            /* Blue for links or highlights */
+    --input-bg: #f9f9f9;          /* Very light gray for input fields */
+    --button-bg: #e0e0e0;         /* Light gray for buttons */
+    --hover-bg: #d6d6d6;          /* Slightly darker gray for button hover */
+    --border-color: #cccccc;    /* Light gray for borders */
+}
+
+.dark-mode {
+    --background: #121212;        /* Dark gray background */
+    --text-color-1: #ffffff;      /* White for primary text */
+    --text-color-2: #b0b0b0;      /* Light gray for secondary text */
+    --outline: #333333;           /* Darker gray for outlines */
+    --accent: #bb86fc;            /* Soft purple for links or highlights */
+    --input-bg: #1e1e1e;          /* Slightly lighter dark gray for input fields */
+    --button-bg: #424242;         /* Medium gray for buttons */
+    --hover-bg: #616161;          /* Slightly lighter gray for button hover */
+    --border-color: #272727;      /* Dark border for containers */
+}
+
+.dark-mode .sun {
+    fill: yellow;
+  }
+  
+  label {
+    width: 75px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    background: var(--background);
+    border-radius: 200px;
+    box-shadow:
+      inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+      inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+  }
+  
+  label::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 2.5px;
+    left: 5px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10 px rgba(0, 0, 0, 0.2);
+  }
+  
+  aside {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  input:checked + label {
+    background: #242424;
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 15%);
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+  }
+  label,
+  label::after {
+    transition: 0.3s;
+  }
+  label:active:after {
+    width: 26px;
+  }
+  
+
+/****************************************
+******General-layout*********************
+*****************************************/ 
+
+html, body {
     font-size: 1rem;
     height: 100%;
     font-size: 100%;
-} 
-
-body {
     margin: 0;
     padding: 0;
     line-height: 1.5;
+    background-color: var(--background);
+    color: var(--text-color-1);
+    height: 100vh;
 }
 
-/* dont forget CSS reset 
-    dont forget to insert dark and light mode 
-    dont forget if you use to insert sanitize
-    
-*/
+header, main, footer {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}
 
 /*
     header of the site
 */
-header {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2em;
-}
 
 header > .hamburguer {
     border: none;
     background-color: white;
     font-size: 25;
+    border-radius: 50%;
+    background-color: var(--background);
 }
 header  img {
     margin-right: 1em;
@@ -56,27 +151,54 @@ header > .logo h1 {
     font-size: 2.5rem;
 }
 
-/*
-    Blogs CSS 
-    dont forget to use the display grid to start to learn how to use 
-*/
 
+/*************************************************
+***********Articles********************************
+***************************************************/
+main {
+    background-color: var(--background);
+    color: var(--text-color-1);
+    display: grid;
+    gap: 1em;
+    grid-template-areas: 
+        "42School"
+        "ScrimbaJavaScript"
+        "ScrimbaDeepDive"
+        "ScrimbaFrontEnd"
+        "JavaEisnt789"
+        "JavaEisnt10791"
+        "UdemyJava"
+        ;
+}
+
+footer {
+    background-color: var(--background);
+    color: var(--text-color-1);
+}
 .blog {
-    width: 100%;
+    width: fit-content;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     color: black;
+    background-color: var(--background);
+    color: var(--text-color-1);
+    border: 1px solid var(--text-color-2);
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    padding: 1rem;
+    margin: 1rem;;
+    border-radius: 10px;
 }
 
 .blog article {
-    width: 100%;
-    max-width: 50rem;
+    width: 80%;
+    /* max-width: 15rem; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    color: black;
+    
 
 }
 .blog article header {
@@ -92,17 +214,40 @@ header > .logo h1 {
 }
 
 .blog article h1 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     color: lightskyblue;
+    line-height: 1.2;
+    padding: 2rem;
 }
 
 .blog article h2 {
-    font-size: 2.5rem;
-    color: #999;
+    font-size: 0.5rem;
+    color: var(--text-color-gray);
     margin-bottom: 0.825rem;
 }
 
 .blog article h3 {
     font-size: 1.178rem;
-    color: #333;
+    color: var(--text-color-3);
 }
+
+.blog article h4 {
+    font-weight: 300;
+    font-size: smaller;
+    padding-top: 2rem;
+}
+
+/**************************************************************************************
+******************************Media queries********************************************
+***************************************************************************************/
+
+/******************************************************************************************
+******************************Small devices **********************************************
+******************************************************************************************/
+
+@media (max-width: 480px) {
+    header, main, footer {
+        max-width: 70%;
+    }
+}
+
