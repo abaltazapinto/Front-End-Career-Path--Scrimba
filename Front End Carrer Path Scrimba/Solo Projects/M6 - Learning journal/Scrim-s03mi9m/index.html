@@ -4,7 +4,6 @@
         <link rel="stylesheet" href="css/style.css">
         <!-- Dont forget to add the meta tag and the icon to the website -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
     </head>
     <body>
     <aside
@@ -122,22 +121,22 @@
           </svg>
         </label>
       </aside>
-      
+    
         <header id="main-header">
             <div class="logo">
                 <img src="images/logo.png" alt="Logo">
                 <h1>My Learning Journal</h1>
             </div>
-            <button class="Hamburguer" id="hamburguer" aria-label="Toggle navigation">
+            <nav class="menu">
+              <a href="index.html" id="home-link">Home</a>
+              <a href="./about.html" id="about-link">About Me</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
                 <b>&#9776;</b> 
             </button>
           </header>
-          <nav class="menu">
-            <a href="#" id="home-link">Home</a>
-            <a href="#" id="about-link">About Me</a>
-          </nav>
-          
-          <div id="home" class="content hidden">Welcome to the Home Page!</div>
+
+          <div id="home" class="content ">Welcome to the Home Page!</div>
           <div id="about" class="content hidden">This is the About Me Page!</div>
           
           <div class="info" id="image-info">

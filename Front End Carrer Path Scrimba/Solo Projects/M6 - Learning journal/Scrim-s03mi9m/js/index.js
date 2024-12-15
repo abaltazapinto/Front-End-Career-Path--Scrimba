@@ -9,3 +9,18 @@ console.log("afdsuihdsa");
 toggle.addEventListener("change", function () {
     document.body.classList.toggle("dark-mode", toggle.checked);
   });
+
+  /********************************************************************************
+   * ******************Menu-toogle-----------------------------*****************
+   * *******************************************************************************
+   */
+
+document.addEventListener("click", function(){
+  const menu = document.querySelector(".menu");
+  const toggle = document.querySelector(".menu-toggle");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    toggle.classList.toggle("hidden")
+  })
+})
