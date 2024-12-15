@@ -126,6 +126,7 @@ header, main, footer {
     display: flex;
     align-items: center;
     justify-content: center; 
+    /* flex-direction: column; */
 }
 
 #main-header {
@@ -137,9 +138,8 @@ header, main, footer {
     padding-bottom: 1rem;
     font-size: 3vw;
 }
-
 /*
-    header of the site
+header of the site
 */
 
 header > .hamburguer {
@@ -161,6 +161,76 @@ header > .logo h1 {
     font-size: 3.325vw;
 }
 
+.hamburguer {
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  .menu a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 0;
+  }
+  .content {
+    font-size: 2vw;
+    padding: 2rem;
+  }
+  .hidden {
+    display: none;
+  }
+
+/*********************************************************
+*****************Main-Image*********************************
+*************************************************************/
+#image-info  img { 
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+#image-info {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.image-text {
+    position: absolute;
+    top: 60%;
+    left: 50%; 
+    transform: translate(-90%, -50%); 
+    color: white; 
+    font-size: 1.5vw; 
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: Adds shadow for better visibility */
+}
+
+.image-text h1 {
+    color: cyan;
+    font-size: 2.5vw;
+}
+
+.image-text h3 {
+    font-size: 2.25vw;
+    font-weight: 300;
+    margin-bottom: 0.325rem;
+}
+
+.image-text h4 {
+    color: cyan;
+    font-size: 1.5vw;
+}
+
 
 /*************************************************
 ***********Articles********************************
@@ -168,13 +238,12 @@ header > .logo h1 {
 main {
     background-color: var(--background);
     color: var(--text-color-1);
+    margin-top: 1rem;
     display: grid;
     gap: 1rem;
     padding: 1rem;
     justify-content: center;
     align-items: center;
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    /* grid-auto-rows: 1fr; */
     grid-template-areas: 
         "42School"
         "ScrimbaJavaScript"
@@ -202,13 +271,12 @@ article {
     border: 1px solid var(--text-color-2);
     padding: 1rem;
     border-radius: 10px;
-    /* width: 350px; */
     max-width: 100%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .blog article {
@@ -276,19 +344,26 @@ article {
 ******************************Small devices **********************************************
 ******************************************************************************************/
 
-
 @media (max-width: 480px) {
 
     #main-header {
         font-size: 6vw;
     }
-    main, footer {
-        max-width: 100%; 
+
+    #image-info  img { 
+        width: 100%;
+        max-height: auto;
     }
+
+
     .blog {
         max-width: 95vw;
+        margin: 0 auto;
     }
 }
+/******************************************************************************************
+******************************Medium devices **********************************************
+******************************************************************************************/
 
 @media (min-width: 481px) {
     main {
@@ -321,10 +396,15 @@ article {
 }
 }
 
+/******************************************************************************************
+******************************Big devices **********************************************
+******************************************************************************************/
+
 @media (min-width: 1025px) {
     #main-header {
         justify-content: space-between;
         font-size: 3vw;
+        padding-right: 2rem;
     }
 
     #main-header img {
