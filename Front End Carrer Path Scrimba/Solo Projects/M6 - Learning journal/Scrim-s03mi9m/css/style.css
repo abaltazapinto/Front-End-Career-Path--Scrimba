@@ -107,15 +107,20 @@
 *****************************************/ 
 
 html, body {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
     line-height: 1.5;
     background-color: var(--background);
     color: var(--text-color-1);
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 header, main, footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden ;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -126,16 +131,11 @@ header, main, footer {
 #main-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 1.5rem;
+    padding-top: 0.625rem;
     padding-bottom: 1rem;
-    font-size: 1rem;
-}
-
-main {
-    padding: 0.5em;
+    font-size: 3vw;
 }
 
 /*
@@ -158,7 +158,7 @@ header > .logo {
 }
 
 header > .logo h1 {
-    font-size: 1rem;
+    font-size: 3.325vw;
 }
 
 
@@ -169,7 +169,12 @@ main {
     background-color: var(--background);
     color: var(--text-color-1);
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* grid-auto-rows: 1fr; */
     grid-template-areas: 
         "42School"
         "ScrimbaJavaScript"
@@ -177,31 +182,39 @@ main {
         "ScrimbaFrontEnd"
         "JavaEisnt789"
         "JavaEisnt10791"
-        "UdemyJava"
-        ;
+        "UdemyJava";
 }
 
 footer {
     background-color: var(--background);
     color: var(--text-color-1);
 }
+
+article {
+    width:auto;
+    box-sizing: border-box;
+}
+
 .blog {
     color: black;
     background-color: var(--background);
     color: var(--text-color-1);
     border: 1px solid var(--text-color-2);
     padding: 1rem;
-    margin: 1rem;;
     border-radius: 10px;
-    width: 20rem;
+    /* width: 350px; */
+    max-width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
 }
 
 .blog article {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    
-
 }
 .blog article header {
     display: flex;
@@ -210,33 +223,49 @@ footer {
 }
 
 .blog article img {
-    border-radius: 0.5rem;
+    width: auto;
+    height: 50px;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .blog article h1 {
-    font-size: 3rem;
+    text-align: center;
+    font-size: 6vw;
     color: lightskyblue;
     line-height: 1.2;
     padding: 0;
     margin: 0;
+    padding-top: 0.425rem;
 }
 
 .blog article h2 {
-    font-size: 3.5rem;
+    display: block;
+    font-size: 4vw;
+    text-align: left;
     color: var(--text-color-2);
-    margin-bottom: 0.825rem;
+    padding-top: 0.325rem;
+    
 }
 
 .blog article h3 {
-    font-size: 2.8rem;
+    display: block;
+    padding-top: 0.325rem;
+    font-size: medium;
+    text-align: left;
     color: var(--text-color-3);
     font-weight: 300;
+    font-size: 3vw;
 }
 
 .blog article h4 {
-    font-weight: 300;
-    font-size: 1rem;
-    padding-top: 2rem;
+    padding-top: 0.325rem;
+    display: block;
+    text-align: left;
+    font-weight: 900;
+    font-size: 3vw;
+    color: lightskyblue;
 }
 
 /**************************************************************************************
@@ -249,9 +278,15 @@ footer {
 
 
 @media (max-width: 480px) {
+
+    #main-header {
+        font-size: 6vw;
+    }
     main, footer {
-        max-width: 90%; 
-         flex-direction: column;
+        max-width: 100%; 
+    }
+    .blog {
+        max-width: 95vw;
     }
 }
 
@@ -264,10 +299,67 @@ footer {
         "JavaEisnt789 JavaEisnt10791"
         "UdemyJava"
         ;
-        padding: 2rem;
+        gap: 0.5rem;
+        padding: 0.2rem;
+    }
+
+.blog article h1 {
+    font-size: 5vw;
+}
+
+.blog article h2 {
+    font-size: 3vw;
+}
+
+.blog article h3 {
+    font-weight: 300;
+    font-size: 2vw;
+}
+
+.blog article h4 {
+    font-size: 3vw;
+}
+}
+
+@media (min-width: 1025px) {
+    #main-header {
+        justify-content: space-between;
+        font-size: 3vw;
+    }
+
+    #main-header img {
+        min-width: 75px;
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "42School ScrimbaJavaScript ScrimbaDeepDive"
+        "ScrimbaFrontEnd JavaEisnt789 JavaEisnt10791"
+        "UdemyJava";
+        padding: 1rem;
+        
+    }
+
+    .blog article h1 {
+        font-size: 2vw;
+    }
+    
+    .blog article h2 {
+        font-size: 2vw;
+    }
+    
+    .blog article h3 {
+        font-size: 1.25vw;
+    }
+    
+    .blog article h4 {
+        padding-top: 0.325rem;
+        display: block;
+        text-align: left;
+        font-weight: 300;
+        font-size: 1vw;
+        color: lightskyblue;
     }
 }
 
-@media (min-width: 870px) {
-
-}
