@@ -439,10 +439,10 @@ article {
   }
   .beginning {
     margin-left: 3.4rem;
-    margin-right: 9.4rem;
+    margin-right: 3.4rem;
 } 
 .container {
-    margin: 9.4rem;
+    margin: 2.4rem;
   }
   .blog article h1 {
     font-size: 5vw;
@@ -470,8 +470,8 @@ article {
   #main-header {
     justify-content: space-between;
     font-size: 3vw;
-    padding-right: 9.4rem;
-    padding-left: 9.4rem;
+    padding-right: 5.4rem;
+    padding-left: 5.4rem;
   }
 
 
@@ -480,11 +480,11 @@ article {
     min-width: 75px;
   }
   .beginning {
-    margin-left: 9.4rem;
-    margin-right: 9.4rem;
+    margin-left: 5.4rem;
+    margin-right: 5.4rem;
 } 
   .container {
-    margin: 9.4rem;
+    margin: 5.4rem;
   }
 
   main {
