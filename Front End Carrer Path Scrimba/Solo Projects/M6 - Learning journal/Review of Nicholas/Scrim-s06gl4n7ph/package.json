@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s06gl4n7ph",
+  "description": "https://scrimba.com/s06gl4n7ph/s0eaujpt7q/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}

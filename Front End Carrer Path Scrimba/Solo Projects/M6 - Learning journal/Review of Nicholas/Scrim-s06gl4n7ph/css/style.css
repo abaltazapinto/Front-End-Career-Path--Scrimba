@@ -1,0 +1,533 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ***********************************
+******* Black and white color*********
+**************************************/
+
+:root {
+  --background: #ffffff; /* White background */
+  --text-color-1: #1a1a1a; /* Dark gray for primary text */
+  --text-color-2: #4a4a4a; /* Medium gray for secondary text */
+  --outline: #d1d5db; /* Light gray for outlines */
+  --accent: #007bff; /* Blue for links or highlights */
+  --input-bg: #f9f9f9; /* Very light gray for input fields */
+  --button-bg: #e0e0e0; /* Light gray for buttons */
+  --hover-bg: #d6d6d6; /* Slightly darker gray for button hover */
+  --border-color: #cccccc; /* Light gray for borders */
+}
+
+.dark-mode {
+  --background: #121212; /* Dark gray background */
+  --text-color-1: #ffffff; /* White for primary text */
+  --text-color-2: #b0b0b0; /* Light gray for secondary text */
+  --outline: #333333; /* Darker gray for outlines */
+  --accent: #bb86fc; /* Soft purple for links or highlights */
+  --input-bg: #1e1e1e; /* Slightly lighter dark gray for input fields */
+  --button-bg: #424242; /* Medium gray for buttons */
+  --hover-bg: #616161; /* Slightly lighter gray for button hover */
+  --border-color: #272727; /* Dark border for containers */
+}
+
+.dark-mode .sun {
+  fill: yellow;
+}
+
+label {
+  width: 75px;
+  height: 25px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  background: var(--background);
+  border-radius: 200px;
+  box-shadow:
+    inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10 px rgba(0, 0, 0, 0.2);
+}
+
+aside {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+input:checked + label {
+  background: #242424;
+}
+
+input:checked + label:after {
+  left: calc(100% - 15%);
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+label,
+label::after {
+  transition: 0.3s;
+}
+label:active:after {
+  width: 26px;
+}
+
+/****************************************
+******General-layout*********************
+*****************************************/
+
+html,
+body {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: var(--background);
+  color: var(--text-color-1);
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+#main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 1rem;
+  padding-top: 0.625rem;
+  padding-bottom: 1rem;
+  font-size: 3vw;
+}
+/*
+header of the site
+*/
+
+header > .hamburguer {
+  border: none;
+  background-color: var(--background);
+}
+header img {
+  margin-right: 1em;
+}
+
+header > .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+header > .logo h1 {
+  font-size: 3.325vw;
+}
+
+/***************************************************
+****************Menu-Toggle*************************
+****************************************************/
+
+/* .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} */
+
+.menu a {
+  text-decoration: none;
+  color: var(--text-color-1);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+}
+
+.menu a:last-child {
+  border-bottom: none;
+}
+
+.menu.active {
+  display: flex;
+  z-index: 999;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  background-color: var(--background);
+  border: none;
+  background: none;
+}
+
+.menu a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  border-radius: 5px;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--background);
+  position: absolute;
+  top: 60px;
+  left: 190px;
+  width: 100%;
+  /* border: 1px solid #444; */
+  border-radius: 5px;
+}
+
+.beginning {
+    margin-left: 1.4rem;
+} 
+.content {
+  font-size: 2vw;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/*********************************************************
+*****************Main-Image*********************************
+*************************************************************/
+#image-info img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+#image-info {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-90%, -50%);
+  color: white;
+  font-size: 1.5vw;
+  text-align: left;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: Adds shadow for better visibility */
+}
+
+.image-text h1 {
+  color: cyan;
+  font-size: 2.5vw;
+}
+
+.image-text h3 {
+  font-size: 2.25vw;
+  font-weight: 300;
+  margin-bottom: 0.325rem;
+}
+
+.image-text h4 {
+  color: cyan;
+  font-size: 1.5vw;
+}
+
+/*************************************************
+***********Articles********************************
+***************************************************/
+
+
+/* Assigning grid areas to the div elements */
+
+.a42School {
+  grid-area: 42School;
+}
+
+.ScrimbaJavaScript {
+  grid-area: ScrimbaJavaScript;
+}
+
+.ScrimbaDeepDive {
+  grid-area: ScrimbaDeepDive;
+}
+
+.ScrimbaFrontEnd {
+  grid-area: ScrimbaFrontEnd;
+}
+
+.JavaEisnt789 {
+  grid-area: JavaEisnt789;
+}
+
+.JavaEisnt10791 {
+  grid-area: JavaEisnt10791;
+}
+
+.UdemyJava {
+  grid-area: UdemyJava;
+}
+main {
+  background-color: var(--background);
+  color: var(--text-color-1);
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  justify-items: center;
+  align-items: stretch;
+  width: 100%;
+  grid-template-areas: 
+    "42School"
+    "ScrimbaJavaScript"
+    "ScrimbaDeepDive"
+    "ScrimbaFrontEnd"
+    "JavaEisnt789"
+    "JavaEisnt10791"
+    "UdemyJava";
+}
+
+footer {
+  background-color: var(--background);
+  color: var(--text-color-1);
+}
+
+article {
+  max-width: auto;
+  box-sizing: border-box;
+}
+
+.blog {
+  background-color: var(--background);
+  color: var(--text-color-1);
+  border: 1px solid var(--text-color-2);
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog article {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.blog article header {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.blog article img {
+  width: auto;
+  min-height: 50px;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.blog article h1 {
+  text-align: center;
+  font-size: 6vw;
+  color: lightskyblue;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+  padding-top: 0.425rem;
+}
+
+.blog article h2 {
+  display: block;
+  font-size: 4vw;
+  text-align: left;
+  color: var(--text-color-2);
+  padding-top: 0.325rem;
+}
+
+.blog article h3 {
+  display: block;
+  padding-top: 0.325rem;
+  text-align: left;
+  color: var(--text-color-3);
+  font-weight: 300;
+  font-size: 3vw;
+}
+
+.blog article h4 {
+  padding-top: 0.325rem;
+  display: block;
+  text-align: left;
+  font-weight: 900;
+  font-size: 3vw;
+  color: lightskyblue;
+}
+
+/**************************************************************************************
+******************************Media queries********************************************
+***************************************************************************************/
+
+/******************************************************************************************
+******************************Small devices **********************************************
+******************************************************************************************/
+
+@media (max-width: 480px) {
+  #main-header {
+    font-size: 6vw;
+  }
+
+  #image-info img {
+    width: 100%;
+    max-height: auto;
+  }
+
+  .blog {
+    max-width: 95vw;
+    margin: 0 auto;
+  
+  }
+}
+/******************************************************************************************
+******************************Medium devices **********************************************
+******************************************************************************************/
+
+@media (min-width: 481px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    border: none;
+    color: var(--text-color-1);
+    background-color: var(--background);
+    gap: 1.5rem;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "42School ScrimbaJavaScript"
+      "ScrimbaDeepDive ScrimbaFrontEnd"
+      "JavaEisnt789 JavaEisnt10791"
+      "UdemyJava .";
+    padding: 0.2rem;
+    margin: auto;
+    width: 90vw;
+  }
+  .beginning {
+    margin-left: 3.4rem;
+    margin-right: 3.4rem;
+} 
+.blog article h1 {
+    font-size: 1.5rem;
+  }
+
+  .blog article h2 {
+    font-size: 1.2rem;
+  }
+
+  .blog article h3 {
+    font-weight: 300;
+    font-size: 2vw;
+  }
+
+  .blog article h4 {
+    font-size: 3vw;
+  }
+}
+
+/******************************************************************************************
+******************************Big devices **********************************************
+******************************************************************************************/
+
+@media (min-width: 1025px) {
+  #main-header {
+    justify-content: space-between;
+    padding-right: 5.4rem;
+    padding-left: 5.4rem;
+  }
+
+  .beginning {
+    margin-left: 5.4rem;
+    margin-right: 5.4rem;
+} 
+
+  main {
+    margin:auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "42School ScrimbaJavaScript ScrimbaDeepDive"
+      "ScrimbaFrontEnd JavaEisnt789 JavaEisnt10791"
+      "UdemyJava . .";
+    padding: 1rem;
+  }
+
+  .blog {
+    padding: 0.5rem;
+  }
+
+  .blog article h1 {
+    font-size: 2vw;
+  }
+
+  .blog article h2 {
+    font-size: 2vw;
+  }
+
+  .blog article h3 {
+    font-size: 1.25vw;
+  }
+
+  .blog article h4 {
+    padding-top: 0.325rem;
+    display: block;
+    text-align: left;
+    font-weight: 300;
+    font-size: 1vw;
+    color: lightskyblue;
+  }
+}
