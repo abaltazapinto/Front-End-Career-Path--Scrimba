@@ -19,3 +19,7 @@ Em termos gerais de eficiência:
 12. Conformance to Coding Standards
 13. Take out empty spaces 
 "
+
+/home/abaltaza/Pictures/Screenshots/Screenshot from 2024-12-25 14-58-54.png
+
+![alt text](<Screenshot from 2024-12-25 14-58-54.png>)
