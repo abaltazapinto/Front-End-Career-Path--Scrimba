@@ -1,0 +1,103 @@
+What You Did Well:
+LocalStorage Integration: Great job using localStorage to persist the user's watchlist. It's an efficient way to store small amounts of user-specific data.
+Dynamic Rendering: You're dynamically generating HTML for the movie list, which is excellent for creating a responsive user interface.
+Accessing External APIs: I like that you’re leveraging the OMDB API to fetch additional movie data. This makes the app dynamic and interactive.
+Event Delegation: Using document.addEventListener with a .closest() method for handling clicks is a solid approach. It improves maintainability.
+Suggestions for Improvement:
+Avoid Repeated HTML Rendering in Loops:
+
+You're modifying innerHTML inside a loop in renderMovieListHtml. This can lead to poor performance, especially with a large watchlist. Instead:
+Build the entire HTML string first.
+Update innerHTML only once after the loop.
+Example:
+
+javascript
+let htmlContent = '';
+watchlist.forEach(imdbID => {
+    // Fetch and append to htmlContent
+});
+watchlistResultEl.innerHTML = htmlContent;
+Error Handling:
+
+While your code handles API errors (catch), it doesn't notify the user when something goes wrong. Consider adding user-friendly error messages to the UI.
+Improvement:
+
+javascript
+.catch(err => {
+    console.error(err);
+    watchlistResultEl.innerHTML = `<p>Failed to fetch movie details. Please try again later.</p>`;
+});
+DRY Principle:
+
+You’re repeating similar blocks of code for adding and removing the empty/full classes in multiple places. Extract that logic into a helper function.
+Improvement:
+
+javascript
+function updateWatchlistState(isEmpty) {
+    watchlistResultEl.classList.toggle('empty', isEmpty);
+    watchlistResultEl.classList.toggle('full', !isEmpty);
+}
+Accessibility:
+
+You’ve included ARIA labels, which is great! However, consider adding focus styles to interactive elements like buttons for users navigating via the keyboard.
+Example: Use the :focus-visible CSS selector.
+Code Comments:
+
+While your code is mostly clear, adding comments explaining the purpose of key functions (e.g., getWatchlist, renderMovieListHtml) would help others understand your logic better.
+Image Alt Attributes:
+
+The alt text for your movie posters could be more descriptive. Instead of "Movie Poster," include the movie title in the text. For example:
+html
+alt="Poster for The Shawshank Redemption"
+Refactor Event Listener Logic:
+
+Right now, the click event listener handles removing the movie from the DOM and updating localStorage. For better separation of concerns, delegate this logic to distinct functions (e.g., handleRemoveClick and removeFromDOM).
+Improvement:
+
+javascript
+document.addEventListener('click', handleRemoveClick);
+
+function handleRemoveClick(e) {
+    const target = e.target.closest('.remove-btn');
+    if (!target) return;
+
+    const movieId = target.dataset.movieId;
+    removeMovie(movieId);
+    removeFromDOM(movieId);
+
+    if (getWatchlist().length === 0) renderEmptyWatchlist();
+}
+
+function removeFromDOM(movieId) {
+    const movieElement = document.querySelector(`[data-div-id='${movieId}']`);
+    if (movieElement) movieElement.remove();
+}
+Performance:
+
+Avoid making fetch calls inside a forEach loop when possible. Consider using Promise.all to fetch all movies concurrently, which can significantly improve performance.
+Example:
+
+javascript
+
+const fetchPromises = watchlist.map(imdbID =>
+    fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}&plot=short&r=json`)
+        .then(res => res.json())
+);
+
+Promise.all(fetchPromises)
+    .then(dataArray => {
+        dataArray.forEach(data => {
+            if (data.Response === "True") {
+                watchlistResultEl.innerHTML += renderMovieCard(data, data.imdbID);
+            }
+        });
+    })
+    .catch(err => console.error("Error fetching movies:", err));
+CSS Class Toggle:
+
+Instead of manually adding and removing classes (empty, full), you can use classList.toggle with a second parameter.
+Improvement:
+
+javascript
+watchlistResultEl.classList.toggle('empty', watchlist.length === 0);
+watchlistResultEl.classList.toggle('full', watchlist.length > 0);
