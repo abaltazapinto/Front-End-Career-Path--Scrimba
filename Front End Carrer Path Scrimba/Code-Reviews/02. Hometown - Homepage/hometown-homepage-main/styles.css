@@ -1,0 +1,185 @@
+/**
+Palette: https://scrimba.com/links/hometown-palette
+RED: #E63946
+LIGHT: #F1FAEE
+AQUA: #A8DADC
+LIGHT BLUE: #457B9D
+DARK BLUE: #1D3557
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    
+}
+
+/* HERO SECTION */
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('images/torshov.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 720px;
+    height: 345px; 
+}
+
+.visit{
+    background-color: #1D3557;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 225px;
+    height: 45px;
+    font-size: 32px;
+    margin-top: 60px;
+    color: #FFFFFF;
+    
+}
+
+.description{
+    background-color: #457B9D;
+    width: 415px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 5px 25px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: -10px;
+    color: #FFFFFF;
+}
+
+
+/* <!-- ACTIVITIES SECTION --> */
+.activities{
+    width: 720px;
+    height: 380px;
+    background-color: #F1FAEE;
+    color: #1D3557;
+    padding-top: 20px;
+
+}
+
+
+.top3{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.activity {
+    display: flex;  
+    flex-direction: column;          
+    align-items: center;    
+    text-align: center;
+    width: 200px; 
+    margin: 0 auto;
+
+}
+
+.activity-wrapper {
+    display: flex;                  
+    flex-direction: row;        
+    justify-content: center;                             
+    width: 100%;                 
+}
+
+.activity img {
+    width: 100px;                                    
+    border-radius: 50%;                        
+}
+
+.activity h4{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;  
+}
+
+.activity p{
+    font-size: 16px;
+    font-weight: 400;  
+}
+
+
+/* Guided-section */
+.guide-section{
+    width: 720px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #FFFFFF;
+ 
+}
+
+.guided-card{
+    width: 375px;
+    height: 300px;
+    color: #1D3557;
+    padding: 0 10px;
+    background: #A8DADC;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: #1D3557 solid 5px;
+    border-top: #1D3557 solid 5px;;
+    
+}
+
+.guide-img{
+    width: 180px;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.text-content{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.guided-card h3{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.guided-card p{
+    font-weight: 400;
+    font-size: 16px;
+    font-style: italic;
+    
+}
+
+.guided-card h4{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+
+/*  box model
+
+|---------------------------|
+|           HERO            |  <-- `.hero` container (div box)
+|                           |
+|  |---------------------|  |  
+|  |       Visit         |  |  <-- `.visit` (title box)
+|  |---------------------|  |  
+|                           |
+|  |---------------------|  |  
+|  |    Description      |  |  <-- `.description` (subtitle box)
+|  |---------------------|  |  
+|                           |
+|---------------------------| 
+
+*/
+
