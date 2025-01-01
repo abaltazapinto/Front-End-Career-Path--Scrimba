@@ -27,3 +27,19 @@ console.log the results
 document.addEventListener("click", () => {
     fetch("https://apis.scrimba.com/jsonplaceholder/todos" {method: get})
 })
+
+/**
+Challenge: 
+
+Fetch a list of todos from the JSON Placeholder API:
+
+BaseURL: https://apis.scrimba.com/jsonplaceholder/
+Endpoint: /todos
+
+This time however, explicitly set the request method to "GET"
+console.log the results
+*/
+
+fetch("https://apis.scrimba.com/jsonplaceholder/todos", {method: "GET"})
+    .then(res => res.json())
+    .then(data => console.log(data))
