@@ -4,10 +4,26 @@ your regular usage of the internet. E.g. today, I checked the
 weather on my phone which probably sent a GET request to retrieve
 weather information.
 
-GET: 
+GET:  to be able to get the latest number of the lottery. 
 
-POST: 
+POST: when i post a photo on instagram.
 
-PUT: 
+PUT: when i edit a comment that ive made on facebook 
 
-DELETE: 
+DELETE: when i delete a photo
+
+/**
+Challenge: 
+
+Fetch a list of todos from the JSON Placeholder API:
+
+BaseURL: https://apis.scrimba.com/jsonplaceholder/
+Endpoint: /todos
+
+This time however, explicitly set the request method to "GET"
+console.log the results
+*/
+
+document.addEventListener("click", () => {
+    fetch("https://apis.scrimba.com/jsonplaceholder/todos" {method: get})
+})
