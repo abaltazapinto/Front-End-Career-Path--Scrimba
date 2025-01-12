@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- nice touch remembering configss to edge -->
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <!-- dont forget the icon thing and also to connect the style.css and the index.js (done these last two) -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Color Scheme generator</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Color Scheme Generator</h1>
+        <label for="seed-color">Choose a seed color:</label>
+        <!-- maybe try to put the label hidden -->
+         
+        <input type="color" id="seed-color" value="#FF0000">
+
+        <label for="scheme-mode">Select a scheme mode:</label>
+        <select id="scheme-mode">
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="triad">Triad</option>
+        </select>
+
+        <button id="generate-btn">Generate color scheme</button>
+        <div id="color-scheme"></div>
+    </div>
+    <script src="index.js" defer></script>
+  </body>
+</html>
