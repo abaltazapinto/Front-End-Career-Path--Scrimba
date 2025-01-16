@@ -40,6 +40,6 @@ console.log(peopleWithPets);
  * (should be Jill, Alice, and Bob)
  */
 
-const olderThan18 = people.filter(eighteen => eighteen.age > 18);
+const olderThan18 = people.filter(eighteen => eighteen.age >= 18);
 
 console.log(olderThan18);
