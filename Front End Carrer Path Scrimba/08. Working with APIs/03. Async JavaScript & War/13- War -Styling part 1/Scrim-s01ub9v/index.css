@@ -1,18 +1,29 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: green;
+    background-image: url("img/table.png");
+    font-family: "Exo 2", sans-serif;
+    height: 100vh;
 }
 
-#cards {
-    padding: 2rem;
+body {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#cards-button-container {
-    position: absolute;
-    bottom: 2rem;
-    left: 13rem;
+button {
+    background-color: #FFF100;
+    cursor: pointer;
+    border: none;
+}
+
+button#new-deck {
+    align-self: flex-start;
+    padding: 5px;
+}
+
+button.draw {
+    font-size: 1.2em;
+    padding: 5px;
 }
