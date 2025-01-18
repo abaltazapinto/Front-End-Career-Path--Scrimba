@@ -1,0 +1,18 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: green;
+}
+
+#cards {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cards-button-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 13rem;
+}
