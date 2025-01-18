@@ -32,9 +32,22 @@ function cardWinner(card1, card2)
     }
     
     const card1Value = cardValues[card1.value];
-    const card2Value = cardValues[card2.calue];
+    const card2Value = cardValues[card2.value];
+
+    console.log("card1", card1.value)
+    console.log("card2", card2.value)
     
-    (card1Value < card2Value) ? "card1" : (card1Value < card2Value) ? "card2" : "tie";
+    console.log("card1", card1Value)
+    console.log("card2", card2Value)
+    
+    if (card1Value > card2Value){
+     return "card1";
+    }else if (card1Value < card2Value) {
+    return "card2";
+    }else {
+        return "tie";
+    }
+    
     
 }
 
@@ -50,7 +63,8 @@ drawCardBtn.addEventListener("click", () => {
                 <img src=${data.cards[1].image} class="card" />
             `
             
-            const winner = cardWinner(card1, card2);
+            const winner = cardWinner(data.cards[0], data.cards[1]);
+
             console.log("Winner:", winner);
         })
 })
