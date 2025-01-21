@@ -62,7 +62,6 @@ drawCardBtn.addEventListener("click", () => {
             cardsContainer.children[1].innerHTML = `
                 <img src=${data.cards[1].image} class="card" />
             `
-            
             const winner = cardWinner(data.cards[0], data.cards[1]);
 
             console.log("Winner:", winner);
