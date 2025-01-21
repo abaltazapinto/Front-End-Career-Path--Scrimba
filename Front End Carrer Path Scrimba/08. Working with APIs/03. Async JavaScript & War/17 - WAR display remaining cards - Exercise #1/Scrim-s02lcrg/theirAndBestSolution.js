@@ -3,6 +3,7 @@ const cardsContainer = document.getElementById("cards")
 const newDeckBtn = document.getElementById("new-deck")
 const drawCardBtn = document.getElementById("draw-cards")
 const header = document.getElementById("header")
+const remainingText = document.getElementById("remaining")
 
 function handleClick() {
     fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
@@ -15,10 +16,19 @@ function handleClick() {
 
 newDeckBtn.addEventListener("click", handleClick)
 
+/**
+ * Challenge:
+ * 
+ * Display the number of cards remaining in the deck on the page
+ * Hint: Check the data that comes back when we draw 2 new cards
+ * to see if there's anything helpful there for this task (😉)
+ */
+
 drawCardBtn.addEventListener("click", () => {
     fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
         .then(res => res.json())
         .then(data => {
+            remainingText.textContent = `Remaining cards: ${data.remaining}`
             cardsContainer.children[0].innerHTML = `
                 <img src=${data.cards[0].image} class="card" />
             `
@@ -29,21 +39,6 @@ drawCardBtn.addEventListener("click", () => {
             header.textContent = winnerText
         })
 })
-/**
- * Challenge:
- * 
- * Try to determine which of the 2 cards is the "winner" (has higher value)
- * Aces are the card with the highest "score"
- * 
- * Part 2:
- * Instead of logging the winner to the console, 
- * display an `h2` on the screen above the 2 cards 
- * that declares who the winner is.
- * 
- * If card1 is the higher card, display "Computer wins!"
- * If card2 is the higher card, display "You win!"
- * If they're equal, display "War!"
- */
 
 function determineCardWinner(card1, card2) {
     const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
@@ -60,12 +55,3 @@ function determineCardWinner(card1, card2) {
     }
 }
 
-// Keeping this test case for reference, but should delete later
-// const card1Obj = {
-//     value: "JACK"
-// }
-// const card2Obj = {
-//     value: "QUEEN"
-// }
-
-// determineCardWinner(card1Obj, card2Obj)
