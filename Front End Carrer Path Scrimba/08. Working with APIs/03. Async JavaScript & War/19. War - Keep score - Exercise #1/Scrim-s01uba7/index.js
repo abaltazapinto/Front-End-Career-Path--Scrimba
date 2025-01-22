@@ -1,9 +1,14 @@
 let deckId
+let computerScore = 0
+let myScore = 0
 const cardsContainer = document.getElementById("cards")
 const newDeckBtn = document.getElementById("new-deck")
 const drawCardBtn = document.getElementById("draw-cards")
 const header = document.getElementById("header")
 const remainingText = document.getElementById("remaining")
+const computerScoreEl = document.getElementById("computer-score")
+const myScoreEl = document.getElementById("my-score")
+
 
 let pointsHome = document.getElementById("pointsHome")
 let pointsAway = document.getElementById("pointsAway")
@@ -80,10 +85,14 @@ function determineCardWinner(card1, card2) {
     
     if (card1ValueIndex > card2ValueIndex) {
         homeScore += 1
+        computerScore++
+        computerScoreEl.textContent = `Computer score: ${computerScore}`
         updateScoreDisplay();
         return "Card 1 wins!"
     } else if (card1ValueIndex < card2ValueIndex) {
         awayScore += 1
+        myScore++
+        myScoreEl.textContent = `My score: ${myScore}`
         updateScoreDisplay();
         return "Card 2 wins!"
     } else {
