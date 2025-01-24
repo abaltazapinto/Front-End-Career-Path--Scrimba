@@ -1,0 +1,17 @@
+{
+  "name": "Scrim-s02tj66",
+  "description": "https://v2.scrimba.com/the-frontend-developer-career-path-c0j/~0ie",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1"
+  }
+}
