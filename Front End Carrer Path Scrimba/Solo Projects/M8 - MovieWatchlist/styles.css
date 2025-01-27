@@ -247,7 +247,7 @@ h1 {
 }
 
 .search-button:hover {
-  background-color: #333;
+  background-color: var(--text-color-2);
   color: #fff;
 }
 
