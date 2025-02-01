@@ -137,12 +137,18 @@
         >
         <div class="main-titles">
           <h1 class="title">Find your film </h1>
-          <p class="myWatchlist">My watchlist</p>
+            <button
+            id="myWatchlist"
+            aria-label="My Watchlist"
+            tabindex="0"
+            onclick="location.href='#watchlist'"
+            onkeydown="if(event.key === 'Enter') location.href='watchlist'">My watchlist
+          </button>
         </div>
         <img alt="" aria-label="" src="images/THJJRUhNlEc.png">
       </header>
       <main>
-        <div class="search-container">    
+        <div class="search-container">
             <div class="search-input-wrapper">
               <label for="search-movie"  class="hidden" aria-hidden="true">Search Movie</label>
               🔍
@@ -153,14 +159,29 @@
                 name="search-movie"
                 placeholder="Search for your movie"
                 aria-describedby="search-helper"
+                required
               >
             </div>
-            <button class="search-button">Search</button>
-        </div>
-        <div class="main-films">
-          sdsad
+            <button 
+              type="submit"
+              class="search-button"
+              aria-label="Search"
+              >
+              Search
+            </button>
         </div>
       </main>
+      <section class="results-container">
+        <h3 class="results-count"></h3>
+        <img 
+          src="images/Group 199.png"
+          alt="No films to display"
+          class="no-data-initial"
+        />
+        <div class="main-films">
+          
+        </div>
+      </section>
     <script src="index.js"></script>
 </body>
 </html>

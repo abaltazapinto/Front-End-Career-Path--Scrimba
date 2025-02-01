@@ -30,6 +30,7 @@ main input {
     --background: #ffffff; /* White background */
     --text-color-1: #1a1a1a; /* Dark gray for primary text */
     --text-color-2: #4a4a4a; /* Medium gray for secondary text */
+    --text-color-3: #5a5a5e;
     --outline: #d1d5db; /* Light gray for outlines */
     --accent: #007bff; /* Blue for links or highlights */
     --input-bg: #f9f9f9; /* Very light gray for input fields */
@@ -42,6 +43,7 @@ main input {
     --background: #121212; /* Dark gray background */
     --text-color-1: #ffffff; /* White for primary text */
     --text-color-2: #b0b0b0; /* Light gray for secondary text */
+    --text-color-3:#a0a1a0;
     --outline: #333333; /* Darker gray for outlines */
     --accent: #bb86fc; /* Soft purple for links or highlights */
     --input-bg: #1e1e1e; /* Slightly lighter dark gray for input fields */
@@ -191,13 +193,13 @@ h1 {
   background: none;
 }
 
-.myWatchlist {
+#myWatchlist {
   margin: 0;
   color: var(--text-color-1);
   cursor: pointer;
   text-shadow: 2px 2px 5px rgba(950,990,950,4);
   align-items: end;
-  background: none;
+  background: transparent;
   border: none;
 }
 
@@ -241,6 +243,7 @@ h1 {
   cursor: pointer;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  background-color: VAR(--text-color-3);
   border-top: 1px solid var(--text-color-2);
   border-bottom: 1px solid var(--text-color-2);
   border-right: 1px solid var(--text-color-2);
@@ -261,4 +264,9 @@ h1 {
 
 .film-details {
   
+}
+
+.no-data-initial {
+  display: flex;
+  margin: 3em auto;
 }
