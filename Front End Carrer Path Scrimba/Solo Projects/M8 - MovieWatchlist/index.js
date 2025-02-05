@@ -19,7 +19,7 @@ my key = http://www.omdbapi.com/?i=tt3896198&apikey=8d3707a7
 */
 
 async function handleSearch() {
-    const res = await fetch("http://www.omdbapi.com/?i=tt3896198&apikey=8d3707a7")
+    const res = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=8d3707a7")
     const data = await res.json()
     console.log(data.Title)
     
@@ -55,7 +55,7 @@ form.addEventListener('submit', async(event) => {
 // API CALL: SEARCHING THE Movie
 async function searchMovies(movieTitle) {
   try {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${movieTitle}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${movieTitle}`)
     const data = await response.json();
     console.log('Search results:', data);
     console.log(data.Search)
@@ -71,7 +71,7 @@ async function searchMovies(movieTitle) {
 async function fetchMovieDetails(movies) {
   try {
     resultsArray = await Promise.all(movies.map(async(movie) => {
-      const response = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
+      const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
       return await response.json()
     }))
     renderResults()
