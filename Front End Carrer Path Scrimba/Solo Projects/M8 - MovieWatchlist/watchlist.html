@@ -136,7 +136,9 @@
         aria-label="background-image with some of portrait of films i a wall"
         >
         <div class="main-titles">
-          <h1 class="title">Find your film </h1>
+          <a href="./index.html" target="_self">
+              <h1 class="title">Find your film </h1>
+            </a>
           <a href="./watchlist.html" target="_self">
             <button
               id="myWatchlist"
@@ -151,49 +153,25 @@
         <img alt="slogan of the app" aria-label="" id="main-image" src="images/THJJRUhNlEc.png">
       </header>
       <main>
-        <div class="search-container">
-            <form id ="form" class="search-input-wrapper">
-                <label for="search-movie"  class="hidden" aria-hidden="true">Search Movie</label>
-                🔍
-                <input
-                type="text"
-                id="search-movie"
-                class="search-input"
-                name="movie-title"
-                placeholder="Search for your movie"
-                aria-describedby="search-helper"
-                required
-                >
-                <button 
-                type="submit"
-                id="search-button"
-                class="search-button"
-                aria-label="Search"
-                >
-                Search
-              </button>
-            </form>
-        
-      </div>
-      </main>
-      <section class="results-container">
-        <div class="movies">
-          <h3 id="results-count" class="results-count"></h3>
-            <div class="film-post">
-              <img 
-              src="images/Group 199.png"
-              alt="No films to display"
-              class="no-data-initial"
-              />
-              <div 
-              class="main-films"
-              id="main-films"
-              >
-                <!--  they enter here the films -->
-              </div>
-        </div>
-        </div>
-      </section>
-    <script src="index.js" type="module"></script>
+          <section class="results-container">
+              <div class="movies">
+                  <h3 id="results-count" class="results-count"></h3>
+                  <div class="film-post">
+                      <img 
+                      src="images/Group 199.png"
+                      alt="No films to display"
+                      class="no-data-initial"
+                      />
+                      <div 
+                      class="main-films"
+                      id="main-films"
+                      >
+                      <!--  they enter here the films -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="watchlist.js" type="module"></script>
 </body>
 </html>

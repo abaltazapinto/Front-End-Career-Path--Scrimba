@@ -3,7 +3,7 @@
 */
 
 // Get the wathclist from LocalStorage
-const getWatchlist = ( ) => JSON.parse(localStorage.getItem('My Watchlist')) || []
+const getWatchlist = () => JSON.parse(localStorage.getItem('My Watchlist')) || []
 
 // Update watchlist in localStorage
 const updateLocalStorage = watchlist => localStorage.setItem('My Watchlist', JSON.stringify(watchlist))
@@ -21,7 +21,9 @@ const toggleWatchlist = (movie, isAdding) => {
 //update button state (add/remove)
 const updateButtonState = (button, isInWatchlist) => {
     button.textContent = isInWatchlist ? "Remove From Watchlist" : "Add To Watch list"
+
     button.classList.toggle('add-btn', !isInWatchlist)
+    
     button.classList.toggle('remove-btn', isInWatchlist)
 }
 
