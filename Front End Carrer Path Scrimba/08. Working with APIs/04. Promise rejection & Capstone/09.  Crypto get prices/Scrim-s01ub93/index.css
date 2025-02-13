@@ -27,6 +27,11 @@ div.top {
     justify-content: space-between;
 }
 
+
+div#crypto > p {
+    margin: 0;
+}
+
 h1.time {
     text-align: center;
 }

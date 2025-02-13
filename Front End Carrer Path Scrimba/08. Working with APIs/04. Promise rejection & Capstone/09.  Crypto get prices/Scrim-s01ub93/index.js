@@ -22,16 +22,7 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         document.getElementById("crypto-top").innerHTML = `
             <img src=${data.image.small} />
             <span>${data.name}</span>
-        
-                        <span> Current price : ${data.market_data.current_price.usd} </span>
-                        <span>24-hour high price: ${data.market_data.high_24h.usd}</span>
-                        <span>24-hour low price: ${data.market_data.low_24h.usd} </span>
-            
-        `;
-        document.getElementById("crypto-price").innerHTML = `
- 
         `
-
         /**
          * Challenge: Add the following data points underneath the 
          * name and icon (1 paragraph each):
@@ -43,8 +34,10 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
          * Feel free to check the response data object for your own currency
          * if you don't want to use USD.
          */
-    })
-    .then(data => {
-        
+        document.getElementById("crypto").innerHTML += `
+            <p>🎯: $${data.market_data.current_price.usd}</p>
+            <p>👆: $${data.market_data.high_24h.usd}</p>
+            <p>👇: $${data.market_data.low_24h.usd}</p>
+        `
     })
     .catch(err => console.error(err))
