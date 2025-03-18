@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s01ub94",
+  "description": "https://scrimba.com/frontend-path-c0j/~0oh/s0pfqodiqs/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
