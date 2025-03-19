@@ -38,47 +38,28 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
 
 // setInterval(getCurrentTime, 1000)
 
+navigator.geolocation.getCurrentPosition(position => {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+        .then(res => {
+            if (!res.ok) {
+                throw Error("Weather data not available")
+            }
+            return res.json()
+        })
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => console.error(err))
+});
 
 /**
- * Challenge: Learn how to access the user's coordinates
- * by using the Geolocation Web API!
+ * Challenge: Display the weather icon as an <img />
+ * inside the <div id="weather">
  * 
- * Log the user's position to the console.
+ * This site shows an example URL for the icon:
+ * https://openweathermap.org/weather-conditions
+ * 
+ * Note: the weather icon is found instead data.weather, which is
+ * an array of weather for that area. You can just access the first
+ * item in that array to get the icon ID.
  */
-
-// my apikey f9d989e0f19b54a9a9945eeaf0374634
-
-/*
-
-Latitude:   
-
-41.232861
-Longitude:
--8.621570
-
-*/
-
-// const latitude = position.coords.latitude;
-// const longitude = position.coords.longitude;
-const apiKey = 'f9d989e0f19b54a9a9945eeaf0374634'
-
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-        position => {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-
-            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`)
-              .then(res => res.json())
-              .then(data => console.log(data))
-              .catch(err => console.error("Error fetching the data", err));
-
-        },
-        (error) => {
-            console.error("Geolocation error:", error.message);
-        }
-    );
-} else {
-    console.error("Geolocation is not supported by this browser.");
-}
-
