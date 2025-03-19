@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }    
@@ -47,4 +48,30 @@ div#crypto-top {
 
 div#crypto-top > span {
     margin-left: 10px;
+}
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#iconTemp > p {
+    align-items: center;
+    align-self: center;
+    font-size: 28px;
+    padding-right: 0.5em;
+}
+
+#iconTemp {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+#nameLocation {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
 }
