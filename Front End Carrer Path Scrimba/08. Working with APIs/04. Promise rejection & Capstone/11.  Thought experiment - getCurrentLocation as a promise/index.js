@@ -76,3 +76,12 @@ getCurrentPosition()
     .then(position => {
         console.log(position)
     })
+
+    aync / await 
+
+    async function getLocation() {
+    const position = await navigator.geolocation.getCurrentPosition()
+    console.log(position)
+}
+
+    */
