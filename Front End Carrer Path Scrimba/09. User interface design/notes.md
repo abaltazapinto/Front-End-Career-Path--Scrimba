@@ -62,3 +62,21 @@ white spaces
 Alignement 
 
 every element is positioned correctly in relation to other elements.
+
+
+WCAG constrast 
+    minium aa
+    enhanced aaa
+    the viusual of texct and images of text.
+    4.5.1
+
+Scale is immportant as weell.
+
+yeah i just remembered other time where i used grid tenoplate colums : repeat(3, auto);
+
+
+design ii chalklenge 
+
+good typography requires the understanding of tohter considereations.
+![alt text](image-1.png)
+
