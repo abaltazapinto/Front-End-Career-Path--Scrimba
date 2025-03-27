@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Montserrat';
+    display: grid;
+    align-items: center;
+    background: #000 url('./sky3.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.container {
+    margin-left:6em;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-gap: 7em;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 3.5em;
+    width:90%;
+    position: relative;
+}
+
+h1:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: white;
+    left: -1em;
+    top: 10px;
+    height: 50%;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+    margin-top: .3em;
+}
+
+span {
+    position: relative;
+}
+
+span:before {
+    position: absolute;
+    content: '';
+    height: .2em;
+    width: 80%;
+    bottom: .1em;
+    z-index: -1;
+    background: #e88a62; 
+}
+/*
+
+- White Space
+- Color 
+- Contrast 
+- Scale
+- Alignment
+- Typography
+- Visual Hierarchy
+
+*/
