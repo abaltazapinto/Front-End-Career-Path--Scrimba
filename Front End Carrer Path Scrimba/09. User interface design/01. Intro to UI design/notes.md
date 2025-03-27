@@ -80,3 +80,12 @@ design ii chalklenge
 good typography requires the understanding of tohter considereations.
 ![alt text](image-1.png)
 
+Understanding typograpy
+
+    > FOnt choice
+    > Visual Hierarchy
+    > Font size
+    > Alignment 
+    > Letter Spacing 
+    > Font Styles (weigth, italics, etc..)
+    > Color & Contrast
