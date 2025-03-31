@@ -15,6 +15,7 @@ body {
     font-family: serif;
     height: 100vh;
     text-align:center;
+    font-family: "Cormorant Garamond", serif;
 }
 
 header {
@@ -69,6 +70,7 @@ nav {
     opacity: 0;
     transition: all .3s;
     text-align: center;
+    line-height: 1.5;
 }
 
 
@@ -136,8 +138,16 @@ ul.secondary li p {
 
 main {
     border: 1px solid white;
+    border: none;
 }
 
 
 /* Your Fixes Below */
 
+body {
+    background: #303A52;
+}
+
+nav {
+    background: #2C354A;
+}
