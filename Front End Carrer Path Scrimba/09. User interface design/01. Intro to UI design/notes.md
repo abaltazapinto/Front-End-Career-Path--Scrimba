@@ -6,17 +6,17 @@ in this chapter we will learn
     > gary simon will teach the last module.
 
 
- 
-Design patterns 
 
-    . Dark mode 
+Design patterns
+
+    . Dark mode
     - Card layouts
     - Modal dialogs
     - Shopping carts
     - Bredcrumbs
     - More
 
- 
+
 
 
 16. Uses at least 1.5 line height for body text.
@@ -45,26 +45,26 @@ notes from here:
 
     UX designer
         figma and stuff
-    
+
     UI designer
         focus on designing the user interface
-    
+
     USER research & testinng
 
 class
 
 white spaces
 
-    using padding is good behavioor. 
+    using padding is good behavioor.
     using m units. remember of line  -heigth
 
 
-Alignement 
+Alignement
 
 every element is positioned correctly in relation to other elements.
 
 
-WCAG constrast 
+WCAG constrast
     minium aa
     enhanced aaa
     the viusual of texct and images of text.
@@ -75,7 +75,7 @@ Scale is immportant as weell.
 yeah i just remembered other time where i used grid tenoplate colums : repeat(3, auto);
 
 
-design ii chalklenge 
+design ii chalklenge
 
 good typography requires the understanding of tohter considereations.
 ![alt text](image-1.png)
@@ -85,7 +85,20 @@ Understanding typograpy
     > FOnt choice
     > Visual Hierarchy
     > Font size
-    > Alignment 
-    > Letter Spacing 
+    > Alignment
+    > Letter Spacing
     > Font Styles (weigth, italics, etc..)
     > Color & Contrast
+
+
+# Fixing the Type & Visual hierarchy
+
+	Its imnmopportant to use Sans Serif -> they7 use Nunito;
+
+	border: unset;
+
+	text-decoration none.
+
+	
+
+
