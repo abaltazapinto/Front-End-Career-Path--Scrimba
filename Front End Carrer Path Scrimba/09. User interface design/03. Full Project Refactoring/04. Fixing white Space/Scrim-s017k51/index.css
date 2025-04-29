@@ -89,7 +89,6 @@ nav ul li a {
 
 .selected {
     background: #9E579D;
-	padding: 1rem;
 }
 
 .open-nav {
@@ -109,16 +108,13 @@ h1 {
 
 .panel {
     background: #39445F;
-    border-radius: 1em;
-	padding: 1em;
-	margin-bottom: 5%;
-	margin: 1rem;
+    border-radius: .3em;
 }
 
 h3 {
     color: #FC85AE;
     margin: 0;
-    font-size: 5em;
+    font-size: 2em;
 }
 
 ul.data li p {
@@ -169,10 +165,12 @@ p {
 a.cta-btn {
     font-size: .9em;
     padding: .2em .4em;
+    border-radius: .2em;
 }
 
 nav ul li a {
     font-size: 1.2em;
+    padding: .8em 1em;
 }
 
 h3 {
@@ -181,4 +179,12 @@ h3 {
 
 nav {
     text-align: left;
+}
+
+.inner-wrapper {
+    padding: 1em;
+}
+.panel {
+    padding: .5em 1em;
+    margin-bottom: 2em;
 }
