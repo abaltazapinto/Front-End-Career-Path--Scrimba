@@ -99,6 +99,4 @@ Understanding typograpy
 
 	text-decoration none.
 
-	
-
 
