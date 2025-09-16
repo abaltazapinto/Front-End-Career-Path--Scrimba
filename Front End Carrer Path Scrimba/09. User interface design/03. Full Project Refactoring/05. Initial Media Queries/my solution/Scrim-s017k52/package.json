@@ -1,0 +1,17 @@
+{
+  "name": "Scrim-s017k52",
+  "description": "https://scrimba.com/frontend-path-c0j/~0ps/s0cbl9duj9/head",
+  "scripts": {
+    "watch": "webpack -w",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "webpack": "^2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.0",
+    "babel-loader": "^7.0",
+    "babel-preset-env": "*",
+    "babel-preset-react": "*"
+  }
+}
