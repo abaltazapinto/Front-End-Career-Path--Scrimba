@@ -78,7 +78,7 @@ nav p {
 
 nav svg {
     cursor: pointer;
-    width: 0.5em;
+    width: 1em;
 }
 
 nav ul li a {
@@ -216,13 +216,77 @@ nav {
     .panel ul.data li p {
         margin-bottom: 0;
     }
+    nav {
+        width: 40%;
+    }
 }
 
 @media (min-width: 720px) {
+    body {
+        padding: 1.5em;
+    }
+    .columns {
+        display: flex;
+    }
+    .col {
+        flex: 0 0 48%;
+    }
+    .secondary {
+        margin-left: 3em;
+    }
+    ul.secondary {
+        margin-top: 0;
+    }
+    nav {
+        width: 30%;
+    }
 
 }
+
+@media (min-width: 850px) {
+    body {
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-template-rows: 70px auto;
+        grid-template-areas:
+            "sidebar header"
+            "sidebar main";
+        padding: 0;
+    }
+
+    header, main {
+        padding: 1.5em;
+    }
+
+    nav {
+        grid-area: sidebar;
+        opacity: 1;
+        visibility: unset;
+        transform: translateX(0);
+        width: 100%;
+        position: unset;
+
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    a.logo {
+        margin: 0;
+    }
+    svg {
+        display: none;
+    }
+}
+
+
  /*
-seing if the git hub is working
+
 - White Space
 - Color
 - Contrast

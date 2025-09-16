@@ -78,7 +78,7 @@ nav p {
 
 nav svg {
     cursor: pointer;
-    width: 0.5em;
+    width: 1em;
 }
 
 nav ul li a {
@@ -152,7 +152,7 @@ nav {
 
 main {
    border: unset;
-}
+} 
 
 a {
     text-decoration: none;
@@ -216,16 +216,39 @@ nav {
     .panel ul.data li p {
         margin-bottom: 0;
     }
+    nav {
+        width: 40%;
+    }
 }
 
 @media (min-width: 720px) {
-
+    body {
+        padding: 1.5em;
+    }
+    .columns {
+        display: flex;
+    }
+    .col {
+        flex: 0 0 48%;
+    }
+    .secondary {
+        margin-left: 3em;
+    }
+    ul.secondary {
+        margin-top: 0;
+    }
+    nav {
+        width: 30%;
+    }
+    
 }
+
+
  /*
-seing if the git hub is working
+
 - White Space
-- Color
-- Contrast
+- Color 
+- Contrast 
 - Scale
 - Alignment
 - Typography
