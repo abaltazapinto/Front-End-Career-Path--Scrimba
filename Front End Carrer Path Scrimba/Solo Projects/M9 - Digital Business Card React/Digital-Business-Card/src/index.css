@@ -34,38 +34,6 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-/*
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-*/
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
 
 /* Main */
 
@@ -78,9 +46,25 @@ main {
 }
 
 main > img {
-	width: 300px;
-	height: 300px;
-	object-fit: cover;
-	object-position: top;
+	width: 100%;
+	height: auto;
+}
 
+/* Card */
+
+.Card {
+  width: 400px;
+  height: 300px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+
+.Card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }

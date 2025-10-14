@@ -11,7 +11,9 @@ function App() {
   return (
     <>
 	<main >
-      <img src={AndreImage} alt='Andre Pinto' />
+		<div className='Card'>
+      	<img src={AndreImage} alt='Andre Pinto' />
+		</div>
 	</main>
     </>
   )
