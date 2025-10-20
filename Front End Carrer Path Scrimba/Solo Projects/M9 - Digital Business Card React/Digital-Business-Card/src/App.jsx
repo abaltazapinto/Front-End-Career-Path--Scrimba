@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import AndreImage from './assets/Andre_Pinto.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
 function App() {
@@ -24,7 +27,7 @@ function App() {
 				<p className='Card--website'>andre-pinto.website</p>
 				<div className='Card--buttons'>
 					<button className='Card--email-button'>
-						<i className="fa-solid fa-envelope"></i> Email
+						<FontAwesomeIcon icon={faEnvelope} /> Email
 					</button>
 					<button className='Card--linkedin-button'>
 						<i className="fa-brands fa-linkedin"></i> LinkedIn
