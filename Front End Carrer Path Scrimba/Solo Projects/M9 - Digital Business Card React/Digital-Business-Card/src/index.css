@@ -15,8 +15,8 @@
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -30,8 +30,8 @@ h1 {
 
 main {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	/*justify-content: center;*/
+	/*align-items: center;*/
 	height: 50vh;
 	border-radius: 40%;
 }
@@ -62,7 +62,7 @@ main > img {
 
 .Card--info {
   background-color: #1A1B21;
-  padding: 20px;
+  padding: 1px 1px 20px 1px;
   text-align: center;
 }
 
@@ -71,12 +71,91 @@ main > img {
 
 .Card--email-button
 {
-	background-color: #3b82f6;
-	color: white;
+	background-color: #FFF;
+	color: black;
 	border: none;
 	border-radius: 5px;
 	padding: 10px 20px;
 	margin: 10px;
 	cursor: pointer;
 	font-size: 16px;
+	font-weight: medium;
+}
+
+.Card--linkedin-button
+{
+	text-decoration: none !important;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	background-color: #0a66c2;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: medium;
+}
+
+.Card--linkedin-link
+{
+	text-decoration: none;
+	color: white;
+}
+
+/* About section */
+
+.Card--about h4 {
+	font-weight: 900;
+	font-size: 20px;
+}
+
+.Card--about {
+
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 20px;
+  margin: 0;
+  padding: 3px 32px 20px 32px;
+  margin-bottom: 20px;
+}
+
+.Card--interests h4 {
+	font-weight: 900;
+	font-size: 20px;
+}
+
+.Card--interests {
+
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 20px;
+  margin: 0;
+  padding: 3px 32px 20px 32px;
+}
+
+
+/* Footer section */
+.Card--footer {
+  width: 100%;
+  background-color: #161619;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 32px;
 }
