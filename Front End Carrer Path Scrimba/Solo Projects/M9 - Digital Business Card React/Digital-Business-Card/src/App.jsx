@@ -26,8 +26,16 @@ function App() {
 				<h2 className='Card--name'>Andre Pinto</h2>
 				<h3 className='Card--job-title'>Developer</h3>
 				<div className='Card--buttons'>
-					<button className='Card--email-button'>
-						<FontAwesomeIcon icon={faEnvelope} /> Email
+					<button
+					className='Card--email-button'
+					onClick={() => {
+						window.open(
+						'https://mail.google.com/mail/?view=cm&fs=1&to=andrebaltazarpinto@gmail.com',
+						'_blank'
+						);
+					}}
+					>
+					<FontAwesomeIcon icon={faEnvelope} /> Email
 					</button>
 					<button className='Card--linkedin-button'>
 						<a
