@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #171717;
+    color: white;
+    padding: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
