@@ -76,7 +76,7 @@ export default function App() {
 		{
 			newGameButtonRef.current.focus()
 		}
-	}, [gameWon])
+	}, [gameWon]) 
 
     return (
         <main>
