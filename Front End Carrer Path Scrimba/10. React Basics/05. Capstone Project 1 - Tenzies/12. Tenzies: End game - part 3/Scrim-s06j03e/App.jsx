@@ -18,14 +18,22 @@ export default function App() {
      * Challenge: Update the `rollDice` function to not just roll
      * all new dice, but instead to look through the existing dice
      * to NOT role any that are being `held`.
-     * 
+     *
      * Hint: this will look relatively similiar to the `hold`
      * function below. When we're "rolling" a die, we're really
      * just updating the `value` property of the die object.
      */
 
     function rollDice() {
-        setDice(generateAllNewDice())
+		setDice(oldDice => oldDice.map(die => {
+			return die.isHeld
+				? die
+				: {
+					...die,
+					value: Math.ceil(Math.random() * 6),
+					id: nanoid()
+				}
+		}))
     }
 
     function hold(id) {

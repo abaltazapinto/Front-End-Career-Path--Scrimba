@@ -6,6 +6,8 @@
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.0"
+    "@fortawesome/react-fontawesome": "^3.1.0",
+    "react-scripts": "^5.0.1",
+    "vite": "^7.3.0"
   }
 }
