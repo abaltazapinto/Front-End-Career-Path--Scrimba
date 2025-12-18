@@ -1,34 +1,30 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { languages } from "./languages"
-
+import clsx from 'clsx'
 /**
  * Goal: Allow the user to start guessing the letters
  *
- * Challenge: Create a new array in state to hold user's
- * guessed letters. When the user chooses a letter, add
- * that letter to this state array.
+ * Challenge: Update the keyboard when a letter is right
+ * or wrong.
  *
- * Don't worry about whether it was a right or wrong
- * guess yet.
+ * Bonus: use the `clsx` package to easily add conditional
+ * classNames to the keys of the keyboard. Check the docs
+ * to learn how to use it 📖
  */
 
 export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = useState("react")
     const [guessedLetters, setGuessedLetters] = useState([])
 
-    function knowLetter(letter) {
-		console.log(guessedLetters);
-		setGuessedLetters(prev =>
-			prev.includes(letter) ?
-			prev :
-			[
-			...prev,
-			letter
-		]
-		)
-	}
-
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+    function addGuessedLetter(letter) {
+        setGuessedLetters(prevLetters =>
+            prevLetters.includes(letter) ?
+                prevLetters :
+                [...prevLetters, letter]
+        )
+    }
 
     const languageElements = languages.map(lang => {
         const styles = {
@@ -51,15 +47,23 @@ export default function AssemblyEndgame() {
     ))
 
     const keyboardElements = alphabet.split("").map(letter => (
-        <button key={letter} onClick={() => knowLetter(letter)}>
-			{letter.toUpperCase()}
-			</button>
-    ))
+        <button
+            key={letter}
+            onClick={() => addGuessedLetter(letter)}
+			className={clsx(
+				"key",
+				guessedLetters.includes(letter) &&
+					currentWord.includes(letter) &&
+					"correct",
+				guessedLetters.includes(letter) &&
+					!currentWord.includes(letter) &&
+					"wrong"
+			)}
 
-	useEffect(() =>
-	{
-		console.log(guessedLetters)
-	}, [guessedLetters])
+        >
+            {letter.toUpperCase()}
+        </button>
+    ))
 
     return (
         <main>
@@ -81,9 +85,6 @@ export default function AssemblyEndgame() {
             <section className="keyboard">
                 {keyboardElements}
             </section>
-			<section>
-				<p>{guessedLetters.join(", ")}</p>
-			</section>
             <button className="new-game">New Game</button>
         </main>
     )
