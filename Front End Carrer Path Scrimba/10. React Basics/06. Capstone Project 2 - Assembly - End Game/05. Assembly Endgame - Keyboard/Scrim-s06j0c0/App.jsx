@@ -1,35 +1,34 @@
-import React from "react"
+import { useState } from "react"
 import { languages } from "./languages"
 
 /**
  * Goal: Build out the main parts of our app
  *
  * Challenge:
- * 1. Save a "currentWord" in state. Initialize as "react".
- * 2. Map over the letters of the word (you'll need to turn
- *    the string into an array of letters first) and display
- *    each one as a <span>. Capitalize the letters when
- *    displaying them.
- * 3. Style to look like the design. You can get the underline
- *    effect on the box using `border-bottom`.
+ * Display the keyboard ⌨️. Use <button>s for each letter
+ * since it'll need to be clickable and tab-accessible.
  */
 
 export default function AssemblyEndgame() {
+    const [currentWord, setCurrentWord] = useState("react")
 
-	const [currentWord, setCurrentWord ] = React.useState("react")
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
 
-	const word = currentWord.split("") 
-	const letras = word.map((letter,index) => {
-		const styles = {
-			backgroundColor: "#323232",
+	const keyboard = alphabet.map((letter,index) => {
+			const styles = {
+				backgroundColor: "#FCBA29",
+
+			}
+			return (
+				<button
+					className="letter"
+					style={styles}
+					key={index}
+					>
+					 {letter}
+					</button>
+			)
 		}
-
-		return (
-			<span className={"letter"}key={index} style={{borderBottom: "2px solid white"}}>
-				{letter.toUpperCase()}
-			</span>
-		)
-	}
 	)
 
     const languageElements = languages.map(lang => {
@@ -48,6 +47,10 @@ export default function AssemblyEndgame() {
         )
     })
 
+    const letterElements = currentWord.split("").map((letter, index) => (
+        <span key={index}>{letter.toUpperCase()}</span>
+    ))
+
     return (
         <main>
             <header>
@@ -62,9 +65,12 @@ export default function AssemblyEndgame() {
             <section className="language-chips">
                 {languageElements}
             </section>
-			<section className="letters">
-                {letras}
+            <section className="word">
+                {letterElements}
             </section>
+			<section className="keyboard">
+				{keyboard}
+			</section>
         </main>
     )
 }
