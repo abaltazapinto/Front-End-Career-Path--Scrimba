@@ -4,11 +4,11 @@ import { languages } from "./languages"
 
 /**
  * Goal: Add in the incorrect guesses mechanism to the game
- * 
+ *
  * Challenge: When mapping over the languages, determine how
  * many of them have been "lost" and add the "lost" class if
  * so.
- * 
+ *
  * Hint: use the wrongGuessCount combined with the index of
  * the item in the array while inside the languages.map code
  */
@@ -17,11 +17,11 @@ export default function AssemblyEndgame() {
     // State values
     const [currentWord, setCurrentWord] = useState("react")
     const [guessedLetters, setGuessedLetters] = useState([])
-    
+
     // Derived values
-    const wrongGuessCount = 
+    const wrongGuessCount =
         guessedLetters.filter(letter => !currentWord.includes(letter)).length
-    
+
     // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -33,16 +33,18 @@ export default function AssemblyEndgame() {
         )
     }
 
-    const languageElements = languages.map(lang => {
+    const languageElements = languages.map((lang,index) => {
         const styles = {
             backgroundColor: lang.backgroundColor,
             color: lang.color
         }
+		const isLost = index < wrongGuessCount
+
         return (
             <span
-                className="chip"
-                style={styles}
-                key={lang.name}
+				style={styles}
+				key={lang.name}
+				className= {clsx("chip", isLost && "lost")}
             >
                 {lang.name}
             </span>
@@ -63,7 +65,7 @@ export default function AssemblyEndgame() {
             correct: isCorrect,
             wrong: isWrong
         })
-        
+
         return (
             <button
                 className={className}

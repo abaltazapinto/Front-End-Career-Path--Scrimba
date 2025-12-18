@@ -8,10 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "clsx": "2.1.1",
     "react": "19.0.0-rc-a99d8e8d-20240916",
     "react-dom": "19.0.0-rc-a99d8e8d-20240916",
-    "clsx": "2.1.1",
-    "vite": "latest"
+    "vite": "^7.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "*"
