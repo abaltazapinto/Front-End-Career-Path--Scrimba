@@ -3,16 +3,25 @@ import { clsx } from "clsx"
 import { languages } from "./languages"
 
 /**
- * Goal: Allow the user to start guessing the letters
+ * Goal: Add in the incorrect guesses mechanism to the game
  *
- * Challenge: Only display the correctly-guessed letters
- * in the word
+ * Challenge: Derive a variable (`wrongGuessCount`) for the
+ * number of incorrect guesses by using the other state
+ * values we're already holding in the component.
+ *
+ * console.log the wrongGuessCount for now
  */
 
 export default function AssemblyEndgame() {
+    // State values
     const [currentWord, setCurrentWord] = useState("react")
     const [guessedLetters, setGuessedLetters] = useState([])
 
+    // Derived values
+    console.log("current word", currentWord)
+	console.log("gueesedLetters", guessedLetters)
+
+    // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     function addGuessedLetter(letter) {
@@ -23,7 +32,6 @@ export default function AssemblyEndgame() {
         )
     }
 
-	console.log(guessedLetters)
     const languageElements = languages.map(lang => {
         const styles = {
             backgroundColor: lang.backgroundColor,
@@ -40,12 +48,13 @@ export default function AssemblyEndgame() {
         )
     })
 
-    const letterElements = currentWord.split("").map((letter, index) =>
-	(
-        <span key={index}>{guessedLetters.includes(letter) ? letter.toUpperCase() : ""}</span>
-))
+    const letterElements = currentWord.split("").map((letter, index) => (
+        <span key={index}>
+            {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+        </span>
+    ))
 
-    	const keyboardElements = alphabet.split("").map(letter => {
+    const keyboardElements = alphabet.split("").map(letter => {
         const isGuessed = guessedLetters.includes(letter)
         const isCorrect = isGuessed && currentWord.includes(letter)
         const isWrong = isGuessed && !currentWord.includes(letter)
@@ -53,6 +62,7 @@ export default function AssemblyEndgame() {
             correct: isCorrect,
             wrong: isWrong
         })
+
         return (
             <button
                 className={className}
@@ -64,6 +74,10 @@ export default function AssemblyEndgame() {
         )
     })
 
+	const wrongGuessCount = guessedLetters
+		.filter(letter => !currentWord.includes(letter))
+		.length
+	console.log(wrongGuessCount)
     return (
         <main>
             <header>
