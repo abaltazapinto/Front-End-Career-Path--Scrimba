@@ -1,0 +1,18 @@
+{
+  "name": "Scrim-s06j0cc",
+  "description": "https://scrimba.com/frontend-path-c0j/~02yv/s0g1ovuj6r/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "19.0.0-rc-a99d8e8d-20240916",
+    "react-dom": "19.0.0-rc-a99d8e8d-20240916",
+    "vite": "^7.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  }
+}
