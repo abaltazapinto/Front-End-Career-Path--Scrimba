@@ -1,18 +1,17 @@
 import { useState } from "react"
 import { clsx } from "clsx"
 import { languages } from "./languages"
+import getFarewellText from "./utils"
 
 /**
- * Goal: Add in the incorrect guesses mechanism to the game
+ * Challenge: Bid farewell to each programming language
+ * as it gets erased from existance 👋😭
  *
- * Challenge:
- * Conditionally render either the "won" or "lost" statuses
- * from the design, both the text and the styles, based on the
- * new derived variables.
+ * Use the `getFarewellText` function from the new utils.js
+ * file to generate the text.
  *
- * Note: We always want the surrounding `section` to be rendered,
- * so only change the content inside that section. Otherwise the
- * content on the page would jump around a bit too much.
+ * Check hint.md if you're feeling stuck, but do your best
+ * to solve the challenge without the hint! 🕵️
  */
 
 export default function AssemblyEndgame() {
@@ -57,6 +56,7 @@ export default function AssemblyEndgame() {
         )
     })
 
+
     const letterElements = currentWord.split("").map((letter, index) => (
         <span key={index}>
             {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
@@ -83,6 +83,44 @@ export default function AssemblyEndgame() {
         )
     })
 
+    const gameStatusClass = clsx("game-status", {
+        won: isGameWon,
+        lost: isGameLost
+    })
+
+    function renderGameStatus() {
+        if (!isGameOver) {
+            return null
+        }
+
+        if (isGameWon) {
+            return (
+                <>
+                    <h2>You win!</h2>
+                    <p>Well done! 🎉</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <h2>Game over!</h2>
+                    <p>You lose! Better start learning Assembly 😭</p>
+                </>
+            )
+        }
+		if(wrongGuessCount > 0 && !isGameOver)
+		{
+			const language = wrongGuessCount - 1
+
+			return (
+				<p>
+					{getFarewellText([language])}
+				</p>
+			)
+		}
+    }
+
+
     return (
         <main>
             <header>
@@ -91,35 +129,9 @@ export default function AssemblyEndgame() {
                 programming world safe from Assembly!</p>
             </header>
 
-            <section
-				className={clsx(
-					"game-status",
-					isGameWon && "game-status-win",
-					isGameLost && "game-status-lost"
-					)}
-				>
-						{isGameWon && (
-							<>
-							<h2>You win!</h2>
-							<p>Well done! 🎉</p>
-							</>
-						)}
-
-						{isGameLost && (
-							<>
-							<h2>You Lost!</h2>
-							<p>Try Again! 🎉</p>
-							</>
-						)}
-
-						{!isGameOver && wrongGuessCount > 0 && (
-							<p>
-								(getFarewellText(languages[wrongGuessCount -1].name))
-							</p>
-						)
-						}
-			</section>
-
+            <section className={gameStatusClass}>
+                {renderGameStatus()}
+            </section>
 
             <section className="language-chips">
                 {languageElements}
