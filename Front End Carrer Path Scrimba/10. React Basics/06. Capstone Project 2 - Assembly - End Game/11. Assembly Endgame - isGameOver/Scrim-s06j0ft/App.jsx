@@ -23,7 +23,8 @@ export default function AssemblyEndgame() {
     const wrongGuessCount =
         guessedLetters.filter(letter => !currentWord.includes(letter)).length
 
-	const isGameOver = wrongGuessCount >= 8
+	console.log(wrongGuessCount)
+
     // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -53,6 +54,7 @@ export default function AssemblyEndgame() {
         )
     })
 
+	const isGameOver = wrongGuessCount >= (languages.length - 1);
     const letterElements = currentWord.split("").map((letter, index) => (
         <span key={index}>
             {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
