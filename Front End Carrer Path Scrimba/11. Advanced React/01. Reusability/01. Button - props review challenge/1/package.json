@@ -1,0 +1,18 @@
+{
+  "name": "Scrim-s03d8mc",
+  "description": "https://scrimba.com/frontend-path-c0j/~0vm/s0k945hp3d/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  }
+}
