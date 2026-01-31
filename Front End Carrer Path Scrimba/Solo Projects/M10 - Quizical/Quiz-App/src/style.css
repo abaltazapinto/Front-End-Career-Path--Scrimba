@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: blue;
+}
+
+body {
+  background-color: #F5F7FB;
+  color: #293264;
+  font-family: "Inter";
+}
+
+.openScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;           
+  width: 100vw;
+}
+
+.openScreen h1{
+  font-size: 2em; 
+  margin: 0;
+}
+
+.openScreen button {
+  background-color: #4D5B9E;
+  padding: 20px 75px;
+  border-radius: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* GameScreen */
+.question-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;           
+  width: 100vw;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;        
+  width: 80%;
+  font-weight: 700;
+  margin: 0.25em 0;
+  padding-bottom: 0.75em;
+  border-bottom: 0.8px solid #DBDEF0;
+}
+
+/* turn the answer choices into buttons */
+.answer-choices {
+  display: flex;
+  flex-direction: row;
+  gap: .75em;
+}
+
+/* Hide the default radio buttons */
+.answer-choices input {
+  display: none;
+}
+
+/* Style the labels to look like buttons */
+.answer-choices label {
+  display: inline-block;
+  padding: 2.5px 25px;
+  border: 2px solid #4D5B9E;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #4D5B9E;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Hover effect */
+.answer-choices label:hover {
+  background-color: #f0f0f0;
+}
+
+/* Checked (active) style */
+.answer-choices input[type="radio"]:checked + label {
+  background-color: #D6DBF5;
+  border: none;
+}
+
+.check,  .play_again button {
+    color: #F5F7FB;
+    background-color: #4D5B9E;
+    border-radius: 10px;
+}
+
+.check {
+  margin-top: 1.5em;
+}
+
+.answer-choices label.right {
+  background-color: #94D7A2 !important;
+  border: none !important;
+  color: #293264;
+}
+
+.answer-choices label.wrong {
+  background-color: #F8BCBC !important;
+  border: none !important;
+  color: #293264;
+  opacity: 0.5;
+}
+
+.answer-choices label.unselected {
+  opacity: 0.5;
+}
+
+.play_again {
+  display: flex;
+  gap: 3em;
+  margin-top: 2em;
+  font-weight: 700;
+}
+
